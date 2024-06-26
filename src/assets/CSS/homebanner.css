@@ -1,0 +1,169 @@
+.homebannerback {
+    width: 100%;
+    height: 500px;
+    /* or any height you need */
+    background-image: url('../img/Home/image\ 36.png');
+    background-size: contain;
+    /* or 'contain' */
+    background-repeat: no-repeat;
+    /* Optional: */
+    background-color: #f0f0f0;
+    /* Fallback color */
+}
+
+.homebannerback2 {
+    width: 100%;
+    background-color: #ece5e5;
+    height: 400px;
+    /* or any height you need */
+    background-image: url('../img/Home/image\ 38.png');
+    background-size: contain;
+    /* or 'contain' */
+    /* background-repeat: no-repeat; */
+    /* Optional: */
+    /* Fallback color */
+}
+
+.homebannertext {
+    background: linear-gradient(to left, rgba(238, 88, 93, 0) 0%, rgba(238, 88, 93, 0.2) 18.61%, rgba(238, 88, 93, 0.814196) 61.08%, #EE585D 81.38%);
+
+    position: relative;
+    top: 150px;
+    left: 90px;
+    padding-right: 150px !important;
+
+
+}
+
+.homebannertext2 {
+    /* background: linear-gradient(to left, rgba(238, 88, 93, 0) 0%, rgba(238, 88, 93, 0.2) 18.61%, rgba(238, 88, 93, 0.814196) 61.08%, #EE585D 81.38%); */
+
+
+
+
+}
+
+.homeaboutinfo {}
+
+.bannerform {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    width: 300px;
+}
+
+.bannerform2 {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    /* width: 300px; */
+}
+
+.bannerinp {
+
+    width: 250px;
+
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white !important;
+
+    background-color: transparent !important;
+    background-clip: padding-box;
+    border-bottom: 1px solid white !important;
+    border-radius: 0px !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    height: 40px !important;
+
+}
+
+.bannerinp::placeholder {
+    color: white !important;
+
+    /* text-align: end; */
+}
+
+.bannerinp:focus {
+    outline: none !important;
+}
+
+.bannertxtarea {
+    display: block;
+    width: 250px;
+
+    padding: 5px;
+    margin-top: 25px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white !important;
+
+    background-color: transparent !important;
+    background-clip: padding-box;
+    border: 1px solid white !important;
+    border-radius: 0px !important;
+    height: 100px;
+}
+
+.bannertxtarea:focus {
+    outline: none !important;
+}
+
+.bannertxtarea::placeholder {
+    color: white !important;
+
+    /* text-align: end; */
+}
+
+.bannerbtn {
+    border: none;
+    background-color: #EE585D;
+    color: white;
+    border-radius: 30px;
+}
+
+.graycircle {
+    height: 300px;
+    width: 300px;
+    background: #989F9D;
+    border-radius: 50%;
+    /* position: absolute; */
+}
+
+.chartslider {
+
+    left: 300px;
+}
+
+.round {
+    /* padding-left: 70px; */
+}
+
+.box{
+    box-shadow: 8px 8px 4px 0px #00000040;
+
+}
+
+.pulgertitle {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 4px;
+    font-weight: 700;
+}
+
+.pulgersubtitle {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.pulgerlist {
+    line-height: 30px;
+}
+
+.plungercard{
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background: #EFEFEF;
+
+}

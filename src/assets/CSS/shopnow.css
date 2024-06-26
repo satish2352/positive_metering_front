@@ -1,0 +1,141 @@
+.shopnow {
+    background: url('../../assets/img/Home/image\ 19\ \(2\).png');
+
+    /* height: 300px; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+
+
+}
+
+.shopnow h1 {
+    font-size: larger;
+    color: white;
+    font-size: 70px;
+}
+
+.shopnow h2 {
+    font-weight: 400;
+    color: white;
+    font-size: 30px;
+}
+
+.ok {
+    background: linear-gradient(252.95deg, #FFFFFF 28.58%, rgba(235, 235, 235, 0.47) 63.27%, rgba(115, 115, 115, 0) 83.38%);
+
+}
+
+.imshopnow {
+    background-image: url('../../assets/img/Home/POSITIVE 1.png');
+    position: relative;
+
+    top: -50px;
+    height: 300px;
+    width: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+}
+
+@media screen and (max-width: 970px) {
+    .imshopnow {
+
+        width: auto !important;
+
+
+    }
+
+    .imshopnow {
+        position: static;
+        top: 0px;
+
+
+
+    }
+}
+
+.contact-btn {
+    color: white;
+    border-radius: 30px;
+    border: 1px red solid;
+    background: transparent;
+    width: 150px;
+    height: 50px;
+}
+
+.imshopnow h1 {
+    font-size: larger;
+    color: white;
+    font-size: 30px;
+}
+
+.imshopnow h3 {
+    font-size: larger;
+    color: white;
+    font-size: 20px;
+}
+
+.imshopdata {
+    padding-top: 160px;
+}
+
+
+/* ----testomonial */
+.testomonialprofile {
+    border-radius: 50%;
+    height: 130px;
+    /* width: 130px; */
+    border: 7px solid rgb(242, 236, 236);
+    box-shadow: 4px 4px 40px 0px #00000040;
+
+
+}
+
+.profileposition {
+    position: relative;
+    top: 70px;
+    justify-content: center;
+    display: flex;
+}
+
+.testomonialback {
+    background: rgba(239, 239, 239, 1);
+    position: relative;
+}
+
+.testback {
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+    box-shadow: 4px 4px 40px 0px #00000040;
+
+    padding: 30px;
+    padding-top: 60px;
+    margin: 20px;
+
+}
+
+.testback h1 {
+    font-size: 30px;
+    letter-spacing: 3px;
+    font-weight: 700;
+
+}
+
+.testback p {
+    font-size: 13px;
+}
+
+.star {
+    color: gold;
+    margin: 7px;
+}
+
+.star1 {
+    color: rgb(158, 151, 151);
+    margin: 7px;
+}

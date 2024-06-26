@@ -1,0 +1,47 @@
+.getaquoteback {
+    background: url('../../assets/img/About/Rectangle\ 161.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    top: 100px;
+
+}
+
+.getaquotebackleft {
+    position: relative;
+    bottom: 250px;
+}
+
+.getaquotebackleftimg {
+    /* height: 400px; */
+    position: relative;
+    bottom: 80px;
+}
+
+
+@media (max-width: 768px) {
+    .getaquoteback {
+        position: static;
+        top: 0px;
+        background-repeat:repeat;
+        /* background-size: cover; */
+
+    }
+    .getaquotebackone{
+        background: url('../../assets/img/About/Layer\ 7\ 1.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    .getaquotebackleft {
+
+        position: relative;
+        bottom: 160px;
+
+
+    }
+
+    .getaquotebackleftimg {
+        position: static;
+ 
+    }
+}

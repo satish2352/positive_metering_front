@@ -1,0 +1,50 @@
+.requestcallback{
+    background-image: url('../../assets/img/Home/image\ 13\ \(1\).png');
+    height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+}
+@media only screen and (max-width: 767px) {
+    .requestcallback{
+        background-image: url('../../assets/img/Home/image\ 13\ \(1\).png');
+        height: 900px;
+        background-size:cover;
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+    }
+}
+.requestcallbackleft{
+    background: rgba(222, 222, 222, 0.79);
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.requestcallbacklefttop{
+    background: rgba(238, 88, 93, 1);
+    
+}
+.requestcallbacklefttop h3{
+
+}
+.requestinput{
+    border: 1px solid rgb(224, 205, 205) !important;
+    background-color: white;
+    height: 40px;
+}
+.requestinput::placeholder {
+    color: #999; /* Placeholder text color */
+    font-size: 13px !important;
+    /* Additional styling properties can be added as needed */
+}
+.requestinput:focus {
+    color: #999; /* Placeholder text color */
+    /* border: 1px solid rgb(226, 12, 12) !important; */
+    outline: none;
+}
+.formrequestbtn{
+    background: rgba(238, 88, 93, 1);
+    border-radius: 30px;
+    color: white;
+    border: none;
+}
+.requestinputlb{
+    font-size: 13px !important;
+}

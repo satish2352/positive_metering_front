@@ -1,0 +1,180 @@
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.logo {
+  max-height: 110px;
+  position: absolute;
+}
+
+@media screen and (max-width:580px) {
+  .Link {
+    color: black;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  .logo {
+    max-height: 110px;
+    position: absolute;
+  }
+}
+
+.Link:hover {
+  color: #e15554;
+}
+
+.Link.active {
+  color: #e15554;
+  font-weight: bold;
+}
+
+.logo {
+  max-height: 110px;
+  position: absolute;
+}
+
+.Link {
+  text-decoration: none !important;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.logo {
+  height: 300px;
+}
+
+.headercontact {
+  border: 1px solid #010101;
+  border-radius: 0px 100px 100px 0px;
+  border-left: none;
+  letter-spacing: 2px;
+}
+
+.headercontact2 {
+  border: 1px solid #010101;
+  border-radius: 100px 0px 0px 100px;
+  border-right: none;
+  letter-spacing: 2px;
+}
+
+.headerphone {
+  color: black;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.callicon {
+  color: #e2c3c3;
+  font-size: 20px;
+}
+
+/****************** Footer ************/
+.footertext {
+  text-align: justify;
+}
+
+.footerinputbox {
+  background-color: white;
+  border-radius: 10px;
+}
+
+.footerenqury {
+  background: #E84C52;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.emailfeild {
+  width: 300px !important;
+}
+
+.footerenquriybtn {
+  border-radius: 10px !important;
+  background: #433C68 !important;
+  padding: 10px;
+  border: none !important;
+}
+
+.icon-hover {
+  background-color: white;
+  color: gray;
+  border-radius: 50%;
+  padding: 7px;
+  font-size: 39px;
+}
+
+.icon-hover:hover {
+  background-color: #e15554;
+  color: white;
+}
+
+
+.footerback {
+  background: url("./assets/img/Home/image\ 29.png");
+  background-size: cover;
+}
+
+.footertext {
+  text-align: left
+}
+
+@media (max-width: 526px) {
+  .footertext {
+    text-align: center;
+  }
+
+  .emailfeild {
+    width: 100px !important;
+  }
+
+  .footerenqury {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-radius: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+
+}
+
+@media (min-width: 526px) and (max-width:920px) {
+  .footertext {
+    text-align: center;
+  }
+
+  .emailfeild {
+    width: 300px !important;
+  }
+
+  .footerenqury {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.formImg {
+  position: relative;
+  z-index: 2;
+  left: 75%;
+  width: 25%;
+  top: -125px;
+}
