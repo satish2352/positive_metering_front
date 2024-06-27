@@ -7,6 +7,7 @@ import { FaInstagram } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -44,11 +45,13 @@ const Footer = () => {
                     <Col xs={12} md={4} lg={2} className='mx-lg-3'>
                         <h5 className=' fw-bold'>Company</h5>
                         <ul className="list-unstyled lh-lg">
-                            <li>About</li>
-                            <li>Services</li>
-                            <li>Media</li>
-                            <li>Contact us</li>
-                            <li>Privacy & Policy</li>
+
+                            <li><Link to='/aboutleadership' style={{ textDecoration: 'none', color: 'black' }}>About</Link></li>
+                            <li><Link to='/service' style={{ textDecoration: 'none', color: 'black' }}>Services</Link></li>
+                            <li><Link to='/product' style={{ textDecoration: 'none', color: 'black' }}>Product</Link></li>
+                            <li><Link to='/blog' style={{ textDecoration: 'none', color: 'black' }}>Blog</Link></li>
+                            <li><Link to='/aboutleadership' style={{ textDecoration: 'none', color: 'black' }}>Contact us</Link></li>
+                            <li><Link to='/newsAndEvents' style={{ textDecoration: 'none', color: 'black' }}>NewsAndEvents</Link></li>
                         </ul>
                     </Col>
                     <Col xs={12} md={4} lg={3} className='mx-lg-3'>

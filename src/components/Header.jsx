@@ -13,7 +13,10 @@ const Header = () => {
         <Row className=' d-flex  justify-content-between  my-2'>
           <Col xs={4} lg={2} className=" headercontact d-flex justify-content-evenly p-2 ps-lg-5">
             <FiPhone className='callicon' />
-            <div className=' headerphone'>7890803429</div>
+            {/* <div className=' headerphone'>7890803429</div> */}
+            <a  className=' headerphone' href="tel:7890803429" style={{textDecoration:'none'}}>7890803429</a>
+            	
+
           </Col>
           <Col xs={4} lg={2}>
             <img
@@ -23,7 +26,9 @@ const Header = () => {
             /></Col>
           <Col xs={4} lg={2} className=" headercontact2 d-flex justify-content-evenly p-2 ps-lg-5">
             <FiPhone className='callicon' />
-            <div className=' headerphone'>7890803429</div>
+            {/* <div className=' headerphone'>7890803429</div> */}
+            <a  className=' headerphone' href="tel:7890803429" style={{textDecoration:'none'}}>7890803429</a>
+            	
           </Col>
         </Row>
       </Container>
@@ -65,4 +70,3 @@ const Header = () => {
 
 
 export default Header
-
