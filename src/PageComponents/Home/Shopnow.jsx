@@ -7,11 +7,18 @@ const Shopnow = () => {
     return (
         <Container fluid className='shopnow py-sm-4 py-lg-0'>
             <Row>
-                <Col md={9} xs={12} className=' justify-content-center d-flex text-center text-lg-start  '>
-                    <div className=' align-content-center'>
-                        <h2 className=' text-uppercase'>"Streamline Your Dispensing Process</h2>
-                        <h1 className=' text-uppercase'>   Shop Now <span className=' fs-1'> !"</span> </h1>
-                        <button className=' bg-transparent border border-2 border-white text-white rounded-5 px-3 py-3 fw-bold fs-6' style={{ letterSpacing: "2px" }}> CONTACT US</button>
+<Col md={3} xs={12} className='d-flex justify-content-end align-items-center ls-2'>
+<h2 className='bannerH' style={{ letterSpacing: '3px' }}>ADDRESS</h2>
+
+</Col>
+
+                <Col md={6} xs={12} className=' justify-content-start d-flex text-center text-lg-start '>
+                    <div className=' align-content-center fs-6 mt-4  BannerT'>
+                         <a href="" style={{textDecoration:'none'}}>Head Office, Nashik M-8, MIDC, Ambad, Nashik - 422010, India.</a><br />
+                 <a  href="tel:+91-253-6613206"   style={{ textDecoration: 'none' }}>Phone: +91-253-6613206/6613218/6613214</a><br />
+                     <a href="" style={{textDecoration:'none'}}>Mail: info@positivemetering.com</a><br />
+                        
+                        <button className=' BannerB mt-2 bg-transparent border border-2 border-danger text-white rounded-5 px-3 py-3 fw-bold fs-6' style={{ letterSpacing: "2px" }}> CONTACT US</button>
                     </div>
 
                 </Col>
@@ -29,4 +36,4 @@ const Shopnow = () => {
     )
 }
 
-export default Shopnow
+export default Shopnow
