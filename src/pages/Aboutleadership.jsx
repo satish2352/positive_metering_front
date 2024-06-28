@@ -32,9 +32,13 @@ const leadershipData = [
   }
 ];
 
+
 const Aboutleadership = () => {
+  window.scrollTo(0, 0);
+  
   return (
     <>
+    
       <Container fluid className='px-0'>
         <img src={banner} className='img-fluid' alt="Banner" />
       </Container>

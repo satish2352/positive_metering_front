@@ -7,6 +7,7 @@ import Getaquote from '../PageComponents/About/Getaquote';
 import Infrastructure from '../PageComponents/About/Infrastructure';
 
 const Aboutourstory = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <Container fluid className=' px-0'>

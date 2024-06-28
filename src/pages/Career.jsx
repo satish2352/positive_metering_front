@@ -4,6 +4,7 @@ import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap'
 import formImg from '../assets/img/Career/image-removebg-preview (89) 1.png'
 
 const Career = () => {
+    window.scrollTo(0, 0);
     return (
         <>
 

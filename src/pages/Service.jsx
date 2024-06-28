@@ -17,6 +17,8 @@ import back3 from '../assets/img/About/back 21.png';
 import { CardText } from 'react-bootstrap';
 
 const Service = () => {
+  window.scrollTo(0, 0);
+  
   const [isFlipped1, setIsFlipped1] = useState(false);
   const [isFlipped2, setIsFlipped2] = useState(false);
   const [isFlipped3, setIsFlipped3] = useState(false);

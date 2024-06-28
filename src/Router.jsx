@@ -13,6 +13,7 @@ import Aboutourstory from './pages/Aboutourstory'
 import Aboutourteam from './pages/Aboutourteam'
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Banner from './PageComponents/Banner/Banner'
 const Router = () => {
     return (
         <>
@@ -29,6 +30,8 @@ const Router = () => {
                 <Route path='/aboutleadership' element={<Aboutleadership />} />
                 <Route path='/aboutourstory' element={<Aboutourstory />} />
                 <Route path='/aboutourteam' element={<Aboutourteam />} />
+                <Route path='/banner' element={<Banner />} />
+
             </Routes>
             <Footer />
         </>

@@ -9,6 +9,7 @@ import Testomonial from '../PageComponents/Home/Testomonial'
 import Requestcallback from '../PageComponents/Home/Requestcallback'
 
 const Home = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <Homebaner/>

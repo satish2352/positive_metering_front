@@ -5,6 +5,7 @@ import Shopnow from '../PageComponents/Home/Shopnow'
 import UploadCV from '../PageComponents/Contactus/UploadCV'
 
 const Contactus = () => {
+  window.scrollTo(0, 0);
   return (
     <>
       <ConatactCard />

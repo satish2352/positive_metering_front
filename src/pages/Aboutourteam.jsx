@@ -20,6 +20,7 @@ const Aboutourteam = () => {
   const handleLeave = () => {
     setHoveredCard(null);
   };
+  window.scrollTo(0, 0);
 
   return (
     <Container fluid style={{ background: "#F7F5EF" }}>

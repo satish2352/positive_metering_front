@@ -38,6 +38,7 @@ const cardData = [
 ];
 
 const NewsAndEvents = () => {
+  window.scrollTo(0, 0);
   return (
     <Container  className="my-5">
         <Heading heading="Infrastructure"/>
