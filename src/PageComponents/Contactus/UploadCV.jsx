@@ -45,14 +45,15 @@ const UploadCV = () => {
                                     </Form.Group>
                                 </Col>
                             </Row>
-                            <div className='text-center'>
+                            <div className='text-center mt-xl-5 mb-xl-4'>
                                 <Button variant="danger" type='button' className='p-3 ' style={{ borderRadius: "30px", letterSpacing: "2px" }}>Send Message</Button>
                             </div>
                         </Form>
 
                     </Col>
-                    {/* <img className='formImg' src={formImg} alt="" /> */}
+
                 </Row>
+                <img className='formImg2' src={formImg} alt="" />
             </Container>
         </>
     )

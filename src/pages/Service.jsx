@@ -6,14 +6,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Heading from '../components/Heading';
-
+import '../assets/CSS/Service.css'
 import image1 from '../assets/img/About/Frame 19.png';
-import image2 from '../assets/img/About/Frame 20 (1).png';
+import image2 from '../assets/img/About/Frame 20.png';
 import image3 from '../assets/img/About/Frame 21.png';
 
 import back1 from '../assets/img/About/back 19.png';
 import back2 from '../assets/img/About/back 20.png';
 import back3 from '../assets/img/About/back 21.png';
+import { CardText } from 'react-bootstrap';
 
 const Service = () => {
   const [isFlipped1, setIsFlipped1] = useState(false);
@@ -56,13 +57,17 @@ const Service = () => {
               <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped1}>
                 <div className="card border-0" onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1}>
                   <FrontCard image={image1} />
-                  <p></p>
+                  <CardText><h1 className='frontH text-center'>Post Order <br /> Services</h1></CardText>
+          
                 </div>
                 <div className="card card-back border-0" onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1}>
-                  <BackCard image={back1} />
-                 
+                  <BackCard image={back1}  ></BackCard>
+                <h3 className='backH'>Post Order Services</h3>
                   
-                
+<p className='backP text-center px-4 text-white mt-4'>Application Engineering is one of our main strenghts. Our expert engineers have excellent field experience who can perfectly match our products with customer's needs. Special care is taken by us to offer a cost effective solution in right time. We help our customers in structuring </p>
+                 
+
+
                 </div>
               </ReactCardFlip>
             </Card.Body>
@@ -73,9 +78,13 @@ const Service = () => {
               <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped2}>
                 <div className="card border-0" onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseLeave2}>
                   <FrontCard image={image2} />
+              <CardText> <h3 className='frontH text-center'>Execution</h3></CardText>
                 </div>
-                <div className="card card-back border-0" onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseLeave2}>
+                <div className="card card-back border-0 " onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseLeave2}>
                   <BackCard image={back2} />
+                   <h3 className='backH'>Execution</h3>
+                   <p className=' text-center px-4 text-white mt-4'>Application Engineering is one of our main strenghts. Our expert engineers have excellent field experience who can perfectly match our products with customer's needs. Special care is taken by us to offer a cost effective solution in right time. We help our customers in structuring </p>
+
                 </div>
               </ReactCardFlip>
             </Card.Body>
@@ -86,9 +95,13 @@ const Service = () => {
               <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped3}>
                 <div className="card  border-0" onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseLeave3}>
                   <FrontCard image={image3} />
+                  <CardText><h1 className='frontH text-center'>Post Order <br /> Services</h1></CardText>
                 </div>
                 <div className="card card-back border-0" onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseLeave3}>
                   <BackCard image={back3} />
+            <h3 className='backH'>Post Order Services</h3>
+                <p className='text-center px-4 text-white mt-4'>Application Engineering is one of our main strenghts. Our expert engineers have excellent field experience who can perfectly match our products with customer's needs. Special care is taken by us to offer a cost effective solution in right time. We help our customers in structuring their budgets and submitting bids to their customers.  </p>
+
                 </div>
               </ReactCardFlip>
             </Card.Body>

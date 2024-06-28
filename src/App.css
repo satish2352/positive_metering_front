@@ -1,54 +1,17 @@
-.navbar-light .navbar-nav .nav-link {
-  color: black;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
+
+.dropdown-menu{
+  border-radius: 0 !important;
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
-.logo {
-  max-height: 110px;
-  position: absolute;
+
+.dropdown-menu-btn{
+  letter-spacing: 2px;
+  text-align: center;
 }
 
-@media screen and (max-width:580px) {
-  .Link {
-    color: black;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 1px;
-  }
-
-  .logo {
-    max-height: 110px;
-    position: absolute;
-  }
-}
-
-.Link:hover {
-  color: #e15554;
-}
-
-.Link.active {
-  color: #e15554;
-  font-weight: bold;
-}
-
-.logo {
-  max-height: 110px;
-  position: absolute;
-}
-
-.Link {
-  text-decoration: none !important;
-  color: black;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-}
-
-.logo {
-  height: 300px;
-}
 
 .headercontact {
   border: 1px solid #010101;
