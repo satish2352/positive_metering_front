@@ -1,0 +1,29 @@
+#getaquote_button {
+    position: relative;
+    right: -7rem;
+    top: -4rem;
+   
+}
+ @media only screen and (max-width: 600px) {
+    #getaquote_button {
+        position: relative;
+        right: -6rem;
+        top: -4rem;
+    }
+} 
+ @media only screen and (min-width:480px) { */
+     #getaquote_button {
+        position: relative;
+        right: -6rem;
+        top: -4rem;
+
+    }
+} 
+ @media only screen and (min-width:1025px) { */
+     #getaquote_button {
+        position: relative;
+        right: -8rem;
+        top: -4rem;
+
+    }
+} 
