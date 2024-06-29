@@ -14,6 +14,8 @@ import Aboutourteam from './pages/Aboutourteam'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Banner from './PageComponents/Banner/Banner'
+import Productlistimgs from './PageComponents/ProductComponenets/Productlistimgs'
+import Hydraulic_Diaphragm_Pumps from './PageComponents/ProductComponenets/Hydraulic_Diaphragm_Pumps'
 const Router = () => {
     return (
         <>
@@ -31,7 +33,6 @@ const Router = () => {
                 <Route path='/aboutourstory' element={<Aboutourstory />} />
                 <Route path='/aboutourteam' element={<Aboutourteam />} />
                 <Route path='/banner' element={<Banner />} />
-
             </Routes>
             <Footer />
         </>

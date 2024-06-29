@@ -11,7 +11,6 @@ function Progress_cavity_screw_pump() {
                     <Image src={progress_img} fluid className='mt-5 mb-5' />
                 </Container>
             </div>
-
         </>
     )
 }
