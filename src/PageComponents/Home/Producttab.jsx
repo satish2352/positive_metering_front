@@ -91,7 +91,7 @@ const ProductTab = () => {
               <div> <Row className="m-3 d-flex justify-content-evenly">
                 {products.map((product) => (
                   <Col key={product.id} className={`plungercard mx-1 ${activeTab === product.id ? 'active' : ''}`} onClick={() => handleTabClick(product.id)}>
-                    <Card.Img variant="top" src={product.image} className='img-fluid p-2' />
+                    <Card.Img variant="top" src={product.image} className='img-fluid p-2' style={{width:'200px'}}  />
                     <div style={{ fontSize: "12px" }} className='text-center'>{product.title}</div>
                   </Col>
                 ))}
