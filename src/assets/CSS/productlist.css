@@ -3,17 +3,18 @@
 
 }
 
-.produclistbox {
+/* .produclistbox {
     box-shadow: 8px 8px 20px 9px rgba(0, 0, 0, 0.25);
     padding-left: 0px;
     padding-right: 0px;
+    
 
-}
+} */
 
 .produclistcontetst {
-    color: rgba(139, 139, 139, 1);
+    color: white;
     list-style: none;
-    font-size: 14px;
+    font-size: 16px;
     border-bottom: 1px solid rgba(216, 211, 211, 1)
 }
 
@@ -77,4 +78,10 @@
     .productlistimgsapplication{
         font-size: 13px;
     }
+}
+
+#menu{
+    background-color:#E84C52;
+    color: white;
+    border-radius: 15px 50px;
 }

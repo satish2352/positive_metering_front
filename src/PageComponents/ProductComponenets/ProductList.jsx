@@ -91,13 +91,15 @@ const ProductList = () => {
                         </ListGroup>
                     </Card> */}
                     <Container className='produclistbox'>
-                        <div className='produclistfttop'>
+                        {/* <div className='produclistfttop' id='menu'>
                             <h5 className='text-white text-center py-3'>Products</h5>
-                        </div>
-                        <div className='py-3'>
+                        </div> */}
+                        <div className='py-3' id='menu'>
+                            <h5 className='text-white text-center py-3'>Products</h5>
+                            <hr></hr>
                             {list.map((a, index) => (
                                 <div key={index} className='product-list-item' onClick={() => setSelectedProduct(a.link)}>
-                                    <p className='produclistcontetst ps-3 mx-3 pb-2'>{a.title}</p>
+                                    <h4 className='produclistcontetst ps-3 mx-3 pb-2'>{a.title}</h4>
                                 </div>
                             ))}
                         </div>

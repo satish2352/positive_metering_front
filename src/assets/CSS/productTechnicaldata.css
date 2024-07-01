@@ -1,17 +1,17 @@
 
 .tabbuttons:hover{
-    color:#131111 !important;
+    color:white !important;
 }
 .nav-pills .nav-link.active{
     border: 3px solid rgba(232, 76, 82, 1);
-    background-color: #fff !important;
-    color: black;
+    background-color: rgba(232, 76, 82, 1) !important;
+    color: white;
 }
 
 .tabbuttons{
     border: 3px solid rgba(232, 76, 82, 1);
-    background-color:  rgba(232, 76, 82, 1);
-    color: #fff;
+    /* background-color:  rgba(232, 76, 82, 1); */
+    color: black;
 }
  tr td {
     border: 1px solid gray 

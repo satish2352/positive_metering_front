@@ -104,13 +104,43 @@ const ProductTechnicaldata = () => {
                 </h1>
 
                 <Container>
-                  <Table className="" style={{ border: "1px solid gray" }}>
+                  <Table striped bordered >
+                    <thead>
+                      <tr>
+                        <th>Flow Rate</th>
+                        <th>Pressure</th>
+                        <th>Pump Model</th>
+                        <th>Pump Model</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                      </tr>
+                      <tr>
+                        
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                      </tr>
+                      <tr>
+                        
+                        <td>Larry the Bird</td>
+                        <td>Larry the Bird</td>
+                        <td>@twitter</td>
+                      </tr>
+                    </tbody>
+                  </Table>
+
+                  {/* <Table className="" style={{ border: "1px solid gray" }}>
                     <tbody>
                       <tr>
                         <td>Flow rate</td>
                         <td>Pressure</td>
                         <td>Pump Model</td>
-                        <td colSpan={2}>Installation Dimensions</td>
+                        <td colSpan={3}>Installation Dimensions</td>
                       </tr>
                       {pumpData.map((item, index) => (
                         <tr key={index}>
@@ -134,7 +164,7 @@ const ProductTechnicaldata = () => {
                         </tr>
                       ))}
                     </tbody>
-                  </Table>
+                  </Table> */}
                 </Container>
 
                 <Row>

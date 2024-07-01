@@ -75,7 +75,7 @@ const ProductTab = () => {
         <Col lg={11} style={{ backgroundColor: "#fff", position: "relative" }} className='box border-1 border-dark-subtle border p-lg-4'>
           <Row className="align-items-center chartslider">
             <Col lg={6} className="px-0">
-              <img src={products.find(product => product.id === activeTab).image} alt="Plunger Type Dosing Pump" className="img-fluid" />
+              <img src={products.find(product => product.id === activeTab).image} alt="Plunger Type Dosing Pump" className="img-fluid" style={{width:'500px'}} />
             </Col>
             <Col lg={6} className="homeaboutinfo text-black">
               <div className="p-lg-3" style={{ textAlign: "justify" }}>
@@ -98,7 +98,6 @@ const ProductTab = () => {
               </Row></div>
             </Col>
           </Row>
-
         </Col>
       </Row>
     </Container>
