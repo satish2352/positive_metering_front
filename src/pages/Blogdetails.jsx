@@ -12,6 +12,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 import Form from "react-bootstrap/Form";
+import Heading from "../components/Heading";
 
 function MyVerticallyCenteredModal(props) {
   const [fullname, setfullname] = useState("");
@@ -304,8 +305,8 @@ function Blogdetails() {
 
   return (
     <>
-      <h3 style={{ textAlign: "center" }}>Blog</h3>
-      <Container className="mt-3">
+      <Heading heading={"Blog"} />
+      <Container className="mt-3"  heading={"Blog"}>
         <Row>
           <Col lg={8} md={8} sm={12}>
             <Image src={blogdetails_img1} height={"500rem"} fluid />

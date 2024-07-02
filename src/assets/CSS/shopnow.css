@@ -60,6 +60,13 @@
 
 
     }
+    .bannerH {
+        position: relative;
+        right: 100px;
+        padding-top: 10px;
+        text-align: center;
+        
+    }
 }
 
 .contact-btn {
@@ -154,4 +161,5 @@
 .bannerH {
     color: #FFFFFF;
     font-family: "Poppins", sans-serif;
+
 }

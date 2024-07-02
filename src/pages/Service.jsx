@@ -18,7 +18,7 @@ import { CardText } from 'react-bootstrap';
 
 const Service = () => {
   window.scrollTo(0, 0);
-  
+
   const [isFlipped1, setIsFlipped1] = useState(false);
   const [isFlipped2, setIsFlipped2] = useState(false);
   const [isFlipped3, setIsFlipped3] = useState(false);
@@ -49,7 +49,7 @@ const Service = () => {
 
   return (
     <>
-      <Container fluid="md">
+      <Container fluid="md" className='mb-5'>
         <Heading heading="services" />
         <p className='text-center ptext'>We consider us a Solution Providing Business. Therefore offering Services to our customers is considered to be a core <br />activity. Our organisation is built around to offer services in three stages.</p>
 
@@ -60,14 +60,14 @@ const Service = () => {
                 <div className="card border-0" onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1}>
                   <FrontCard image={image1} />
                   <CardText><h1 className='frontH text-center'>Post Order <br /> Services</h1></CardText>
-          
+
                 </div>
                 <div className="card card-back border-0" onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1}>
                   <BackCard image={back1}  ></BackCard>
-                <h3 className='backH'>Post Order Services</h3>
-                  
-<p className='backP text-center px-4 text-white mt-4'>Application Engineering is one of our main strenghts. Our expert engineers have excellent field experience who can perfectly match our products with customer's needs. Special care is taken by us to offer a cost effective solution in right time. We help our customers in structuring </p>
-                 
+                  <h3 className='backH'>Post Order Services</h3>
+
+                  <p className='backP text-center px-4 text-white mt-4'>Application Engineering is one of our main strenghts. Our expert engineers have excellent field experience who can perfectly match our products with customer's needs. Special care is taken by us to offer a cost effective solution in right time. We help our customers in structuring </p>
+
 
 
                 </div>
@@ -80,12 +80,12 @@ const Service = () => {
               <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped2}>
                 <div className="card border-0" onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseLeave2}>
                   <FrontCard image={image2} />
-              <CardText> <h3 className='frontH text-center'>Execution</h3></CardText>
+                  <CardText> <h3 className='frontH text-center'>Execution</h3></CardText>
                 </div>
                 <div className="card card-back border-0 " onMouseEnter={handleMouseEnter2} onMouseLeave={handleMouseLeave2}>
                   <BackCard image={back2} />
-                   <h3 className='backH'>Execution</h3>
-                   <p className=' text-center px-4 text-white mt-4'>Application Engineering is one of our main strenghts. Our expert engineers have excellent field experience who can perfectly match our products with customer's needs. Special care is taken by us to offer a cost effective solution in right time. We help our customers in structuring </p>
+                  <h3 className='backH'>Execution</h3>
+                  <p className=' text-center px-4 text-white mt-4'>Application Engineering is one of our main strenghts. Our expert engineers have excellent field experience who can perfectly match our products with customer's needs. Special care is taken by us to offer a cost effective solution in right time. We help our customers in structuring </p>
 
                 </div>
               </ReactCardFlip>
@@ -101,8 +101,8 @@ const Service = () => {
                 </div>
                 <div className="card card-back border-0" onMouseEnter={handleMouseEnter3} onMouseLeave={handleMouseLeave3}>
                   <BackCard image={back3} />
-            <h3 className='backH'>Post Order Services</h3>
-                <p className='text-center px-4 text-white mt-4'>Application Engineering is one of our main strenghts. Our expert engineers have excellent field experience who can perfectly match our products with customer's needs. Special care is taken by us to offer a cost effective solution in right time. We help our customers in structuring their budgets and submitting bids to their customers.  </p>
+                  <h3 className='backH'>Post Order Services</h3>
+                  <p className='text-center px-4 text-white mt-4'>Application Engineering is one of our main strenghts. Our expert engineers have excellent field experience who can perfectly match our products with customer's needs. Special care is taken by us to offer a cost effective solution in right time. We help our customers in structuring their budgets and submitting bids to their customers.  </p>
 
                 </div>
               </ReactCardFlip>

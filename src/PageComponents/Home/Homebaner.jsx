@@ -349,7 +349,7 @@ function Homebaner() {
           <Carousel.Caption>
             {/* <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
-            <Row  >
+            <Row class="sticky-top" >
               <Col lg={3}></Col>
               <Col lg={6}>
                 <div className=" homebannertext p-10">
@@ -366,10 +366,10 @@ function Homebaner() {
                   </p>
                 </div>
               </Col>
-              <Col lg={3} sm={12} className=" bannerform my-5">
+              <Col lg={3} sm={12} className=" bannerform my-5" class="sticky-top">
                 <div class="contact-form">
                   <h2 className="py-3">CONTACT</h2>
-                  <form onSubmit={handleSubmit} >
+                  <form onSubmit={handleSubmit} class="sticky-top" >
                     <input
                       type="text"
                       name="fullName"

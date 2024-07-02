@@ -27,36 +27,45 @@ const ProductTechnicaldata = () => {
 
   //table 1 data
 
-  const pumpData = [
+  const TechnicalDataTable = [
     {
-      flowRate: "35",
-      pressure: "10",
-      pumpModel: "GRM 91",
-      installationDimensions: [{ installDim1: "hello", installDim2: "nice" }],
+      flowrate : '0-513',
+      pressure : '133',
+      PumpModel : 'PL1011',
+      l : '1050',
+      w : '350',
+      h :'850'
+
     },
     {
-      flowRate: "165",
-      pressure: "10",
-      pumpModel: "GRM 92",
-      installationDimensions: [{ installDim1: "", installDim2: "" }],
+      flowrate : '0-4152',
+      pressure : '640',
+      PumpModel : 'PL2017',
+      l : '1550',
+      w : '400',
+      h :'1350'
     },
     {
-      flowRate: "600",
-      pressure: "6",
-      pumpModel: "GRM 93",
-      installationDimensions: [{ installDim1: "", installDim2: "" }],
+      flowrate : '0-10993',
+      pressure : '813',
+      PumpModel : 'PL3530',
+      l : '1800',
+      w : '450',
+      h :'1400'
     },
     {
-      flowRate: "1200",
-      pressure: "6",
-      pumpModel: "GRM 94",
-      installationDimensions: [{ installDim1: "", installDim2: "" }],
+      flowrate : '0-22800',
+      pressure : '796',
+      PumpModel : 'PL6040',
+      l : '2300',
+      w : '700',
+      h :'2000'
     },
-  ];
+  ]
 
   return (
     <>
-      <Container fluid className="productTechnicaldata">
+      <Container fluid className="productTechnicaldata mb-4">
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
           <Container>
             <Col>
@@ -130,30 +139,21 @@ const ProductTechnicaldata = () => {
                         <td>350</td>
                         <td>850</td>
                       </tr>
-                      <tr>
-                        <td>0-4152</td>
-                        <td>640</td>
-                        <td>PL2017</td>
-                        <td>1550</td>
-                        <td>400</td>
-                        <td>1350</td>
-                      </tr>
-                      <tr>
-                        <td>0-10993</td>
-                        <td>813</td>
-                        <td>PL3530</td>
-                        <td>1800</td>
-                        <td>450</td>
-                        <td>1400</td>
-                      </tr>
-                      <tr>
-                        <td>0-22800</td>
-                        <td>796</td>
-                        <td>PL6040</td>
-                        <td>2300</td>
-                        <td>700</td>
-                        <td>2000</td>
-                      </tr>
+                      {
+                        TechnicalDataTable.map((a)=>(
+                          <>
+                          <tr>
+                            <td>{a.flowrate}</td>
+                            <td>{a.pressure}</td>
+                            <td>{a.PumpModel}</td>
+                            <td>{a.l}</td>
+                            <td>{a.w}</td>
+                            <td>{a.h}</td>
+                          </tr>
+                          </>
+                        ))
+                      }
+                      
                     </tbody>
                   </Table>
 
@@ -191,7 +191,7 @@ const ProductTechnicaldata = () => {
                 </Container>
 
                 <Row>
-                  <Col xl={12} className=" ">
+                  <Col xl={12} className="mb-4">
                     {isSmallScreen ? (
                       <Image src={img2} className="w-100" />
                     ) : (

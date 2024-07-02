@@ -4,6 +4,7 @@ import '../assets/CSS/aboutus.css';
 import banner from '../assets/img/About/Rectangle 4417.png';
 import lder1 from '../assets/img/About/Group 1000004058 (1).png';
 import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
+import Heading from '../components/Heading';
 
 const leadershipData = [
   {
@@ -38,11 +39,12 @@ const Aboutleadership = () => {
   
   return (
     <>
+    {/* <Heading heading="leadership"/> */}
     
       <Container fluid className='px-0'>
         <img src={banner} className='img-fluid' alt="Banner" />
       </Container>
-      <Container fluid>
+      <Container fluid className='leadershippara'>
         {leadershipData.map((leader, index) => (
           <Row key={index} className='mb-5 mb-lg-0'>
             {index % 2 === 0 ? (
@@ -51,7 +53,7 @@ const Aboutleadership = () => {
                   <img src={leader.imgSrc} className='img-fluid' alt={leader.name} />
                 </Col>
                 <Col xs={12} lg={6} className='p-lg-5 p-3 d-flex align-items-center'>
-                  <div>
+                  <div >
                     <h2 className='text-uppercase fw-bold' style={{ letterSpacing: "2px" }}>
                       {leader.name}
                     </h2>
@@ -89,6 +91,7 @@ const Aboutleadership = () => {
           </Row>
         ))}
       </Container>
+      <div className='spaceing'></div>
     </>
   );
 }

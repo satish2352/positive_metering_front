@@ -7,7 +7,7 @@ import Heading from '../components/Heading';
 const cardData = [
   {
     title: "ipsum dolor sit amet,",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.labore et dolore magna aliqua",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique nostrum, aliquam reprehenderit, ut architecto porro quod iure quibusdam labore, beatae sapiente voluptate excepturi nam quaerat. Delectus cum necessitatibus commodi blanditiis? Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique nostrum, aliquam reprehenderit, ut architecto porro quod iure quibusdam labore, beatae sapiente voluptate excepturi nam quaerat. Delectus cum necessitatibus commodi blanditiis?',
     imgSrc: sampleImage
   },
   {

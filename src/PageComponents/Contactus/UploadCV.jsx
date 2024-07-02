@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Heading from "../../components/Heading";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import formImg from "../../assets/img/Contactus/image-removebg-preview (89) 1.png";
+import Image from 'react-bootstrap/Image';
 const UploadCV = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -71,10 +72,10 @@ const UploadCV = () => {
   return (
     <>
       <Container fluid>
-        <Row className="d-flex justify-content-center getintouchbg py-5">
+        <Row className="d-flex justify-content-center getintouchbg py-5 ">
           <Col xs={10} className="p-5 border-0 bg-white my-lg-5 shadow-lg">
             <Heading heading={"Get in touch"} />
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} >
               <Row className="">
                 <Col xl={6}>
                   <Form.Group
@@ -172,16 +173,18 @@ const UploadCV = () => {
                 <Button
                   variant="danger"
                   type="submit"
-                  className="p-3 "
+                  className="p-3"
                   style={{ borderRadius: "30px", letterSpacing: "2px" }}
                 >
                   Send Message
                 </Button>
               </div>
+              <div className='sendmessagebtn'></div>
             </Form>
           </Col>
         </Row>
-        <img className="formImg2" src={formImg} alt="" />
+        {/* <img className="formImg2" src={formImg} alt="" fluid/> */}
+        <Image className="formImg2" src={formImg} rounded fluid />
       </Container>
     </>
   );

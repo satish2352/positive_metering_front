@@ -22,6 +22,7 @@
   width: 330px;
 }
 
+
 @media only screen and (min-width: 320px) and (max-width: 479px) {
   .formImg {
     position: relative;
@@ -30,4 +31,16 @@
     width: 25%;
     bottom: 288px;
   }
+  .formImg2 {
+    position: absolute;
+    left: 5%;
+    top: 575%;
+    bottom: 290px;
+    height: 195px;
+    width: 350px;
+  }
+  .sendmessagebtn{
+  margin-top: 280px;
+}
+
 }

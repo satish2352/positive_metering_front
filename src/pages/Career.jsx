@@ -3,7 +3,8 @@ import Heading from "../components/Heading";
 
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import formImg from "../assets/img/Career/image-removebg-preview (89) 1.png";
-
+import Image from 'react-bootstrap/Image';
+import career from '../assets/CSS/career.css'
 const Career = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -216,11 +217,12 @@ const Career = () => {
                     Submit
                   </Button>
                 </div>
+                <div className="sendmessagebtn"></div>
               </Form>
             </Container>
           </Col>
         </Row>
-        <img className="formImg" src={formImg} alt="" />
+        <Image src={formImg} rounded fluid className="formImg"/>
       </Container>
     </>
   );

@@ -59,7 +59,7 @@ const contactDetails = [
 
 const ConatactCard = () => {
   return (
-    <Container fluid className='caontatctcardback py-5'>
+    <Container fluid className='caontatctcardback py-5 mb-5'>
       <Row>
         {contactDetails.map((contact) => (
           <Col key={contact.id} lg={4} md={6} className='caontatctcardimg py-4' >
