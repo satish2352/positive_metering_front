@@ -6,6 +6,10 @@ import im2 from '../../assets/img/Contactus/image 16 (2).png';
 import im3 from '../../assets/img/Contactus/image 16 (3).png';
 import im4 from '../../assets/img/Contactus/image 16 (4).png';
 import im5 from '../../assets/img/Contactus/image 16 (5).png';
+import Image from 'react-bootstrap/Image';
+import imgtop from '../../assets/img/Contactus/conatcttopimg.png'
+import imgmobile from '../../assets/img/Contactus/mobileview.png'
+import ResponsiveImage from '../../pages/ResponsiveImage';
 const contactDetails = [
   {
     id: 1,
@@ -59,6 +63,10 @@ const contactDetails = [
 
 const ConatactCard = () => {
   return (
+    <>
+    
+    <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
+
     <Container fluid className='caontatctcardback py-5 mb-5'>
       <Row>
         {contactDetails.map((contact) => (
@@ -78,6 +86,7 @@ const ConatactCard = () => {
         ))}
       </Row>
     </Container>
+    </>
   );
 };
 

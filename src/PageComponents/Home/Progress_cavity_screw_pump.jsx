@@ -2,10 +2,12 @@ import React from 'react'
 import { Container } from 'react-bootstrap'
 import Image from 'react-bootstrap/Image';
 import progress_img from '../../assets/img/Home/Progress.png'
+import "../../assets/CSS/requestcall.css";
 
 function Progress_cavity_screw_pump() {
     return (
         <>
+        <div className='buttonpart'></div>
             <div style={{ backgroundColor: '#efefef' }}>
                 <Container>
                     <Image src={progress_img} fluid className='mt-5 mb-5' />

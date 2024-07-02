@@ -15,6 +15,10 @@ import back1 from '../assets/img/About/back 19.png';
 import back2 from '../assets/img/About/back 20.png';
 import back3 from '../assets/img/About/back 21.png';
 import { CardText } from 'react-bootstrap';
+import ResponsiveImage from './ResponsiveImage';
+
+import imgtop from '../assets/img/services/diskimg.png'
+import imgmobile from '../assets/img/services/mobileview.png'
 
 const Service = () => {
   window.scrollTo(0, 0);
@@ -49,6 +53,7 @@ const Service = () => {
 
   return (
     <>
+    <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
       <Container fluid="md" className='mb-5'>
         <Heading heading="services" />
         <p className='text-center ptext'>We consider us a Solution Providing Business. Therefore offering Services to our customers is considered to be a core <br />activity. Our organisation is built around to offer services in three stages.</p>

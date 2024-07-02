@@ -13,6 +13,10 @@ import Modal from "react-bootstrap/Modal";
 
 import Form from "react-bootstrap/Form";
 import Heading from "../components/Heading";
+import ResponsiveImage from "./ResponsiveImage";
+
+import imgmobile from '../assets/img/services/mobileview.png'
+import imgtop from '../assets/img/services/diskimg.png'
 
 function MyVerticallyCenteredModal(props) {
   const [fullname, setfullname] = useState("");
@@ -305,6 +309,7 @@ function Blogdetails() {
 
   return (
     <>
+    <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
       <Heading heading={"Blog"} />
       <Container className="mt-3"  heading={"Blog"}>
         <Row>

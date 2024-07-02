@@ -2,6 +2,9 @@ import React from 'react';
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import Heading from '../../components/Heading';
 import img1 from "../../assets/img/blog/Rectangle 113.png";
+import ResponsiveImage from '../../pages/ResponsiveImage';
+import imgmobile from '../../assets/img/services/mobileview.png'
+import imgtop from '../../assets/img/services/diskimg.png'
 
 const blogData = [
     {
@@ -33,6 +36,7 @@ const blogData = [
 const BlogCard = () => {
     return (
         <>
+        <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
             <section>
                 <Heading heading={"Blog"} />
                 <Container fluid>

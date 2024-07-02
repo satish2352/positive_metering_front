@@ -1,25 +1,45 @@
 .requestcallback{
-    background-image: url('../../assets/img/Home/image\ 13\ \(1\).png');
+    /* background-image: url('../../assets/img/Home/image\ 13\ \(1\).png'); */
     height: 500px;
     background-size: contain;
     background-repeat: no-repeat; /* Prevent the image from repeating */
 }
 @media only screen and (max-width: 767px) {
     .requestcallback{
-        background-image: url('../../assets/img/Home/image\ 13\ \(1\).png');
-        height: 900px;
+        /* background-image: url('../../assets/img/Home/image\ 13\ \(1\).png'); */
+        height: 800px;
         background-size:cover;
         background-repeat: no-repeat; /* Prevent the image from repeating */
+    }
+    .contentpara{
+        
+        position: relative;
+        top: 900rem;
+        
     }
 }
 .requestcallbackleft{
     background: rgba(222, 222, 222, 0.79);
     padding-left: 0px !important;
     padding-right: 0px !important;
+    position: relative;
+    top: -600px;
+    
 }
 .requestcallbacklefttop{
     background: rgba(238, 88, 93, 1);
+    position: relative;
+}
+.contentpara{
+    position: relative;
+    top: -800px;
+    background: rgba(222, 222, 222, 0.79);
     
+}
+.contentpara1{
+    position: relative;
+    top: -800px;
+    background: rgba(222, 222, 222, 0.79);
 }
 .requestcallbacklefttop h3{
 
@@ -48,3 +68,7 @@
 .requestinputlb{
     font-size: 13px !important;
 }
+.buttonpart{
+    margin-top: -500px;
+}
+

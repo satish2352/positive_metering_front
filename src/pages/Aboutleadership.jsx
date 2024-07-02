@@ -2,9 +2,13 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../assets/CSS/aboutus.css';
 import banner from '../assets/img/About/Rectangle 4417.png';
+import New from '../assets/img/About/Frame 19.png';
 import lder1 from '../assets/img/About/Group 1000004058 (1).png';
 import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 import Heading from '../components/Heading';
+
+import ResponsiveImage from "./ResponsiveImage";
+
 
 const leadershipData = [
   {
@@ -36,13 +40,13 @@ const leadershipData = [
 
 const Aboutleadership = () => {
   window.scrollTo(0, 0);
-  
+
   return (
     <>
-    {/* <Heading heading="leadership"/> */}
-    
+      {/* <Heading heading="leadership"/> */}
+
       <Container fluid className='px-0'>
-        <img src={banner} className='img-fluid' alt="Banner" />
+        <ResponsiveImage mobileSrc={banner} desktopSrc={banner} />
       </Container>
       <Container fluid className='leadershippara'>
         {leadershipData.map((leader, index) => (
