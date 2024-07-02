@@ -104,32 +104,55 @@ const ProductTechnicaldata = () => {
                 </h1>
 
                 <Container>
-                  <Table striped bordered >
+                  <Table bordered >
                     <thead>
                       <tr>
                         <th>Flow Rate</th>
                         <th>Pressure</th>
                         <th>Pump Model</th>
-                        <th>Pump Model</th>
+                        <th colSpan={3}>Installation Dimensions</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>(Ltr / Hr)</td>
+                        <td>bar (g) Max.</td>
+                        <td></td>
+                        <td>L</td>
+                        <td>W</td>
+                        <td>H</td>
                       </tr>
                       <tr>
-                        
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>0-513</td>
+                        <td>133</td>
+                        <td>PL1011</td>
+                        <td>1050</td>
+                        <td>350</td>
+                        <td>850</td>
                       </tr>
                       <tr>
-                        
-                        <td>Larry the Bird</td>
-                        <td>Larry the Bird</td>
-                        <td>@twitter</td>
+                        <td>0-4152</td>
+                        <td>640</td>
+                        <td>PL2017</td>
+                        <td>1550</td>
+                        <td>400</td>
+                        <td>1350</td>
+                      </tr>
+                      <tr>
+                        <td>0-10993</td>
+                        <td>813</td>
+                        <td>PL3530</td>
+                        <td>1800</td>
+                        <td>450</td>
+                        <td>1400</td>
+                      </tr>
+                      <tr>
+                        <td>0-22800</td>
+                        <td>796</td>
+                        <td>PL6040</td>
+                        <td>2300</td>
+                        <td>700</td>
+                        <td>2000</td>
                       </tr>
                     </tbody>
                   </Table>

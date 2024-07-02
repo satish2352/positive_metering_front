@@ -1,6 +1,6 @@
 
 .tabbuttons:hover{
-    color:white !important;
+    color:black !important;
 }
 .nav-pills .nav-link.active{
     border: 3px solid rgba(232, 76, 82, 1);

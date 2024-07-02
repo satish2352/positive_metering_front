@@ -99,7 +99,7 @@ const ProductList = () => {
                             <hr></hr>
                             {list.map((a, index) => (
                                 <div key={index} className='product-list-item' onClick={() => setSelectedProduct(a.link)}>
-                                    <h4 className='produclistcontetst ps-3 mx-3 pb-2'>{a.title}</h4>
+                                    <p className='produclistcontetst ps-3 mx-3 pb-2'>{a.title}</p>
                                 </div>
                             ))}
                         </div>
