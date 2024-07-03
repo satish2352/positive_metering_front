@@ -27,7 +27,8 @@ const Header = () => {
             <img
               src={logo}
               alt="Positive logo"
-              className='header-logo mt-md-1'
+              className='header-logo mt-md-2'
+
             />
           </Col>
           <Col xs={4} lg={2} className=" headercontact2 d-flex justify-content-evenly p-2 ps-lg-5">
@@ -71,9 +72,9 @@ const Header = () => {
                 <Link style={{letterSpacing:3}} className={`${getNavLinkClass('/blog')} fw-bold  me-5 pe-5`} to="/blog">BLOG</Link>
               </Nav.Link>
             </Nav>
-            <Nav className="me-auto ps-4">
+            <Nav className="me-auto ">
               <Nav.Link href="/news-event">
-                <Link style={{letterSpacing:3}} className={`${getNavLinkClass('/news-event')} fw-bold ms-4 ps-3 `} to="/news-event">NEWS & EVENT</Link>
+                <Link style={{letterSpacing:3}} className={`${getNavLinkClass('/news-event')} fw-bold  `} to="/news-event">NEWS & EVENT</Link>
               </Nav.Link>
               <Nav.Link href="/career">
                 <Link style={{letterSpacing:3}} className={`${getNavLinkClass('/career')} fw-bold mx-xxl-3`} to="/career">CAREER</Link>
@@ -85,7 +86,7 @@ const Header = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <hr />
+      <hr className='m-0 mt-3 mb-0'/>
     </>
   );
 };
