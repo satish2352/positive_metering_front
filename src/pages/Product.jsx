@@ -2,7 +2,7 @@ import React from 'react'
 import ProductList from '../PageComponents/ProductComponenets/ProductList'
 import ProductTechnicaldata from '../PageComponents/ProductComponenets/ProductTechnicaldata'
 import ResponsiveImage from './ResponsiveImage';
-import imgmobile from '../assets/img/services/mobileview.png'
+import imgmobile from '../assets/img/productimgs/productmobileview.png'
 import imgtop from '../assets/img/services/diskimg.png'
 const Product = () => {
   window.scrollTo(0, 0);
