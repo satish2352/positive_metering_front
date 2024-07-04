@@ -71,7 +71,7 @@ function OurProducts() {
         </div>
       </Slider>
       <Row className=' text-center '>
-        <h1 className='oueprd'>OUR PRODUCTS</h1>
+        {/* <h1 className='oueprd'>OUR PRODUCTS</h1> */}
       </Row>
     </Container>
   );

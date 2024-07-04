@@ -345,7 +345,7 @@ function Homebaner() {
     <>
       <Carousel>
         <Carousel.Item>
-          <Image src={banner1} rounded className='img-fluid' />
+          <Image src={banner1} rounded className='img-fluid ' />
           <Carousel.Caption>
             {/* <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
