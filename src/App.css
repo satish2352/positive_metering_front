@@ -154,3 +154,22 @@
   font-weight: 400;
   font-style: normal;
 }
+
+
+/* hj 03/7/24 BlogCard.jsx */
+.blogCardTitle{
+  font-family: "Poppins", sans-serif;
+
+}
+
+.blogCardDesc{
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+
+
+
+
+
