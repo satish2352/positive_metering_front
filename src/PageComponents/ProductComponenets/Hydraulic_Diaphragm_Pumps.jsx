@@ -19,7 +19,7 @@ function Hydraulic_Diaphragm_Pumps() {
         {
           application_list.map((a) => (
             <>
-              <li style={{ fontSize: '17px' }}><p>{a.title}</p></li>
+              <li style={{ fontSize: '17px' , fontFamily : 'Poppins' }}><p>{a.title}</p></li>
             </>
           ))
         }

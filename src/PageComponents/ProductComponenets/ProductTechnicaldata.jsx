@@ -29,37 +29,37 @@ const ProductTechnicaldata = () => {
 
   const TechnicalDataTable = [
     {
-      flowrate : '0-513',
-      pressure : '133',
-      PumpModel : 'PL1011',
-      l : '1050',
-      w : '350',
-      h :'850'
+      flowrate: '0-246',
+      pressure: '80',
+      PumpModel: 'SD1011',
+      l: '520',
+      w: '400',
+      h: '250'
 
     },
     {
-      flowrate : '0-4152',
-      pressure : '640',
-      PumpModel : 'PL2017',
-      l : '1550',
-      w : '400',
-      h :'1350'
+      flowrate: '0-1169',
+      pressure: '100',
+      PumpModel: 'SD2017',
+      l: '620',
+      w: '470',
+      h: '300'
     },
     {
-      flowrate : '0-10993',
-      pressure : '813',
-      PumpModel : 'PL3530',
-      l : '1800',
-      w : '450',
-      h :'1400'
+      flowrate: '0-6521',
+      pressure: '200',
+      PumpModel: 'SD3530',
+      l: '810',
+      w: '680',
+      h: '350'
     },
     {
-      flowrate : '0-22800',
-      pressure : '796',
-      PumpModel : 'PL6040',
-      l : '2300',
-      w : '700',
-      h :'2000'
+      flowrate: '0-9782',
+      pressure: '200',
+      PumpModel: 'SD6040',
+      l: '1100',
+      w: '900',
+      h: '450'
     },
   ]
 
@@ -131,29 +131,21 @@ const ProductTechnicaldata = () => {
                         <td>W</td>
                         <td>H</td>
                       </tr>
-                      <tr>
-                        <td>0-513</td>
-                        <td>133</td>
-                        <td>PL1011</td>
-                        <td>1050</td>
-                        <td>350</td>
-                        <td>850</td>
-                      </tr>
                       {
-                        TechnicalDataTable.map((a)=>(
+                        TechnicalDataTable.map((a) => (
                           <>
-                          <tr>
-                            <td>{a.flowrate}</td>
-                            <td>{a.pressure}</td>
-                            <td>{a.PumpModel}</td>
-                            <td>{a.l}</td>
-                            <td>{a.w}</td>
-                            <td>{a.h}</td>
-                          </tr>
+                            <tr>
+                              <td>{a.flowrate}</td>
+                              <td>{a.pressure}</td>
+                              <td>{a.PumpModel}</td>
+                              <td>{a.l}</td>
+                              <td>{a.w}</td>
+                              <td>{a.h}</td>
+                            </tr>
                           </>
                         ))
                       }
-                      
+
                     </tbody>
                   </Table>
 
@@ -202,38 +194,15 @@ const ProductTechnicaldata = () => {
               </Tab.Pane>
               <Tab.Pane eventKey="OPTION">
                 <h1 className="tableheadstyle text-center pt-5 pb-3">
-                  Second tab content
+                  OPTION
                 </h1>
 
                 <Container>
-                  <Table style={{ border: "1px solid gray" }}>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                    </tbody>
-                  </Table>
+                  <ul style={{ fontFamily: 'Poppies' }}>
+                    <li>Multiple Head with identical or different outputs for each head using single drive</li>
+                    <li>Jacketed Head for heating or cooling the liquid being pumped</li>
+                    <li>Automatic flow variation by receiving 4-20 mA signal from the process</li>
+                  </ul>
                 </Container>
               </Tab.Pane>
               <Tab.Pane eventKey="MATERIAL OF CONSTRUCTION">
@@ -241,7 +210,7 @@ const ProductTechnicaldata = () => {
                   MATERIAL OF CONSTRUCTION
                 </h1>
                 <Container>
-                  <Table style={{ border: "1px solid gray" }}>
+                  {/* <Table style={{ border: "1px solid gray" }}>
                     <tbody>
                       <tr>
                         <td>1</td>
@@ -268,7 +237,27 @@ const ProductTechnicaldata = () => {
                         <td>@twitter</td>
                       </tr>
                     </tbody>
-                  </Table>
+                  </Table> */}
+                  <Container>
+                    <Row>
+                      <Col xl={6} xxl={6} lg={6} md={6} sm={12}>
+                        <ul>
+                          <li>SS304/SS304L</li>
+                          <li>SS304/SS304L</li>
+                          <li>Carbon Steels</li>
+                          <li>Any other special alloy</li>
+                        </ul>
+                      </Col>
+                      <Col xl={6} xxl={6} lg={6} md={6} sm={12}>
+                        <ul>
+                          <li>PP/PVC/PTFE/PVDF</li>
+                          <li>Alloy 20</li>
+                          <li>Hastalloy B/C</li>
+                          <li>Diaphragm MOC - PTFE/Metallic</li>
+                        </ul>
+                      </Col>
+                    </Row>
+                  </Container>
                 </Container>
               </Tab.Pane>
             </Tab.Content>

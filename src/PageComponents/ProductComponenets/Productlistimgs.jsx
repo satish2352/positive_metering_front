@@ -23,9 +23,6 @@ const Productlistimgs = () => {
 
             <Row className='productlistimgsback py-3'>
                 <Image src={img} rounded fluid className='rounded mx-auto d-block' style={{height:'27rem'}}/>
-                {/* <h1 className='productlistimgstitle'>PLUNGER</h1>
-                <h5 className='productlistimgssubtitle'>TYPE DOSING PUMPS</h5>
-                <div className='productlistproductimg '>  <img src={img} alt="" className=' w-75  ' /></div> */}
             </Row>
             <Row >
                 <h1 className='p-2'>Applications</h1>
@@ -33,14 +30,14 @@ const Productlistimgs = () => {
                     <Col lg={6} sm={12}> {
                         list1.map((a) => {
                             return (
-                                <li className='productlistimgsapplication' style={{fontSize:'17px'}}>{a.title}</li>
+                                <li className='productlistimgsapplication' style={{fontSize:'17px' ,fontFamily:'Poppins'}}>{a.title}</li>
                             )
                         })
                     }</Col>
                     <Col lg={6} sm={12}> {
                         list2.map((a) => {
                             return (
-                                <li className='productlistimgsapplication' style={{fontSize:'17px'}}>{a.title}</li>
+                                <li className='productlistimgsapplication' style={{fontSize:'17px' ,fontFamily:'Poppins'}}>{a.title}</li>
                             )
                         })
                     }</Col>

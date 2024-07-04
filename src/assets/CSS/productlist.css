@@ -85,3 +85,6 @@
     color: white;
     border-radius: 0px 50px 0px ;
 }
+.product-list-item-selected {
+    font-weight: bold;
+}

@@ -4,8 +4,6 @@ import Productlistimgs from './Productlistimgs';
 import Hydraulic_Diaphragm_Pumps from './Hydraulic_Diaphragm_Pumps';
 import Sanwich_Diaphragm_Pumps from './Sanwich_Diaphragm_Pumps';
 import Mechanical_Diaphragm from './Mechanical_Diaphragm';
-
-import '../../assets/CSS/productlist.css';
 import Electronic_Dosing_Pump_ED from './Electronic_Dosing_Pump_ED';
 import Electronic_Dosing_Pump_DD from './Electronic_Dosing_Pump_DD';
 import Screw_Pumps from './Screw_Pumps';
@@ -15,10 +13,8 @@ import Side_Entry_Mixers from './Side_Entry_Mixers';
 import Portable_Mixers from './Portable_Mixers';
 import Flocculators from './Flocculators';
 import Impellers from './Impellers';
-//import './Productlist.css'
 
-// import Card from 'react-bootstrap/Card';
-// import ListGroup from 'react-bootstrap/ListGroup';
+import '../../assets/CSS/productlist.css';
 
 const ProductList = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -28,11 +24,8 @@ const ProductList = () => {
         { title: "Hydraulic Diaphragm Pumps", link: 'Hydraulic-Diaphragm-Pumps' },
         { title: "Sanwich Diaphragm Pumps", link: 'Sanwich-Diaphragm-Pumps' },
         { title: "Mechanical Diaphragm", link: 'Mechanical-Diaphragm' },
-        // { title: "Pumps", link: 'Pumps' },
         { title: "Electronic Dosing Pump ED", link: 'Electronic-Dosing-Pump-ED' },
-        // { title: "Series 1", link: 'Series-1' },
         { title: "Electronic Dosing Pump DD", link: 'Electronic-Dosing-Pump-DD' },
-        // { title: "Series 2", link: 'Series-2' },
         { title: "Screw Pumps", link: 'Screw-Pumps' },
         { title: "Chemical Injection Skid", link: 'Chemical-Injection-Skid' },
         { title: "Agitators", link: 'Agitators' },
@@ -77,29 +70,19 @@ const ProductList = () => {
         <Container className='py-4'>
             <Row>
                 <Col lg={4}>
-                    {/* <Card>
-                        <Card.Header style={{textAlign:'center', backgroundColor:'#e84c52', color:'white'}}><b>Products</b></Card.Header>
-                        <ListGroup variant="flush">
-                            {list.map((a, index) => (
-                                <ListGroup.Item>
-                                    <div key={index} onClick={() => setSelectedProduct(a.link)}>
-                                        <p>{a.title}</p>
-                                    </div>
-                                </ListGroup.Item>
-
-                            ))}
-                        </ListGroup>
-                    </Card> */}
                     <Container className='produclistbox'>
-                        {/* <div className='produclistfttop' id='menu'>
-                            <h5 className='text-white text-center py-3'>Products</h5>
-                        </div> */}
                         <div className='py-3' id='menu'>
                             <h5 className='text-white text-center py-3'>Products</h5>
                             <hr></hr>
                             {list.map((a, index) => (
-                                <div key={index} className='product-list-item' onClick={() => setSelectedProduct(a.link)}>
-                                    <p className='produclistcontetst ps-3 mx-3 pb-2'>{a.title}</p>
+                                <div
+                                    key={index}
+                                    className={`product-list-item ${selectedProduct === a.link ? 'product-list-item-selected' : ''}`}
+                                    onClick={() => setSelectedProduct(a.link)}
+                                >
+                                    <p className='produclistcontetst ps-3 mx-3 pb-2' style={{ fontFamily: 'Poppins' }}>
+                                        {a.title}
+                                    </p>
                                 </div>
                             ))}
                         </div>

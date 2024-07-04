@@ -19,7 +19,7 @@ function Electronic_Dosing_Pump_ED() {
         {
           application_list.map((a) => (
             <>
-              <li style={{ fontSize: '17px' }}><p>{a.title}</p></li>
+              <li style={{ fontSize: '17px', fontFamily:'Poppins' }}><p>{a.title}</p></li>
             </>
           ))
         }
