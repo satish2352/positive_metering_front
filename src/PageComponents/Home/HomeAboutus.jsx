@@ -19,21 +19,21 @@ const HomeAboutus = () => {
         <Col
           lg={6}
           className='order-lg-1 d-none d-lg-block order-2 px-0'
-        data-aos="fade-up"data-aos-easing="linear"
-              data-aos-duration="1500"
+          data-aos="fade-up" data-aos-easing="linear"
+          data-aos-duration="1500"
         >
-          <img src={about} className='img-fluid' alt="About Us"/>
+          <img src={about} className='img-fluid' alt="About Us" />
         </Col>
         <Col
           lg={6}
           className='order-lg-2 order-1 homeaboutinfo text-white d-grid align-items-center'
           style={{ backgroundColor: '#EE585D' }}
-      
+
         >
-          <div className='p-lg-5 p-2'data-aos="fade-up"data-aos-easing="linear"
-              data-aos-duration="1500" style={{ textAlign: 'justify' }}>
-            <h1 style={{ letterSpacing: '4px', paddingLeft:'50px' }}>ABOUT US</h1>
-            <p style={{ fontSize: '12px' , paddingLeft:'50px' , paddingRight:'50px'}}>
+          <div className='p-lg-5 py-4' data-aos="fade-up" data-aos-easing="linear"
+            data-aos-duration="1500" style={{ textAlign: 'justify' }}>
+            <h1 style={{ letterSpacing: '4px'}}>ABOUT US</h1>
+            <p style={{ fontSize: '12px' }}>
               The Founder of our company Mr. Sudhir Mutalik is a passionate
               mechanical engineer graduated from the reputed Government
               College of Engineering, Karad near Pune, India. Diesel Engines
@@ -42,7 +42,7 @@ const HomeAboutus = () => {
               kid Mounted Chemical Dosing Systems.
               With a vision to "Simplify Chemical Treatments in the world"
               after 25 years today Positive Metering Pumps (I) Pvt Ltd has
-              done more than 125,000 installations of various products in 
+              done more than 125,000 installations of various products in
               The Founder of our company Mr. Sudhir Mutalik is a passionate
               mechanical engineer graduated from the reputed Government
               College of Engineering, Karad near Pune, India. Diesel Engines
@@ -51,12 +51,12 @@ const HomeAboutus = () => {
               kid Mounted Chemical Dosing Systems.
               With a vision to "Simplify Chemical Treatments in the world"
               after 25 years today Positive Metering Pumps (I) Pvt Ltd has
-              done more than 125,000 installations of various products in 
+              done more than 125,000 installations of various products in
               With a vision to "Simplify Chemical Treatments in the world"
               after 25 years today Positive Metering Pumps (I) Pvt Ltd has
-              done more than 125,000 installations of various products in 
+              done more than 125,000 installations of various products in
               The Founder of our company Mr. Sudhir Mutalik is a passionate
-             
+
             </p>
           </div>
         </Col>

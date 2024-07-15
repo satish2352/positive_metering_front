@@ -84,7 +84,7 @@ const Career = () => {
     <>
       <Container fluid className=" creerback">
         <Row className="d-flex justify-content-center  py-5">
-          <Heading heading={"CAREER OPPORTUNITY"} className="fs-3" />
+          <Heading heading={"CAREER OPPORTUNITY"} />
           {/* <h1     >CAREER OPPORTUNITY</h1> */}
           <Col xs={11} mg={10} className="p-lg-5 pb-5 border-0 bg-white my-lg-5 shadow-lg">
             <Heading heading={"UPLOAD YOUR CV"} />
