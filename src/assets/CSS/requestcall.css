@@ -1,0 +1,86 @@
+.requestcallback {
+    height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .requestcallback {
+        height: 1100px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+
+
+    .requestcallbackleft {
+        background: rgba(222, 222, 222, 0.79);
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        position: relative;
+        top: -321px !important;
+
+    }
+}
+
+.requestcallbackleft {
+    background: rgba(222, 222, 222, 0.79);
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    position: relative;
+    top: -600px;
+
+}
+
+.requestcallbacklefttop {
+    background: rgba(238, 88, 93, 1);
+    position: relative;
+}
+
+.contentpara {
+    position: relative;
+    top: -800px;
+    background: rgba(222, 222, 222, 0.79);
+
+}
+
+.contentpara1 {
+    position: relative;
+    top: -800px;
+    background: rgba(222, 222, 222, 0.79);
+}
+
+
+
+.requestinput {
+    border: 1px solid rgb(224, 205, 205) !important;
+    background-color: white;
+    height: 40px;
+}
+
+.requestinput::placeholder {
+    color: #999;
+    font-size: 13px !important;
+
+}
+
+.requestinput:focus {
+    color: #999;
+    outline: none;
+}
+
+.formrequestbtn {
+    background: rgba(238, 88, 93, 1);
+    border-radius: 30px;
+    color: white;
+    border: none;
+}
+
+.requestinputlb {
+    font-size: 13px !important;
+}
+
+.buttonpart {
+    margin-top: -500px;
+}

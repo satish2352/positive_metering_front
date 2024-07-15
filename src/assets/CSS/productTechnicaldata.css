@@ -1,0 +1,18 @@
+
+.nav-pills .nav-link.active{
+    border: 3px solid rgba(232, 76, 82, 1);
+    background-color: rgba(232, 76, 82, 1) !important;
+    color: white;
+}
+
+.tabbuttons{
+    border: 3px solid rgba(232, 76, 82, 1);
+    color: black;
+}
+ tr,th,td {
+    border: 1px solid rgb(199, 193, 193) 
+ }
+ Table{
+    border: 1px solid rgb(0, 0, 0) !important 
+
+ }

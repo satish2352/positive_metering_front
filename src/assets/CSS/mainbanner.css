@@ -1,0 +1,52 @@
+.slick-next {
+    right: 0px !important;
+}
+
+.oueprd {
+    letter-spacing: 10px;
+
+}
+
+.ourprdimg {
+    height: 200px;
+    width: 250px;
+}
+
+.ourprdcard {
+    padding: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slick-center .ourprdcard {
+    transform: scale(1.2);
+    padding: 20px;
+    z-index: 1;
+}
+
+
+.oueprd {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+    .oueprd {
+        font-size: 1.5rem;
+    }
+
+
+}
+
+@media (max-width: 600px) {
+    .oueprd {
+        font-size: 1.2rem;
+    }
+
+    .ourprdimg {
+        width: 80%;
+    }
+
+    .slick-center .ourprdcard {
+        padding: 5px !important;
+    }
+}

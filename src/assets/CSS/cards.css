@@ -1,0 +1,23 @@
+.caontatctcardback {
+    background: #FFFFFFCC;
+
+
+
+}
+
+.caontatctcardimg {
+    position: relative;
+}
+
+.caontatctcardsubsection {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 8px 10px 25px 0px rgba(0, 0, 0, 0.25);
+    width: 300px;
+    position: absolute;
+    left: 90px;
+    bottom: 0px;
+}
+
+.caontatctcardsubsection p {
+    font-size: 14px;
+}
