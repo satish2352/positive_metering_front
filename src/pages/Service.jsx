@@ -69,11 +69,7 @@ const Service = () => {
                 <div className="card card-back border-0" onMouseEnter={handleMouseEnter1} onMouseLeave={handleMouseLeave1}>
                   <BackCard image={back1}  ></BackCard>
                   <h3 className='backH'>Post Order Services</h3>
-
                   <p className='backP text-center px-4 text-white mt-4'>Application Engineering is one of our main strenghts. Our expert engineers have excellent field experience who can perfectly match our products with customer's needs. Special care is taken by us to offer a cost effective solution in right time. We help our customers in structuring </p>
-
-
-
                 </div>
               </ReactCardFlip>
             </Card.Body>

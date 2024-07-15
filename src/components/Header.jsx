@@ -55,7 +55,7 @@ const Header = () => {
                 </Nav.Link>
                 <NavDropdown title="ABOUT" className='fw-bold mx-xxl-3 text-black' id="collapsible-nav-dropdown">
                   <NavDropdown.Item className='py-0 dropdown-menu-btn' href="/aboutleadership">
-                    <strong>LEADERSHIP</strong> <hr className='m-2 border-2' />
+                    <strong >LEADERSHIP</strong> <hr className='m-2 border-2' />
                   </NavDropdown.Item>
                   <NavDropdown.Item className='py-0 dropdown-menu-btn' href="/aboutourstory">
                     <strong>OUR STORY</strong> <hr className='m-2 border-2' />

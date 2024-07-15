@@ -59,8 +59,8 @@ function OurProducts() {
     <Container fluid className='my-5'>
       <Slider {...settings}>
         {products.map(product => (
-          <div key={product.id} className='ourprdcard d-flex justify-content-center'>
-            <h3><img src={product.img} className='img-fluid ourprdimg' alt=""/></h3>
+          <div key={product.id} className='ourprdcard d-flex justify-content-center' >
+            <h3><img src={product.img} className='img-fluid ourprdimg' alt="" /></h3>
           </div>
         ))}
       </Slider>

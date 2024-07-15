@@ -14,7 +14,7 @@ const HomeAboutus = () => {
   }, []);
 
   return (
-    <Container fluid className='mt-0'>
+    <Container fluid className='mt-5'>
       <Row>
         <Col
           lg={6}
