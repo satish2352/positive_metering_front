@@ -4,6 +4,7 @@
     background-size: contain;
     position: relative;
     top: 100px;
+    margin-bottom: -100px;
 
 }
 
@@ -24,7 +25,7 @@
         top: 0px;
         background-repeat:repeat;
         height: 780px;
-
+        margin-bottom: 0px;
     }
     .getaquotebackone{
         background: url('../../assets/img/About/Layer71.png');

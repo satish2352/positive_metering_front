@@ -90,7 +90,6 @@ const Ouroffices = () => {
                         data-aos-anchor-placement="center-bottom"
                         data-aos-easing="ease-out-cubic"
                         data-aos-duration="2000"
-                        data-aos-delay="400"
                     >
                         <Card className="h-100 rounded-4 infrastructurecard border-bottom border-3 border-danger border-end-0 border-top-0 border-start-0">
                             <Card.Img variant="top" src={card.img} alt={card.title} className=' rounded-4' />

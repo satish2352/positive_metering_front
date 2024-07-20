@@ -12,14 +12,21 @@
 }
 
 
+.smglink {
+  text-decoration: none !important;
+  color: #000000;
+}
+
 .dropdown-menu-btn {
   letter-spacing: 2px;
   text-align: center;
 }
 
-.dropdown-item.active, .dropdown-item:active{
+.dropdown-item.active,
+.dropdown-item:active {
   background: transparent !important;
 }
+
 .headercontact {
   border: 1px solid #010101;
   border-radius: 0px 100px 100px 0px;
@@ -51,7 +58,8 @@
 .blogspace {
   margin-right: 100px;
 }
-.hedershadow{
+
+.hedershadow {
   box-shadow: 8px 10px 10px 0px #00000040;
 }
 
@@ -82,7 +90,7 @@
 
 .footertext {
   text-align: justify;
-  
+
 }
 
 .footerinputbox {
@@ -103,10 +111,11 @@
 }
 
 .emailfeild {
-  width: 300px !important;
+  width: 400px !important;
 }
 
 .footerenquriybtn {
+  float: inline-end;
   border-radius: 10px !important;
   background: #433C68 !important;
   padding: 10px;
@@ -143,7 +152,7 @@
   }
 
   .emailfeild {
-    width: 100px !important;
+    width: 140px !important;
   }
 
   .footerenqury {
@@ -270,6 +279,6 @@
   display: block;
 }
 
-.blogcrd{
+.blogcrd {
   height: 300px !important;
 }

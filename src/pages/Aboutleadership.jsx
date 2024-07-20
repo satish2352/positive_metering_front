@@ -27,7 +27,7 @@ const leadershipData = [
   },
   {
     imgSrc: lder3,
-    name: "mr. MALHAR mutalilk",
+    name: "Mr. Malhar Mutalik",
     title: "Cheif Technical Manager",
     description: "The Founder of our company Mr. Sudhir Mutalik is a passionate mechanical engineer graduated from the reputed Government College of Engineering, Karad near Pune, India. Diesel Engines has been his interest for study since his university days. He was selected by the world's well-known Diesel Engine manufacturer Kirloskar Oil Engines Ltd through campus recruitment."
   },

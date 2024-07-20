@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, Button, InputGroup } from "react-bootstrap";
 import logo from "../assets/img/Home/Group 1000003789.png";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaFacebook, FaTwitter, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { CiLinkedin } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
@@ -17,6 +18,7 @@ const Footer = () => {
   const firstHalf = products.slice(0, half);
   const secondHalf = products.slice(half);
   const [email, setEmail] = useState("");
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -79,10 +81,10 @@ const Footer = () => {
                   >
                     <MdOutlineEmail />
                   </InputGroup.Text>
-                  <Form.Control
+                  <input
                     type="email"
                     className=" emailfeild"
-                    style={{ border: "none" }}
+                    style={{ border: "none",outline:"none" }}
                     placeholder="Enter your mail"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -118,7 +120,8 @@ const Footer = () => {
             <ul className="list-unstyled lh-lg">
               <li>
                 <Link
-                  to="/aboutleadership"
+                  onClick={() => window.scrollTo(0, 0)}
+                  to="/aboutourstory"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   About
@@ -126,6 +129,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/service"
                   style={{ textDecoration: "none", color: "black" }}
                 >
@@ -134,7 +138,8 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/product"
+                  onClick={() => window.scrollTo(0, 400)}
+                  to={`/Product/11`}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   Product
@@ -150,7 +155,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/aboutleadership"
+                  to="/contactus"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   Contact us
@@ -158,7 +163,15 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  to="/newsAndEvents"
+                  to="/career"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  Career
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/news-event"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   NewsAndEvents
@@ -169,7 +182,7 @@ const Footer = () => {
           <Col xs={12} md={8} lg={5}>
 
             <Row>
-              <Col xs={12} md={6} lg={6} className="mx-lg-3x">
+              <Col xs={12} md={6} lg={6} className="mx-lg-3x pt-5 pt-lg-0">
                 <h5 className=" fw-bold" style={{ marginTop: '-30px' }}>Product</h5>
                 <ul className="list-unstyled lh-lg">
                   {
@@ -224,20 +237,22 @@ const Footer = () => {
             xs={12}
             lg={6}
             className="text-center d-flex justify-content-evenly align-items-cente"
-          >
-            <p>
-              &copy; 2024 Copyright :{" "}
-              <ins> Made with Passion by Sumago Infotech</ins>{" "}
+          > <p>
+              <a href="https://www.sumagoinfotech.com/" className="smglink">
+                &copy; {currentYear} Copyright :{" "}
+                <ins className="smglink"> Made with Passion by Sumago Infotech</ins>{" "}
+              </a>
             </p>
           </Col>
           <Col xs={12} lg={6}>
             <div className=" text-center d-grid d-lg-flex justify-content-center align-items-center">
               <div>Terms & Conditions</div>
               <div className="d-flex justify-content-center">
-                <CiFacebook className="icon-hover mx-2 " />
-                <FaInstagram className="icon-hover mx-2" />
-                <MdOutlineMail className="icon-hover mx-2" />
-                <FaWhatsapp className="icon-hover mx-2" />
+                <a href="https://www.facebook.com/PositiveMetering"><CiFacebook className="icon-hover mx-2 " /></a>
+                <a href="https://www.instagram.com/positive_metering_pumps/?hl=en"><FaInstagram className="icon-hover mx-2" /></a>
+                <a href="mailto:info@positivemetering.com"><MdOutlineMail className="icon-hover mx-2" /></a>
+                <a href={`https://wa.me/${91-253-6613218}`}><FaWhatsapp className="icon-hover mx-2" /></a>
+                <a href="https://www.linkedin.com/company/positive-metering-pumps-i-pvt-ltd/"> <CiLinkedin className="icon-hover mx-2" /></a>
               </div>
             </div>
           </Col>

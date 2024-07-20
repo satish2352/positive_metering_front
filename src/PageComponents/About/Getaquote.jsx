@@ -6,8 +6,12 @@ import im from "../../assets/img/About/Layer71.png"
 import ResponsiveImage from '../../pages/ResponsiveImage'
 import imgmobile from '../../assets/img/About/aboutmobileview.png'
 // import imgtop from '../../desktopSrc={imgtop}'
-
+import { useNavigate } from 'react-router-dom'
 const Getaquote = () => {
+    const navigate = useNavigate()
+    const handleScrollAndNavigate = () => {
+        navigate('/contactus', { state: { scrollTo: 1300 } });
+      };
     return (
         <>
             <Container fluid className=' my-1 my-lg-0' style={{position:"relative"}}>
@@ -24,7 +28,7 @@ const Getaquote = () => {
                             <h4 className=' text-white mx-4'>Its Not Just About
                                 The Machinery..</h4>
                             <h6 className=' text-uppercase fw-bold'>Its about the efficiency!!</h6>
-                            <button style={{ background: "#636262" }} className=' text-white border-0 fs-4 py-2 px-4 rounded-5' >Get A Quote</button>
+                            <button style={{ background: "#636262" }}onClick={handleScrollAndNavigate} className=' text-white border-0 fs-4 py-2 px-4 rounded-5' >Get A Quote</button>
                         </div>
                     </Col>
                 </Row>

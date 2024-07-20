@@ -21,17 +21,11 @@ const Home = () => {
       <HomeAboutus />
       <OurProducts />
       <Producttab />
-      {/* <Shopnow /> */}
       <Shopnowhome />
       <Testomonial />
       <Requestcallback />
       <Progress_cavity_screw_pump />
-      {/* <div style={{ backgroundColor: '#efefef' }}>
-        <Container>
-          <Image src={progress_img}  fluid  className='mt-5 mb-5'/>
-        </Container>
-      </div> */}
-
+   
     </>
   )
 }

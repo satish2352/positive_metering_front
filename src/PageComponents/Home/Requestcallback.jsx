@@ -3,7 +3,7 @@ import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 import "../../assets/CSS/requestcall.css";
 import homepagevideo from '../../assets/video/positive.mp4';
-
+import mobilepagevideo from '../../assets/video/WhatsApp-Video-2024-07-18-at-115.mp4';
 const Requestcallback = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -62,89 +62,175 @@ const Requestcallback = () => {
   };
 
   return (
-    <Container fluid className="requestcallbackcontainer">
-      <video
-        autoPlay
-        loop
-        muted
-        poster="https://assets.codepen.io/6093409/river.jpg"
-        style={{ width: '100%' }}
-        className="viod"
-      >
-        <source src={homepagevideo} type="video/mp4" />
-      </video>
+    <>
 
-      <div className="requestcallback d-flex align-items-center justify-content-evenly">
-        <Container className="p-4">
-          <Row className="d-flex justify-content-evenly fw-bold">
-            <Col md={7} className="requestcallbackleft">
-              <div className="requestcallbacklefttop">
-                <h4 className="text-white text-center py-3">PLUNGER TYPE DOSING PUMPS</h4>
-              </div>
-              <div className="p-3 p-lg-5 lh-3" style={{ textAlign: 'justify' }}>
-                <p>
-                  Dosing Pumps are extensively utilized in a range of industries
-                  to maintain precise chemical dosing and control. Dosing Pumps
-                  economy in India has played a essential role in various sectors
-                  , like Oil and Gas , Water treatment, Chemical, Pharmaceutical,
-                  Agriculture, which brings Precision, costeffectiveness and
-                  efficiency in various process. Which enhance Productivity and
-                  Quality standards.
-                </p>
-              </div>
-            </Col>
-            <Col md={4} className="requestcallbackleft">
-              <div className="requestcallbacklefttop">
-                <h4 className="text-white text-center py-3 text-uppercase">Request A CALL BACK</h4>
-              </div>
-              <div className="p-3 px-5">
-                {successMessage && alert(<div className="alert alert-success">{successMessage}</div>)}
-                <form onSubmit={handleSubmit}>
-                  <div className="d-grid fw-bold requestinputlb">
-                    <label>Name</label>
-                    <input
-                      type="text"
-                      className="requestinput"
-                      placeholder="Enter Name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                    {errors.name && <span className="error text-danger">{errors.name}</span>}
-                  </div>
-                  <div className="d-grid requestinputlb">
-                    <label>Email</label>
-                    <input
-                      type="text"
-                      className="requestinput"
-                      placeholder="Enter Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                    {errors.email && <span className="error text-danger">{errors.email}</span>}
-                  </div>
-                  <div className="d-grid requestinputlb">
-                    <label>Message</label>
-                    <input
-                      type="text"
-                      className="requestinput"
-                      placeholder="Comment"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                    />
-                    {errors.message && <span className="error text-danger">{errors.message}</span>}
-                  </div>
-                  <div className="d-flex justify-content-end pt-4">
-                    <button className="px-4 py-2 text-center formrequestbtn" type="submit">
-                      Submit
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    </Container>
+      <Container fluid className="requestcallbackcontainer d-none d-md-block">
+        <video
+          autoPlay
+          loop
+          muted
+          poster="https://assets.codepen.io/6093409/river.jpg"
+          style={{ width: '100%' }}
+          className="viod"
+        >
+          <source src={homepagevideo} type="video/mp4" />
+        </video>
+
+        <div className="requestcallback d-flex align-items-center justify-content-evenly">
+          <Container className="p-4">
+            <Row className="d-flex justify-content-evenly fw-bold">
+              <Col md={7} className="requestcallbackleft">
+                <div className="requestcallbacklefttop">
+                  <h4 className="text-white text-center py-3">PLUNGER TYPE DOSING PUMPS</h4>
+                </div>
+                <div className="p-3 p-lg-5 lh-3" style={{ textAlign: 'justify' }}>
+                  <p>
+                    Dosing Pumps are extensively utilized in a range of industries
+                    to maintain precise chemical dosing and control. Dosing Pumps
+                    economy in India has played a essential role in various sectors
+                    , like Oil and Gas , Water treatment, Chemical, Pharmaceutical,
+                    Agriculture, which brings Precision, costeffectiveness and
+                    efficiency in various process. Which enhance Productivity and
+                    Quality standards.
+                  </p>
+                </div>
+              </Col>
+              <Col md={4} className="requestcallbackleft">
+                <div className="requestcallbacklefttop">
+                  <h4 className="text-white text-center py-3 text-uppercase">Request A CALL BACK</h4>
+                </div>
+                <div className="p-3 px-5">
+                  {successMessage && alert(<div className="alert alert-success">{successMessage}</div>)}
+                  <form onSubmit={handleSubmit}>
+                    <div className="d-grid fw-bold requestinputlb">
+                      <label>Name</label>
+                      <input
+                        type="text"
+                        className="requestinput"
+                        placeholder="Enter Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                      {errors.name && <span className="error text-danger">{errors.name}</span>}
+                    </div>
+                    <div className="d-grid requestinputlb">
+                      <label>Email</label>
+                      <input
+                        type="text"
+                        className="requestinput"
+                        placeholder="Enter Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                      {errors.email && <span className="error text-danger">{errors.email}</span>}
+                    </div>
+                    <div className="d-grid requestinputlb">
+                      <label>Message</label>
+                      <input
+                        type="text"
+                        className="requestinput"
+                        placeholder="Comment"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                      />
+                      {errors.message && <span className="error text-danger">{errors.message}</span>}
+                    </div>
+                    <div className="d-flex justify-content-end pt-4">
+                      <button className="px-4 py-2 text-center formrequestbtn" type="submit">
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </Container>
+      <Container fluid className="requestcallbackcontainer d-block d-md-none">
+        <video
+          autoPlay
+          loop
+          muted
+          poster="https://assets.codepen.io/6093409/river.jpg"
+          style={{ width: '100%' }}
+          className="viod"
+        >
+          <source src={mobilepagevideo} type="video/mp4" />
+        </video>
+
+        <div className="requestcallback d-flex align-items-center justify-content-evenly">
+          <Container className="p-4">
+            <Row className="d-flex justify-content-evenly fw-bold">
+              <Col md={7} className="requestcallbackleft">
+                <div className="requestcallbacklefttop">
+                  <h4 className="text-white text-center py-3">PLUNGER TYPE DOSING PUMPS</h4>
+                </div>
+                <div className="p-3 p-lg-5 " style={{ textAlign: 'justify' }}>
+                  <p>
+                    Dosing Pumps are extensively utilized in a range of industries
+                    to maintain precise chemical dosing and control. Dosing Pumps
+                    economy in India has played a essential role in various sectors
+                    , like Oil and Gas , Water treatment, Chemical, Pharmaceutical,
+                    Agriculture, which brings Precision, costeffectiveness and
+                    efficiency in various process. Which enhance Productivity and
+                    Quality standards.
+                  </p>
+                </div>
+              </Col>
+              <Col md={4} className="requestcallbackleft">
+                <div className="requestcallbacklefttop">
+                  <h4 className="text-white text-center py-3 text-uppercase">Request A CALL BACK</h4>
+                </div>
+                <div className="p-3 px-5">
+                  {successMessage && alert(<div className="alert alert-success">{successMessage}</div>)}
+                  <form onSubmit={handleSubmit}>
+                    <div className="d-grid fw-bold requestinputlb">
+                      <label>Name</label>
+                      <input
+                        type="text"
+                        className="requestinput"
+                        placeholder="Enter Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                      {errors.name && <span className="error text-danger">{errors.name}</span>}
+                    </div>
+                    <div className="d-grid requestinputlb">
+                      <label>Email</label>
+                      <input
+                        type="text"
+                        className="requestinput"
+                        placeholder="Enter Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                      {errors.email && <span className="error text-danger">{errors.email}</span>}
+                    </div>
+                    <div className="d-grid requestinputlb">
+                      <label>Message</label>
+                      <input
+                        type="text"
+                        className="requestinput"
+                        placeholder="Comment"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                      />
+                      {errors.message && <span className="error text-danger">{errors.message}</span>}
+                    </div>
+                    <div className="d-flex justify-content-end pt-4">
+                      <button className="px-4 py-2 text-center formrequestbtn" type="submit">
+                        Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </Container>
+    </>
   );
 };
 

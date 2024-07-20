@@ -56,9 +56,7 @@ const Header = () => {
         <Row className='d-flex justify-content-between my-2'>
           {loading ? (
             <p>Loading contacts...</p>
-          ) : error ? (
-            <p>Error: {error}</p>
-          ) : (
+          )  : (
             <>
               <Col xs={4} lg={2} className="headercontact d-flex justify-content-evenly p-2 ps-lg-5">
                 <FiPhone className='callicon' />
@@ -125,6 +123,7 @@ const Header = () => {
           </Container>
         </Navbar>
       </div>
+      <hr />
     </div>
   );
 };

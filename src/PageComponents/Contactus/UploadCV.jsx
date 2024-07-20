@@ -178,15 +178,7 @@ const UploadCV = () => {
                   </Form.Group>
                 </Col>
 
-                <Col xl={12}>
-                  <Form.Group className="mb-3" controlId="formFile">
-                    <Form.Label>Upload CV</Form.Label>
-                    <Form.Control
-                      type="file"
-                      onChange={(e) => setCVFile(e.target.files[0])}
-                    />
-                  </Form.Group>
-                </Col>
+                
               </Row>
               <div className="text-center mt-xl-5 mb-xl-4">
                 <Button

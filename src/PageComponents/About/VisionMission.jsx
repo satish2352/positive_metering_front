@@ -37,8 +37,8 @@ const VisionMission = () => {
                             <p className='text-white' style={{ textAlign: "justify", fontSize: "0.78rem", fontWeight: "400" }}>
                                 The Founder of our company Mr. Sudhir Mutalik is a passionate mechanical engineer graduated from the reputed Government College of Engineering, Karad near Pune, India. Diesel Engines has been his interest for study since his university days. He was selected by the world's well-known Diesel Engine manufacturer Kirloskar Oil Engines Ltd through campus recruitment. After working with KOEL for a short while his love for Diesel Engines and precisely the slider-crank mechanism attracted him towards Chemical Dosing Pumps, the drive end of which also works on a similar principle. After working over the product for a few years and studying applications in various sectors Positive Metering Pumps company was founded in 1996 for manufacturing of Chemical Dosing Pumps and Skid Mounted Chemical Dosing Systems.
                             </p>
-                            <h5 className='text-white' onClick={handleClick} style={{fontSize:'36px'}}>
-                                Vision <img style={{ width: "50%" }} src={visionArrow} alt="" /> <span style={{ fontWeight: "200" , fontSize:'36px'}}> Mission </span>
+                            <h5 className='text-white' onClick={handleClick} style={{letterSpacing:"2px" }}>
+                                Vision <img style={{ width: "50%" }} src={visionArrow} alt="" /> <span style={{fontWeight: "200",letterSpacing:"2px" }}> Mission </span>
                             </h5>
                         </Col>
                     ) : (
@@ -47,10 +47,10 @@ const VisionMission = () => {
                                 Mission <img style={{ width: "15%" }} src={missiongoal} alt="" />
                             </h2>
                             <p className='text-white' style={{ textAlign: "justify", fontSize: "0.78rem", fontWeight: "400" }}>
-                                The Founder of our company Mr. Sudhir Mutalik is a passionate mechanical engineer graduated from the reputed Government College of Engineering, Karad near Pune, India. Diesel Engines has been his interest for study since his university days. He was selected by the world's well-known Diesel Engine manufacturer Kirloskar Oil Engines Ltd through campus recruitment. After working with KOEL for a short while his love for Diesel Engines and precisely the slider-crank mechanism attracted him towards Chemical Dosing Pumps, the drive end of which also works on a similar principle. After working over the product for a few years and studying applications in various sectors Positive Metering Pumps company was founded in 1996 for manufacturing of Chemical Dosing Pumps and Skid Mounted Chemical Dosing Systems.
+                                The  graduated from the reputed Government College of Engineering, Karad near Pune, India. Diesel Engines has beenwell-known Diesel Engine manufacturer Kirloskar Oil Engines Ltd through campus recruitment. After working with KOEL for a short Founder of our company Mr. Sudhir Mutalik is a passionate mechanical engineer while his love for Diesel Engines and precisely the slider-crank mechanism attracted him towards Chemical Dosing Pumps, the drive end of which also works on a similar principle. After working over the product for a few years and studying applications in various sectors Positive Metering Pumps company was founded in 1996 for manufacturing of Chemical Dosing Pumps and Skid Mounted Chemical Dosing Systems .
                             </p>
-                            <h5 className='text-white' onClick={handleClick}>
-                                <span style={{ fontWeight: "200" }}> Vision </span> <img style={{ width: "50%" }} src={missionArrow} alt="" /> Mission
+                            <h5 className='text-white' onClick={handleClick} style={{letterSpacing:"2px" }}>
+                                <span style={{ fontWeight: "200",letterSpacing:"2px" }}> Vision </span> <img style={{ width: "50%" }} src={missionArrow} alt="" /> Mission
                             </h5>
                         </Col>
                     )}
