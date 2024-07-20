@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Container, Row, Col, Form, Button, InputGroup } from "react-bootstrap";
 import logo from "../assets/img/Home/Group 1000003789.png";
 import { MdOutlineEmail } from "react-icons/md";
@@ -8,12 +8,18 @@ import { MdOutlineMail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { Link } from "react-router-dom";
-
+import axios from 'axios'
+import { ProductContext } from '../ProductContext';
+import { useNavigate } from 'react-router-dom';
 const Footer = () => {
+  const { products } = useContext(ProductContext);
+  const half = Math.ceil(products.length / 2);
+  const firstHalf = products.slice(0, half);
+  const secondHalf = products.slice(half);
   const [email, setEmail] = useState("");
 
   const [errors, setErrors] = useState({});
-
+  const [isLoading, setIsLoading] = useState(false);
   const validateForm = () => {
     let errors = {};
     let isValid = true;
@@ -30,19 +36,24 @@ const Footer = () => {
   };
   console.log("errors", errors);
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      let newData = {
-        email,
-      };
-      alert("Data Submited Successfully..");
-      console.log("newData", newData);
+      setIsLoading(true);
+      try {
+        const response = await axios.post("/subscribe/add-subscribeemail", { email });
+        alert("Data Submitted Successfully.");
+        console.log("Response:", response.data);
+        setEmail("");
+      } catch (error) {
+        console.error("Error submitting data:", error);
+        alert("Failed to submit data.");
+      }
     }
   };
-
   return (
-    <Container className="footerback" fluid>
+    <Container className="footerback " fluid>
       <Container>
         <Row className="justify-content-center  mb-4">
           <Col
@@ -76,17 +87,17 @@ const Footer = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
-                      {errors.email && (
-                  <span className="error text-danger">{errors.email}</span>
-                )}
-                  <Button className="footerenquriybtn" type="submit" style={{fontSize:'16px'}}>Subscribe</Button>
+                  {errors.email && (
+                    <span className="error text-danger">{errors.email}</span>
+                  )}
+                  <Button className="footerenquriybtn" type="submit" style={{ fontSize: '16px' }}>Subscribe</Button>
                 </InputGroup>
               </Form>
             </div>
           </Col>
         </Row>
         <Row className="justify-content-center align-items-center fw-medium footertext">
-          <Col xs={12} md={10} lg={3} className=" footertext mb-4 mx-lg-3 ">
+          <Col xs={12} md={10} lg={4} className=" footertext mb-4 mx-lg-3 ">
             <div className="d-grid justify-content-center">
               {" "}
               <img
@@ -96,11 +107,9 @@ const Footer = () => {
               />
             </div>
             <p className="mt-3" style={{ textAlign: "justify" }}>
-              Poshwave Pumps are extensively utilized in a variety of industrial
-              applications like process chemicals dosing and transfer, brine
-              injection systems in the food industry, power plants, and sugar
-              industries. Our pump range includes various models catering to
-              different needs.
+              Dosing Pumps are extensively utilized in a range of industries to maintain precise chemical dosing and control. Dosing Pumps economy in India has played a essential role in various sectors, like Oil and Gas , Water treatment, Chemical, Pharmaceutical, Agriculture, which brings Precision,costeffectiveness and efficiency in various process. Which enhance Productivity and Quality standards.
+
+              We, Positive Metering Pumps India Pvt Ltd, are among the well established companies engaged in manufacturing of all your Dosing needs
             </p>
           </Col>
 
@@ -157,35 +166,60 @@ const Footer = () => {
               </li>
             </ul>
           </Col>
-          <Col xs={12} md={4} lg={3} className="mx-lg-3">
-            <h5 className=" fw-bold" style={{marginTop:'-1px'}}>Product</h5>
-            <ul className="list-unstyled lh-lg">
-              <li>Plunger type dosing pumps</li>
-              <li>Plunger type dosing pumps</li>
-              <li>Electric type dosing pumps</li>
-              <li>Plunger type dosing pumps</li>
-              <li>Plunger type dosing pumps</li>
-              <li>Electric type dosing pumps</li>
+          <Col xs={12} md={8} lg={5}>
 
-              {/* <li>Diaphragm type dosing pumps</li>
-              <li>Magnet type dosing pumps</li>
-              <li>Electric type dosing pumps</li>
-              <li>Solenoid type dosing pumps</li> */}
-            </ul>
-          </Col>
-          <Col xs={12} md={4} lg={2} className="mx-lg-3x">
-            <h5 className=" fw-bold" style={{marginTop:'-20px'}}>Product</h5>
-            <ul className="list-unstyled lh-lg">
-              <li>Agitator</li>
-              <li>Emulsifier</li>
-              <li>Static Mixers</li>
-              <li>Portable mixers</li>
-              <li>Portable stirrers</li>
-            </ul>
+            <Row>
+              <Col xs={12} md={6} lg={6} className="mx-lg-3x">
+                <h5 className=" fw-bold" style={{ marginTop: '-30px' }}>Product</h5>
+                <ul className="list-unstyled lh-lg">
+                  {
+                    firstHalf.map((a) => {
+                      return (
+                        <>
+                          <li>
+                            <Link
+                              onClick={() => window.scrollTo(0, 500)}
+                              to={`/Product/${a.id}`}
+                              style={{ textDecoration: "none", color: "black" }
+
+                              }
+                            >
+                              {a.productName}
+                            </Link>
+                          </li >
+                        </>
+                      )
+                    })
+                  }
+                </ul>
+              </Col>
+              <Col xs={12} md={6} lg={6} className="mx-lg-3x">
+
+                <ul className="list-unstyled lh-lg">
+                  {
+                    secondHalf.map((a) => {
+                      return (
+                        <>
+                          <li>
+                            <Link
+                              onClick={() => window.scrollTo(0, 500)}
+                              to={`/Product/${a.id}`}
+                              style={{ textDecoration: "none", color: "black" }}
+                            >
+                              {a.productName}
+                            </Link>
+                          </li >
+                        </>
+                      )
+                    })
+                  }
+                </ul>
+              </Col>
+            </Row>
           </Col>
         </Row>
         <hr />
-        <Row className="mt-4 d-flex">
+        <Row className="mt-4 d-flex pb-5">
           <Col
             xs={12}
             lg={6}

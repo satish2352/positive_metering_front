@@ -10,6 +10,7 @@ import banner3Mobile from "../../assets/img/Home/Group 1000004134.png";
 import { Col, Row, Container, Modal, Button } from 'react-bootstrap';
 import { TypeAnimation } from "react-type-animation";
 import "../../assets/CSS/homebanner.css";
+import axios from 'axios';
 
 function Homebaner() {
   const [show, setShow] = useState(false);
@@ -68,17 +69,30 @@ function Homebaner() {
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      let newData = {
-        fullname,
-        email,
-        mobile,
-        message,
-      };
-      alert("Data Submitted Successfully.");
-      console.log("newData", newData);
+      try {
+        const response = await axios.post('/carousal-form/addcarousalform', {
+          name: fullname,
+          email,
+          mobile,
+          message,
+        });
+        if (response.status === 200) {
+          alert("Data Submitted Successfully.");
+          console.log("newData", response.data);
+        } else {
+          alert("Failed to submit data.");
+        }
+        setEmail("")
+        setmessage("")
+        setmobile("")
+        setfullname("")
+          } catch (error) {
+        alert("Failed to submit data.");
+        console.error("Error submitting form:", error);
+      }
     }
   };
 
@@ -120,7 +134,7 @@ function Homebaner() {
                     )}
                   </div>
                 </Col>
-                <Col lg={3} sm={12} className="bannerform my-5 sticky-top">
+                <Col lg={3} sm={12} className="bannerform my-5  sticky-top">
                   <div className="contact-form">
                     <h2 className="py-3">CONTACT</h2>
                     <form onSubmit={handleSubmit} className="sticky-top">

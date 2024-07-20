@@ -7,10 +7,7 @@ import ResponsiveImage from '../../pages/ResponsiveImage'
 import im1 from "../../assets/img/Home/image.png"
 const Shopnow = () => {
     return (
-        // <>
-
-        //     <ResponsiveImage mobileSrc={im1} desktopSrc={im} />
-        // </>
+      
         <Container fluid className='shopnow py-sm-4 py-lg-0' >
             <Row>
                 <Col md={3} xs={12} className='d-flex mt-5 justify-content-end align-items-center ls-2'>
@@ -21,7 +18,8 @@ const Shopnow = () => {
                         <a href="" style={{ textDecoration: 'none' }}>Head Office, Nashik M-8, MIDC, Ambad, Nashik - 422010, India.</a><br />
                         <a href="tel:+91-253-6613206" style={{ textDecoration: 'none' }}>Phone: +91-253-6613206/6613218/6613214</a><br />
                         <a href="" style={{ textDecoration: 'none' }}>Mail: info@positivemetering.com</a><br />
-                        <button className=' BannerB mt-2 bg-transparent border border-2 border-danger text-white rounded-5 px-3 py-3 fw-bold fs-6' style={{ letterSpacing: "2px" }}> CONTACT US</button>
+                        <button onClick={() => window.scrollTo({ top: 2500, behavior: 'smooth' })}
+                            className=' BannerB mt-2 bg-transparent border border-2 border-danger text-white rounded-5 px-3 py-3 fw-bold fs-6' style={{ letterSpacing: "2px" }}> CONTACT US</button>
                     </div>
                 </Col>
                 <Col md={3} xs={12} className='d-none d-lg-flex align-items-end justify-content-end'>

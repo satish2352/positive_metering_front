@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import Heading from "../components/Heading";
-
+import imgmobile from "../assets/img/services/mobileview.png";
+import imgtop from "../assets/img/services/diskimg.png";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import formImg from "../assets/img/Career/image-removebg-preview (89) 1.png";
 import Image from 'react-bootstrap/Image';
 import '../assets/CSS/career.css'
+import ResponsiveImage from "./ResponsiveImage";
+
 const Career = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -82,10 +85,11 @@ const Career = () => {
   window.scrollTo(0, 0);
   return (
     <>
-      <Container fluid className=" creerback">
+      <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
+
+      <Container className=" creerback">
         <Row className="d-flex justify-content-center  py-5">
-          <Heading heading={"CAREER OPPORTUNITY"} />
-          {/* <h1     >CAREER OPPORTUNITY</h1> */}
+          <Heading heading={"career OPPORTUNITIES"} />
           <Col xs={11} mg={10} className="p-lg-5 pb-5 border-0 bg-white my-lg-5 shadow-lg">
             <Heading heading={"UPLOAD YOUR CV"} />
             <Container>
@@ -221,7 +225,7 @@ const Career = () => {
             </Container>
           </Col>
         </Row>
-        <Image src={formImg} rounded fluid  className="formImg d-none d-lg-block"/>
+        <Image src={formImg} rounded fluid className="formImg d-none d-lg-block" />
       </Container>
     </>
   );

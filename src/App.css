@@ -17,7 +17,9 @@
   text-align: center;
 }
 
-
+.dropdown-item.active, .dropdown-item:active{
+  background: transparent !important;
+}
 .headercontact {
   border: 1px solid #010101;
   border-radius: 0px 100px 100px 0px;
@@ -80,6 +82,7 @@
 
 .footertext {
   text-align: justify;
+  
 }
 
 .footerinputbox {
@@ -127,6 +130,7 @@
 .footerback {
   background: url("./assets/img/Home/image29.png");
   background-size: cover;
+  font-size: 15px;
 }
 
 .footertext {
@@ -264,4 +268,8 @@
   text-decoration: none;
   padding: 15px 20px;
   display: block;
+}
+
+.blogcrd{
+  height: 300px !important;
 }

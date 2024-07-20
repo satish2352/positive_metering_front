@@ -2,8 +2,9 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import '../../assets/CSS/shophome.css'
 import im from "../../assets/img/Home/image.png"
-
+import { useNavigate } from 'react-router-dom'
 const Shopnowhome = () => {
+    const naigate = useNavigate()
     return (
         <Container fluid className='shopnow py-sm-4 my-5 py-lg-0s'>
             <Row>
@@ -13,7 +14,7 @@ const Shopnowhome = () => {
                             data-aos-duration="1500">"Streamline Your Dispensing Process</h2>
                         <h1 className=' text-uppercase' data-aos="fade-up" data-aos-easing="linear"
                             data-aos-duration="1500">   Shop Now <span className=' fs-1'> !"</span> </h1>
-                        <button data-aos="fade-up" data-aos-easing="linear"
+                        <button onClick={()=>naigate('/career')} data-aos="fade-up" data-aos-easing="linear"
                             data-aos-duration="1500" className=' bg-transparent border border-2 border-white text-white rounded-5 px-3 py-3 fw-bold fs-6' style={{ letterSpacing: "2px" }}> CONTACT US</button>
                     </div>
 

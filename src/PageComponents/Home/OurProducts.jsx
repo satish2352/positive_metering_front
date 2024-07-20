@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../assets/CSS/mainbanner.css';
 import Slider from "react-slick";
 import { Container, Row } from 'react-bootstrap';
-
-const products = [
-  { id: 1, img: require('../../assets/img/Home/Rectangle 114 (1).png') },
-  { id: 2, img: require('../../assets/img/Home/Rectangle 114 (1).png') },
-  { id: 3, img: require('../../assets/img/Home/Rectangle 114 (1).png') },
-  { id: 4, img: require('../../assets/img/Home/Rectangle 114 (1).png') },
-  { id: 5, img: require('../../assets/img/Home/Rectangle 114 (1).png') },
-  { id: 6, img: require('../../assets/img/Home/Rectangle 114 (1).png') },
-];
+import axios from 'axios';
+import Heading from '../../components/Heading';
 
 function OurProducts() {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const response = await axios.get('testimonials/get-testimonials');
+        if (response.data.result) {
+          setProducts(response.data.responseData);
+        } else {
+          setError(response.data.message);
+        }
+      } catch (error) {
+        setError('There was an error making the request!');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchContacts();
+  }, []);
+
   const slidesToShow = 5;
   const slidesToScroll = 0;
 
@@ -57,16 +73,20 @@ function OurProducts() {
 
   return (
     <Container fluid className='my-5'>
-      <Slider {...settings}>
-        {products.map(product => (
-          <div key={product.id} className='ourprdcard d-flex justify-content-center' >
-            <h3><img src={product.img} className='img-fluid ourprdimg' alt="" /></h3>
-          </div>
-        ))}
-      </Slider>
-      <Row className='text-center'>
-        {/* <h1 className='oueprd'>OUR PRODUCTS</h1> */}
-      </Row>
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>{error}</p>
+      ) : (
+        <Slider {...settings}>
+          {products.filter(product => !product.isActive).map(product => (
+            <div key={product.id} className='ourprdcard d-flex justify-content-center'>
+              <h3><img src={product.img} className='img-fluid ourprdimg w-100 h-100' alt="" /></h3>
+            </div>
+          ))}
+        </Slider>
+      )}
+    <Heading heading="OUR PRODUCTs"></Heading>
     </Container>
   );
 }

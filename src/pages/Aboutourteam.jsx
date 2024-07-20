@@ -1,20 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import lder1 from '../assets/img/About/image 6.png';
-// import lder2 from '../assets/img/About/image 6.png';
 import Heading from '../components/Heading';
 import banner from '../assets/img/About/Rectangle 4417.png';
 
-const teamMembers = [
-  { id: 1, name: "LA. THARUNAKUMAR", title: "Chairman", image: lder1 },
-  { id: 2, name: "MS. JOTHIMONI AMMU", title: "CEO", image: lder1 },
-  { id: 3, name: "MR. RANJITH KUMAR", title: "Member", image: lder1 },
-  // Add all team members here
-];
-
 const Aboutourteam = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [teamMembers, setTeamMembers] = useState([]);
 
+  useEffect(() => {
+    const fetchTeamMembers = async () => {
+      try {
+        const response = await axios.get('http://positivebackend.sumagodemo.com/team/get-teammembers');
+        if (response.data.result) {
+          const sortedData = response.data.responseData.sort((a, b) => a.position_no - b.position_no);
+          setTeamMembers(sortedData);
+        }
+      } catch (error) {
+        console.error('Error fetching team members:', error);
+      }
+    };
+
+    fetchTeamMembers();
+  }, []);
   const handleHover = (cardId) => {
     setHoveredCard(cardId);
   };
@@ -23,47 +31,42 @@ const Aboutourteam = () => {
     setHoveredCard(null);
   };
 
-
   return (
     <>
       <Container fluid className='px-0'>
         <img src={banner} className='img-fluid' alt="Banner" />
       </Container>
-      <Container fluid style={{ background: "#F7F5EF", paddingTop:'30px' }}>
+      <Container fluid style={{ background: "#F7F5EF", paddingTop: '30px' }}>
         <Heading heading="OUR TEAM" className="py-3 " />
         <Container>
           <Row>
             {teamMembers.map(member => (
-              <Col md={4} xs={12} key={member.id} className="mb-5">
+              <Col md={4}  key={member.id} className="mb-5">
                 <Card
-                  onMouseEnter={() => handleHover(member.id)}
+                  onMouseEnter={() => handleHover(member.position_no)}
                   onMouseLeave={handleLeave}
                   className="team-card"
                 >
                   <div className="image-container">
                     <Card.Img
                       variant="top"
-                      src={member.image}
-                      className={hoveredCard === member.id ? 'colored-image' : 'black-white-image'}
-                      style={{backgroundColor:'#363636'}}
+                      src={member.img}
+                      className={hoveredCard === member.position_no ? 'colored-image' : 'black-white-image'}
+                      style={{ backgroundColor: '#363636' }}
                     />
                   </div>
                   <Card.Body className={hoveredCard === member.id ? 'd-none' : 'd-block'}>
                     <div className='px-2 py-4'>
                       <h5 className='fw-bold text-center'>{member.name}</h5>
-                      <Card.Text className=' text-center'>{member.title}</Card.Text>
+                      <Card.Text className='text-center'>{member.designation}</Card.Text>
                     </div>
                   </Card.Body>
-                  <Card.Body className={hoveredCard === member.id ? 'd-block sencodetext' : 'd-none'}>
+                  <Card.Body className={hoveredCard === member.position_no ? 'd-block sencodetext' : 'd-none'}>
                     <div className='sencodesubtext p-lg-3 text-white'>
-                      <h5 className='text-center'>Mrs. Jyotsana Mutalik</h5>
-                      <Card.Subtitle className="mb-lg-2 text-center">CEO Finance Director</Card.Subtitle>
+                      <h5 className='text-center'>{member.name}</h5>
+                      <Card.Subtitle className="mb-lg-2 text-center">{member.designation}</Card.Subtitle>
                       <Card.Text style={{ fontSize: "12px" }}>
-                        After working over the product for a few years and studying applications
-                        in various sectors,
-                        Positive Metering Pumps company was founded in 1996 for manufacturing
-                        of Chemical Dosing Pumps and
-                        Skid Mounted Chemical Dosing Systems.
+                        {member.description}
                       </Card.Text>
                     </div>
                   </Card.Body>

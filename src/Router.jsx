@@ -14,16 +14,20 @@ import Aboutourteam from './pages/Aboutourteam'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Banner from './PageComponents/Banner/Banner'
-
+import { useContext } from 'react'
 import Productlistimgs from './PageComponents/ProductComponenets/Productlistimgs'
 import Hydraulic_Diaphragm_Pumps from './PageComponents/ProductComponenets/Hydraulic_Diaphragm_Pumps'
 import Newnavbar from './components/Newnavbar'
-
+import ProductList from './PageComponents/ProductComponenets/ProductList'
+import { ProductContext } from './ProductContext'
+import Eventdetails from './pages/Eventdetails'
 const Router = () => {
+    const { blog,newevents } = useContext(ProductContext);
+
     return (
         <>
             <Header />
-            <Newnavbar/>
+            <Newnavbar />
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path="/blog" element={<Blog />} />
@@ -37,6 +41,29 @@ const Router = () => {
                 <Route path='/aboutourstory' element={<Aboutourstory />} />
                 <Route path='/aboutourteam' element={<Aboutourteam />} />
                 <Route path='/banner' element={<Banner />} />
+                <Route path='/Product/:id' element={<ProductList />} />
+                {blog.map((c) => {
+                    return (
+                        <Route
+                            key={c.title}
+                            path={`/blogdetails/${c.id}`}
+                            element={
+                                <Blogdetails title={c.shortDesc} image={c.img} longetxt={c.longDesc} />
+                            }
+                        />
+                    );
+                })}
+                 {newevents.map((c) => {
+                    return (
+                        <Route
+                            key={c.title}
+                            path={`/newevents/${c.id}`}
+                            element={
+                                <Eventdetails title={c.title} image={c.img} longetxt={c.longDesc} />
+                            }
+                        />
+                    );
+                })}
             </Routes>
             <Footer />
         </>

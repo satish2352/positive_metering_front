@@ -5,8 +5,8 @@ const Heading = ({heading}) => {
     return (
         <>
             <Container>
-                <Row className=' text-center my-4 '>
-                    <p className='oueprd text-uppercase' style={{fontFamily:'Roboto', fontSize:'64px' , lineHeight:'12px'}}>{heading}</p>
+                <Row className=' text-center'>
+                    <p className='oueprd text-uppercase' >{heading}</p>
                 </Row>
             </Container>
         </>

@@ -1,76 +1,73 @@
-import React from 'react';
-import { Container, Col } from 'react-bootstrap';
-import { FaStar } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { Container, Col, Modal, Button } from 'react-bootstrap';
+import { Rating } from 'react-simple-star-rating'; // Importing Rating component
 import Slider from 'react-slick';
 import Heading from '../../components/Heading';
-import im1 from '../../assets/img/Home/8538f65b57b894ab67325c5349657e23.png';
+import axios from 'axios';
 
 const Testomonial = () => {
-  // Testimonial data (for example)
-  const testimonials = [
-    {
-      id: 1,
-      profileImg: im1,
-      title: 'Good service',
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
-      stars: 4,
-    },
-    {
-      id: 2,
-      profileImg: im1,
-      title: 'Good service',
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
-      stars: 4,
-    },
-    {
-      id: 3,
-      profileImg: im1,
-      title: 'Good service',
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
-      stars: 4,
-    },,   {
-      id: 1,
-      profileImg: im1,
-      title: 'Good service',
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
-      stars: 4,
-    },
-    {
-      id: 2,
-      profileImg: im1,
-      title: 'Good service',
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
-      stars: 4,
-    },
-    {
-      id: 3,
-      profileImg: im1,
-      title: 'Good service',
-      content:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's",
-      stars: 4,
-    },
-    // Add more testimonials as needed
-  ];
+  const [testimonial, setTestimonial] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedTestimonial, setSelectedTestimonial] = useState(null);
+
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const response = await axios.get('testimonials/get-testimonials');
+        if (response.data.result) {
+          setTestimonial(response.data.responseData);
+        } else {
+          setError(response.data.message);
+        }
+      } catch (error) {
+        setError('There was an error making the request!');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchContacts();
+  }, []);
+
+  const handleShowModal = (testimonial) => {
+    setSelectedTestimonial(testimonial);
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setSelectedTestimonial(null);
+  };
+
+  const truncateReview = (review, limit =200) => {
+    if (review.length <= limit) return review;
+    return review.substring(0, limit) + '...';
+  };
 
   var settings = {
     infinite: false,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     initialSlide: 0,
     autoplay: true,
-    speed: 10000,
-    autoplaySpeed: 100,
-    cssEase: "linear",
+    speed:20000,
+    autoplaySpeed: 7000,
+    cssEase: 'linear',
     infinite: true,
 
     responsive: [
+      {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
       {
         breakpoint: 1024,
         settings: {
@@ -99,35 +96,61 @@ const Testomonial = () => {
   };
 
   return (
-    <Container fluid className='testomonialback py-5 text-center' style={{marginTop:'-90px'}}>
-      <Heading heading={'TESTIMONIALS'}/>
+    <Container fluid className='testomonialback py-5 text-center' style={{ marginTop: '-90px' }}>
+      <Heading heading={'TESTIMONIALS'} />
       <Slider {...settings}>
-        {testimonials.map((testimonial) => (
+        {testimonial.map((testimonial) => (
           <div key={testimonial.id} className='text-center'>
             <Col>
               <div className='profileposition'>
-                <img
-                  src={testimonial.profileImg}
-                  alt=''
-                  className='testomonialprofile img-fluid'
-                />
+                <img src={testimonial.img} alt='' className='testomonialprofile img-fluid' />
               </div>
               <div className='testback'>
                 <h1>{testimonial.title}</h1>
-                <p>{testimonial.content}</p>
-                <div className='d-flex justify-content-center'>
-                  {[...Array(testimonial.stars)].map((_, index) => (
-                    <FaStar key={index} className='star' />
-                  ))}
-                  {[...Array(5 - testimonial.stars)].map((_, index) => (
-                    <FaStar key={index + 5} className='star1' />
-                  ))}
-                </div>
+                <p>
+                  {truncateReview(testimonial.review,200)}
+                  {testimonial.review.length >200 && (
+                    <span className='read-more' onClick={() => handleShowModal(testimonial)}>
+                      ... <b>read more</b>
+                    </span>
+                  )}
+                </p>
+                <Rating
+                  iconsCount={5}
+                  initialValue={testimonial.star}
+                  size={20}
+                  readonly
+                  fillColor='orange'
+                  emptyColor='gray'
+                />
               </div>
             </Col>
           </div>
         ))}
       </Slider>
+
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>{selectedTestimonial?.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className='profileposition'>
+            <img src={selectedTestimonial?.img} alt='' className='testomonialprofile img-fluid' />
+          </div>
+          <div className='testback'>
+            <p>{selectedTestimonial?.review}</p>
+            <Rating
+              iconsCount={5}
+              initialValue={selectedTestimonial?.star}
+              size={20}
+              readonly
+              fillColor='orange'
+              emptyColor='gray'
+            />
+          </div>
+        </Modal.Body>
+       
+      </Modal>
     </Container>
   );
 };

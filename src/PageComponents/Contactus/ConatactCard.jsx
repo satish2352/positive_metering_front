@@ -1,81 +1,42 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import axios from 'axios';
 import '../../assets/CSS/cards.css';
-import im1 from '../../assets/img/Contactus/image 16 (1).png';
-import im2 from '../../assets/img/Contactus/image114.png';
-import im3 from '../../assets/img/Contactus/image 16 (3).png';
-import im4 from '../../assets/img/Contactus/image 16 (4).png';
-import im5 from '../../assets/img/Contactus/image 16 (5).png';
 import imgtop from '../../assets/img/Contactus/conatcttopimg.png';
 import imgmobile from '../../assets/img/Contactus/mobileview.png';
 import ResponsiveImage from '../../pages/ResponsiveImage';
 
-const contactDetails = [
-  {
-    id: 1,
-    img: im1,
-    title: 'Spares',
-    contactPerson: 'Ms. Kalpana Jadhav',
-    phone: '+91 9552590843',
-    email: 'support@positivemetering.com'
-  },
-  {
-    id: 2,
-    img: im2,
-    title: 'Spares',
-    contactPerson: 'Ms. Kalpana Jadhav',
-    phone: '+91 9552590843',
-    email: 'support@positivemetering.com'
-  },
-  {
-    id: 3,
-    img: im3,
-    title: 'Spares',
-    contactPerson: 'Ms. Kalpana Jadhav',
-    phone: '+91 9552590843',
-    email: 'support@positivemetering.com'
-  },
-  {
-    id: 4,
-    img: im4,
-    title: 'Spares',
-    contactPerson: 'Ms. Kalpana Jadhav',
-    phone: '+91 9552590843',
-    email: 'support@positivemetering.com'
-  },
-  {
-    id: 5,
-    img: im5,
-    title: 'Spares',
-    contactPerson: 'Ms. Kalpana Jadhav',
-    phone: '+91 9552590843',
-    email: 'support@positivemetering.com'
-  },
-  {
-    id: 6,
-    img: im1,
-    title: 'Spares',
-    contactPerson: 'Ms. Kalpana Jadhav',
-    phone: '+91 9552590843',
-    email: 'support@positivemetering.com'
-  }
-];
+const ContactCard = () => {
+  const [contactDetails, setContactDetails] = useState([]);
 
-const ConatactCard = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration
-      once: true // Whether animation should happen only once - while scrolling down
+      once: true, // Whether animation should happen only once - while scrolling down
     });
+
+    // Fetch contact details from the API
+    const fetchContactDetails = async () => {
+      try {
+        const response = await axios.get('/contactperson/get-contactpersons');
+        if (response.data.result) {
+          setContactDetails(response.data.responseData);
+        }
+      } catch (error) {
+        console.error('Error fetching contact details:', error);
+      }
+    };
+
+    fetchContactDetails();
   }, []);
 
   return (
     <>
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
 
-      <Container fluid className='caontatctcardback py-5 mb-5' style={{backgroundColor:'#EDEAEA'}}>
+      <Container fluid className='caontatctcardback py-5 mb-5' style={{ backgroundColor: '#EDEAEA' }}>
         <Row>
           {contactDetails.map((contact) => (
             <Col
@@ -93,7 +54,7 @@ const ConatactCard = () => {
               <div className='caontatctcardsubsection px-3 py-4'>
                 <h4 className='fw-bolder'>{contact.title}</h4>
                 <p className='fw-medium'>
-                  Contact Person: {contact.contactPerson}<br />
+                  Contact Person: {contact.person_name}<br />
                   Phone: {contact.phone}<br />
                   Mail: {contact.email}
                 </p>
@@ -106,4 +67,4 @@ const ConatactCard = () => {
   );
 };
 
-export default ConatactCard;
+export default ContactCard;

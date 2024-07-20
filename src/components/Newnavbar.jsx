@@ -48,7 +48,7 @@ const NewNavbar = () => {
             </NavDropdown.Item>
           </NavDropdown>
           <Nav.Link href="/product" onClick={closeNavbar}>
-            <Link className={`${getNavLinkClass('/product')} fw-bold mx-xxl-3`} to="/product">PRODUCT</Link>
+            <Link className={`${getNavLinkClass('/product')} fw-bold mx-xxl-3`} to="/Product/11">PRODUCT</Link>
           </Nav.Link>
           <Nav.Link href="/service" onClick={closeNavbar}>
             <Link className={`${getNavLinkClass('/service')} fw-bold mx-xxl-3`} to="/service">SERVICE</Link>

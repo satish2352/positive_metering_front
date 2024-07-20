@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useState,  useEffect } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import sampleImage from '../../assets/img/Contactus/Rectangle 4345.png';
 import '../../assets/CSS/aboutus.css';
 import Heading from '../../components/Heading';
+import axios from 'axios';
 
 const cardData = [
     {
@@ -42,6 +43,30 @@ const cardData = [
 ];
 
 const Ouroffices = () => {
+    const [offices, setoffices] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+  
+    useEffect(() => {
+      const fetchContacts = async () => {
+        try {
+          const response = await axios.get('office/get-offices');
+          if (response.data.result) {
+            setoffices(response.data.responseData);
+          } else {
+            setError(response.data.message);
+          }
+        } catch (error) {
+          setError('There was an error making the request!');
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchContacts();
+    }, []);
+  
     useEffect(() => {
         AOS.init({
             duration: 1000, // Animation duration
@@ -53,7 +78,7 @@ const Ouroffices = () => {
         <Container className="my-5">
             <Heading heading="OUR OFFICES" />
             <Row className=' d-flex justify-content-evenly'>
-                {cardData.map((card, index) => (
+                {offices.map((card, index) => (
                     <Col
                         key={index}
                         xs={12}
@@ -74,9 +99,9 @@ const Ouroffices = () => {
                                 <Card.Text className='px-lg-3'>
                                     {card.address}
                                     <br />
-                                    {card.tel}
+                                    {card.phone}
                                     <br />
-                                    {card.mail}
+                                    {card.email}
                                 </Card.Text>
                             </Card.Body>
                         </Card>

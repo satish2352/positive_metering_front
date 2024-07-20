@@ -60,7 +60,7 @@ const Aboutleadership = () => {
                 </Col>
                 <Col xs={12} lg={6} className='p-lg-5 p-3 d-flex align-items-center'>
                   <div >
-                    <h2 className='text-uppercase fw-bold' style={{ letterSpacing: "2px",fontFamily : 'Roboto' , fontSize:'48px' , paddingLeft:'20px'}}>
+                    <h2 className='text-uppercase fw-bold' style={{ letterSpacing: "1px",fontFamily : 'Roboto' ,  paddingLeft:'20px'}}>
                       {leader.name}
                     </h2>
                     <h4 style={{paddingLeft:'20px'}}>{leader.title}</h4>
@@ -80,7 +80,7 @@ const Aboutleadership = () => {
                 </Col>
                 <Col xs={12} lg={{ order: 'first', span: 6 }} className='p-lg-5 p-3  d-flex align-items-center'>
                   <div>
-                    <h2 className='text-uppercase fw-bold' style={{ letterSpacing: "2px",fontFamily : 'Roboto' , fontSize:'48px' , paddingLeft:'20px'}}>
+                    <h2 className='text-uppercase fw-bold' style={{ letterSpacing: "1px",fontFamily : 'Roboto' ,  paddingLeft:'20px'}}>
                       {leader.name}
                     </h2>
                     <h4 style={{paddingLeft:'20px'}}>{leader.title}</h4>

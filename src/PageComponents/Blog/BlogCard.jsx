@@ -1,52 +1,37 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import Heading from "../../components/Heading";
-import img1 from "../../assets/img/blog/Blog-Cart-img-1.png";
-import img2 from "../../assets/img/blog/Blog-Cart-img-2.png";
-import img3 from "../../assets/img/blog/Blog-Cart-img-3.png";
-import img4 from "../../assets/img/blog/Blog-Cart-img-4.png";
 import ResponsiveImage from "../../pages/ResponsiveImage";
 import imgmobile from "../../assets/img/services/mobileview.png";
 import imgtop from "../../assets/img/services/diskimg.png";
 import { useNavigate } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
-const blogData = [
-  {
-    title: "Plastic to diesel",
-    text: "Feeling Proud to contribute successfully in the first Plant in India to convert Diesel from Plastic. Dosing Pumps specially designed & manufactured by my engineers (@Positive Metering Pumps India Pvt Ltd ) for this plant established in Dehradun, India is being used for an important role. Many thanks to Technip FMC for the opportunity.",
-    img: img1,
-    bgColor: "#EE585D",
-  },
-  {
-    title: "Phosphate Dosing in propane Dehydrogenation PDH Unit integrated with Polypropylene PP Unit",
-    text: "Propylene can be produced as a by-product in the Ethylene Plants or Oil Refining processes. But the demand of Propylene is much higher as compared to the produce that is available in the above sources.",
-    img: img2,
-    bgColor: "#CDCDCD",
-  },
-  {
-    title: "Wash Filthy Water",
-    text: "We are a company into manufacturing of: 1) Chemical Dosing Pumps 2) Skid Mounted Chemical Dosing system 3) Progressive Cavity Screw Pumps 4) High-Pressure Triplex Plunger Pumps 5) Electronic Dosing Pumps 6) Stirrers / Agitators We are supplying to all the well-known EPC companies in the field of Water & Waste Water Treatment like BHEL, L&T, VA Tech ...",
-    img: img3,
-    bgColor: "#727171",
-  },
-  {
-    title: "For Sonatrach Refinery, Algeria",
-    text: "Sonatrach Refinery is the national state-owned oil company of Algeria. Founded in 1963, it is known today to be the largest company in Africa with 154 subsidiaries, and is often referred to as the first African oil “major”.",
-    img: img4,
-    bgColor: "#EE585D",
-  },
-];
+import axios from 'axios';
 
 const BlogCard = () => {
   const navigate = useNavigate();
+  const [blogData, setBlogData] = useState([]);
 
   useEffect(() => {
     AOS.init({
       duration: 1000,
       once: true,
     });
+
+    // Fetch the blog data from the API
+    const fetchBlogData = async () => {
+      try {
+        const response = await axios.get('/blogdetails/get-blogdetails');
+        if (response.data.result) {
+          setBlogData(response.data.responseData);
+        }
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+      }
+    };
+
+    fetchBlogData();
   }, []);
 
   return (
@@ -57,31 +42,28 @@ const BlogCard = () => {
         <Container fluid>
           <Row className="px-4">
             {blogData.map((blog, index) => (
-              <Col key={index} xl={3} lg={3} md={6} sm={6} className="mb-4">
+              <Col key={blog.id} xl={3} lg={3} md={6} sm={6} className="mb-4">
                 <Card className="border-0 h-100">
                   <Row
-                    className={`text-white ${index % 2 === 1 ? "flex-lg-column-reverse" : "d-lg-grid"
-                      }`}
+                    className={`text-white ${index % 2 === 1 ? "flex-lg-column-reverse" : "d-lg-grid"}`}
                   >
-                    <Col xs={12} className="pe-0 ps-0 bg-light">
+                    <Col xs={12} className="pe-0 ps-0 bg-light blogcrd">
                       <Card.Img
                         variant="top"
-                        src={blog.img}
-                        className="bg-light"
+                        src={`http://positivebackend.sumagodemo.com/${blog.img}`}
+                        className="bg-light img-fluid w-100 h-100"
                         data-aos="zoom-in"
-                         data-aos-duration="2000"
+                        data-aos-duration="2000"
                       />
                     </Col>
-                    <Col
-                      xs={12}
-                      className="ps-0"
-                      style={{ background: blog.bgColor }}
+                    <Col xs={12} className="ps-0 blogcrd"
+                      style={{ background: index % 2 === 0 ? "#EE585D" : "#CDCDCD" }}
                     >
                       <Card.Body
                         className="pt-4 pb-4 d-flex flex-column justify-content-between"
                         style={{
-                          background: blog.bgColor,
-                          minHeight: "342px",
+                          background: index % 2 === 0 ? "#EE585D" : "#CDCDCD",
+                      
                         }}
                       >
                         <div>
@@ -99,7 +81,7 @@ const BlogCard = () => {
                             className="blogCardDesc pt-3"
                             style={{ fontSize: "0.85rem" }}
                           >
-                            {blog.text}
+                            {blog.shortDesc}
                           </Card.Text>
                         </div>
                         <div className="d-flex justify-content-start">
@@ -110,7 +92,7 @@ const BlogCard = () => {
                               border: "3px solid white",
                               borderRadius: "30px",
                             }}
-                            onClick={() => navigate('/blogdetails')}
+                            onClick={() => navigate(`/blogdetails/${blog.id}`)}
                           >
                             Read More
                           </Button>
