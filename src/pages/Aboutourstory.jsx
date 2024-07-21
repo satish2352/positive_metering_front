@@ -11,7 +11,7 @@ const Aboutourstory = () => {
   window.scrollTo(0, 0);
   return (
     <>
-    <Heading heading="Our story"/>
+    <Heading  heading="Our story"/>
     
       <Container fluid className=' px-0'>
         <img src={banner} alt="" className=' img-fluid'/>

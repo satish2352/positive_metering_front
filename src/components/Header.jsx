@@ -56,7 +56,7 @@ const Header = () => {
         <Row className='d-flex justify-content-between my-2'>
           {loading ? (
             <p>Loading contacts...</p>
-          )  : (
+          ) : (
             <>
               <Col xs={4} lg={2} className="headercontact d-flex justify-content-evenly p-2 ps-lg-5">
                 <FiPhone className='callicon' />
@@ -81,15 +81,15 @@ const Header = () => {
                 </Nav.Link>
                 <NavDropdown title="ABOUT" className='fw-bold mx-xxl-3 text-black' id="collapsible-nav-dropdown">
                   <NavDropdown.Item className='py-0 dropdown-menu-btn' >
-                  <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/aboutleadership')} fw-bold mx-xxl-3`} to="/aboutleadership">  <strong>LEADERSHIP</strong> <hr className='m-2 border-2' /></Link>
-                  
+                    <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/aboutleadership')} fw-bold mx-xxl-3`} to="/aboutleadership">  <strong>LEADERSHIP</strong> <hr className='m-2 border-2' /></Link>
+
                   </NavDropdown.Item>
                   <NavDropdown.Item className='py-0 dropdown-menu-btn' to="/aboutourstory">
-                  <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/aboutourstory')} fw-bold mx-xxl-3`} to="/aboutourstory">  <strong>OUR STORY</strong> <hr className='m-2 border-2' /></Link>
+                    <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/aboutourstory')} fw-bold mx-xxl-3`} to="/aboutourstory">  <strong>OUR STORY</strong> <hr className='m-2 border-2' /></Link>
 
                   </NavDropdown.Item>
                   <NavDropdown.Item className='py-0 dropdown-menu-btn' to="/aboutourteam">
-                  <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/aboutourteam')} fw-bold mx-xxl-3`} to="/aboutourteam">  <strong>OUR TEAM</strong> <hr className='m-2 border-2' /></Link>
+                    <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/aboutourteam')} fw-bold mx-xxl-3`} to="/aboutourteam">  <strong>OUR TEAM</strong> <hr className='m-2 border-2' /></Link>
 
                   </NavDropdown.Item>
                 </NavDropdown>
@@ -106,7 +106,7 @@ const Header = () => {
               <img
                 src={logo}
                 alt="Positive logo"
-                className={`header-logo mt-md-2 ${isFixed ? 'small-logo' : ''}`}
+                className={`header-logo mt-md-2 ${isFixed ? 'small-logo ms-4 mb-2' : ''}`}
               />
               <Nav className="me-auto">
                 <Nav.Link>

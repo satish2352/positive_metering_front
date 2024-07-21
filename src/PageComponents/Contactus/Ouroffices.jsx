@@ -89,10 +89,10 @@ const Ouroffices = () => {
                         data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
                         data-aos-easing="ease-out-cubic"
-                        data-aos-duration="2000"
+                        data-aos-duration="500"
                     >
                         <Card className="h-100 rounded-4 infrastructurecard border-bottom border-3 border-danger border-end-0 border-top-0 border-start-0">
-                            <Card.Img variant="top" src={card.img} alt={card.title} className=' rounded-4' />
+                            <Card.Img variant="top" src={card.img} alt={card.title} className=' rounded-4 w-100 h-100' />
                             <Card.Body className=' pb-4'>
                                 <Card.Title className=' fw-bolder fs-4'>{card.title}</Card.Title>
                                 <Card.Text className='px-lg-3'>

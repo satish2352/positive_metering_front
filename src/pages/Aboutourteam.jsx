@@ -11,7 +11,7 @@ const Aboutourteam = () => {
   useEffect(() => {
     const fetchTeamMembers = async () => {
       try {
-        const response = await axios.get('http://positivebackend.sumagodemo.com/team/get-teammembers');
+        const response = await axios.get('/team/get-teammembers');
         if (response.data.result) {
           const sortedData = response.data.responseData.sort((a, b) => a.position_no - b.position_no);
           setTeamMembers(sortedData);
@@ -23,6 +23,7 @@ const Aboutourteam = () => {
 
     fetchTeamMembers();
   }, []);
+
   const handleHover = (cardId) => {
     setHoveredCard(cardId);
   };
@@ -41,28 +42,28 @@ const Aboutourteam = () => {
         <Container>
           <Row>
             {teamMembers.map(member => (
-              <Col md={4}  key={member.id} className="mb-5">
+              <Col md={4} key={member.id} className="mb-5">
                 <Card
                   onMouseEnter={() => handleHover(member.position_no)}
                   onMouseLeave={handleLeave}
                   className="team-card"
                 >
                   <div className="image-container">
-                    <Card.Img
+                    <img
                       variant="top"
                       src={member.img}
-                      className={hoveredCard === member.position_no ? 'colored-image' : 'black-white-image'}
+                      className={hoveredCard === member.position_no ? 'colored-image teamimg' : 'black-white-image teamimg'}
                       style={{ backgroundColor: '#363636' }}
                     />
                   </div>
-                  <Card.Body className={hoveredCard === member.id ? 'd-none' : 'd-block'}>
+                  <Card.Body className={hoveredCard === member.position_no ? 'd-none' : 'd-block'}>
                     <div className='px-2 py-4'>
                       <h5 className='fw-bold text-center'>{member.name}</h5>
                       <Card.Text className='text-center'>{member.designation}</Card.Text>
                     </div>
                   </Card.Body>
                   <Card.Body className={hoveredCard === member.position_no ? 'd-block sencodetext' : 'd-none'}>
-                    <div className='sencodesubtext p-lg-3 text-white'>
+                    <div className='sencodesubtext p-lg-3 p-2 text-white'>
                       <h5 className='text-center'>{member.name}</h5>
                       <Card.Subtitle className="mb-lg-2 text-center">{member.designation}</Card.Subtitle>
                       <Card.Text style={{ fontSize: "12px" }}>

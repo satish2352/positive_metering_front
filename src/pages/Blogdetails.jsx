@@ -95,22 +95,22 @@ function MyVerticallyCenteredModal(props) {
     <Modal
       {...props}
       centered
+      closeButton
+      
     >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Get A Quote Form
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
+      
+      <Modal.Body className=" getquoteformback">
 
-        <form onSubmit={handleSubmit} className=" d-grid p-lg-5">
+        <form onSubmit={handleSubmit} className=" formbacks d-grid p-lg-5">
           <input
             type="text"
             name="fullName"
+            className="bannerinp ms-2"
             placeholder="Full name"
             value={fullname}
             onChange={(e) => setfullname(e.target.value)}
             required
+            
           />
           {errors.fullname && (
             <span className="error text-danger">{errors.fullname}</span>
@@ -118,6 +118,7 @@ function MyVerticallyCenteredModal(props) {
           <input
             type="email"
             name="email"
+             className="bannerinp ms-2"
             placeholder="Email Address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -130,6 +131,7 @@ function MyVerticallyCenteredModal(props) {
             type="tel"
             name="mobileNumber"
             placeholder="Mobile Number"
+             className="bannerinp ms-2"
             value={mobile}
             onChange={(e) => setmobile(e.target.value)}
             required
@@ -141,6 +143,7 @@ function MyVerticallyCenteredModal(props) {
             name="message"
             placeholder="Message"
             value={message}
+            className="bannertxtarea ps-3"
             onChange={(e) => setmessage(e.target.value)}
             required
           />
@@ -149,7 +152,7 @@ function MyVerticallyCenteredModal(props) {
           )}
           <button
             type="submit"
-            className="bannerbtn px-5 py-2 m-3 me-4 float-end"
+            className="bannerbtn  w-50 py-2 m-3 me-4 float-end"
           >
             SEND
           </button>
@@ -172,7 +175,7 @@ function Blogdetails({ image, title, longetxt }) {
       <Container className="mt-3" heading={"Blog"}>
         <Row>
           <Col lg={8} md={8} sm={12}>
-            <Image src={`http://positivebackend.sumagodemo.com/${image}`} height={"500rem"} fluid />
+            <Image src={`http://positivebackend.sumagodemo.com/${image}`} className="blogdetailimg" fluid />
           </Col>
           <Col lg={4} md={4} sm={12} className=" d-none d-lg-block">
             <Image
@@ -196,9 +199,9 @@ function Blogdetails({ image, title, longetxt }) {
           </Col>
         </Row>
         <div className="mt-3"></div>
-        <h1>
+        <h5>
           {title}
-        </h1>
+        </h5>
       </Container>
       <div className="mt-3"></div>
       <Container>

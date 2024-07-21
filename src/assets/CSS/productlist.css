@@ -70,7 +70,13 @@
     background-color:#E84C52;
     color: white;
     border-radius: 0px 50px 0px ;
+    box-shadow: 8px 8px 20px 9px #00000040;
+
 }
 .product-list-item-selected {
     font-weight: bold;
+}
+.prdimgs{
+    background-image: url('../img//productimgs/image\ 7.png');
+    background-size: cover;
 }

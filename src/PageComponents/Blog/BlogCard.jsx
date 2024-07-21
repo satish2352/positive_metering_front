@@ -12,6 +12,7 @@ import axios from 'axios';
 const BlogCard = () => {
   const navigate = useNavigate();
   const [blogData, setBlogData] = useState([]);
+  const characterLimit = 200; // Set your character limit here
 
   useEffect(() => {
     AOS.init({
@@ -24,7 +25,13 @@ const BlogCard = () => {
       try {
         const response = await axios.get('/blogdetails/get-blogdetails');
         if (response.data.result) {
-          setBlogData(response.data.responseData);
+          const truncatedData = response.data.responseData.map(blog => ({
+            ...blog,
+            shortDesc: blog.shortDesc.length > characterLimit
+              ? blog.shortDesc.substring(0, characterLimit) + '...'
+              : blog.shortDesc
+          }));
+          setBlogData(truncatedData);
         }
       } catch (error) {
         console.error("Error fetching blog data:", error);
@@ -60,7 +67,7 @@ const BlogCard = () => {
                       style={{ background: index % 2 === 0 ? "#EE585D" : "#CDCDCD" }}
                     >
                       <Card.Body
-                        className="pt-4 pb-4 d-flex flex-column justify-content-between"
+                        className="pt-4 pb-3 d-flex flex-column justify-content-between"
                         style={{
                           background: index % 2 === 0 ? "#EE585D" : "#CDCDCD",
                       
@@ -84,10 +91,10 @@ const BlogCard = () => {
                             {blog.shortDesc}
                           </Card.Text>
                         </div>
-                        <div className="d-flex justify-content-start">
+                        <div className="d-flex justify-content-start ">
                           <Button
                             variant="transparent"
-                            className="text-white py-2 mt-xl-3 align-self-end fw-bolder"
+                            className="text-white py-2 mt-xl-3 align-self-end fw-bolder "
                             style={{
                               border: "3px solid white",
                               borderRadius: "30px",
