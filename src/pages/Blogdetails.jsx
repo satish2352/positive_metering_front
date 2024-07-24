@@ -205,7 +205,7 @@ function Blogdetails({ image, title, longetxt }) {
       </Container>
       <div className="mt-3"></div>
       <Container>
-        {longetxt}
+        <div  dangerouslySetInnerHTML={{ __html: longetxt }}></div>
       </Container>
       <div className="mb-5"></div>
     </>

@@ -6,10 +6,10 @@ import "slick-carousel/slick/slick-theme.css";
 import Router from './Router';
 import axios from 'axios';
 function App() {
-  axios.defaults.baseURL = 'http://positivebackend.sumagodemo.com/';
+  axios.defaults.baseURL = 'https://positivebackend.sumagodemo.com/';
   return (
     <>
-     <Router/>
+      <Router />
     </>
   );
 }

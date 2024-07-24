@@ -108,11 +108,10 @@ const ProductList = () => {
                                         />
                                     </div>
                                     <h1 className='p-2'>Application</h1>
-                                    <ul>
-                                        <li style={{ fontSize: '17px', fontFamily: 'Poppins' }}>
-                                            <p>{productDetails.application}</p>
-                                        </li>
-                                    </ul>
+                                    <div
+                                        style={{ fontSize: '17px', fontFamily: 'Poppins' }}
+                                        dangerouslySetInnerHTML={{ __html: productDetails.application }}
+                                    ></div>
                                 </>
                             )}
                         </div>
@@ -161,18 +160,23 @@ const ProductList = () => {
                                 <Container className="d-flex justify-content-center">
                                     <Col lg={8}>
                                         {technicalData.map(data => (
-                                            <li key={data.id}>{data.technicalDescription}</li>
+                                            <div key={data.id} dangerouslySetInnerHTML={{ __html: data.technicalDescription }}></div>
                                         ))}
                                     </Col>
+
                                 </Container>
                             </Tab.Pane>
                             <Tab.Pane eventKey="OPTION">
                                 <h1 className="tableheadstyle text-center pt-5 pb-3">OPTION</h1>
                                 <Container>
                                     <Row className="d-flex justify-content-center">
-                                        <Col lg={8}>{optionsData.map(data => (
-                                            <li key={data.id}>{data.optionsDescription}</li>
-                                        ))}</Col>
+
+                                        <Col lg={8}>
+                                            {optionsData.map(data => (
+                                                <div key={data.id} dangerouslySetInnerHTML={{ __html: data.optionsDescription }}></div>
+                                            ))}
+                                        </Col>
+
                                     </Row>
                                 </Container>
                             </Tab.Pane>
@@ -182,9 +186,13 @@ const ProductList = () => {
                                 </h1>
                                 <Container>
                                     <Row className="d-flex justify-content-center">
-                                        <Col lg={8}>{materialData.map(data => (
-                                            <li key={data.id}>{data.materialDescription}</li>
-                                        ))}</Col>
+
+
+                                        <Col lg={8}>
+                                            {materialData.map(data => (
+                                                <div key={data.id} dangerouslySetInnerHTML={{ __html: data.materialDescription }}></div>
+                                            ))}
+                                        </Col>
                                     </Row>
                                 </Container>
                             </Tab.Pane>
