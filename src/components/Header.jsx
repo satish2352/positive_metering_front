@@ -53,7 +53,7 @@ const Header = () => {
   return (
     <div className='d-none d-lg-block'>
       <Container fluid>
-        <Row className='d-flex justify-content-between my-2'>
+        <Row className='d-flex justify-content-between mt-1'>
           {loading ? (
             <p>Loading contacts...</p>
           ) : (
@@ -71,9 +71,9 @@ const Header = () => {
           )}
         </Row>
       </Container>
-      <div className={`header-wrapper ${isFixed ? 'fixed hedershadow' : ''}`}>
+      <div className={`header-wrapper ${isFixed ? 'fixed hedershadow ' : 'navbarspacing '}`}>
         <Navbar collapseOnSelect expand="lg">
-          <Container>
+         
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className={`ms-auto ${isFixed ? '' : 'pe-5'}`}>
                 <Nav.Link href="/">
@@ -110,7 +110,7 @@ const Header = () => {
               />
               <Nav className="me-auto">
                 <Nav.Link>
-                  <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/news-event')} fw-bold`} to="/news-event">NEWS & EVENT</Link>
+                  <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/news-event')} fw-bold  ${isFixed ? 'ps-3' : ' '}`} to="/news-event">NEWS & EVENT</Link>
                 </Nav.Link>
                 <Nav.Link >
                   <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/career')} fw-bold mx-xxl-3`} to="/career">CAREER</Link>
@@ -120,10 +120,9 @@ const Header = () => {
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>
-          </Container>
+        
         </Navbar>
       </div>
-      <hr />
     </div>
   );
 };

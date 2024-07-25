@@ -101,7 +101,7 @@ const Testomonial = () => {
       <Slider {...settings}>
         {testimonial.map((testimonial) => (
           <div key={testimonial.id} className='text-center'>
-            <Col>
+            <Col style={{ marginTop: '-50px' }}>
               <div className='profileposition'>
                 <img src={testimonial.img} alt='' className='testomonialprofile img-fluid' />
               </div>

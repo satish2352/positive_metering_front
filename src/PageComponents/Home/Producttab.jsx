@@ -21,30 +21,44 @@ const ProductTab = () => {
   const handleTabClick = (id) => {
     setActiveTab(id);
   };
+  const slidesToShow = 4;
+  const slidesToScroll = 3;
 
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 3,
+    slidesToShow: slidesToShow,
+    slidesToScroll: slidesToScroll,
     autoplay: true,
     autoplaySpeed: 2000,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1400,
         settings: {
-          slidesToShow: 2,
-        },
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
       },
       {
-        breakpoint: 768,
+        breakpoint: 600,
         settings: {
           slidesToShow: 2,
-        },
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
       },
-    ],
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
-
+ 
   const activeProduct = products.find((product) => product.id === activeTab);
 
   return (

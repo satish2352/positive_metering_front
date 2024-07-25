@@ -87,11 +87,11 @@ const Career = () => {
     <>
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
 
-      <Container className=" creerback">
+      <Container fluid className=" creerback">
         <Row className="d-flex justify-content-center  py-5">
           <Heading heading={"career OPPORTUNITIES"} />
-          <Col xs={11} mg={10} className="p-lg-5 pb-5 border-0 bg-white my-lg-5 shadow-lg">
-            <Heading heading={"UPLOAD YOUR CV"} />
+          <Col xs={9} mg={10} className="p-lg-5 pb-5 border-0 bg-white my-lg-5 shadow-lg">
+            <h4 className=" text-center upcv" > UPLOAD YOUR CV</h4>
             <Container>
               <Form onSubmit={handleSubmit}>
                 <Row className="">

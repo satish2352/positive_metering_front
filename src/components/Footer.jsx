@@ -116,7 +116,7 @@ const Footer = () => {
           </Col>
 
           <Col xs={12} md={4} lg={2} className="mx-lg-3">
-            <h5 className=" fw-bold">Company</h5>
+            <h5 className=" fw-bold mb-lg-5">Company</h5>
             <ul className="list-unstyled lh-lg">
               <li>
                 <Link
@@ -183,13 +183,13 @@ const Footer = () => {
 
             <Row>
               <Col xs={12} md={6} lg={6} className="mx-lg-3x pt-5 pt-lg-0">
-                <h5 className=" fw-bold" style={{ marginTop: '-30px' }}>Product</h5>
+                <h5 className=" fw-bold mb-lg-5" >Product</h5>
                 <ul className="list-unstyled lh-lg">
                   {
                     firstHalf.map((a) => {
                       return (
                         <>
-                          <li>
+                          <li className="pt-1">
                             <Link
                               onClick={() => window.scrollTo(0, 500)}
                               to={`/Product/${a.id}`}
@@ -207,13 +207,13 @@ const Footer = () => {
                 </ul>
               </Col>
               <Col xs={12} md={6} lg={6} className="mx-lg-3x">
-
+              <h5 className=" fw-bold mb-lg-5 d-none d-lg-block" >Product</h5>
                 <ul className="list-unstyled lh-lg">
                   {
                     secondHalf.map((a) => {
                       return (
                         <>
-                          <li>
+                          <li className="pt-1">
                             <Link
                               onClick={() => window.scrollTo(0, 500)}
                               to={`/Product/${a.id}`}
@@ -236,13 +236,13 @@ const Footer = () => {
           <Col
             xs={12}
             lg={6}
-            className="text-center d-flex justify-content-evenly align-items-cente"
-          > <p>
+            className="text-center d-flex justify-content-evenly align-items-center"
+          > <div>
               <a href="https://www.sumagoinfotech.com/" className="smglink">
                 &copy; {currentYear} Copyright :{" "}
-                <ins className="smglink"> Made with Passion by Sumago Infotech</ins>{" "}
+                <ins className=""> Made with Passion by Sumago Infotech</ins>{" "}
               </a>
-            </p>
+            </div>
           </Col>
           <Col xs={12} lg={6}>
             <div className=" text-center d-grid d-lg-flex justify-content-center align-items-center">

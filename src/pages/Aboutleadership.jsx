@@ -1,4 +1,4 @@
-import React ,{useEffect}from 'react';
+import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../assets/CSS/aboutus.css';
 import banner from '../assets/img/About/Rectangle 4417.png';
@@ -57,17 +57,17 @@ const Aboutleadership = () => {
       <Container fluid className='px-0'>
         <ResponsiveImage mobileSrc={banner} desktopSrc={banner} />
       </Container>
-      <Container fluid className='leadershippara mt-1'>
+      <Container fluid className=' mt-1'>
         {leadershipData.map((leader, index) => (
-          <Row key={index} className='mb-5 mb-lg-0'>
+          <Row key={index} className='mb-5 mb-lg-0 my-3 leadershippara'>
             {index % 2 === 0 ? (
               <>
-                <Col xs={12} lg={6} className='px-0' data-aos="fade-right" data-aos-anchor-placement="center-bottom"
+                <Col xs={12} lg={6} className='px-0 ' data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                   data-aos-easing="ease-out-cubic"
                   data-aos-duration="2000">
                   <img src={leader.imgSrc} className='img-fluid' alt={leader.name} />
                 </Col>
-                <Col xs={12} lg={6} className='p-lg-5 p-3 d-flex align-items-center' data-aos="fade-left" data-aos-anchor-placement="center-bottom"
+                <Col xs={12} lg={6} className='p-lg-5 p-3 d-flex align-items-center' data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                   data-aos-easing="ease-out-cubic"
                   data-aos-duration="2000">
                   <div >
@@ -75,7 +75,7 @@ const Aboutleadership = () => {
                       {leader.name}
                     </h2>
                     <h4 style={{ paddingLeft: '20px' }}>{leader.title}</h4>
-                    <p className='fw-medium lh-base' style={{ fontFamily: 'Roboto', textAlign: 'justify', paddingLeft: '20px', paddingRight: '20px' }}>{leader.description}</p>
+                    <p className='fw-medium lh-base' style={{ fontFamily: 'Roboto', textAlign: 'justify', paddingLeft: '20px', paddingup: '20px' }}>{leader.description}</p>
                     <div style={{ paddingLeft: '20px' }}>
                       <FaFacebook className='fs-1 mx-2' />
                       <FaInstagram className='fs-1 mx-2' />
@@ -86,12 +86,12 @@ const Aboutleadership = () => {
               </>
             ) : (
               <>
-                <Col xs={12} lg={{ order: 'last', span: 6 }} className='px-0' data-aos="fade-left" data-aos-anchor-placement="center-bottom"
+                <Col xs={12} lg={{ order: 'last', span: 6 }} className='px-0' data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                   data-aos-easing="ease-out-cubic"
                   data-aos-duration="2000">
                   <img src={leader.imgSrc} className='img-fluid' alt={leader.name} />
                 </Col>
-                <Col xs={12} lg={{ order: 'first', span: 6 }} className='p-lg-5 p-3  d-flex align-items-center'data-aos="fade-right" data-aos-anchor-placement="center-bottom"
+                <Col xs={12} lg={{ order: 'first', span: 6 }} className='p-lg-5 p-3  d-flex align-items-center' data-aos="fade-up" data-aos-anchor-placement="center-bottom"
                   data-aos-easing="ease-out-cubic"
                   data-aos-duration="2000">
                   <div>
@@ -99,7 +99,7 @@ const Aboutleadership = () => {
                       {leader.name}
                     </h2>
                     <h4 style={{ paddingLeft: '20px' }}>{leader.title}</h4>
-                    <p className='fw-medium lh-base' style={{ fontFamily: 'Roboto', textAlign: 'justify', paddingLeft: '20px', paddingRight: '20px' }}>{leader.description}</p>
+                    <p className='fw-medium lh-base' style={{ fontFamily: 'Roboto', textAlign: 'justify', paddingLeft: '20px', paddingup: '20px' }}>{leader.description}</p>
                     <div style={{ paddingLeft: '20px' }}>
                       <FaFacebook className='fs-1 mx-2' />
                       <FaInstagram className='fs-1 mx-2' />

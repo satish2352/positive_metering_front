@@ -14,21 +14,25 @@
     position: static;
 }
 
-@media (max-width: 567px) {
+@media (max-width: 700px) {
     .carsimg {
         height: 400px !important;
     }
-
     .homebannertext {
         background: transparent !important;
         text-align: left;
-        position: relative;
-        top: 450px;
-        padding: 10px !important;
-        padding-right: 0px !important;
-
-
+        position: static !important;
+        top: 0px !important;
+        padding: 0px !important;
+        /* padding-right: 190px; */
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+    
     }
+    .bannerform {
+        display: none!important;
+    }
+    
 }
 
 .homebannerback2 {
@@ -39,18 +43,19 @@
     background-size: contain;
 }
 
+
+
 .homebannertext {
     background: linear-gradient(to left, rgba(238, 88, 93, 0) 0%, rgba(238, 88, 93, 0.2) 18.61%, rgba(238, 88, 93, 0.814196) 61.08%, #EE585D 81.38%);
     text-align: left;
     position: relative;
-    top: 450px;
+    top: 490px;
     padding: 50px;
     padding-right: 190px;
-
+    margin-right: -200px;
+    margin-left: 100px;
 
 }
-
-
 
 
 
@@ -60,11 +65,71 @@
     border: 3px solid white;
     width: 300px;
     position: relative;
-    left: 790px;
+    left: 85%;
     top: 10px;
 }
 
+@media screen and (min-width: 1400px) {
+    .bannerform {
+        background: transparent;
+        color: white;
+        border: 3px solid white;
+        width: 400px;
+        position: relative;
+        left: 85%;
+        top: 10px;
+    } 
+    .bannerinp {
 
+        width: 300px !important;
+    
+        padding-bottom: 20px;
+        padding-top: 20px;
+        font-size: 1.2rem !important;
+        font-weight: 400;
+        line-height: 1.5;
+        color: white !important;
+    
+        background-color: transparent !important;
+        background-clip: padding-box;
+        border-bottom: 1px solid white !important;
+        border-radius: 0px !important;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+        height: 70px !important;
+    
+    }
+    .bannertxtarea {
+        display: block;
+        width: 300px !important;
+        margin-left: 40px !important;
+        padding: 5px;
+        margin-top: 25px;
+        font-size: 1.2rem !important;
+        font-weight: 400;
+        line-height: 1.5;
+        color: white !important;
+    
+        background-color: transparent !important;
+        background-clip: padding-box;
+        border: 1px solid white !important;
+        border-radius: 0px !important;
+        height: 100px;
+    }
+    .homebannertext {
+        background: linear-gradient(to left, rgba(238, 88, 93, 0) 0%, rgba(238, 88, 93, 0.2) 18.61%, rgba(238, 88, 93, 0.814196) 61.08%, #EE585D 81.38%);
+        text-align: left;
+        position: relative;
+        top: 580px;
+        padding: 50px;
+        padding-right: 190px;
+        font-size: 20px;
+        margin-right: -200px;
+        margin-left: 200px;
+    
+    }
+}
 
 .bannerform2 {
     background: transparent;
@@ -90,7 +155,7 @@
     border-top: none !important;
     border-left: none !important;
     border-right: none !important;
-    height: 40px !important;
+    height: 40px ;
 
 }
 

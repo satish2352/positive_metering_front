@@ -54,7 +54,7 @@
     .shopnow {
         background: url('../../assets/img/Home/image112.png');
 
-        height: 450px;
+        height: 500px;
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -74,7 +74,7 @@
 
     .bannerH {
         position: relative;
-        right: 100px;
+        /* right: 100px; */
         padding-top: 10px;
         text-align: center;
 

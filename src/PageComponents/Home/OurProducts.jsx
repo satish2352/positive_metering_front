@@ -13,7 +13,7 @@ function OurProducts() {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axios.get('testimonials/get-testimonials');
+        const response = await axios.get('homeslider/get-homeslider');
         if (response.data.result) {
           setProducts(response.data.responseData);
         } else {
@@ -45,7 +45,7 @@ function OurProducts() {
     cssEase: "linear",
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1400,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
@@ -72,7 +72,7 @@ function OurProducts() {
   };
 
   return (
-    <Container fluid className='my-5'>
+    <Container fluid className='my-5 py-lg-5'>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
@@ -80,13 +80,12 @@ function OurProducts() {
       ) : (
         <Slider {...settings}>
           {products.filter(product => !product.isActive).map(product => (
-            <div key={product.id} className='ourprdcard d-flex justify-content-center'>
-              <h3><img src={product.img} className='img-fluid ourprdimg w-100 h-100' alt="" /></h3>
+            <div key={product.id} className='ourprdcard d-flex justify-content-center p-4'>
+             <img src={product.img} className='img-fluid ourprdimg w-100 h-100' alt="" />
             </div>
           ))}
         </Slider>
       )}
-    <Heading heading="OUR PRODUCTs"></Heading>
     </Container>
   );
 }

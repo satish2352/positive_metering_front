@@ -37,7 +37,7 @@ const Aboutourteam = () => {
       <Container fluid className='px-0'>
         <img src={banner} className='img-fluid' alt="Banner" />
       </Container>
-      <Container fluid style={{ background: "#F7F5EF", paddingTop: '30px' }}>
+      <Container fluid style={{ background: "#F7F5EF", paddingTop: '30px' }} className='pb-lg-5'>
         <Heading heading="OUR TEAM" className="py-3 " />
         <Container>
           <Row>

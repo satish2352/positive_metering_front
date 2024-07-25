@@ -73,7 +73,7 @@ const ProductList = () => {
         <>
             <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
 
-            <Container className='py-4'>
+            <Container fluid className='py-4 px-lg-5'>
                 <Row>
                     <Col lg={4}>
                         <Container className='produclistbox'>
@@ -121,7 +121,7 @@ const ProductList = () => {
 
             <ProductTab />
 
-            <Container fluid className="productTechnicaldata mb-4">
+            <Container fluid className="productTechnicaldata mt-5 mb-4">
                 <Tab.Container id="left-tabs-example" defaultActiveKey="TECHNICAL">
                     <Container>
                         <Col>

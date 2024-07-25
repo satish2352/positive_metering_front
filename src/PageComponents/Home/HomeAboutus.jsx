@@ -14,7 +14,7 @@ const HomeAboutus = () => {
   }, []);
 
   return (
-    <Container fluid className='mt-2'>
+    <Container fluid className='mt-5'>
       <Row>
         <Col
           lg={6}
@@ -33,7 +33,7 @@ const HomeAboutus = () => {
           <div className='p-lg-5 py-4' data-aos="fade-up" data-aos-easing="linear"
             data-aos-duration="1500" style={{ textAlign: 'justify' }}>
             <h1 style={{ letterSpacing: '4px'}}>ABOUT US</h1>
-            <p style={{ fontSize: '12px' }}>
+            <p style={{ fontSize: '15px' }}>
               The Founder of our company Mr. Sudhir Mutalik is a passionate
               mechanical engineer graduated from the reputed Government
               College of Engineering, Karad near Pune, India. Diesel Engines
@@ -47,15 +47,7 @@ const HomeAboutus = () => {
               mechanical engineer graduated from the reputed Government
               College of Engineering, Karad near Pune, India. Diesel Engines
               has been his interest for study since his university days.
-              He was selected by the world's well-known Diesel Engine
-              kid Mounted Chemical Dosing Systems.
-              With a vision to "Simplify Chemical Treatments in the world"
-              after 25 years today Positive Metering Pumps (I) Pvt Ltd has
-              done more than 125,000 installations of various products in
-              With a vision to "Simplify Chemical Treatments in the world"
-              after 25 years today Positive Metering Pumps (I) Pvt Ltd has
-              done more than 125,000 installations of various products in
-              The Founder of our company Mr. Sudhir Mutalik is a passionate
+             
 
             </p>
           </div>

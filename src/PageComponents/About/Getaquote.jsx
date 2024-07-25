@@ -14,7 +14,7 @@ const Getaquote = () => {
       };
     return (
         <>
-            <Container fluid className=' my-1 my-lg-0' style={{position:"relative"}}>
+            <Container fluid className=' my-1 mt-2 my-lg-0' style={{position:"relative"}}>
                 <Row className=' getaquoteback'>
                     <Col lg={3} className=' d-none d-lg-block'>
                         <img src={im} className=' img-fluid h-50' alt="" />

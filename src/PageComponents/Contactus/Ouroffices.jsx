@@ -75,7 +75,7 @@ const Ouroffices = () => {
     }, []);
 
     return (
-        <Container className="my-5">
+        <Container className="my-lg-2 my-5">
             <Heading heading="OUR OFFICES" />
             <Row className=' d-flex justify-content-evenly'>
                 {offices.map((card, index) => (
@@ -85,7 +85,7 @@ const Ouroffices = () => {
                         sm={12}
                         md={6}
                         lg={6}
-                        className="mb-4 rounded-4 p-lg-4 text-center"
+                        className=" rounded-4 p-lg-4 text-center"
                         data-aos="fade-up"
                         data-aos-anchor-placement="center-bottom"
                         data-aos-easing="ease-out-cubic"
