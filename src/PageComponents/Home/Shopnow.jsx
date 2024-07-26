@@ -11,13 +11,13 @@ const Shopnow = () => {
         <Container fluid className='shopnow py-sm-4 py-lg-0' >
             <Row>
                 <Col md={3} xs={12} className='d-flex mt-5 justify-content-end align-items-center ls-2'>
-                    <h1 className='bannerH text-center' style={{ letterSpacing: '3px' }}>ADDRESS</h1>
+                    <h2 className='bannerH text-center' style={{ letterSpacing: '3px' }}>ADDRESS</h2>
                 </Col>
                 <Col md={6} xs={12} className=' justify-content-start d-flex text-center text-lg-start '>
-                    <div className=' align-content-center fs-5 mt-4  BannerT'>
-                        <a href="" style={{ textDecoration: 'none' }}>Head Office, Nashik M-8, MIDC, Ambad, Nashik - 422010, India.</a><br />
-                        <a href="tel:+91-253-6613206" style={{ textDecoration: 'none' }}>Phone: +91-253-6613206/6613218/6613214</a><br />
-                        <a href="" style={{ textDecoration: 'none' }}>Mail: info@positivemetering.com</a><br />
+                    <div className=' align-content-center  mt-4  BannerT'>
+                        <a href="" className='BannerT ' style={{ textDecoration: 'none' }}>Head Office, Nashik M-8, MIDC, Ambad, Nashik - 422010, India.</a><br />
+                        <a href="tel:+91-253-6613206" className='BannerT ' style={{ textDecoration: 'none' }}>Phone: +91-253-6613206/6613218/6613214</a><br />
+                        <a href="" className='BannerT ' style={{ textDecoration: 'none' }}>Mail: info@positivemetering.com</a><br />
                         <button onClick={() => window.scrollTo({ top: 2500, behavior: 'smooth' })}
                             className=' BannerB mt-2 bg-transparent border border-4 border-danger text-white rounded-5 px-3 py-3 fw-bold fs-5' style={{ letterSpacing: "2px" }}> CONTACT US</button>
                     </div>

@@ -16,3 +16,6 @@
     border: 1px solid rgb(0, 0, 0) !important 
 
  }
+ .nav-pills .nav-link{
+border-radius: 0px !important;
+ }

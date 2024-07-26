@@ -63,38 +63,40 @@ const Footer = () => {
             md={10}
             className="text-center justify-content-center d-flex"
           >
-            <div className=" footerenqury">
-              <h2 className="text-white">Subscribe to our News letter</h2>
+            <div className=" footerenqury justify-content-center d-grid">
+              <h2 className="text-white text-center">Subscribe to our News letter</h2>
 
-              <Form className="d-flex justify-content-center mt-3 pb-3 " onSubmit={handleSubmit}>
-                <InputGroup
-                  className=" p-1 rounded-2 "
-                  style={{ backgroundColor: "#fff" }}
-                >
-                  <InputGroup.Text
-                    style={{
-                      backgroundColor: "#fff",
-                      border: "none",
-                      fontSize: "20px",
-                      color: "gray",
-                    }}
+              <div className=" d-flex justify-content-center">
+                <Form className=" mt-3 pb-3 subscribe" onSubmit={handleSubmit}>
+                  <InputGroup
+                    className=" p-1 rounded-2 "
+                    style={{ backgroundColor: "#fff" }}
                   >
-                    <MdOutlineEmail />
-                  </InputGroup.Text>
-                  <input
-                    type="email"
-                    className=" emailfeild"
-                    style={{ border: "none",outline:"none" }}
-                    placeholder="Enter your mail"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                  />
-                  {errors.email && (
-                    <span className="error text-danger">{errors.email}</span>
-                  )}
-                  <Button className="footerenquriybtn" type="submit" style={{ fontSize: '16px' }}>Subscribe</Button>
-                </InputGroup>
-              </Form>
+                    <InputGroup.Text
+                      style={{
+                        backgroundColor: "#fff",
+                        border: "none",
+                        fontSize: "20px",
+                        color: "gray",
+                      }}
+                    >
+                      <MdOutlineEmail />
+                    </InputGroup.Text>
+                    <input
+                      type="email"
+                      className=" emailfeild"
+                      style={{ border: "none", outline: "none" }}
+                      placeholder="Enter your mail"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    {errors.email && (
+                      <span className="error text-danger">{errors.email}</span>
+                    )}
+                    <Button className="footerenquriybtn" type="submit" style={{ fontSize: '16px' }}>Subscribe</Button>
+                  </InputGroup>
+                </Form>
+              </div>
             </div>
           </Col>
         </Row>
@@ -116,9 +118,9 @@ const Footer = () => {
           </Col>
 
           <Col xs={12} md={4} lg={2} className="mx-lg-3">
-            <h5 className=" fw-bold mb-lg-5">Company</h5>
+            <h5 className=" fw-bold mb-lg-4">Company</h5>
             <ul className="list-unstyled lh-lg">
-              <li>
+              <li className="pt-1">
                 <Link
                   onClick={() => window.scrollTo(0, 0)}
                   to="/aboutourstory"
@@ -127,7 +129,7 @@ const Footer = () => {
                   About
                 </Link>
               </li>
-              <li>
+              <li className="pt-1">
                 <Link
                   onClick={() => window.scrollTo(0, 0)}
                   to="/service"
@@ -136,7 +138,7 @@ const Footer = () => {
                   Services
                 </Link>
               </li>
-              <li>
+              <li className="pt-1">
                 <Link
                   onClick={() => window.scrollTo(0, 400)}
                   to={`/Product/11`}
@@ -145,32 +147,36 @@ const Footer = () => {
                   Product
                 </Link>
               </li>
-              <li>
+              <li className="pt-1">
                 <Link
+                 onClick={() => window.scrollTo(0, 0)}
                   to="/blog"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   Blog
                 </Link>
               </li>
-              <li>
+              <li className="pt-1">
                 <Link
+                 onClick={() => window.scrollTo(0, 0)}
                   to="/contactus"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   Contact us
                 </Link>
               </li>
-              <li>
+              <li className="pt-1">
                 <Link
+                 onClick={() => window.scrollTo(0, 0)}
                   to="/career"
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   Career
                 </Link>
               </li>
-              <li>
+              <li className="pt-1">
                 <Link
+                 onClick={() => window.scrollTo(0, 0)}
                   to="/news-event"
                   style={{ textDecoration: "none", color: "black" }}
                 >
@@ -207,7 +213,7 @@ const Footer = () => {
                 </ul>
               </Col>
               <Col xs={12} md={6} lg={6} className="mx-lg-3x">
-              <h5 className=" fw-bold mb-lg-5 d-none d-lg-block" >Product</h5>
+                <h5 className=" fw-bold mb-lg-5 d-none d-lg-block" >Product</h5>
                 <ul className="list-unstyled lh-lg">
                   {
                     secondHalf.map((a) => {
@@ -251,7 +257,7 @@ const Footer = () => {
                 <a href="https://www.facebook.com/PositiveMetering"><CiFacebook className="icon-hover mx-2 " /></a>
                 <a href="https://www.instagram.com/positive_metering_pumps/?hl=en"><FaInstagram className="icon-hover mx-2" /></a>
                 <a href="mailto:info@positivemetering.com"><MdOutlineMail className="icon-hover mx-2" /></a>
-                <a href={`https://wa.me/${91-253-6613218}`}><FaWhatsapp className="icon-hover mx-2" /></a>
+                <a href={`https://wa.me/${91 - 253 - 6613218}`}><FaWhatsapp className="icon-hover mx-2" /></a>
                 <a href="https://www.linkedin.com/company/positive-metering-pumps-i-pvt-ltd/"> <CiLinkedin className="icon-hover mx-2" /></a>
               </div>
             </div>

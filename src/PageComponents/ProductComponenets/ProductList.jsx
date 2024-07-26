@@ -77,7 +77,7 @@ const ProductList = () => {
                 <Row>
                     <Col lg={4}>
                         <Container className='produclistbox'>
-                            <div className='py-3' id='menu'>
+                            <div className='py-3 px-4' id='menu'>
                                 <h4 style={{ letterSpacing: "3px" }} className='text-white text-center py-3'>PRODUCTS</h4>
 
                                 {products.map((product, index) => (

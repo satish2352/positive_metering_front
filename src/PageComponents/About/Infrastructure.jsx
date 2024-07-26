@@ -29,8 +29,8 @@ const Infrastructure = () => {
         {infrastructureData.map((card, index) => (
           <Col key={index} xs={12} md={6} lg={4} className="mb-4 rounded-4 p-lg-4 text-center">
             <Card className="h-100 rounded-4 infrastructurecard border-bottom border-3 border-danger border-end-0 border-top-0 border-start-0">
-              <Card.Img variant="top" src={card.img} alt={card.title} className='rounded-4 h-100 w-100' />
-              <Card.Body>
+              <Card.Img variant="top" src={card.img} alt={card.title} className='rounded-4 ' />
+              <Card.Body className='infrastructurecardinfo'>
                 <Card.Title className='fw-bolder'>{card.title}</Card.Title>
                 <Card.Text className='px-lg-3'>{card.desc}</Card.Text>
               </Card.Body>

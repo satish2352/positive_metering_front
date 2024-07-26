@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 const ProductTab = () => {
   const [activeTab, setActiveTab] = useState(11);
   const { products } = useContext(ProductContext);
-  const navigate =useNavigate()
+  const navigate = useNavigate()
   useEffect(() => {
     AOS.init();
   }, []);
@@ -21,7 +21,7 @@ const ProductTab = () => {
   const handleTabClick = (id) => {
     setActiveTab(id);
   };
-  const slidesToShow = 4;
+  const slidesToShow = 3;
   const slidesToScroll = 3;
 
   const settings = {
@@ -58,7 +58,7 @@ const ProductTab = () => {
       }
     ]
   };
- 
+
   const activeProduct = products.find((product) => product.id === activeTab);
 
   return (
@@ -77,8 +77,7 @@ const ProductTab = () => {
                   data-aos-duration="1500"
                   src={activeProduct.img}
                   alt={activeProduct.productName}
-                  className="img-fluid p-5 p-lg-1"
-                  style={{ width: '700px', height: '400px', marginBottom: '30px' }}
+                  className="img-fluid producttabimg p-5 p-lg-1"
                 />
               )}
             </Col>
@@ -92,18 +91,14 @@ const ProductTab = () => {
                     <h3 className="pulgersubtitle" style={{ fontFamily: 'Poppins', fontSize: '20px' }}>
                       {activeProduct.subtitle}
                     </h3>
-                    <p style={{ fontFamily: 'Poppins', fontSize: '16px' }}>
-                      {activeProduct.application}
-                    </p>
-                    {activeProduct.features && (
-                      <ul className="pulgerlist" style={{ fontFamily: 'Poppins' }}>
-                        {activeProduct.features.map((feature, index) => (
-                          <li key={index}>{feature}</li>
-                        ))}
-                      </ul>
-                    )}
+                  
+                    <div
+                      style={{ fontSize: '17px', fontFamily: 'Poppins' }}
+                      dangerouslySetInnerHTML={{ __html: activeProduct.application }}
+                    ></div>
+
                     <Button variant="outline-dark" className="rounded-5 py-2 px-4 shadow-sm"
-                    onClick={()=>navigate(`/Product/${activeProduct.id}`)}
+                      onClick={() => navigate(`/Product/${activeProduct.id}`)}
                     >
                       Read More
                     </Button>

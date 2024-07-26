@@ -21,3 +21,16 @@
 .caontatctcardsubsection p {
     font-size: 14px;
 }
+@media screen and (min-width: 1400px) {
+    .caontatctcardsubsection {
+        
+        width: 370px;
+        position: absolute;
+        left: 130px;
+        bottom: 0px;
+    }
+    .caontatctcardsubsection p {
+        font-size: 17px;
+    }
+
+}

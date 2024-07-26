@@ -47,8 +47,8 @@ function OurProducts() {
       {
         breakpoint: 1400,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 5,
+          slidesToScroll: 5,
           infinite: true,
           dots: true
         }
@@ -72,7 +72,7 @@ function OurProducts() {
   };
 
   return (
-    <Container fluid className='my-5 py-lg-5'>
+    <Container fluid className='my-5 py-lg-0'>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (

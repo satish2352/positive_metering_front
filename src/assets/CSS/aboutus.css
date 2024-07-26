@@ -5,8 +5,21 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+.visionMissionp{
+  font-size: 14px;
+}
 
-@media screen  and (max-width: 670px) {
+@media screen and (min-width: 1400px) {
+  .visionMission {
+    background-image: url("../img/About/vision.png");
+    height: 700px;
+  }
+  .visionMissionp{
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 670px) {
   .visionMission {
     background-image: url("../img/About/vision.png");
     height: 500px;
@@ -16,11 +29,23 @@
   }
 }
 
+@media screen and (min-width: 1400px) {
+  .producttabimg {
+    height: 700px !important;
+  }
+}
+
+.producttabimg {
+  height: 500px;
+}
+
 .infrastructurecard {
   box-shadow: 20px 10px 80px 0px #00000040;
 
 }
-
+.infrastructurecardinfo{
+  height: 170px !important;
+}
 .team-card {
   transition: background-color 0.3s, color 0.3s;
   border: 1px solid #C8C8C8;
@@ -54,6 +79,7 @@
   height: auto;
   width: 170px !important;
 }
+
 @media (max-width: 526px) {
   .plungercard {
     box-shadow: 1px 1px 2px 0px #00000040;
@@ -61,7 +87,8 @@
     height: auto;
     width: 170px !important;
   }
-  .teamimg{
+
+  .teamimg {
     height: 300px;
     width: 100%;
   }
@@ -77,10 +104,12 @@
   background: #CD4247;
   height: 133px;
 }
-.teamimg{
+
+.teamimg {
   height: 400px;
   width: 100%;
 }
+
 .sencodesubtext {
   background: #E84C52;
   position: relative;

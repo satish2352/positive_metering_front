@@ -74,9 +74,10 @@
 
     .bannerH {
         position: relative;
-        /* right: 100px; */
+        right: 100px;
         padding-top: 10px;
         text-align: center;
+        font-size: 30px;
 
     }
 }
@@ -172,5 +173,11 @@
 .bannerH {
     color: #FFFFFF;
     font-family: "Poppins", sans-serif;
+    font-size: 40px !important;
+}
+@media screen and (min-width: 1400px) {
+    .BannerT {
+        font-size: 20px !important;
+    }
 
 }

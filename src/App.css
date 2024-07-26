@@ -142,9 +142,11 @@ padding: 0px !important;
 }
 
 .emailfeild {
-  width: 400px !important;
+  width: 250px !important;
 }
-
+.subscribe{
+width: 80%;
+}
 .footerenquriybtn {
   float: inline-end;
   border-radius: 10px !important;
