@@ -42,9 +42,9 @@
 }
 
 .getquoteformback {
-    background-image: url('../assets/img/About/back\ 21.png');
+    background-image: url('../assets/img/About/Untitled-1\ 2.png');
     /* D:\newpositive\positive_metering_front\src\assets\img\About\back 21.png */
-    background-size: cover;
+    background-size: contain    ;
 }
 
 .formbacks {

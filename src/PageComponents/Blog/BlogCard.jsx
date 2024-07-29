@@ -57,7 +57,7 @@ const BlogCard = () => {
                     <Col xs={12} className="pe-0 ps-0 bg-light blogcrd">
                       <Card.Img
                         variant="top"
-                        src={`http://positivebackend.sumagodemo.com/${blog.img}`}
+                        src={blog.img}
                         className="bg-light img-fluid w-100 h-100"
                         data-aos="zoom-in"
                         data-aos-duration="2000"

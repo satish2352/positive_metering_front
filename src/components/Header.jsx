@@ -81,20 +81,20 @@ const Header = () => {
                 </Nav.Link>
                 <NavDropdown title="ABOUT" className='fw-bold mx-xxl-3 text-black' id="collapsible-nav-dropdown">
                   <NavDropdown.Item className='py-0 dropdown-menu-btn' >
-                    <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/aboutleadership')} fw-bold mx-xxl-3`} to="/aboutleadership">  <strong>LEADERSHIP</strong> <hr className='m-2 border-2' /></Link>
+                    <Link  className={`${getNavLinkClass('/aboutleadership')}  mx-xxl-3`} to="/aboutleadership">  <strong>LEADERSHIP</strong> <hr className='m-0 border-2' /></Link>
 
                   </NavDropdown.Item>
                   <NavDropdown.Item className='py-0 dropdown-menu-btn' to="/aboutourstory">
-                    <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/aboutourstory')} fw-bold mx-xxl-3`} to="/aboutourstory">  <strong>OUR STORY</strong> <hr className='m-2 border-2' /></Link>
+                    <Link  className={`${getNavLinkClass('/aboutourstory')}  mx-xxl-3`} to="/aboutourstory">  <strong>OUR STORY</strong> <hr className='m-0 border-2' /></Link>
 
                   </NavDropdown.Item>
                   <NavDropdown.Item className='py-0 dropdown-menu-btn' to="/aboutourteam">
-                    <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/aboutourteam')} fw-bold mx-xxl-3`} to="/aboutourteam">  <strong>OUR TEAM</strong> <hr className='m-2 border-2' /></Link>
+                    <Link  className={`${getNavLinkClass('/aboutourteam')}  mx-xxl-3`} to="/aboutourteam">  <strong>OUR TEAM</strong> <hr className='m-0 border-2' /></Link>
 
                   </NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link >
-                  <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/product')} fw-bold mx-xxl-3`} to="/Product/11">PRODUCT</Link>
+                  <Link style={{ letterSpacing: 3 }}onClick={() => window.scrollTo(0, 0)} className={`${getNavLinkClass('/product')} fw-bold mx-xxl-3`} to="/Product/11">PRODUCT</Link>
                 </Nav.Link>
                 <Nav.Link >
                   <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/service')} fw-bold mx-xxl-3`} to="/service">SERVICE</Link>

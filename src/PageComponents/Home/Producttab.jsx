@@ -17,7 +17,16 @@ const ProductTab = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+  const activeProduct = products.find((product) => product.id === activeTab);
 
+  let firstWord = '';
+  let restOfText = '';
+
+  if (activeProduct) {
+    [firstWord, ...restOfText] = activeProduct.productName.split(' ');
+    firstWord = firstWord.toUpperCase();
+    restOfText = restOfText.join(' ');
+  }
   const handleTabClick = (id) => {
     setActiveTab(id);
   };
@@ -59,7 +68,6 @@ const ProductTab = () => {
     ]
   };
 
-  const activeProduct = products.find((product) => product.id === activeTab);
 
   return (
     <Container fluid className="mt-3 p-lg-5" style={{ background: '#EFEFEF', position: 'relative' }}>
@@ -86,18 +94,19 @@ const ProductTab = () => {
                 {activeProduct && (
                   <>
                     <h1 className="pulgertitle" style={{ color: '#434343' }}>
-                      {activeProduct.productName}
+                      <span  className='firstWord'>{firstWord}</span><br />
+                      <span className='restOfText'> {restOfText}</span>
                     </h1>
                     <h3 className="pulgersubtitle" style={{ fontFamily: 'Poppins', fontSize: '20px' }}>
                       {activeProduct.subtitle}
                     </h3>
-                  
-                    <div
-                      style={{ fontSize: '17px', fontFamily: 'Poppins' }}
+
+                    <div className=' productapplictions'
+
                       dangerouslySetInnerHTML={{ __html: activeProduct.application }}
                     ></div>
 
-                    <Button variant="outline-dark" className="rounded-5 py-2 px-4 shadow-sm"
+                    <Button variant="outline-dark" className="rounded-5 py-2 fs-6 px-4 shadow-sm"
                       onClick={() => navigate(`/Product/${activeProduct.id}`)}
                     >
                       Read More

@@ -18,6 +18,7 @@
     .carsimg {
         height: 400px !important;
     }
+
     .homebannertext {
         background: transparent !important;
         text-align: left;
@@ -27,12 +28,13 @@
         /* padding-right: 190px; */
         margin-right: 0px !important;
         margin-left: 0px !important;
-    
+
     }
+
     .bannerform {
-        display: none!important;
+        display: none !important;
     }
-    
+
 }
 
 .homebannerback2 {
@@ -78,18 +80,19 @@
         position: relative;
         left: 85%;
         top: 10px;
-    } 
+    }
+
     .bannerinp {
 
         width: 300px !important;
-    
+
         padding-bottom: 20px;
         padding-top: 20px;
         font-size: 1.2rem !important;
         font-weight: 400;
         line-height: 1.5;
         color: white !important;
-    
+
         background-color: transparent !important;
         background-clip: padding-box;
         border-bottom: 1px solid white !important;
@@ -98,8 +101,9 @@
         border-left: none !important;
         border-right: none !important;
         height: 70px !important;
-    
+
     }
+
     .bannertxtarea {
         display: block;
         width: 300px !important;
@@ -110,13 +114,14 @@
         font-weight: 400;
         line-height: 1.5;
         color: white !important;
-    
+
         background-color: transparent !important;
         background-clip: padding-box;
         border: 1px solid white !important;
         border-radius: 0px !important;
         height: 100px;
     }
+
     .homebannertext {
         background: linear-gradient(to left, rgba(238, 88, 93, 0) 0%, rgba(238, 88, 93, 0.2) 18.61%, rgba(238, 88, 93, 0.814196) 61.08%, #EE585D 81.38%);
         text-align: left;
@@ -127,7 +132,7 @@
         font-size: 20px;
         margin-right: -200px;
         margin-left: 200px;
-    
+
     }
 }
 
@@ -155,7 +160,7 @@
     border-top: none !important;
     border-left: none !important;
     border-right: none !important;
-    height: 40px ;
+    height: 40px;
 
 }
 
@@ -172,6 +177,23 @@
     display: block;
     width: 250px;
     margin-left: 10px;
+    padding: 5px;
+    margin-top: 25px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white !important;
+
+    background-color: transparent !important;
+    background-clip: padding-box;
+    border: 1px solid white !important;
+    border-radius: 0px !important;
+    height: 100px;
+}
+.bannertxtarea2 {
+    display: block;
+    width: 250px;
+    margin-left: 7px!important;
     padding: 5px;
     margin-top: 25px;
     font-size: 1rem;
@@ -226,7 +248,29 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     letter-spacing: 4px;
     font-weight: 700;
-     
+
+}
+
+.productapplictions {
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 1400px) {
+    .productapplictions {
+        font-size: 20px !important;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+}
+@media screen and (max-width: 800px) {
+    .productapplictions {
+        font-size: 16px !important;
+        letter-spacing: 0px;
+        font-weight: 500;
+    }
 }
 
 .pulgersubtitle {

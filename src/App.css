@@ -62,25 +62,30 @@
     left: 48.5%;
     bottom: -14px;
   }
-  .navbarspacing{
+
+  .navbarspacing {
     margin-bottom: 15px !important;
   }
+
   .hedershadow {
     padding-top: 10px !important;
     padding-bottom: 10px !important;
   }
+
   .header-logo.small-logo {
     width: 80px !important;
     padding: 0px !important;
     left: 0px;
     bottom: -18px !important;
   }
-  
+
 }
-.navbarspacing{
+
+.navbarspacing {
   margin-bottom: 5px;
 }
-.navbar{
+
+.navbar {
   padding: 0px !important;
 }
 
@@ -96,7 +101,7 @@
 
 .header-logo.small-logo {
   width: 50px;
-padding: 0px !important;
+  padding: 0px !important;
   left: 0px;
   bottom: -5px;
 }
@@ -144,9 +149,11 @@ padding: 0px !important;
 .emailfeild {
   width: 250px !important;
 }
-.subscribe{
-width: 80%;
+
+.subscribe {
+  width: 80%;
 }
+
 .footerenquriybtn {
   float: inline-end;
   border-radius: 10px !important;
@@ -185,7 +192,7 @@ width: 80%;
   }
 
   .emailfeild {
-    width: 140px !important;
+    width: 131px !important;
   }
 
   .footerenqury {
@@ -199,6 +206,9 @@ width: 80%;
     text-align: center;
   }
 
+  .subscribe {
+    width: 100%;
+  }
 }
 
 @media (min-width: 526px) and (max-width:920px) {
@@ -208,6 +218,10 @@ width: 80%;
 
   .emailfeild {
     width: 300px !important;
+  }
+
+  .subscribe {
+    width: 100%;
   }
 
   .footerenqury {

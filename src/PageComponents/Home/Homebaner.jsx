@@ -13,18 +13,25 @@ import "../../assets/CSS/homebanner.css";
 import axios from 'axios';
 
 function Homebaner() {
-  const [show, setShow] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  const [homeslider, sethomeslider] = useState([])
   const [fullname, setfullname] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setmobile] = useState("");
   const [message, setmessage] = useState("");
   const [errors, setErrors] = useState({});
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    axios.get('/homeslider/get-homeslider')
+      .then(response => {
+        sethomeslider(response.data.responseData);
+      })
+      .catch(error => {
+        console.error("There was an error fetching the data!", error);
+      });
+  }, []);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -89,7 +96,7 @@ function Homebaner() {
         setmessage("")
         setmobile("")
         setfullname("")
-          } catch (error) {
+      } catch (error) {
         alert("Failed to submit data.");
         console.error("Error submitting form:", error);
       }
@@ -108,7 +115,7 @@ function Homebaner() {
   return (
     <>
       <Carousel className='homebannerback'>
-        {cararray.filter(a => (isMobile ? a.view === 'mobile' : a.view === 'large')).map((a, index) => (
+        {homeslider.filter(a => (isMobile ? a.view === 'mobile' : a.view === 'desktop')).map((a, index) => (
           <Carousel.Item key={index} interval={1000}>
             <Image src={a.img} rounded className='img-fluid carsimg' />
             <Carousel.Caption>
@@ -122,7 +129,7 @@ function Homebaner() {
                           sequence={[`WELCOME`, 1000, ""]}
                           speed={50}
                           repeat={Infinity}
-                          style={{fontSize:'30px'}}
+                          style={{ fontSize: '30px' }}
                         />
                       </span>
                       <br /> To Positive Meter

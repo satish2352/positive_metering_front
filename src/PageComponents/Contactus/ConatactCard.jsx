@@ -44,7 +44,7 @@ const ContactCard = () => {
               lg={4}
               md={6}
               className='caontatctcardimg py-4'
-              data-aos="zoom-out"
+              data-aos="zoom-in"
               data-aos-easing="linear"
               data-aos-duration="1500"
             >

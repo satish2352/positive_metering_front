@@ -18,6 +18,12 @@
     font-size: 18px;
   }
 }
+.firstWord{
+  font-size: 4rem !important;
+}
+.restOfText{
+  font-size: 2rem;
+}
 
 @media screen and (max-width: 670px) {
   .visionMission {
@@ -27,11 +33,17 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+  .firstWord{
+    font-size: 3rem !important;
+  }
+  .restOfText{
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 1400px) {
   .producttabimg {
-    height: 700px !important;
+    height: 600px !important;
   }
 }
 
@@ -91,6 +103,9 @@
   .teamimg {
     height: 300px;
     width: 100%;
+  }
+  .producttabimg {
+    height: 300px !important;
   }
 }
 

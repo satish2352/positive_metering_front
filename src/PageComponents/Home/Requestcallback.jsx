@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
 import "../../assets/CSS/requestcall.css";
-import homepagevideo from '../../assets/video/positive.mp4';
+import homepagevideo from '../../assets/video/VE Project 111.mp4';
 import mobilepagevideo from '../../assets/video/WhatsApp-Video-2024-07-18-at-115.mp4';
+
 const Requestcallback = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -63,7 +64,6 @@ const Requestcallback = () => {
 
   return (
     <>
-
       <Container fluid className="requestcallbackcontainer d-none d-md-block">
         <video
           autoPlay
@@ -100,7 +100,7 @@ const Requestcallback = () => {
                   <h4 className="text-white text-center py-3 text-uppercase">Request A CALL BACK</h4>
                 </div>
                 <div className="p-3 px-5">
-                  {successMessage && alert(<div className="alert alert-success">{successMessage}</div>)}
+              
                   <form onSubmit={handleSubmit}>
                     <div className="d-grid fw-bold requestinputlb">
                       <label>Name</label>
@@ -147,6 +147,7 @@ const Requestcallback = () => {
           </Container>
         </div>
       </Container>
+
       <Container fluid className="requestcallbackcontainer d-block d-md-none">
         <video
           autoPlay
@@ -166,7 +167,7 @@ const Requestcallback = () => {
                 <div className="requestcallbacklefttop">
                   <h4 className="text-white text-center py-3">PLUNGER TYPE DOSING PUMPS</h4>
                 </div>
-                <div className="p-3 p-lg-5 " style={{ textAlign: 'justify' }}>
+                <div className="p-3 p-lg-5" style={{ textAlign: 'justify' }}>
                   <p>
                     Dosing Pumps are extensively utilized in a range of industries
                     to maintain precise chemical dosing and control. Dosing Pumps
@@ -183,7 +184,7 @@ const Requestcallback = () => {
                   <h4 className="text-white text-center py-3 text-uppercase">Request A CALL BACK</h4>
                 </div>
                 <div className="p-3 px-5">
-                  {successMessage && alert(<div className="alert alert-success">{successMessage}</div>)}
+                 
                   <form onSubmit={handleSubmit}>
                     <div className="d-grid fw-bold requestinputlb">
                       <label>Name</label>

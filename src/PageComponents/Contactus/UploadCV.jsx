@@ -11,7 +11,6 @@ const UploadCV = () => {
   const [subject, setSubject] = useState("");
   const [mobile, setMobile] = useState("");
   const [message, setMessage] = useState("");
-  const [cvFile, setCVFile] = useState(null); // State to hold CV file
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
@@ -62,37 +61,35 @@ const UploadCV = () => {
         formData.append('subject', subject);
         formData.append('message', message);
         formData.append('phone', mobile);
-        if (cvFile) {
-          formData.append('cv', cvFile);
+
+        // Log the FormData entries
+        for (let pair of formData.entries()) {
+          console.log(`${pair[0]}: ${pair[1]}`);
         }
-  
-        const response = await axios.post('http://positivebackend.sumagodemo.com/uploadcv/create-uploadcv', formData, {
+
+        const response = await axios.post('/getintouch/add-getintouch', formData, {
           headers: {
-            'Content-Type': 'multipart/form-data',
+            'Content-Type': 'application/json',
           },
         });
         console.log("Server Response:", response.data);
-        
-        // Assuming response.data contains the responseData structure you provided
-        const responseData = response.data.responseData;
-  
+
         // Reset form fields and state after successful submission
         setName("");
         setEmail("");
         setSubject("");
         setMobile("");
         setMessage("");
-        setCVFile(null);
         setErrors({});
-  
+
         alert("Data Submitted Successfully.");
       } catch (error) {
         console.error("Error submitting data:", error);
+        console.error("Error response data:", error.response?.data);
         alert("Failed to submit data. Please try again later.");
       }
     }
   };
-  
 
   return (
     <>
@@ -177,8 +174,6 @@ const UploadCV = () => {
                     )}
                   </Form.Group>
                 </Col>
-
-                
               </Row>
               <div className="text-center mt-xl-5 mb-xl-4">
                 <Button

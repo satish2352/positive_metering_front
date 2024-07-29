@@ -13,7 +13,7 @@ function OurProducts() {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axios.get('homeslider/get-homeslider');
+        const response = await axios.get('carrousal/get-carrousal');
         if (response.data.result) {
           setProducts(response.data.responseData);
         } else {

@@ -143,7 +143,7 @@ function MyVerticallyCenteredModal(props) {
             name="message"
             placeholder="Message"
             value={message}
-            className="bannertxtarea ps-3"
+            className="bannertxtarea bannertxtarea2 ps-3"
             onChange={(e) => setmessage(e.target.value)}
             required
           />
@@ -175,7 +175,7 @@ function Blogdetails({ image, title, longetxt }) {
       <Container className="mt-3" heading={"Blog"}>
         <Row>
           <Col lg={8} md={8} sm={12}>
-            <Image src={`http://positivebackend.sumagodemo.com/${image}`} className="blogdetailimg" fluid />
+            <Image src={image} className="blogdetailimg" fluid />
           </Col>
           <Col lg={4} md={4} sm={12} className=" d-none d-lg-block">
             <Image

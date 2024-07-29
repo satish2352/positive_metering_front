@@ -27,17 +27,15 @@ const Footer = () => {
     let isValid = true;
 
     if (!email.trim()) {
-      errors.email = "email is required";
+      errors.email = "Email is required";
       isValid = false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      errors.email = "invalid email address";
+      errors.email = "Invalid email address";
       isValid = false;
     }
     setErrors(errors);
     return isValid;
   };
-  console.log("errors", errors);
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,9 +46,12 @@ const Footer = () => {
         alert("Data Submitted Successfully.");
         console.log("Response:", response.data);
         setEmail("");
+        setErrors({});
       } catch (error) {
         console.error("Error submitting data:", error);
-        alert("Failed to submit data.");
+        alert("There was an error submitting the form.");
+      } finally {
+        setIsLoading(false);
       }
     }
   };
