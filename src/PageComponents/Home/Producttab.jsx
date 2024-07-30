@@ -11,7 +11,7 @@ import "../../assets/CSS/aboutus.css";
 import { ProductContext } from '../../ProductContext';
 import { useNavigate } from 'react-router-dom';
 const ProductTab = () => {
-  const [activeTab, setActiveTab] = useState(11);
+  const [activeTab, setActiveTab] = useState(30);
   const { products } = useContext(ProductContext);
   const navigate = useNavigate()
   useEffect(() => {

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import '../../assets/CSS/mainbanner.css';
+import React, { useState, useEffect } from "react";
+import "../../assets/CSS/mainbanner.css";
 import Slider from "react-slick";
-import { Container, Row } from 'react-bootstrap';
-import axios from 'axios';
-import Heading from '../../components/Heading';
+import { Container, Row } from "react-bootstrap";
+import axios from "axios";
+import Heading from "../../components/Heading";
 
 function OurProducts() {
   const [products, setProducts] = useState([]);
@@ -13,14 +13,15 @@ function OurProducts() {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axios.get('carrousal/get-carrousal');
+        const response = await axios.get("carrousal/get-carrousal");
         if (response.data.result) {
           setProducts(response.data.responseData);
+          console.log(response);
         } else {
           setError(response.data.message);
         }
       } catch (error) {
-        setError('There was an error making the request!');
+        setError("There was an error making the request!");
       } finally {
         setLoading(false);
       }
@@ -50,40 +51,49 @@ function OurProducts() {
           slidesToShow: 5,
           slidesToScroll: 5,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
-    <Container fluid className='my-5 py-lg-0'>
+    <Container fluid className="my-5 py-lg-0">
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
         <p>{error}</p>
       ) : (
         <Slider {...settings}>
-          {products.filter(product => !product.isActive).map(product => (
-            <div key={product.id} className='ourprdcard d-flex justify-content-center p-4'>
-             <img src={product.img} className='img-fluid ourprdimg w-100 h-100' alt="" />
-            </div>
-          ))}
+          {products
+            .filter((product) => product.isActive)
+            .map((product) => (
+              <div
+                key={product.id}
+                className="ourprdcard d-flex justify-content-center p-4"
+              >
+                <img
+                  src={product.img}
+                  className="img-fluid ourprdimg w-100 h-100"
+                  alt=""
+                />
+              </div>
+            ))}
         </Slider>
       )}
     </Container>

@@ -77,30 +77,30 @@ const Header = () => {
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className={`ms-auto ${isFixed ? '' : 'pe-5'}`}>
                 <Nav.Link href="/">
-                  <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/')} fw-bold mx-xxl-3`} to="/">HOME</Link>
+                  <Link style={{ letterSpacing: 3 }}onClick={() => window.scrollTo(0, 0)} className={`${getNavLinkClass('/')} fw-bold mx-xxl-3`} to="/">HOME</Link>
                 </Nav.Link>
                 <NavDropdown title="ABOUT" className='fw-bold mx-xxl-3 text-black' id="collapsible-nav-dropdown">
                   <NavDropdown.Item className='py-0 dropdown-menu-btn' >
-                    <Link  className={`${getNavLinkClass('/aboutleadership')}  mx-xxl-3`} to="/aboutleadership">  <strong>LEADERSHIP</strong> <hr className='m-0 border-2' /></Link>
+                    <Link  className={`${getNavLinkClass('/aboutleadership')}  mx-xxl-3`}onClick={() => window.scrollTo(0, 0)} to="/aboutleadership">  <strong>LEADERSHIP</strong> <hr className='m-0 border-2' /></Link>
 
                   </NavDropdown.Item>
                   <NavDropdown.Item className='py-0 dropdown-menu-btn' to="/aboutourstory">
-                    <Link  className={`${getNavLinkClass('/aboutourstory')}  mx-xxl-3`} to="/aboutourstory">  <strong>OUR STORY</strong> <hr className='m-0 border-2' /></Link>
+                    <Link  className={`${getNavLinkClass('/aboutourstory')}  mx-xxl-3`}onClick={() => window.scrollTo(0, 0)} to="/aboutourstory">  <strong>OUR STORY</strong> <hr className='m-0 border-2' /></Link>
 
                   </NavDropdown.Item>
                   <NavDropdown.Item className='py-0 dropdown-menu-btn' to="/aboutourteam">
-                    <Link  className={`${getNavLinkClass('/aboutourteam')}  mx-xxl-3`} to="/aboutourteam">  <strong>OUR TEAM</strong> <hr className='m-0 border-2' /></Link>
+                    <Link  className={`${getNavLinkClass('/aboutourteam')}  mx-xxl-3`}onClick={() => window.scrollTo(0, 0)} to="/aboutourteam">  <strong>OUR TEAM</strong> <hr className='m-0 border-2' /></Link>
 
                   </NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link >
-                  <Link style={{ letterSpacing: 3 }}onClick={() => window.scrollTo(0, 0)} className={`${getNavLinkClass('/product')} fw-bold mx-xxl-3`} to="/Product/11">PRODUCT</Link>
+                  <Link style={{ letterSpacing: 3 }}onClick={() => window.scrollTo(0, 0)} className={`${getNavLinkClass('/product')} fw-bold mx-xxl-3`} to="/Product/30">PRODUCT</Link>
                 </Nav.Link>
                 <Nav.Link >
-                  <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/service')} fw-bold mx-xxl-3`} to="/service">SERVICE</Link>
+                  <Link style={{ letterSpacing: 3 }} onClick={() => window.scrollTo(0, 0)}className={`${getNavLinkClass('/service')} fw-bold mx-xxl-3`} to="/service">SERVICE</Link>
                 </Nav.Link>
                 <Nav.Link>
-                  <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/blog')} fw-bold ${isFixed ? '' : 'blogspace'}`} to="/blog">BLOG</Link>
+                  <Link style={{ letterSpacing: 3 }} onClick={() => window.scrollTo(0, 0)}className={`${getNavLinkClass('/blog')} fw-bold ${isFixed ? '' : 'blogspace'}`} to="/blog">BLOG</Link>
                 </Nav.Link>
               </Nav>
               <img
@@ -110,13 +110,13 @@ const Header = () => {
               />
               <Nav className="me-auto">
                 <Nav.Link>
-                  <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/news-event')} fw-bold  ${isFixed ? 'ps-3' : ' '}`} to="/news-event">NEWS & EVENT</Link>
+                  <Link style={{ letterSpacing: 3 }} onClick={() => window.scrollTo(0, 0)}className={`${getNavLinkClass('/news-event')} fw-bold  ${isFixed ? 'ps-3' : ' '}`} to="/news-event">NEWS & EVENT</Link>
                 </Nav.Link>
                 <Nav.Link >
-                  <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/career')} fw-bold mx-xxl-3`} to="/career">CAREER</Link>
+                  <Link style={{ letterSpacing: 3 }} onClick={() => window.scrollTo(0, 0)}className={`${getNavLinkClass('/career')} fw-bold mx-xxl-3`} to="/career">CAREER</Link>
                 </Nav.Link>
                 <Nav.Link >
-                  <Link style={{ letterSpacing: 3 }} className={`${getNavLinkClass('/contactus')} fw-bold mx-xxl-3`} to="/contactus">CONTACT US</Link>
+                  <Link style={{ letterSpacing: 3 }} onClick={() => window.scrollTo(0, 0)}className={`${getNavLinkClass('/contactus')} fw-bold mx-xxl-3`} to="/contactus">CONTACT US</Link>
                 </Nav.Link>
               </Nav>
             </Navbar.Collapse>

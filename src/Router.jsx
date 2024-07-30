@@ -48,7 +48,7 @@ const Router = () => {
                             key={c.title}
                             path={`/blogdetails/${c.id}`}
                             element={
-                                <Blogdetails title={c.shortDesc} image={c.img} longetxt={c.longDesc} />
+                                <Blogdetails title={c.title} image={c.img} longetxt={c.longDesc} />
                             }
                         />
                     );
