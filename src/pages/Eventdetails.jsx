@@ -27,7 +27,7 @@ function Eventdetails({ image, title, longetxt }) {
   return (
     <>
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
-      <Heading heading={"Blog"} />
+      <Heading heading={"News and Events"} />
       <Container className=" p-2 p-lg-5" heading={"Blog"}>
         <Row>
           <Col lg={5} md={6} sm={12}>

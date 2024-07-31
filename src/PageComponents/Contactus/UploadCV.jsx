@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Heading from "../../components/Heading";
 import { Button, Form, Row, Col, Container } from "react-bootstrap";
 import formImg from "../../assets/img/Contactus/image-removebg-preview (89) 1.png";
 import Image from 'react-bootstrap/Image';
 import axios from 'axios';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const UploadCV = () => {
   const [name, setName] = useState("");
@@ -12,6 +13,13 @@ const UploadCV = () => {
   const [mobile, setMobile] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
+  const [isCaptchaVerified, setCaptchaVerified] = useState(false);
+  const captchaRef = useRef(null);
+
+  const onChange = (value) => {
+    setCaptchaVerified(true);
+    console.log(value);
+  };
 
   const validateForm = () => {
     let errors = {};
@@ -44,6 +52,11 @@ const UploadCV = () => {
 
     if (!message.trim()) {
       errors.message = "Message is required";
+      isValid = false;
+    }
+
+    if (!isCaptchaVerified) {
+      errors.captcha = 'Please complete the reCAPTCHA before submitting.';
       isValid = false;
     }
 
@@ -81,6 +94,12 @@ const UploadCV = () => {
         setMobile("");
         setMessage("");
         setErrors({});
+        setCaptchaVerified(false);
+
+        // Reset reCAPTCHA
+        if (captchaRef.current) {
+          captchaRef.current.reset();
+        }
 
         alert("Data Submitted Successfully.");
       } catch (error) {
@@ -104,7 +123,7 @@ const UploadCV = () => {
                     <Form.Label>Name</Form.Label>
                     <Form.Control
                       type="text"
-                      placeholder="Enter your name"
+                      placeholder="Enter Your Name"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                     />
@@ -119,7 +138,7 @@ const UploadCV = () => {
                     <Form.Label>Email Id</Form.Label>
                     <Form.Control
                       type="email"
-                      placeholder="Enter your email"
+                      placeholder="Enter Your Email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
@@ -131,10 +150,10 @@ const UploadCV = () => {
 
                 <Col xl={6}>
                   <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Phone</Form.Label>
+                    <Form.Label>Mobile</Form.Label>
                     <Form.Control
                       type="number"
-                      placeholder="Enter your phone number"
+                      placeholder="Enter Your Mobile Number"
                       value={mobile}
                       onChange={(e) => setMobile(e.target.value)}
                     />
@@ -149,7 +168,7 @@ const UploadCV = () => {
                     <Form.Label>Subject</Form.Label>
                     <Form.Control
                       type="text"
-                      placeholder="Enter your subject"
+                      placeholder="Enter Your Subject"
                       value={subject}
                       onChange={(e) => setSubject(e.target.value)}
                     />
@@ -163,7 +182,7 @@ const UploadCV = () => {
                   <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                     <Form.Label>Message</Form.Label>
                     <Form.Control
-                      placeholder="Enter your message"
+                      placeholder="Enter Your Message"
                       as="textarea"
                       rows={3}
                       value={message}
@@ -174,6 +193,20 @@ const UploadCV = () => {
                     )}
                   </Form.Group>
                 </Col>
+
+                <Col xl={6}>
+                  <ReCAPTCHA
+                    ref={captchaRef}
+                    //  testserver
+                    sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+                    // local
+                    // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+                    onChange={onChange}
+                  />
+                  {errors.captcha && (
+                    <span className="error text-danger">{errors.captcha}</span>
+                  )}
+                </Col>
               </Row>
               <div className="text-center mt-xl-5 mb-xl-4">
                 <Button
@@ -182,7 +215,7 @@ const UploadCV = () => {
                   className="p-3"
                   style={{ borderRadius: "30px", letterSpacing: "2px" }}
                 >
-                  Send Message
+                  Submit
                 </Button>
               </div>
             </Form>

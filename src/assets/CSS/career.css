@@ -9,7 +9,7 @@
   position: relative;background: rgb(239, 239, 239);
 }
 .upcv{
-  letter-spacing: 10px;
+  letter-spacing: 8px;
 }
 @media only screen and (min-width: 320px) and (max-width: 479px) {
     .formImg {
