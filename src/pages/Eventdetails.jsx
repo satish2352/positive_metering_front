@@ -15,9 +15,8 @@ import Form from "react-bootstrap/Form";
 import Heading from "../components/Heading";
 import ResponsiveImage from "./ResponsiveImage";
 
-import imgmobile from '../assets/img/services/mobileview.png'
-import imgtop from '../assets/img/services/diskimg.png'
-
+import imgmobile from "../assets/img/services/mobileview.png";
+import imgtop from "../assets/img/services/diskimg.png";
 
 function Eventdetails({ image, title, longetxt }) {
   window.scrollTo(0, 0);
@@ -33,24 +32,16 @@ function Eventdetails({ image, title, longetxt }) {
           <Col lg={5} md={6} sm={12}>
             <Image src={`${image}`} height={"500rem"} fluid />
           </Col>
-          <Col  lg={7} md={6} sm={12}>
+          <Col lg={7} md={6} sm={12}>
             <h5>{title}</h5>
             <p>{longetxt}</p>
           </Col>
         </Row>
-
-
       </Container>
 
-      <Container>
-
-
-      </Container>
-
+      <Container></Container>
     </>
   );
 }
 
-
-
-export default Eventdetails
+export default Eventdetails;

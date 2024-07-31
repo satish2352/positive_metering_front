@@ -71,7 +71,7 @@ function MyVerticallyCenteredModal(props) {
           message,
         });
         if (response.status === 200) {
-          alert("Data Submitted Successfully.");
+          alert("Thank you. I will connect with you soon.");
           console.log("newData", response.data);
         } else {
           alert("Failed to submit data.");
@@ -100,7 +100,7 @@ function MyVerticallyCenteredModal(props) {
     >
       
       <Modal.Body className=" getquoteformback">
-
+      <Modal.Header className="text-white" closeButton></Modal.Header>
         <form onSubmit={handleSubmit} className=" formbacks d-grid p-lg-5">
           <input
             type="text"

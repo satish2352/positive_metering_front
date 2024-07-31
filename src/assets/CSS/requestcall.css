@@ -33,7 +33,7 @@
     padding-left: 0px !important;
     padding-right: 0px !important;
     position: relative;
-    top: -500px;
+    top: -690px;
 
 }
 
@@ -55,23 +55,43 @@
     background: rgba(222, 222, 222, 0.79);
 }
 
+.requesttext{
+    border: 1px solid rgb(224, 205, 205) !important;
+    background-color: white;
+    height: 80px;
+    padding: 30px;
+    color: #999;
+    border-radius: 20px;scrollbar-width: none;
+    
+}
+.requesttext::placeholder {
+    color: #999;
 
 
+}
+.requesttext:focus {
+    color: #999;
+    outline: none;
+    padding: 5px 20px ;
+}
 .requestinput {
     border: 1px solid rgb(224, 205, 205) !important;
     background-color: white;
     height: 40px;
+    border-radius: 30px;
+    padding: 0px 20px ;
+    color: #999;
 }
 
 .requestinput::placeholder {
     color: #999;
-    font-size: 13px !important;
 
 }
 
 .requestinput:focus {
     color: #999;
     outline: none;
+    padding: 0px 20px ;
 }
 
 .formrequestbtn {
@@ -82,7 +102,7 @@
 }
 
 .requestinputlb {
-    font-size: 13px !important;
+    font-size: 16px !important;
 }
 
 .buttonpart {
