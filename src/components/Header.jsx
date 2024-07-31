@@ -4,7 +4,7 @@ import logo from "../assets/img/Home/Group 1000003789.png";
 import { FiPhone } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
-import { ProductContext } from '../ProductContext';
+import { ProductContext } from "../ProductContext";
 
 const Header = () => {
   const [isFixed, setIsFixed] = useState(false);
@@ -107,7 +107,7 @@ const Header = () => {
                 <Link
                   style={{ letterSpacing: 3 }}
                   onClick={() => window.scrollTo(0, 0)}
-                  className={`${getNavLinkClass("/")} fw-bold mx-xxl-3`}
+                  className={`${getNavLinkClass("/")} fw-bold nvlink mx-xxl-3`}
                   to="/"
                 >
                   HOME
@@ -115,14 +115,14 @@ const Header = () => {
               </Nav.Link>
               <NavDropdown
                 title="ABOUT"
-                className="fw-bold mx-xxl-3 text-black"
+                className="fw-bold mx-xxl-3 text-black nvlink"
                 id="collapsible-nav-dropdown"
               >
                 <NavDropdown.Item className="py-0 dropdown-menu-btn">
                   <Link
                     className={`${getNavLinkClass(
-                      "/aboutleadership"
-                    )}  mx-xxl-3`}
+                      "/aboutleadership "
+                    )} nvlink mx-xxl-3`}
                     onClick={() => window.scrollTo(0, 0)}
                     to="/aboutleadership"
                   >
@@ -135,7 +135,7 @@ const Header = () => {
                   to="/aboutourstory"
                 >
                   <Link
-                    className={`${getNavLinkClass("/aboutourstory")}  mx-xxl-3`}
+                    className={`${getNavLinkClass("/aboutourstory")} nvlink  mx-xxl-3`}
                     onClick={() => window.scrollTo(0, 0)}
                     to="/aboutourstory"
                   >
@@ -148,7 +148,7 @@ const Header = () => {
                   to="/aboutourteam"
                 >
                   <Link
-                    className={`${getNavLinkClass("/aboutourteam")}  mx-xxl-3`}
+                    className={`${getNavLinkClass("/aboutourteam")} nvlink  mx-xxl-3`}
                     onClick={() => window.scrollTo(0, 0)}
                     to="/aboutourteam"
                   >
@@ -161,7 +161,7 @@ const Header = () => {
                 <Link
                   style={{ letterSpacing: 3 }}
                   onClick={() => window.scrollTo(0, 0)}
-                  className={`${getNavLinkClass("/product")} fw-bold mx-xxl-3`}
+                  className={`${getNavLinkClass("/product")}  nvlink fw-bold mx-xxl-3`}
                   to={`/product/${productNo}`}
                 >
                   PRODUCT
@@ -171,7 +171,7 @@ const Header = () => {
                 <Link
                   style={{ letterSpacing: 3 }}
                   onClick={() => window.scrollTo(0, 0)}
-                  className={`${getNavLinkClass("/service")} fw-bold mx-xxl-3`}
+                  className={`${getNavLinkClass("/service")} nvlink fw-bold mx-xxl-3`}
                   to="/service"
                 >
                   SERVICE
@@ -181,7 +181,7 @@ const Header = () => {
                 <Link
                   style={{ letterSpacing: 3 }}
                   onClick={() => window.scrollTo(0, 0)}
-                  className={`${getNavLinkClass("/blog")} fw-bold ${
+                  className={`${getNavLinkClass("/blog")} nvlink fw-bold ${
                     isFixed ? "" : "blogspace"
                   }`}
                   to="/blog"
@@ -202,7 +202,7 @@ const Header = () => {
                 <Link
                   style={{ letterSpacing: 3 }}
                   onClick={() => window.scrollTo(0, 0)}
-                  className={`${getNavLinkClass("/news-event")} fw-bold  ${
+                  className={`${getNavLinkClass("/news-event")} fw-bold nvlink  ${
                     isFixed ? "ps-3" : " "
                   }`}
                   to="/news-event"
@@ -214,7 +214,7 @@ const Header = () => {
                 <Link
                   style={{ letterSpacing: 3 }}
                   onClick={() => window.scrollTo(0, 0)}
-                  className={`${getNavLinkClass("/career")} fw-bold mx-xxl-3`}
+                  className={`${getNavLinkClass("/career")} fw-bold nvlink mx-xxl-3`}
                   to="/career"
                 >
                   CAREER
@@ -226,7 +226,7 @@ const Header = () => {
                   onClick={() => window.scrollTo(0, 0)}
                   className={`${getNavLinkClass(
                     "/contactus"
-                  )} fw-bold mx-xxl-3`}
+                  )} fw-bold nvlink mx-xxl-3`}
                   to="/contactus"
                 >
                   CONTACT US

@@ -38,7 +38,7 @@ const NewNavbar = () => {
         <Nav className="ms-auto pe-5">
           <Nav.Link href="/" onClick={closeNavbar}>
             <Link
-              className={`${getNavLinkClass("/")} fw-bold mx-xxl-3`}
+              className={`${getNavLinkClass("/")} fw-bold mx-xxl-3 nvlink`}
               onClick={() => window.scrollTo(0, 0)}
               to="/"
             >
@@ -49,7 +49,7 @@ const NewNavbar = () => {
           <NavDropdown
             title="ABOUT"
             style={{ backgroundColor: "#333" }}
-            className="my-0 ms-3 fw-bold mx-xxl-3 text-black"
+            className="my-0 ms-3 fw-bold mx-xxl-3 text-black nvlink"
             id="collapsible-nav-dropdown"
           >
             <NavDropdown.Item
@@ -60,7 +60,7 @@ const NewNavbar = () => {
               <Link
                 className={`${getNavLinkClass(
                   "/aboutleadership"
-                )} fw-bold mx-xxl-3`}
+                )} fw-bold nvlink mx-xxl-3`}
                 onClick={() => window.scrollTo(0, 0)}
                 to="/aboutleadership"
               >
@@ -75,7 +75,7 @@ const NewNavbar = () => {
               <Link
                 className={`${getNavLinkClass(
                   "/aboutourstory"
-                )} fw-bold mx-xxl-3`}
+                )} fw-bold nvlink mx-xxl-3`}
                 onClick={() => window.scrollTo(0, 0)}
                 to="/aboutourstory"
               >
@@ -90,7 +90,7 @@ const NewNavbar = () => {
               <Link
                 className={`${getNavLinkClass(
                   "/aboutourteam"
-                )} fw-bold mx-xxl-3`}
+                )} fw-bold nvlink mx-xxl-3`}
                 onClick={() => window.scrollTo(0, 0)}
                 to="/aboutourteam"
               >
@@ -100,7 +100,7 @@ const NewNavbar = () => {
           </NavDropdown>
           <Nav.Link href="/product" onClick={closeNavbar}>
             <Link
-              className={`${getNavLinkClass("/product")} fw-bold mx-xxl-3`}
+              className={`${getNavLinkClass("/product")} fw-bold nvlink mx-xxl-3`}
               onClick={() => window.scrollTo(0, 0)}
               to={`/product/${productNo}`}
             >
@@ -109,7 +109,7 @@ const NewNavbar = () => {
           </Nav.Link>
           <Nav.Link href="/service" onClick={closeNavbar}>
             <Link
-              className={`${getNavLinkClass("/service")} fw-bold mx-xxl-3`}
+              className={`${getNavLinkClass("/service")} fw-bold nvlink mx-xxl-3`}
               onClick={() => window.scrollTo(0, 0)}
               to="/service"
             >
@@ -118,7 +118,7 @@ const NewNavbar = () => {
           </Nav.Link>
           <Nav.Link href="/blog" onClick={closeNavbar}>
             <Link
-              className={`${getNavLinkClass("/blog")} fw-bold me-5 pe-5`}
+              className={`${getNavLinkClass("/blog")} fw-bold nvlink me-5 pe-5`}
               onClick={() => window.scrollTo(0, 0)}
               to="/blog"
             >
@@ -129,7 +129,7 @@ const NewNavbar = () => {
         <Nav className="me-auto">
           <Nav.Link href="/news-event" onClick={closeNavbar}>
             <Link
-              className={`${getNavLinkClass("/news-event")} fw-bold`}
+              className={`${getNavLinkClass("/news-event")} nvlink fw-bold`}
               onClick={() => window.scrollTo(0, 0)}
               to="/news-event"
             >
@@ -138,7 +138,7 @@ const NewNavbar = () => {
           </Nav.Link>
           <Nav.Link href="/career" onClick={closeNavbar}>
             <Link
-              className={`${getNavLinkClass("/career")} fw-bold mx-xxl-3`}
+              className={`${getNavLinkClass("/career")} fw-bold nvlink mx-xxl-3`}
               onClick={() => window.scrollTo(0, 0)}
               to="/career"
             >
@@ -147,7 +147,7 @@ const NewNavbar = () => {
           </Nav.Link>
           <Nav.Link href="/contactus" onClick={closeNavbar}>
             <Link
-              className={`${getNavLinkClass("/contactus")} fw-bold mx-xxl-3`}
+              className={`${getNavLinkClass("/contactus")} fw-bold nvlink mx-xxl-3`}
               onClick={() => window.scrollTo(0, 0)}
               to="/contactus"
             >
