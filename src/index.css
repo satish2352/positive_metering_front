@@ -1,16 +1,12 @@
-
-
-.formImg2{
+.formImg2 {
   position: absolute;
   bottom: 100px;
   width: 330px;
   right: 150px;
 }
-
-
-
-
-
+.nvlink:hover {
+  color: #ee585d !important;
+}
 
 @media only screen and (max-width: 479px) {
   .formImg {
@@ -28,8 +24,7 @@
     height: 195px;
     width: 350px;
   }
-  .sendmessagebtn{
-  margin-top: 280px;
-}
-
+  .sendmessagebtn {
+    margin-top: 280px;
+  }
 }
