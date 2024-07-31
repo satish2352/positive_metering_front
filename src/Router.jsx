@@ -41,7 +41,7 @@ const Router = () => {
                 <Route path='/aboutourstory' element={<Aboutourstory />} />
                 <Route path='/aboutourteam' element={<Aboutourteam />} />
                 <Route path='/banner' element={<Banner />} />
-                <Route path='/Product/:id' element={<ProductList />} />
+                <Route path='/product/:id' element={<ProductList />} />
                 {blog.map((c) => {
                     return (
                         <Route

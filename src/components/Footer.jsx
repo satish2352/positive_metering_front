@@ -142,7 +142,7 @@ const Footer = () => {
               <li className="pt-1">
                 <Link
                   onClick={() => window.scrollTo(0, 400)}
-                  to={`/Product/11`}
+                  to={`/product/11`}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   Product
@@ -199,7 +199,7 @@ const Footer = () => {
                           <li className="pt-1">
                             <Link
                               onClick={() => window.scrollTo(0, 500)}
-                              to={`/Product/${a.id}`}
+                              to={`/product/${a.id}`}
                               style={{ textDecoration: "none", color: "black" }
 
                               }
@@ -223,7 +223,7 @@ const Footer = () => {
                           <li className="pt-1">
                             <Link
                               onClick={() => window.scrollTo(0, 500)}
-                              to={`/Product/${a.id}`}
+                              to={`/product/${a.id}`}
                               style={{ textDecoration: "none", color: "black" }}
                             >
                               {a.productName}

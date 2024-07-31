@@ -46,7 +46,7 @@ function OurProducts() {
     cssEase: "linear",
     responsive: [
       {
-        breakpoint: 1400,
+        breakpoint: 1600,
         settings: {
           slidesToShow: 5,
           slidesToScroll: 5,

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import '../../assets/CSS/shophome.css'
-import im from "../../assets/img/Home/image.png"
+import im from "../../assets/img/Home/Group 1000004137.png"
 import { useNavigate } from 'react-router-dom'
 const Shopnowhome = () => {
     const naigate = useNavigate()

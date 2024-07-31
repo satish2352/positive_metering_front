@@ -8,7 +8,9 @@ export const ProductProvider = ({ children }) => {
   const [blog, setblog] = useState([])
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [newevents,setnewevents]=useState([])
+  const [newevents, setnewevents] = useState([])
+  const [productNo, setProductNo] = useState(0);
+
   useEffect(() => {
     const fetchblogdeatil = async () => {
       try {
@@ -32,7 +34,11 @@ export const ProductProvider = ({ children }) => {
       try {
         const response = await axios.get('/productdetails/get-productdetails');
         if (response.data.result) {
-          setProducts(response.data.responseData);
+          const productData = response.data.responseData;
+          setProducts(productData);
+          if (productData.length > 0) {
+            setProductNo(productData[0].id);
+          }
         } else {
           setError('Failed to fetch product details');
         }
@@ -64,7 +70,7 @@ export const ProductProvider = ({ children }) => {
     fetchnewevents();
   }, []);
   return (
-    <ProductContext.Provider value={{ products, loading, error,blog,newevents }}>
+    <ProductContext.Provider value={{ products, loading, error, blog, newevents,productNo }}>
       {children}
     </ProductContext.Provider>
   );

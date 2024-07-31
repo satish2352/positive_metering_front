@@ -5,23 +5,25 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-.visionMissionp{
+.visionMissionp {
   font-size: 14px;
 }
-
-@media screen and (min-width: 1400px) {
+.abouttxt {
+  font-size: 19px !important;
+}
+@media screen and (min-width: 1600px) {
   .visionMission {
     background-image: url("../img/About/vision.png");
     height: 700px;
   }
-  .visionMissionp{
+  .visionMissionp {
     font-size: 18px;
   }
 }
-.firstWord{
+.firstWord {
   font-size: 4rem !important;
 }
-.restOfText{
+.restOfText {
   font-size: 2rem;
 }
 
@@ -33,15 +35,15 @@
     background-repeat: no-repeat;
     background-position: center;
   }
-  .firstWord{
+  .firstWord {
     font-size: 3rem !important;
   }
-  .restOfText{
+  .restOfText {
     font-size: 1.5rem;
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1600px) {
   .producttabimg {
     height: 600px !important;
   }
@@ -53,19 +55,15 @@
 
 .infrastructurecard {
   box-shadow: 20px 10px 80px 0px #00000040;
-
 }
-.infrastructurecardinfo{
+.infrastructurecardinfo {
   height: 170px !important;
 }
 .team-card {
   transition: background-color 0.3s, color 0.3s;
-  border: 1px solid #C8C8C8;
+  border: 1px solid #c8c8c8;
   box-shadow: 8px 10px 10px 0px #00000040;
-
 }
-
-
 
 .black-white-image {
   filter: grayscale(100%);
@@ -77,17 +75,15 @@
   transition: filter 0.3s ease-out;
 }
 
-
 .card-img-top {
   width: 100%;
 
   object-fit: cover;
-
 }
 
 .plungercard {
   box-shadow: 5px 5px 20px 0px #00000040;
-  background: #EFEFEF;
+  background: #efefef;
   height: auto;
   width: 170px !important;
 }
@@ -95,7 +91,7 @@
 @media (max-width: 526px) {
   .plungercard {
     box-shadow: 1px 1px 2px 0px #00000040;
-    background: #EFEFEF;
+    background: #efefef;
     height: auto;
     width: 170px !important;
   }
@@ -115,8 +111,7 @@
 }
 
 .sencodetext {
-
-  background: #CD4247;
+  background: #cd4247;
   height: 133px;
 }
 
@@ -124,9 +119,11 @@
   height: 400px;
   width: 100%;
 }
-
+.abtname {
+  color:  #e84c52;
+}
 .sencodesubtext {
-  background: #E84C52;
+  background: #e84c52;
   position: relative;
   bottom: 60px;
 }
@@ -136,13 +133,32 @@
 }
 
 .getintouchbg {
-  background: url('../img/Contactus/background6.png');
+  background: url("../img/Contactus/background6.png");
 }
 
 .leadershippara {
-  background-color: #F7F5EF;
+  background-color: #f7f5ef;
 }
 
 .spaceing {
   margin-bottom: 10px;
+}
+
+.social-icons {
+  padding-left: 20px;
+}
+
+.social-icons .icon {
+  font-size: 4rem;
+
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.social-icons .icon:hover {
+  transform: translateZ(10px) rotateY(15deg);
+  color: #e84c52; /* Change this color as needed */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }

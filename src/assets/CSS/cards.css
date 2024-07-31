@@ -21,7 +21,7 @@
 .caontatctcardsubsection p {
     font-size: 14px;
 }
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1600px) {
     .caontatctcardsubsection {
         
         width: 370px;

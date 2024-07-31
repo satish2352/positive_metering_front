@@ -55,7 +55,7 @@
   bottom: -6px;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1600px) {
   .header-logo {
     position: absolute;
     width: 130px;
