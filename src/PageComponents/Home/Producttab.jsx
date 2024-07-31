@@ -154,21 +154,24 @@ const ProductTab = ({ no }) => {
                       >
                         {activeProduct.subtitle}
                       </h3>
-
                       <div
                         className="productapplictions"
                         dangerouslySetInnerHTML={{
                           __html: activeProduct.application,
                         }}
                       ></div>
-
-                      <Button
-                        variant="outline-dark"
-                        className="rounded-5 py-2 fs-6 px-4 shadow-sm"
-                        onClick={() => navigate(`/product/${activeProduct.id}`)}
-                      >
-                        Read More
-                      </Button>
+                      <div className=" d-flex alignbtn  justify-content-end">
+                        {" "}
+                        <Button
+                          variant="outline-dark"
+                          className="rounded-5 py-2 fs-6 px-4 m-lg-3   shadow-sm"
+                          onClick={() =>
+                            navigate(`/product/${activeProduct.id}`)
+                          }
+                        >
+                          Read More
+                        </Button>
+                      </div>{" "}
                     </>
                   )}
                 </div>

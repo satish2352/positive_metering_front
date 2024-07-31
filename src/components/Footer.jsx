@@ -9,10 +9,11 @@ import { MdOutlineMail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { Link } from "react-router-dom";
-import axios from 'axios'
-import { ProductContext } from '../ProductContext';
-import { useNavigate } from 'react-router-dom';
+import axios from "axios";
+import { ProductContext } from "../ProductContext";
+import { useNavigate } from "react-router-dom";
 const Footer = () => {
+  const navigate = useNavigate();
   const { products } = useContext(ProductContext);
   const half = Math.ceil(products.length / 2);
   const firstHalf = products.slice(0, half);
@@ -22,6 +23,11 @@ const Footer = () => {
 
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const capitalizeFirstLetter = (str) => {
+    if (!str) return str;
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
+
   const validateForm = () => {
     let errors = {};
     let isValid = true;
@@ -42,7 +48,9 @@ const Footer = () => {
     if (validateForm()) {
       setIsLoading(true);
       try {
-        const response = await axios.post("/subscribe/add-subscribeemail", { email });
+        const response = await axios.post("/subscribe/add-subscribeemail", {
+          email,
+        });
         alert("Data Submitted Successfully.");
         console.log("Response:", response.data);
         setEmail("");
@@ -65,7 +73,9 @@ const Footer = () => {
             className="text-center justify-content-center d-flex"
           >
             <div className=" footerenqury justify-content-center d-grid">
-              <h2 className="text-white text-center">Subscribe to our News letter</h2>
+              <h2 className="text-white text-center">
+                Subscribe to our News letter
+              </h2>
 
               <div className=" d-flex justify-content-center">
                 <Form className=" mt-3 pb-3 subscribe" onSubmit={handleSubmit}>
@@ -87,15 +97,23 @@ const Footer = () => {
                       type="email"
                       className=" emailfeild"
                       style={{ border: "none", outline: "none" }}
-                      placeholder="Enter your mail"
+                      placeholder="Enter Your Email Address"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
-                    <Button className="footerenquriybtn" type="submit" style={{ fontSize: '16px' }}>Subscribe</Button>
-                    {errors.email && (
-                      <span className="error text-danger ms-3 mt-1">{errors.email}</span>
-                    )}
+                    <Button
+                      className="footerenquriybtn"
+                      type="submit"
+                      style={{ fontSize: "16px" }}
+                    >
+                      Subscribe
+                    </Button>
                   </InputGroup>
+                  <div className=" text-start">
+                    {errors.email && (
+                      <span className=" text-white mt-1">{errors.email}</span>
+                    )}
+                  </div>
                 </Form>
               </div>
             </div>
@@ -105,24 +123,35 @@ const Footer = () => {
           <Col xs={12} md={10} lg={4} className=" footertext mb-4 mx-lg-3 ">
             <div className="d-grid justify-content-center">
               {" "}
-              <img
-                src={logo}
-                alt="Company Logo"
-                style={{ maxWidth: "100px" }}
-              />
+              <Link to='/'>
+                {" "}
+                <img
+                  src={logo}
+             
+                  alt="Company Logo"
+                  style={{ maxWidth: "100px" }}
+                />
+              </Link>
             </div>
             <p className="mt-3" style={{ textAlign: "justify" }}>
-              Dosing Pumps are extensively utilized in a range of industries to maintain precise chemical dosing and control. Dosing Pumps economy in India has played a essential role in various sectors, like Oil and Gas , Water treatment, Chemical, Pharmaceutical, Agriculture, which brings Precision,costeffectiveness and efficiency in various process. Which enhance Productivity and Quality standards.
-
-              We, Positive Metering Pumps India Pvt Ltd, are among the well established companies engaged in manufacturing of all your Dosing needs
+              Dosing Pumps are extensively utilized in a range of industries to
+              maintain precise chemical dosing and control. Dosing Pumps economy
+              in India has played a essential role in various sectors, like Oil
+              and Gas , Water treatment, Chemical, Pharmaceutical, Agriculture,
+              which brings Precision,costeffectiveness and efficiency in various
+              process. Which enhance Productivity and Quality standards. We,
+              Positive Metering Pumps India Pvt Ltd, are among the well
+              established companies engaged in manufacturing of all your Dosing
+              needs
             </p>
           </Col>
 
           <Col xs={12} md={4} lg={2} className="mx-lg-3">
             <h5 className=" fw-bold mb-lg-4">Company</h5>
             <ul className="list-unstyled lh-lg">
-              <li className="pt-1">
+              <li className="pt-1 ">
                 <Link
+                  className="nvlink"
                   onClick={() => window.scrollTo(0, 0)}
                   to="/aboutourstory"
                   style={{ textDecoration: "none", color: "black" }}
@@ -130,8 +159,9 @@ const Footer = () => {
                   About
                 </Link>
               </li>
-              <li className="pt-1">
+              <li className="pt-1 ">
                 <Link
+                  className="nvlink"
                   onClick={() => window.scrollTo(0, 0)}
                   to="/service"
                   style={{ textDecoration: "none", color: "black" }}
@@ -141,6 +171,7 @@ const Footer = () => {
               </li>
               <li className="pt-1">
                 <Link
+                  className="nvlink"
                   onClick={() => window.scrollTo(0, 400)}
                   to={`/product/11`}
                   style={{ textDecoration: "none", color: "black" }}
@@ -150,7 +181,8 @@ const Footer = () => {
               </li>
               <li className="pt-1">
                 <Link
-                 onClick={() => window.scrollTo(0, 0)}
+                  className="nvlink"
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/blog"
                   style={{ textDecoration: "none", color: "black" }}
                 >
@@ -159,7 +191,8 @@ const Footer = () => {
               </li>
               <li className="pt-1">
                 <Link
-                 onClick={() => window.scrollTo(0, 0)}
+                  className="nvlink"
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/contactus"
                   style={{ textDecoration: "none", color: "black" }}
                 >
@@ -168,7 +201,8 @@ const Footer = () => {
               </li>
               <li className="pt-1">
                 <Link
-                 onClick={() => window.scrollTo(0, 0)}
+                  className="nvlink"
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/career"
                   style={{ textDecoration: "none", color: "black" }}
                 >
@@ -177,7 +211,8 @@ const Footer = () => {
               </li>
               <li className="pt-1">
                 <Link
-                 onClick={() => window.scrollTo(0, 0)}
+                  className="nvlink"
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/news-event"
                   style={{ textDecoration: "none", color: "black" }}
                 >
@@ -187,52 +222,47 @@ const Footer = () => {
             </ul>
           </Col>
           <Col xs={12} md={8} lg={5}>
-
             <Row>
               <Col xs={12} md={6} lg={6} className="mx-lg-3x pt-5 pt-lg-0">
-                <h5 className=" fw-bold mb-lg-5" >Product</h5>
+                <h5 className=" fw-bold mb-lg-5">Product</h5>
                 <ul className="list-unstyled lh-lg">
-                  {
-                    firstHalf.map((a) => {
-                      return (
-                        <>
-                          <li className="pt-1">
-                            <Link
-                              onClick={() => window.scrollTo(0, 500)}
-                              to={`/product/${a.id}`}
-                              style={{ textDecoration: "none", color: "black" }
-
-                              }
-                            >
-                              {a.productName}
-                            </Link>
-                          </li >
-                        </>
-                      )
-                    })
-                  }
+                  {firstHalf.map((a) => {
+                    return (
+                      <>
+                        <li className="pt-1">
+                          <Link
+                            className="nvlink"
+                            onClick={() => window.scrollTo(0, 500)}
+                            to={`/product/${a.id}`}
+                            style={{ textDecoration: "none", color: "black" }}
+                          >
+                            {capitalizeFirstLetter(a.productName)}
+                          </Link>
+                        </li>
+                      </>
+                    );
+                  })}
                 </ul>
               </Col>
               <Col xs={12} md={6} lg={6} className="mx-lg-3x">
-                <h5 className=" fw-bold mb-lg-5 d-none d-lg-block" >Product</h5>
+                <h5 className=" fw-bold mb-lg-5 d-none d-lg-block">Product</h5>
                 <ul className="list-unstyled lh-lg">
-                  {
-                    secondHalf.map((a) => {
-                      return (
-                        <>
-                          <li className="pt-1">
-                            <Link
-                              onClick={() => window.scrollTo(0, 500)}
-                              to={`/product/${a.id}`}
-                              style={{ textDecoration: "none", color: "black" }}
-                            >
-                              {a.productName}
-                            </Link>
-                          </li >
-                        </>
-                      )
-                    })
-                  }
+                  {secondHalf.map((a) => {
+                    return (
+                      <>
+                        <li className="pt-1">
+                          <Link
+                            className="nvlink"
+                            onClick={() => window.scrollTo(0, 500)}
+                            to={`/product/${a.id}`}
+                            style={{ textDecoration: "none", color: "black" }}
+                          >
+                            {capitalizeFirstLetter(a.productName)}
+                          </Link>
+                        </li>
+                      </>
+                    );
+                  })}
                 </ul>
               </Col>
             </Row>
@@ -244,8 +274,10 @@ const Footer = () => {
             xs={12}
             lg={6}
             className="text-center d-flex justify-content-evenly align-items-center"
-          > <div>
-              <a href="https://www.sumagoinfotech.com/" className="smglink">
+          >
+            {" "}
+            <div>
+              <a href="https://www.sumagoinfotech.com/" target="_blank" className="smglink">
                 &copy; {currentYear} Copyright :{" "}
                 <ins className=""> Made with Passion by Sumago Infotech</ins>{" "}
               </a>
@@ -255,11 +287,22 @@ const Footer = () => {
             <div className=" text-center d-grid d-lg-flex justify-content-center align-items-center">
               <div>Terms & Conditions</div>
               <div className="d-flex justify-content-center">
-                <a href="https://www.facebook.com/PositiveMetering"><CiFacebook className="icon-hover mx-2 " /></a>
-                <a href="https://www.instagram.com/positive_metering_pumps/?hl=en"><FaInstagram className="icon-hover mx-2" /></a>
-                <a href="mailto:info@positivemetering.com"><MdOutlineMail className="icon-hover mx-2" /></a>
-                <a href={`https://wa.me/${91 - 253 - 6613218}`}><FaWhatsapp className="icon-hover mx-2" /></a>
-                <a href="https://www.linkedin.com/company/positive-metering-pumps-i-pvt-ltd/"> <CiLinkedin className="icon-hover mx-2" /></a>
+                <a href="https://www.facebook.com/PositiveMetering" target="_blank">
+                  <CiFacebook className="icon-hover mx-2 " />
+                </a>
+                <a href="https://www.instagram.com/positive_metering_pumps/?hl=en" target="_blank">
+                  <FaInstagram className="icon-hover mx-2" />
+                </a>
+                <a href="mailto:info@positivemetering.com" target="_blank">
+                  <MdOutlineMail className="icon-hover mx-2" />
+                </a>
+                <a href={`https://wa.me/${91 - 253 - 6613218}`} target="_blank">
+                  <FaWhatsapp className="icon-hover mx-2" />
+                </a>
+                <a href="https://www.linkedin.com/company/positive-metering-pumps-i-pvt-ltd/" target="_blank">
+                  {" "}
+                  <CiLinkedin className="icon-hover mx-2" />
+                </a>
               </div>
             </div>
           </Col>

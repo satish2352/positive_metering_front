@@ -42,16 +42,17 @@
 }
 
 .getquoteformback {
-    background-image: url('../assets/img/About/Untitled-1\ 2.png');
+    background-image: url('../assets/img/DGHGF.png');
     /* D:\newpositive\positive_metering_front\src\assets\img\About\back 21.png */
-    background-size: contain    ;
+    background-size: cover    ;
+    background-repeat: no-repeat;
 }
 
 .formbacks {
     background: rgba(255, 255, 255, 0);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(1px);
+    /* backdrop-filter: blur(3px); */
+    /* -webkit-backdrop-filter: blur(1px); */
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
 }

@@ -61,7 +61,7 @@ const Requestcallback = () => {
           }
         );
         if (response.status === 200) {
-          alert("Thank you. I will connect with you soon.");
+          alert("Thank you. we will connect with you soon.");
           setFullname("");
           setEmail("");
           setMobile("");
@@ -139,35 +139,38 @@ const Requestcallback = () => {
                         placeholder="Enter Full Name"
                         value={fullname}
                         onChange={(e) => setFullname(e.target.value)}
+                        required
                       />
                       {errors.fullname && (
                         <span className="error text-danger">{errors.fullname}</span>
                       )}
                     </div>
                     <div className="d-grid">
-                      <label className="requestinputlb ms-2 p-2">Email</label>
+                      <label className="requestinputlb ms-2 p-2">Email Id</label>
                       <input
                         type="text"
                         className="requestinput"
-                        placeholder="Enter Email"
+                        placeholder="Enter Email Id"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        required
                       />
                       {errors.email && (
                         <span className="error text-danger">{errors.email}</span>
                       )}
                     </div>
                     <div className="d-grid">
-                      <label className="requestinputlb ms-2 p-2">Mobile</label>
+                      <label className="requestinputlb ms-2 p-2">Mobile No</label>
                       <input
                         type="text"
                         className="requestinput"
-                        placeholder="Enter Mobile"
+                        placeholder="Enter Mobile No"
                         value={mobile}
                         onChange={(e) => setMobile(e.target.value)}
+                        required
                       />
                       {errors.mobile && (
-                        <span className="error text-danger">{errors.mobile}</span>
+                        <span className=" fw-light text-danger">{errors.mobile}</span>
                       )}
                     </div>
                     <div className="d-grid">
@@ -177,6 +180,7 @@ const Requestcallback = () => {
                         placeholder="Enter Message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
+                        required
                       ></textarea>
                       {errors.message && (
                         <span className="error text-danger">{errors.message}</span>
@@ -249,20 +253,20 @@ const Requestcallback = () => {
                         onChange={(e) => setFullname(e.target.value)}
                       />
                       {errors.fullname && (
-                        <span className="error text-danger">{errors.fullname}</span>
+                        <span className=" text-danger">{errors.fullname}</span>
                       )}
                     </div>
                     <div className="d-grid">
-                      <label className="requestinputlb ms-2 p-2">Email</label>
+                      <label className="requestinputlb ms-2 p-2">Email id</label>
                       <input
                         type="text"
                         className="requestinput"
-                        placeholder="Enter Email"
+                        placeholder="Enter Email id"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                       />
                       {errors.email && (
-                        <span className="error text-danger">{errors.email}</span>
+                        <span className=" text-danger">{errors.email}</span>
                       )}
                     </div>
                     <div className="d-grid">
@@ -275,7 +279,7 @@ const Requestcallback = () => {
                         onChange={(e) => setMobile(e.target.value)}
                       />
                       {errors.mobile && (
-                        <span className="error text-danger">{errors.mobile}</span>
+                        <span className=" text-danger">{errors.mobile}</span>
                       )}
                     </div>
                     <div className="d-grid">
@@ -287,7 +291,7 @@ const Requestcallback = () => {
                         onChange={(e) => setMessage(e.target.value)}
                       ></textarea>
                       {errors.message && (
-                        <span className="error text-danger">{errors.message}</span>
+                        <span className=" text-danger">{errors.message}</span>
                       )}
                     </div>
                     <div className="d-flex justify-content-end pt-4">

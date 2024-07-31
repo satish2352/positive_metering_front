@@ -48,22 +48,22 @@ const Career = () => {
       errors.email = "Email is required";
       isValid = false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      errors.email = "Invalid email address";
+      errors.email = "Invalid Email ID";
       isValid = false;
     }
 
     if (!subject.trim()) {
-      errors.subject = "Subject is required";
+      errors.subject = "Subject Is Required";
       isValid = false;
     }
 
     if (!message.trim()) {
-      errors.message = "Message is required";
+      errors.message = "Message Is Required";
       isValid = false;
     }
 
     if (!uploadcv) {
-      errors.uploadcv = "CV is required";
+      errors.uploadcv = "CV Is Required";
       isValid = false;
     } else {
       const allowedExtensions = /(\.pdf)$/i;
@@ -163,7 +163,7 @@ const Career = () => {
                       <Form.Label>Email Id</Form.Label>
                       <Form.Control
                         type="email"
-                        placeholder="Enter Your Email"
+                        placeholder="Enter Your Email Id"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                       />
@@ -174,10 +174,10 @@ const Career = () => {
                   </Col>
                   <Col xl={6}>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                      <Form.Label>Mobile Number</Form.Label>
+                      <Form.Label>Mobile No.</Form.Label>
                       <Form.Control
                         type="number"
-                        placeholder="Enter Your Mobile Number"
+                        placeholder="Enter Your Mobile No."
                         value={mobile}
                         onChange={(e) => setMobile(e.target.value)}
                       />
@@ -230,19 +230,32 @@ const Career = () => {
                       )}
                     </Form.Group>
                   </Col>
-                  <Col xl={6}>
-                    <ReCAPTCHA
-                      ref={captchaRef}
-                      //  testserver
-                      sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
-                      //local
-                      // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
-                      onChange={onChange}
-                    />
-                    {errors.captcha && <span className="error text-danger" style={{ fontWeight: "400" }}> {errors.captcha}</span>}
-                  </Col>
+                  <Col xl={5}>
+                  <ReCAPTCHA
+                    ref={captchaRef}
+                    //  testserver
+                    sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+                    // local
+                    // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+                    onChange={onChange}
+                  />
+                  {errors.captcha && (
+                    <span className="error text-danger">{errors.captcha}</span>
+                  )}
+                </Col>
+
+                <Col xl={4} className=" d-flex justify-content-end">
+                 <div> <Button
+                    variant="danger"
+                    type="submit"
+                    className="p-3"
+                    style={{ borderRadius: "30px", letterSpacing: "2px" }}
+                  >
+                    Submit
+                  </Button></div>
+                </Col>
                 </Row>
-                <div className="text-center text-center mt-xl-5 mb-xl-4">
+                {/* <div className="text-center text-center mt-xl-5 mb-xl-4">
                   <Button
                     variant="danger"
                     type="submit"
@@ -251,7 +264,7 @@ const Career = () => {
                   >
                     Submit
                   </Button>
-                </div>
+                </div> */}
               </Form>
             </Container>
           </Col>

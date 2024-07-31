@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "../../assets/CSS/shopnow.css";
 import axios from "axios";
@@ -8,12 +8,21 @@ import ResponsiveImage from "../../pages/ResponsiveImage";
 import im1 from "../../assets/img/Home/image.png";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import ReCAPTCHA from "react-google-recaptcha";
+
 function MyVerticallyCenteredModal(props) {
   const [fullname, setfullname] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setmobile] = useState("");
   const [message, setmessage] = useState("");
   const [errors, setErrors] = useState({});
+  const [isCaptchaVerified, setCaptchaVerified] = useState(false);
+  const captchaRef = useRef(null);
+
+  const onChange = (value) => {
+    setCaptchaVerified(true);
+    console.log(value);
+  };
 
   const validateForm = () => {
     let errors = {};
@@ -44,7 +53,10 @@ function MyVerticallyCenteredModal(props) {
       errors.message = "Message is required";
       isValid = false;
     }
-
+    if (!isCaptchaVerified) {
+      errors.captcha = "Please complete the reCAPTCHA before submitting.";
+      isValid = false;
+    }
     setErrors(errors);
     return isValid;
   };
@@ -60,7 +72,7 @@ function MyVerticallyCenteredModal(props) {
           message,
         });
         if (response.status === 200) {
-          alert("Thank you. I will connect with you soon.");
+          alert("Thank you. we will connect with you soon..");
           console.log("newData", response.data);
         } else {
           alert("Failed to submit data.");
@@ -89,7 +101,7 @@ function MyVerticallyCenteredModal(props) {
             type="text"
             name="fullName"
             className="bannerinp ms-2"
-            placeholder="Full name"
+            placeholder="Enter Full Name"
             value={fullname}
             onChange={(e) => setfullname(e.target.value)}
             required
@@ -101,7 +113,7 @@ function MyVerticallyCenteredModal(props) {
             type="email"
             name="email"
             className="bannerinp ms-2"
-            placeholder="Email Address"
+            placeholder="Enter Email Id"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -112,31 +124,44 @@ function MyVerticallyCenteredModal(props) {
           <input
             type="tel"
             name="mobileNumber"
-            placeholder="Mobile Number"
+            placeholder="Enter Mobile No."
             className="bannerinp ms-2"
             value={mobile}
             onChange={(e) => setmobile(e.target.value)}
             required
           />
           {errors.mobile && (
-            <span className="error text-danger">{errors.mobile}</span>
+            <span className=" ps-4 text-danger">{errors.mobile}</span>
           )}
           <textarea
             name="message"
-            placeholder="Message"
+            placeholder="Enter Message"
             value={message}
-            className="bannertxtarea bannertxtarea2 ps-3"
+            style={{ marginLeft: "7px" }}
+            className="bannertxtarea2 bannertxtarea ps-3 "
             onChange={(e) => setmessage(e.target.value)}
             required
           />
           {errors.message && (
             <span className="error text-danger">{errors.message}</span>
           )}
+          <ReCAPTCHA
+            className=" my-4 ms-2"
+            ref={captchaRef}
+            //  testserver
+            // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+            // local
+            sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+            onChange={onChange}
+          />
+          {errors.captcha && (
+            <span className="error text-danger">{errors.captcha}</span>
+          )}
           <button
             type="submit"
-            className="bannerbtn  w-50 py-2 m-3 me-4 float-end"
+            className="bannerbtn w-50 py-2 m-3 me-4 float-end"
           >
-            SEND
+            SUBMIT
           </button>
         </form>
       </Modal.Body>

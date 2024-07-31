@@ -178,7 +178,7 @@ function Homebaner() {
                           type="text"
                           name="fullName"
                           className="bannerinp"
-                          placeholder="Enter full name"
+                          placeholder="Enter Full Name"
                           value={fullname}
                           onChange={(e) => setfullname(e.target.value)}
                           required
@@ -191,7 +191,7 @@ function Homebaner() {
                         <input
                           type="email"
                           name="email"
-                          placeholder="Enter email address"
+                          placeholder="Enter Email Id"
                           className="bannerinp"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
@@ -205,7 +205,7 @@ function Homebaner() {
                         <input
                           type="tel"
                           name="mobileNumber"
-                          placeholder="Enter mobile number"
+                          placeholder="Enter Mobile No."
                           className="bannerinp"
                           value={mobile}
                           onChange={(e) => setmobile(e.target.value)}
@@ -233,7 +233,7 @@ function Homebaner() {
                           type="submit"
                           className="bannerbtn px-5 py-2 m-3 me-4 float-end"
                         >
-                          SEND
+                          SUBMIT
                         </button>
                       </form>
                     </div>

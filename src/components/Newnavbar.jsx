@@ -3,7 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { NavDropdown, Nav } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/img/Home/Group 1000003789.png";
-import { ProductContext } from '../ProductContext';
+import { ProductContext } from "../ProductContext";
 
 const NewNavbar = () => {
   const location = useLocation();
@@ -29,7 +29,10 @@ const NewNavbar = () => {
   return (
     <div className="mobile-navbar d-lg-none d-block">
       <div className="navbar-header">
-        <img src={logo} alt="Logo" className="logo" />
+        <Link to='/'>
+         
+          <img src={logo} alt="Logo" className="logo" />
+        </Link>
         <button className="toggle-button" onClick={toggleNavbar}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </button>
@@ -100,7 +103,9 @@ const NewNavbar = () => {
           </NavDropdown>
           <Nav.Link href="/product" onClick={closeNavbar}>
             <Link
-              className={`${getNavLinkClass("/product")} fw-bold nvlink mx-xxl-3`}
+              className={`${getNavLinkClass(
+                "/product"
+              )} fw-bold nvlink mx-xxl-3`}
               onClick={() => window.scrollTo(0, 0)}
               to={`/product/${productNo}`}
             >
@@ -109,7 +114,9 @@ const NewNavbar = () => {
           </Nav.Link>
           <Nav.Link href="/service" onClick={closeNavbar}>
             <Link
-              className={`${getNavLinkClass("/service")} fw-bold nvlink mx-xxl-3`}
+              className={`${getNavLinkClass(
+                "/service"
+              )} fw-bold nvlink mx-xxl-3`}
               onClick={() => window.scrollTo(0, 0)}
               to="/service"
             >
@@ -138,7 +145,9 @@ const NewNavbar = () => {
           </Nav.Link>
           <Nav.Link href="/career" onClick={closeNavbar}>
             <Link
-              className={`${getNavLinkClass("/career")} fw-bold nvlink mx-xxl-3`}
+              className={`${getNavLinkClass(
+                "/career"
+              )} fw-bold nvlink mx-xxl-3`}
               onClick={() => window.scrollTo(0, 0)}
               to="/career"
             >
@@ -147,7 +156,9 @@ const NewNavbar = () => {
           </Nav.Link>
           <Nav.Link href="/contactus" onClick={closeNavbar}>
             <Link
-              className={`${getNavLinkClass("/contactus")} fw-bold nvlink mx-xxl-3`}
+              className={`${getNavLinkClass(
+                "/contactus"
+              )} fw-bold nvlink mx-xxl-3`}
               onClick={() => window.scrollTo(0, 0)}
               to="/contactus"
             >

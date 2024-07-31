@@ -5,9 +5,9 @@ import ResponsiveImage from "../../pages/ResponsiveImage";
 import imgmobile from "../../assets/img/services/mobileview.png";
 import imgtop from "../../assets/img/services/diskimg.png";
 import { useNavigate } from "react-router-dom";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import axios from 'axios';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import axios from "axios";
 
 const BlogCard = () => {
   const navigate = useNavigate();
@@ -23,13 +23,14 @@ const BlogCard = () => {
     // Fetch the blog data from the API
     const fetchBlogData = async () => {
       try {
-        const response = await axios.get('/blogdetails/get-blogdetails');
+        const response = await axios.get("/blogdetails/get-blogdetails");
         if (response.data.result) {
-          const truncatedData = response.data.responseData.map(blog => ({
+          const truncatedData = response.data.responseData.map((blog) => ({
             ...blog,
-            shortDesc: blog.shortDesc.length > characterLimit
-              ? blog.shortDesc.substring(0, characterLimit) + '...'
-              : blog.shortDesc
+            shortDesc:
+              blog.shortDesc.length > characterLimit
+                ? blog.shortDesc.substring(0, characterLimit) + "..."
+                : blog.shortDesc,
           }));
           setBlogData(truncatedData);
         }
@@ -52,7 +53,9 @@ const BlogCard = () => {
               <Col key={blog.id} xl={3} lg={3} md={6} sm={6} className="mb-4">
                 <Card className="border-0 h-100">
                   <Row
-                    className={`text-white ${index % 2 === 1 ? "flex-lg-column-reverse" : "d-lg-grid"}`}
+                    className={`text-white ${
+                      index % 2 === 1 ? "flex-lg-column-reverse" : "d-lg-grid"
+                    }`}
                   >
                     <Col xs={12} className="pe-0 ps-0 bg-light blogcrd">
                       <Card.Img
@@ -63,14 +66,17 @@ const BlogCard = () => {
                         data-aos-duration="2000"
                       />
                     </Col>
-                    <Col xs={12} className="ps-0 blogcrd"
-                      style={{ background: index % 2 === 0 ? "#EE585D" : "#CDCDCD" }}
+                    <Col
+                      xs={12}
+                      className="ps-0 blogcrd"
+                      style={{
+                        background: index % 2 === 0 ? "#EE585D" : "#727171",
+                      }}
                     >
                       <Card.Body
                         className="pt-4 pb-3 d-flex flex-column justify-content-between"
                         style={{
-                          background: index % 2 === 0 ? "#EE585D" : "#CDCDCD",
-                      
+                          background: index % 2 === 0 ? "#EE585D" : "#727171",
                         }}
                       >
                         <div>
@@ -82,7 +88,9 @@ const BlogCard = () => {
                               letterSpacing: "1.2px",
                             }}
                           >
-                            {blog.title}
+                            {blog.title.length > 23
+                              ? blog.title.substring(0, 23) + "..."
+                              : blog.title}
                           </Card.Title>
                           <Card.Text
                             className="blogCardDesc pt-3"
@@ -91,7 +99,7 @@ const BlogCard = () => {
                             {blog.shortDesc}
                           </Card.Text>
                         </div>
-                        <div className="d-flex justify-content-start ">
+                        <div className="d-flex justify-content-end ">
                           <Button
                             variant="transparent"
                             className="text-white py-2 mt-xl-3 align-self-end fw-bolder "

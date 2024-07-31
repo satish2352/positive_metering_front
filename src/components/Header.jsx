@@ -135,7 +135,9 @@ const Header = () => {
                   to="/aboutourstory"
                 >
                   <Link
-                    className={`${getNavLinkClass("/aboutourstory")} nvlink  mx-xxl-3`}
+                    className={`${getNavLinkClass(
+                      "/aboutourstory"
+                    )} nvlink  mx-xxl-3`}
                     onClick={() => window.scrollTo(0, 0)}
                     to="/aboutourstory"
                   >
@@ -148,7 +150,9 @@ const Header = () => {
                   to="/aboutourteam"
                 >
                   <Link
-                    className={`${getNavLinkClass("/aboutourteam")} nvlink  mx-xxl-3`}
+                    className={`${getNavLinkClass(
+                      "/aboutourteam"
+                    )} nvlink  mx-xxl-3`}
                     onClick={() => window.scrollTo(0, 0)}
                     to="/aboutourteam"
                   >
@@ -161,7 +165,9 @@ const Header = () => {
                 <Link
                   style={{ letterSpacing: 3 }}
                   onClick={() => window.scrollTo(0, 0)}
-                  className={`${getNavLinkClass("/product")}  nvlink fw-bold mx-xxl-3`}
+                  className={`${getNavLinkClass(
+                    "/product"
+                  )}  nvlink fw-bold mx-xxl-3`}
                   to={`/product/${productNo}`}
                 >
                   PRODUCT
@@ -171,7 +177,9 @@ const Header = () => {
                 <Link
                   style={{ letterSpacing: 3 }}
                   onClick={() => window.scrollTo(0, 0)}
-                  className={`${getNavLinkClass("/service")} nvlink fw-bold mx-xxl-3`}
+                  className={`${getNavLinkClass(
+                    "/service"
+                  )} nvlink fw-bold mx-xxl-3`}
                   to="/service"
                 >
                   SERVICE
@@ -190,21 +198,23 @@ const Header = () => {
                 </Link>
               </Nav.Link>
             </Nav>
-            <img
-              src={logo}
-              alt="Positive logo"
-              className={`header-logo mt-md-2 ${
-                isFixed ? "small-logo ms-4 mb-2" : ""
-              }`}
-            />
+            <Link to='/'>
+              <img
+                src={logo}
+                alt="Positive logo"
+                className={`header-logo mt-md-2 ${
+                  isFixed ? "small-logo ms-4 mb-2" : ""
+                }`}
+              />
+            </Link>
             <Nav className="me-auto">
               <Nav.Link>
                 <Link
                   style={{ letterSpacing: 3 }}
                   onClick={() => window.scrollTo(0, 0)}
-                  className={`${getNavLinkClass("/news-event")} fw-bold nvlink  ${
-                    isFixed ? "ps-3" : " "
-                  }`}
+                  className={`${getNavLinkClass(
+                    "/news-event"
+                  )} fw-bold nvlink  ${isFixed ? "ps-3" : " "}`}
                   to="/news-event"
                 >
                   NEWS & EVENT
@@ -214,7 +224,9 @@ const Header = () => {
                 <Link
                   style={{ letterSpacing: 3 }}
                   onClick={() => window.scrollTo(0, 0)}
-                  className={`${getNavLinkClass("/career")} fw-bold nvlink mx-xxl-3`}
+                  className={`${getNavLinkClass(
+                    "/career"
+                  )} fw-bold nvlink mx-xxl-3`}
                   to="/career"
                 >
                   CAREER

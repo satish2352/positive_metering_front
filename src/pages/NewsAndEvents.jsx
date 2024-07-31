@@ -58,7 +58,10 @@ const NewsAndEvents = () => {
                     <Card.Title className="newsEventTitleFont fw-bolder"
                       style={{ fontSize: "18px", flexGrow: 1, textAlign: "justify" }}
                     >
-                      {card.title}
+                      
+                      {card.title.length > 40
+                              ? card.title.substring(0, 40) + "..."
+                              : card.title}
                     </Card.Title>
                     <Card.Text
                       className="newsEventDescFont pt-3"
@@ -69,7 +72,7 @@ const NewsAndEvents = () => {
                   </Card.Body>
                 </div>
 
-                <div className="d-flex justify-content-start pb-3 ps-5">
+                <div className="d-flex justify-content-end pb-3 pe-4">
                   <button
                     style={{ backgroundColor: "transparent" }}
                     className="rounded-5 border-3 px-3 py-2 border border-danger fw-bolder"
