@@ -91,10 +91,10 @@ const Footer = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />
-                    {errors.email && (
-                      <span className="error text-danger">{errors.email}</span>
-                    )}
                     <Button className="footerenquriybtn" type="submit" style={{ fontSize: '16px' }}>Subscribe</Button>
+                    {errors.email && (
+                      <span className="error text-danger ms-3 mt-1">{errors.email}</span>
+                    )}
                   </InputGroup>
                 </Form>
               </div>
