@@ -110,41 +110,44 @@ const Testimonial = () => {
         >
           <Heading heading={"TESTIMONIALS"} />
           <Slider {...settings}>
-            {testimonial.map((testimonial) => (
-              <div key={testimonial.id} className="text-center">
-                <Col style={{ marginTop: "-50px" }}>
-                  <div className="profileposition">
-                    <img
-                      src={testimonial.img}
-                      alt=""
-                      className="testomonialprofile img-fluid"
-                    />
+            {testimonial.filter(testimonial => testimonial.isActive).map((testimonial) => {
+                console.log("testimonials", testimonial);
+                return (
+                  <div key={testimonial.id} className="text-center">
+                    <Col style={{ marginTop: "-50px" }}>
+                      <div className="profileposition">
+                        <img
+                          src={testimonial.img}
+                          alt=""
+                          className="testomonialprofile img-fluid"
+                        />
+                      </div>
+                      <div className="testback">
+                        <h1>{testimonial.title}</h1>
+                        <p>
+                          {truncateReview(testimonial.review, 200)}
+                          {testimonial.review.length > 200 && (
+                            <span
+                              className="read-more"
+                              onClick={() => handleShowModal(testimonial)}
+                            >
+                              ... <b>read more</b>
+                            </span>
+                          )}
+                        </p>
+                        <Rating
+                          iconsCount={5}
+                          initialValue={testimonial.star}
+                          size={20}
+                          readonly
+                          fillColor="orange"
+                          emptyColor="gray"
+                        />
+                      </div>
+                    </Col>
                   </div>
-                  <div className="testback">
-                    <h1>{testimonial.title}</h1>
-                    <p>
-                      {truncateReview(testimonial.review, 200)}
-                      {testimonial.review.length > 200 && (
-                        <span
-                          className="read-more"
-                          onClick={() => handleShowModal(testimonial)}
-                        >
-                          ... <b>read more</b>
-                        </span>
-                      )}
-                    </p>
-                    <Rating
-                      iconsCount={5}
-                      initialValue={testimonial.star}
-                      size={20}
-                      readonly
-                      fillColor="orange"
-                      emptyColor="gray"
-                    />
-                  </div>
-                </Col>
-              </div>
-            ))}
+                )
+              })}
           </Slider>
 
           <Modal show={showModal} onHide={handleCloseModal}>

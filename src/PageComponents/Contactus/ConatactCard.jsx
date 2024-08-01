@@ -38,7 +38,7 @@ const ContactCard = () => {
 
       <Container fluid className='caontatctcardback py-5 mb-5' style={{ backgroundColor: '#EDEAEA' }}>
         <Row>
-          {contactDetails.map((contact) => (
+          {contactDetails.filter(contactDetails => contactDetails.isActive).map((contact) => (
             <Col
               key={contact.id}
               lg={4}
