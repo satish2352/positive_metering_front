@@ -6,7 +6,7 @@ import imgmobile from '../assets/img/productimgs/productmobileview.png'
 import imgtop from '../assets/img/services/diskimg.png'
 import ProductTab from '../PageComponents/Home/Producttab';
 const Product = () => {
-  window.scrollTo(0, 0);
+
   return (
     <>
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />

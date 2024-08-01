@@ -66,8 +66,9 @@ const NewsAndEvents = () => {
                     <Card.Text
                       className="newsEventDescFont pt-3"
                       style={{ fontSize: "13px", flexGrow: 1, textAlign: "justify", lineHeight: "23px" }}
+                      dangerouslySetInnerHTML={{ __html: card.shortDesc }}
                     >
-                      {card.shortDesc}
+                     
                     </Card.Text>
                   </Card.Body>
                 </div>

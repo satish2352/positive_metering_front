@@ -7,14 +7,13 @@ import banner3 from "../../assets/img/Home/2540 x 1018.jpg";
 import banner1Mobile from "../../assets/img/Home/Rectangle 4430.png";
 import banner2Mobile from "../../assets/img/Home/image 45.png";
 import banner3Mobile from "../../assets/img/Home/Group 1000004134.png";
-import { Col, Row, Container, Modal, Button } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
 import "../../assets/CSS/homebanner.css";
 import axios from "axios";
 
 function Homebaner() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-
   const [homeslider, sethomeslider] = useState([]);
   const [fullname, setfullname] = useState("");
   const [email, setEmail] = useState("");
@@ -22,17 +21,38 @@ function Homebaner() {
   const [message, setmessage] = useState("");
   const [errors, setErrors] = useState({});
 
+  const defaultImages = {
+    desktop: [
+      { img: banner1, view: "desktop", isActive: true },
+
+    ],
+    mobile: [
+      { img: banner1Mobile, view: "mobile", isActive: true },
+
+    ],
+  };
+
   useEffect(() => {
     window.scrollTo(0, 0);
     axios
       .get("/homeslider/get-homeslider")
       .then((response) => {
-        sethomeslider(response.data.responseData);
+        const data = response.data.responseData.filter(slide => slide.isActive);
+        const desktopSlides = data.filter(slide => slide.view === "desktop");
+        const mobileSlides = data.filter(slide => slide.view === "mobile");
+        
+        const finalSlides = [
+          ...desktopSlides.length ? desktopSlides : defaultImages.desktop,
+          ...mobileSlides.length ? mobileSlides : defaultImages.mobile
+        ];
+        sethomeslider(finalSlides);
       })
       .catch((error) => {
         console.error("There was an error fetching the data!", error);
+        sethomeslider([...defaultImages.desktop, ...defaultImages.mobile]);
       });
   }, []);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -104,27 +124,16 @@ function Homebaner() {
     }
   };
 
-  const cararray = [
-    { img: banner1, view: "large" },
-    { img: banner2, view: "large" },
-    { img: banner3, view: "large" },
-    { img: banner1Mobile, view: "mobile" },
-    { img: banner2Mobile, view: "mobile" },
-    { img: banner3Mobile, view: "mobile" },
-  ];
-
   return (
     <>
       <Carousel className="homebannerback">
         {homeslider
-          .filter((a) =>
-            isMobile ? a.view === "mobile" : a.view === "desktop"
-          )
+          .filter((a) => a.isActive && (isMobile ? a.view === "mobile" : a.view === "desktop"))
           .map((a, index) => (
             <Carousel.Item key={index} interval={1000}>
               <Image src={a.img} rounded className="img-fluid carsimg" />
               <Carousel.Caption>
-                <Row className="sticky-top ">
+                <Row className="sticky-top">
                   <Col lg={1}></Col>
                   <Col lg={9}>
                     <div className="homebannertext p-10">
@@ -158,10 +167,10 @@ function Homebaner() {
                           Dosing Pumps are extensively utilized in a range of
                           industries to maintain precise chemical dosing and
                           control. Dosing Pumps economy in India has played a
-                          essential role in various sectors, like Oil and Gas ,
+                          essential role in various sectors, like Oil and Gas,
                           Water treatment, Chemical, Pharmaceutical,
-                          Agriculture, which brings Precision,costeffectiveness
-                          and efficiency in various process. Which enhance
+                          Agriculture, which brings Precision, cost-effectiveness
+                          and efficiency in various processes. Which enhance
                           Productivity and Quality standards. We, Positive
                           Metering Pumps India Pvt Ltd, are among the well
                           established companies engaged in manufacturing of all
@@ -170,7 +179,7 @@ function Homebaner() {
                       )}
                     </div>
                   </Col>
-                  <Col lg={3} sm={12} className="bannerform my-5  sticky-top">
+                  <Col lg={3} sm={12} className="bannerform my-5 sticky-top">
                     <div className="contact-form">
                       <h2 className="py-3">CONTACT</h2>
                       <form onSubmit={handleSubmit} className="sticky-top">

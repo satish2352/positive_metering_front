@@ -221,7 +221,7 @@ const UploadCV = () => {
                   </Form.Group>
                 </Col>
 
-                <Col xl={5}>
+                <Col xl={12}>
                   <ReCAPTCHA
                     ref={captchaRef}
                     //  testserver
@@ -235,17 +235,18 @@ const UploadCV = () => {
                   )}
                 </Col>
 
-                <Col xl={4} className=" d-flex justify-content-end">
-                 <div> <Button
+               
+              </Row>
+              <div className="text-center text-center mt-xl-5 mb-xl-4">
+                  <Button
                     variant="danger"
                     type="submit"
-                    className="p-3"
+                    className="py-3 px-5  fs-6"
                     style={{ borderRadius: "30px", letterSpacing: "2px" }}
                   >
                     Submit
-                  </Button></div>
-                </Col>
-              </Row>
+                  </Button>
+                </div>
               <div className="text-center mt-xl-5 mb-xl-4"></div>
             </Form>
           </Col>

@@ -40,9 +40,9 @@ const Ouroffices = () => {
         <Container className="my-lg-5 my-5">
             <Heading heading="OUR OFFICES" />
             {loading ? (
-                <p>Loading...</p>
+                <p></p>
             ) : error ? (
-                <p>Error: {error}</p>
+                <p></p>
             ) : (
                 <Row className='d-flex justify-content-evenly'>
                     {offices.map((card, index) => (

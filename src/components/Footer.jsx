@@ -14,7 +14,7 @@ import { ProductContext } from "../ProductContext";
 import { useNavigate } from "react-router-dom";
 const Footer = () => {
   const navigate = useNavigate();
-  const { products } = useContext(ProductContext);
+  const { products,productNo } = useContext(ProductContext);
   const half = Math.ceil(products.length / 2);
   const firstHalf = products.slice(0, half);
   const secondHalf = products.slice(half);
@@ -173,7 +173,7 @@ const Footer = () => {
                 <Link
                   className="nvlink"
                   onClick={() => window.scrollTo(0, 400)}
-                  to={`/product/11`}
+                  to={`/product/${productNo}`}
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   Product
@@ -196,7 +196,7 @@ const Footer = () => {
                   to="/contactus"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  Contact us
+                  Contact Us
                 </Link>
               </li>
               <li className="pt-1">
@@ -216,7 +216,7 @@ const Footer = () => {
                   to="/news-event"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  NewsAndEvents
+                  News And Events
                 </Link>
               </li>
             </ul>

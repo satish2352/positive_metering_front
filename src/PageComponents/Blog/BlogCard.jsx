@@ -94,9 +94,9 @@ const BlogCard = () => {
                           </Card.Title>
                           <Card.Text
                             className="blogCardDesc pt-3"
-                            style={{ fontSize: "0.85rem" }}
+                            dangerouslySetInnerHTML={{ __html: blog.shortDesc }}
                           >
-                            {blog.shortDesc}
+                            {}
                           </Card.Text>
                         </div>
                         <div className="d-flex justify-content-end ">

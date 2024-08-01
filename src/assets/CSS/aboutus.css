@@ -1,12 +1,12 @@
 .visionMission {
   background-image: url("../img/About/vision.png");
-  height: 500px;
+  height: 400px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 .visionMissionp {
-  font-size: 14px;
+  font-size: 18px;
 }
 .alignbtn{
   margin-right: 15%;
@@ -14,15 +14,7 @@
 .abouttxt {
   font-size: 15px !important;
 }
-@media screen and (min-width: 1600px) {
-  .visionMission {
-    background-image: url("../img/About/vision.png");
-    height: 700px;
-  }
-  .visionMissionp {
-    font-size: 18px;
-  }
-}
+
 .firstWord {
   font-size: 4rem !important;
 }
