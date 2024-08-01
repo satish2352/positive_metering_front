@@ -59,7 +59,7 @@ const Header = () => {
       <Container fluid>
         <Row className="d-flex justify-content-between mt-1">
           {loading ? (
-            <p>Loading contacts...</p>
+            <p></p>
           ) : (
             <>
               <Col
@@ -80,9 +80,9 @@ const Header = () => {
               <Col
                 xs={4}
                 lg={2}
-                className="headercontact2 d-flex justify-content-evenly p-2 ps-lg-5"
+                className="headercontact2 d-flex  p-2 ps-3"
               >
-                <FiPhone className="callicon" />
+                <FiPhone className="callicon me-3" />
                 <a
                   className="headerphone"
                   href={`tel:${contacts[0]?.phone2}`}

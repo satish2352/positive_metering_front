@@ -16,7 +16,11 @@ const ProductTab = ({ no }) => {
   const [error, setError] = useState(null);
   const [productNo, setProductNo] = useState(no || 0); // use prop `no` if provided, otherwise default to 0
   const [activeTab, setActiveTab] = useState(no || 0); // initialize `activeTab` with `no` prop as well
-
+  const handleProductClick = (productId) => {
+    navigate(`/product/${productId}`);
+    window.scrollTo(0, 270) // Adjust timeout as needed to ensure navigation completes
+    
+  };
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -116,9 +120,9 @@ const ProductTab = ({ no }) => {
           className="box border-1 border-dark-subtle border p-lg-4"
         >
           {loading ? (
-            <div>Loading...</div>
+            <div></div>
           ) : error ? (
-            <div>{error}</div>
+            <div></div>
           ) : (
             <Row className="align-items-center chartslider">
               <Col lg={6} className="px-0">
@@ -165,9 +169,7 @@ const ProductTab = ({ no }) => {
                         <Button
                           variant="outline-dark"
                           className="rounded-5 py-2 fs-6 px-4 m-lg-3   shadow-sm"
-                          onClick={() =>
-                            navigate(`/product/${activeProduct.id}`)
-                          }
+                          onClick={() => handleProductClick(activeProduct.id)}
                         >
                           Read More
                         </Button>

@@ -5,10 +5,10 @@ import imgmobile from "../assets/img/services/mobileview.png";
 import imgtop from "../assets/img/services/diskimg.png";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import formImg from "../assets/img/Career/image-removebg-preview (89) 1.png";
-import Image from 'react-bootstrap/Image';
-import '../assets/CSS/career.css';
+import Image from "react-bootstrap/Image";
+import "../assets/CSS/career.css";
 import ResponsiveImage from "./ResponsiveImage";
-import ReCAPTCHA from 'react-google-recaptcha';
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Career = () => {
   const [name, setName] = useState("");
@@ -67,7 +67,8 @@ const Career = () => {
       isValid = false;
     } else {
       const allowedExtensions = /(\.pdf)$/i;
-      if (uploadcv.size > 300 * 1024) { // 1MB size limit
+      if (uploadcv.size > 300 * 1024) {
+        // 1MB size limit
         errors.uploadcv = "file size should be less than 300kb";
         isValid = false;
       } else if (!allowedExtensions.exec(uploadcv.name)) {
@@ -77,7 +78,7 @@ const Career = () => {
     }
 
     if (!isCaptchaVerified) {
-      errors.captcha = 'Please complete the recaptcha before submitting.';
+      errors.captcha = "Please complete the recaptcha before submitting.";
       isValid = false;
     }
 
@@ -97,11 +98,15 @@ const Career = () => {
       formData.append("cv", uploadcv);
 
       try {
-        const response = await axios.post("uploadcv/create-uploadcv", formData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        });
+        const response = await axios.post(
+          "uploadcv/create-uploadcv",
+          formData,
+          {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          }
+        );
         alert("Data Submitted Successfully");
         console.log("Response data:", response.data);
 
@@ -123,7 +128,6 @@ const Career = () => {
         if (captchaRef.current) {
           captchaRef.current.reset();
         }
-
       } catch (error) {
         console.error("Error submitting the form:", error);
         alert("Failed to submit the form");
@@ -138,13 +142,22 @@ const Career = () => {
       <Container fluid className="creerback">
         <Row className="d-flex justify-content-center py-5">
           <Heading heading={"career OPPORTUNITIES"} />
-          <Col xs={11} md={10} className="p-lg-5 pb-5 border-0 bg-white my-lg-5 shadow-lg">
-            <h4 className="text-center upcv py-3">Want To Make Career With Us</h4>
+          <Col
+            xs={11}
+            md={10}
+            className="p-lg-5 pb-5 border-0 bg-white my-lg-5 shadow-lg"
+          >
+            <h4 className="text-center upcv py-3">
+              Want to make career with us
+            </h4>
             <Container>
               <Form onSubmit={handleSubmit}>
                 <Row className="">
                   <Col xl={6}>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Group
+                      className="mb-3"
+                      controlId="exampleForm.ControlInput1"
+                    >
                       <Form.Label>Name</Form.Label>
                       <Form.Control
                         type="text"
@@ -159,7 +172,10 @@ const Career = () => {
                   </Col>
 
                   <Col xl={6}>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Group
+                      className="mb-3"
+                      controlId="exampleForm.ControlInput1"
+                    >
                       <Form.Label>Email Id</Form.Label>
                       <Form.Control
                         type="email"
@@ -168,12 +184,17 @@ const Career = () => {
                         onChange={(e) => setEmail(e.target.value)}
                       />
                       {errors.email && (
-                        <span className="error text-danger">{errors.email}</span>
+                        <span className="error text-danger">
+                          {errors.email}
+                        </span>
                       )}
                     </Form.Group>
                   </Col>
                   <Col xl={6}>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Group
+                      className="mb-3"
+                      controlId="exampleForm.ControlInput1"
+                    >
                       <Form.Label>Mobile No.</Form.Label>
                       <Form.Control
                         type="number"
@@ -182,12 +203,17 @@ const Career = () => {
                         onChange={(e) => setMobile(e.target.value)}
                       />
                       {errors.mobile && (
-                        <span className="error text-danger">{errors.mobile}</span>
+                        <span className="error text-danger">
+                          {errors.mobile}
+                        </span>
                       )}
                     </Form.Group>
                   </Col>
                   <Col xl={6}>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                    <Form.Group
+                      className="mb-3"
+                      controlId="exampleForm.ControlInput1"
+                    >
                       <Form.Label>Subject</Form.Label>
                       <Form.Control
                         type="text"
@@ -196,13 +222,18 @@ const Career = () => {
                         onChange={(e) => setSubject(e.target.value)}
                       />
                       {errors.subject && (
-                        <span className="error text-danger">{errors.subject}</span>
+                        <span className="error text-danger">
+                          {errors.subject}
+                        </span>
                       )}
                     </Form.Group>
                   </Col>
                   <Col xl={12}>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                      <Form.Label>Upload CV</Form.Label>
+                    <Form.Group
+                      className="mb-3"
+                      controlId="exampleForm.ControlInput1"
+                    >
+                      <Form.Label>Upload CV <span className=" text-danger" style={{fontSize:"13px"}} >(file size should be less than 400kb)</span></Form.Label>
                       <Form.Control
                         type="file"
                         accept=".pdf"
@@ -210,13 +241,18 @@ const Career = () => {
                         ref={fileInputRef} // Assign ref to file input
                       />
                       {errors.uploadcv && (
-                        <span className="error text-danger">{errors.uploadcv}</span>
+                        <span className="error text-danger">
+                          {errors.uploadcv}
+                        </span>
                       )}
                     </Form.Group>
                   </Col>
 
                   <Col xl={12}>
-                    <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+                    <Form.Group
+                      className="mb-3"
+                      controlId="exampleForm.ControlTextarea1"
+                    >
                       <Form.Label>Message</Form.Label>
                       <Form.Control
                         placeholder="Enter Your Message"
@@ -226,50 +262,50 @@ const Career = () => {
                         onChange={(e) => setMessage(e.target.value)}
                       />
                       {errors.message && (
-                        <span className="error text-danger">{errors.message}</span>
+                        <span className="error text-danger">
+                          {errors.message}
+                        </span>
                       )}
                     </Form.Group>
                   </Col>
-                  <Col xl={5}>
-                  <ReCAPTCHA
-                    ref={captchaRef}
-                    //  testserver
-                    sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
-                    // local
-                    // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
-                    onChange={onChange}
-                  />
-                  {errors.captcha && (
-                    <span className="error text-danger">{errors.captcha}</span>
-                  )}
-                </Col>
+                  <Col xl={12}>
+                    <ReCAPTCHA
+                      ref={captchaRef}
+                      //  testserver
+                      sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+                      // local
+                      // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+                      onChange={onChange}
+                    />
+                    {errors.captcha && (
+                      <span className="error text-danger">
+                        {errors.captcha}
+                      </span>
+                    )}
+                  </Col>
 
-                <Col xl={4} className=" d-flex justify-content-end">
-                 <div> <Button
-                    variant="danger"
-                    type="submit"
-                    className="p-3"
-                    style={{ borderRadius: "30px", letterSpacing: "2px" }}
-                  >
-                    Submit
-                  </Button></div>
-                </Col>
+             
                 </Row>
-                {/* <div className="text-center text-center mt-xl-5 mb-xl-4">
+                <div className="text-center text-center mt-xl-5 mb-xl-4">
                   <Button
                     variant="danger"
                     type="submit"
-                    className="py-3 px-4"
+                    className="py-3 px-5  fs-6"
                     style={{ borderRadius: "30px", letterSpacing: "2px" }}
                   >
                     Submit
                   </Button>
-                </div> */}
+                </div>
               </Form>
             </Container>
           </Col>
         </Row>
-        <Image src={formImg} rounded fluid className="formImg d-none d-lg-block" />
+        <Image
+          src={formImg}
+          rounded
+          fluid
+          className="formImg d-none d-lg-block"
+        />
       </Container>
     </>
   );

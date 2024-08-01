@@ -26,7 +26,7 @@ const Requestcallback = () => {
       errors.email = "Email is required";
       isValid = false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      errors.email = "Invalid email address";
+      errors.email = "Invalid Email Id";
       isValid = false;
     }
 
@@ -34,7 +34,7 @@ const Requestcallback = () => {
       errors.mobile = "Mobile is required";
       isValid = false;
     } else if (!/^\d{10}$/.test(mobile)) {
-      errors.mobile = "Mobile number must be exactly 10 digits";
+      errors.mobile = "Mobile No Must Be  10 Digits";
       isValid = false;
     }
 
@@ -156,7 +156,7 @@ const Requestcallback = () => {
                         required
                       />
                       {errors.email && (
-                        <span className="error text-danger">{errors.email}</span>
+                        <span className=" ms-4 fw-light text-danger">{errors.email}</span>
                       )}
                     </div>
                     <div className="d-grid">
@@ -170,7 +170,7 @@ const Requestcallback = () => {
                         required
                       />
                       {errors.mobile && (
-                        <span className=" fw-light text-danger">{errors.mobile}</span>
+                        <span className=" ms-4 fw-light text-danger">{errors.mobile}</span>
                       )}
                     </div>
                     <div className="d-grid">

@@ -29,7 +29,16 @@ const VisionMission = () => {
         <section className='visionMission mt-2 mb-3'>
             <Container fluid>
                 <Row className='align-items-center pt-xl-5'>
-                    {isChanged ? (
+                <Col lg={{ span: 5, offset: 5 }}>
+                            <h1 className='text-white'>
+                                Vision <img style={{ width: "15%" }} src={visionEye} alt="" />
+                            </h1>
+                            <p className='text-white fs-5 fw-light' style={{ textAlign: "justify" }}>
+                            To revolutionize and simplify chemical treatments across global industries, ensuring efficiency and sustainability.
+                            </p>
+                        
+                        </Col>
+                    {/* {isChanged ? (
                         <Col lg={{ span: 5, offset: 6 }}>
                             <h2 className='text-white'>
                                 Vision <img style={{ width: "15%" }} src={visionEye} alt="" />
@@ -53,7 +62,7 @@ const VisionMission = () => {
                                 <span style={{ fontWeight: "200", letterSpacing: "2px" }}> VISION </span> <img style={{ width: "50%" }} src={missionArrow} alt="" /> MISSION
                             </h6>
                         </Col>
-                    )}
+                    )} */}
                 </Row>
             </Container>
         </section>

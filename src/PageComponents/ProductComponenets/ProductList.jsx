@@ -72,8 +72,8 @@ const ProductList = () => {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error loading products</p>;
+  if (loading) return <p></p>;
+  if (error) return <p></p>;
 
   return (
     <>
@@ -100,7 +100,7 @@ const ProductList = () => {
                     <p
                       className={` ${getNavLinkClass(
                         `/product/${product.id}`
-                      )} produclistcontetst ps-3 mx-3 pb-2`}
+                      )} produclistcontetst ps-3 mx-lg-3 pb-2`}
                       style={{ fontFamily: "Poppins" }}
                     >
                       {product.productName}

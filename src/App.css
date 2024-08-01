@@ -329,3 +329,7 @@
 .blogcrd {
   height: 300px !important;
 }
+.blogbtnr{
+  position: relative;
+  bottom: 2px;
+}
