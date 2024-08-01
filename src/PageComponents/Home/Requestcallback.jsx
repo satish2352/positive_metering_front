@@ -51,15 +51,12 @@ const Requestcallback = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await axios.post(
-          "/carousal-form/addcarousalform",
-          {
-            name: fullname,
-            email,
-            mobile,
-            message,
-          }
-        );
+        const response = await axios.post("/carousal-form/addcarousalform", {
+          name: fullname,
+          email,
+          mobile,
+          message,
+        });
         if (response.status === 200) {
           alert("Thank you. we will connect with you soon.");
           setFullname("");
@@ -102,24 +99,27 @@ const Requestcallback = () => {
                 </div>
                 <div className="p-3 p-lg-5" style={{ textAlign: "justify" }}>
                   <p>
-                    The Founder of our company Mr. Sudhir Mutalik is a
-                    passionate mechanical engineer graduated from the reputed
-                    Government College of Engineering, Karad near Pune, India.
-                    Diesel Engines has been his interest for study since his
-                    university days. He was selected by the world's well-known
-                    Diesel Engine manufacturer Kirloskar Oil Engines Ltd through
-                    campus recruitment. After working with KOEL for a short
-                    while his love for Diesel Engines and precisely the
-                    slider-crank mechanism attracted him towards Chemical Dosing
-                    Pumps, the drive end of which also works on a similar
-                    principle. After working over the product for a few years
-                    and studying applications in various sectors Positive
-                    Metering Pumps company was founded in 1996 for manufacturing
-                    of Chemical Dosing Pumps and Skid Mounted Chemical Dosing
-                    Systems. With a vision to "Simplify Chemical Treatments in
-                    the world" after 25 years today Positive Metering Pumps (I)
-                    Pvt Ltd has done more than 125,000 installations of various
-                    products in 40 different countries of the world.
+                    <div class="title">Plunger Type Dosing Pumps</div>
+                    <div class="description">
+                      Unlock unparalleled dosing precision and reliability with
+                      our state-of-the-art Plunger Type Dosing Pumps. Engineered
+                      to surpass industry standards and meet the most demanding
+                      applications, our pumps redefine excellence in fluid
+                      handling.
+                    </div>
+                    <ul class="features">
+                      <li>Plunger-style dosing pump featuring gland packing</li>
+                      <li>Accurate metering instruments</li>
+                      <li>
+                        Consistent metering accuracy regardless of back pressure
+                      </li>
+                      <li>
+                        Flow rate linearly related to changes in stroke length
+                      </li>
+                      <li>
+                        Optional external setup for flushing the gland packing
+                      </li>
+                    </ul>
                   </p>
                 </div>
               </Col>
@@ -132,7 +132,9 @@ const Requestcallback = () => {
                 <div className="p-3 px-5">
                   <form onSubmit={handleSubmit}>
                     <div className="d-grid fw-bold">
-                      <label className="requestinputlb ms-2 p-2">Full Name</label>
+                      <label className="requestinputlb ms-2 p-2">
+                        Full Name
+                      </label>
                       <input
                         type="text"
                         className="requestinput"
@@ -142,11 +144,15 @@ const Requestcallback = () => {
                         required
                       />
                       {errors.fullname && (
-                        <span className="error text-danger">{errors.fullname}</span>
+                        <span className="error text-danger">
+                          {errors.fullname}
+                        </span>
                       )}
                     </div>
                     <div className="d-grid">
-                      <label className="requestinputlb ms-2 p-2">Email Id</label>
+                      <label className="requestinputlb ms-2 p-2">
+                        Email Id
+                      </label>
                       <input
                         type="text"
                         className="requestinput"
@@ -156,11 +162,15 @@ const Requestcallback = () => {
                         required
                       />
                       {errors.email && (
-                        <span className=" ms-4 fw-light text-danger">{errors.email}</span>
+                        <span className=" ms-4 fw-light text-danger">
+                          {errors.email}
+                        </span>
                       )}
                     </div>
                     <div className="d-grid">
-                      <label className="requestinputlb ms-2 p-2">Mobile No</label>
+                      <label className="requestinputlb ms-2 p-2">
+                        Mobile No
+                      </label>
                       <input
                         type="text"
                         className="requestinput"
@@ -170,7 +180,9 @@ const Requestcallback = () => {
                         required
                       />
                       {errors.mobile && (
-                        <span className=" ms-4 fw-light text-danger">{errors.mobile}</span>
+                        <span className=" ms-4 fw-light text-danger">
+                          {errors.mobile}
+                        </span>
                       )}
                     </div>
                     <div className="d-grid">
@@ -183,7 +195,9 @@ const Requestcallback = () => {
                         required
                       ></textarea>
                       {errors.message && (
-                        <span className="error text-danger">{errors.message}</span>
+                        <span className="error text-danger">
+                          {errors.message}
+                        </span>
                       )}
                     </div>
                     <div className="d-flex justify-content-end pt-4">
@@ -244,7 +258,9 @@ const Requestcallback = () => {
                 <div className="p-3 px-5">
                   <form onSubmit={handleSubmit}>
                     <div className="d-grid fw-bold requestinputlb">
-                      <label className="requestinputlb ms-2 p-2">Full Name</label>
+                      <label className="requestinputlb ms-2 p-2">
+                        Full Name
+                      </label>
                       <input
                         type="text"
                         className="requestinput"
@@ -257,7 +273,9 @@ const Requestcallback = () => {
                       )}
                     </div>
                     <div className="d-grid">
-                      <label className="requestinputlb ms-2 p-2">Email id</label>
+                      <label className="requestinputlb ms-2 p-2">
+                        Email id
+                      </label>
                       <input
                         type="text"
                         className="requestinput"

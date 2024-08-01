@@ -112,16 +112,10 @@ const Testimonial = () => {
           <Slider {...settings}>
             {testimonial.map((testimonial) => (
               <div key={testimonial.id} className="text-center">
-                <Col style={{ marginTop: "-50px" }}>
-                  <div className="profileposition">
-                    <img
-                      src={testimonial.img}
-                      alt=""
-                      className="testomonialprofile img-fluid"
-                    />
-                  </div>
+                <Col >
+                 
                   <div className="testback">
-                    <h1>{testimonial.title}</h1>
+                
                     <p>
                       {truncateReview(testimonial.review, 200)}
                       {testimonial.review.length > 200 && (

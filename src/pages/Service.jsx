@@ -15,7 +15,7 @@ import back2 from '../assets/img/About/back 20.png';
 import back3 from '../assets/img/About/back 21.png';
 import ResponsiveImage from "./ResponsiveImage";
 import imgmobile from "../assets/img/services/mobileview.png";
-import imgtop from "../assets/img/services/diskimg.png";
+import imgtop from "../assets/img/services/baner welcome.jpg";
 
 const services = [
   {
