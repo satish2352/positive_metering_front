@@ -269,21 +269,21 @@ const Footer = () => {
           </Col>
         </Row>
         <hr />
-        <Row className="mt-4 d-flex pb-5">
-          <Col
+        <Row className="mt-3 d-flex pb-3">
+          {/* <Col
             xs={12}
             lg={6}
             className="text-center d-flex justify-content-evenly align-items-center"
           >
-            {" "}
-            <div>
+            {" "} */}
+            {/* <div>
               <a href="https://www.sumagoinfotech.com/" target="_blank" className="smglink">
                 &copy; {currentYear} Copyright :{" "}
                 <ins className=""> Made with Passion by Sumago Infotech</ins>{" "}
               </a>
-            </div>
-          </Col>
-          <Col xs={12} lg={6}>
+            </div> */}
+          {/* </Col> */}
+          <Col xs={12} lg={12}>
             <div className=" text-center d-grid d-lg-flex justify-content-center align-items-center">
               <div>Terms & Conditions</div>
               <div className="d-flex justify-content-center">
