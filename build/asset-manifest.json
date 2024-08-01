@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.5e2a9d0e.css",
-    "main.js": "/static/js/main.2f931fd7.js",
+    "main.css": "/static/css/main.7eafbb9c.css",
+    "main.js": "/static/js/main.9b56eed4.js",
     "static/js/453.20b77820.chunk.js": "/static/js/453.20b77820.chunk.js",
     "static/media/WhatsApp-Video-2024-07-18-at-115.mp4": "/static/media/WhatsApp-Video-2024-07-18-at-115.74012b059b6cfbbced47.mp4",
     "static/media/positive.mp4": "/static/media/positive.cdaedc454545d55fb4d7.mp4",
@@ -48,6 +48,7 @@
     "static/media/leadershipimg2.png": "/static/media/leadershipimg2.91461f9c6594790e19d3.png",
     "static/media/Group 1000004137.png": "/static/media/Group 1000004137.f0c33984dac7646c5a65.png",
     "static/media/image.png": "/static/media/image.12c6ba1169092471769c.png",
+    "static/media/infrastructure.jpeg": "/static/media/infrastructure.4abc593fe71d8b951915.jpeg",
     "static/media/image-removebg-preview (89) 1.png": "/static/media/image-removebg-preview (89) 1.aad8a2abbaa95c71ffb0.png",
     "static/media/Layer71.png": "/static/media/Layer71.22883c5cd94558584e23.png",
     "static/media/MissionArrow.png": "/static/media/MissionArrow.09cbe5336ab0f88c4a20.png",
@@ -61,12 +62,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.5e2a9d0e.css.map": "/static/css/main.5e2a9d0e.css.map",
-    "main.2f931fd7.js.map": "/static/js/main.2f931fd7.js.map",
+    "main.7eafbb9c.css.map": "/static/css/main.7eafbb9c.css.map",
+    "main.9b56eed4.js.map": "/static/js/main.9b56eed4.js.map",
     "453.20b77820.chunk.js.map": "/static/js/453.20b77820.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5e2a9d0e.css",
-    "static/js/main.2f931fd7.js"
+    "static/css/main.7eafbb9c.css",
+    "static/js/main.9b56eed4.js"
   ]
 }
