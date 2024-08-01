@@ -159,9 +159,9 @@ function MyVerticallyCenteredModal(props) {
             className=" my-4 ms-2"
             ref={captchaRef}
             //  testserver
-            // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+            sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
             // local
-            sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+            // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
             onChange={onChange}
           />
           {errors.captcha && (
