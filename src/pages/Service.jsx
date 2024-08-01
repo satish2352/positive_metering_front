@@ -55,7 +55,7 @@ const Service = () => {
 
       <Container>
         <Heading heading="Services" />
-        <p className='text-center ptext'>
+        <p className='text-center mx-5 mb-5 ptext'>
           We consider ourselves a Solution Providing Business. Therefore, offering Services to our customers is considered to be a core activity. Our organization is built around offering services in three stages.
         </p>
 
