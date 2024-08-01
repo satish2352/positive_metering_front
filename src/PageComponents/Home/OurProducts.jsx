@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../assets/CSS/mainbanner.css";
 import Slider from "react-slick";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import Heading from "../../components/Heading";
 
@@ -75,10 +75,10 @@ function OurProducts() {
   return (
     <Container fluid className="my-5 py-lg-0">
       {loading ? (
-        <p>Loading...</p>
+        <p></p>
       ) : error ? (
-        <p>{error}</p>
-      ) : (
+        <p> </p>
+      ) : products.length > 5 ? (
         <Slider {...settings}>
           {products
             .filter((product) => product.isActive)
@@ -95,6 +95,22 @@ function OurProducts() {
               </div>
             ))}
         </Slider>
+      ) : (
+        <Row>
+          {products
+            .filter((product) => product.isActive)
+            .map((product) => (
+              <Col key={product.id} xs={12} sm={6} md={2} className="mb-4">
+                <div className=" d-flex justify-content-center ">
+                  <img
+                    src={product.img}
+                    className="img-fluid ourprdimg w-100 h-100"
+                    alt=""
+                  />
+                </div>
+              </Col>
+            ))}
+        </Row>
       )}
     </Container>
   );

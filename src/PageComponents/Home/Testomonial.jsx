@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Col, Modal, Button } from 'react-bootstrap';
-import { Rating } from 'react-simple-star-rating'; // Importing Rating component
-import Slider from 'react-slick';
-import Heading from '../../components/Heading';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import { Container, Col, Modal, Button } from "react-bootstrap";
+import { Rating } from "react-simple-star-rating"; // Importing Rating component
+import Slider from "react-slick";
+import Heading from "../../components/Heading";
+import axios from "axios";
 
-const Testomonial = () => {
+const Testimonial = () => {
   const [testimonial, setTestimonial] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -15,14 +15,14 @@ const Testomonial = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axios.get('testimonials/get-testimonials');
+        const response = await axios.get("testimonials/get-testimonials");
         if (response.data.result) {
           setTestimonial(response.data.responseData);
         } else {
           setError(response.data.message);
         }
       } catch (error) {
-        setError('There was an error making the request!');
+        setError("There was an error making the request!");
       } finally {
         setLoading(false);
       }
@@ -41,23 +41,22 @@ const Testomonial = () => {
     setSelectedTestimonial(null);
   };
 
-  const truncateReview = (review, limit =200) => {
+  const truncateReview = (review, limit = 200) => {
     if (review.length <= limit) return review;
-    return review.substring(0, limit) + '...';
+    return review.substring(0, limit) + "...";
   };
 
-  var settings = {
+  const settings = {
     infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 0,
     autoplay: true,
-    speed:20000,
+    speed: 20000,
     autoplaySpeed: 7000,
-    cssEase: 'linear',
+    cssEase: "linear",
     infinite: true,
-
     responsive: [
       {
         breakpoint: 1600,
@@ -96,63 +95,87 @@ const Testomonial = () => {
   };
 
   return (
-    <Container fluid className='testomonialback py-5 text-center' style={{ marginTop: '-90px' }}>
-      <Heading heading={'TESTIMONIALS'} />
-      <Slider {...settings}>
-        {testimonial.map((testimonial) => (
-          <div key={testimonial.id} className='text-center'>
-            <Col style={{ marginTop: '-50px' }}>
-              <div className='profileposition'>
-                <img src={testimonial.img} alt='' className='testomonialprofile img-fluid' />
+    <>
+      {loading ? (
+        <></>
+      ) : error ? (
+        <></>
+      ) : testimonial.length === 0 ? (
+        <></>
+      ) : (
+        <Container
+          fluid
+          className="testomonialback py-5 text-center"
+          style={{ marginTop: "-90px" }}
+        >
+          <Heading heading={"TESTIMONIALS"} />
+          <Slider {...settings}>
+            {testimonial.map((testimonial) => (
+              <div key={testimonial.id} className="text-center">
+                <Col style={{ marginTop: "-50px" }}>
+                  <div className="profileposition">
+                    <img
+                      src={testimonial.img}
+                      alt=""
+                      className="testomonialprofile img-fluid"
+                    />
+                  </div>
+                  <div className="testback">
+                    <h1>{testimonial.title}</h1>
+                    <p>
+                      {truncateReview(testimonial.review, 200)}
+                      {testimonial.review.length > 200 && (
+                        <span
+                          className="read-more"
+                          onClick={() => handleShowModal(testimonial)}
+                        >
+                          ... <b>read more</b>
+                        </span>
+                      )}
+                    </p>
+                    <Rating
+                      iconsCount={5}
+                      initialValue={testimonial.star}
+                      size={20}
+                      readonly
+                      fillColor="orange"
+                      emptyColor="gray"
+                    />
+                  </div>
+                </Col>
               </div>
-              <div className='testback'>
-                <h1>{testimonial.title}</h1>
-                <p>
-                  {truncateReview(testimonial.review,200)}
-                  {testimonial.review.length >200 && (
-                    <span className='read-more' onClick={() => handleShowModal(testimonial)}>
-                      ... <b>read more</b>
-                    </span>
-                  )}
-                </p>
-                <Rating
-                  iconsCount={5}
-                  initialValue={testimonial.star}
-                  size={20}
-                  readonly
-                  fillColor='orange'
-                  emptyColor='gray'
+            ))}
+          </Slider>
+
+          <Modal show={showModal} onHide={handleCloseModal}>
+            <Modal.Header closeButton>
+              <Modal.Title>{selectedTestimonial?.title}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <div className="profileposition">
+                <img
+                  src={selectedTestimonial?.img}
+                  alt=""
+                  className="testomonialprofile img-fluid"
                 />
               </div>
-            </Col>
-          </div>
-        ))}
-      </Slider>
-
-      <Modal show={showModal} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>{selectedTestimonial?.title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <div className='profileposition'>
-            <img src={selectedTestimonial?.img} alt='' className='testomonialprofile img-fluid' />
-          </div>
-          <div className='testback'>
-            <p>{selectedTestimonial?.review}</p>
-            <Rating
-              iconsCount={5}
-              initialValue={selectedTestimonial?.star}
-              size={20}
-              readonly
-              fillColor='orange'
-              emptyColor='gray'
-            />
-          </div>
-        </Modal.Body>
-       
-      </Modal>
-    </Container>
+              <div className="testback">
+                <p>{selectedTestimonial?.review}</p>
+                <Rating
+                  iconsCount={5}
+                  initialValue={selectedTestimonial?.star}
+                  size={20}
+                  readonly
+                  fillColor="orange"
+                  emptyColor="gray"
+                />
+              </div>
+            </Modal.Body>
+          </Modal>
+        </Container>
+      )}
+    </>
   );
 };
 
-export default Testomonial;
+export default Testimonial;
