@@ -166,7 +166,7 @@ const Header = () => {
                   style={{ letterSpacing: 3 }}
                   onClick={() => window.scrollTo(0, 0)}
                   className={`${getNavLinkClass(
-                    "/product"
+                    `/product/${productNo}`
                   )}  nvlink fw-bold mx-xxl-3`}
                   to={`/product/${productNo}`}
                 >

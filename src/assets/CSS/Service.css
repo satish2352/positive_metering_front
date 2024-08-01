@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 .ptext {
-  font-weight: 400;
-
+  font-weight: 500;
   font-family: "Roboto", sans-serif;
   font-style: normal;
-  text-align: justify !important;
+  text-align: center !important;
+  font-size: 1.1rem;
 }
 
 .card-info {
@@ -16,7 +16,7 @@
 .frontH {
   color: #ffffff;
   margin-top: -250px;
-  padding:0px 30px;
+  padding: 0px 30px;
 }
 
 .backH {
@@ -24,7 +24,6 @@
   text-align: center;
   color: #ffffff;
 }
-.backP{
-    text-align: justify !important;
-
+.backP {
+  text-align: justify !important;
 }

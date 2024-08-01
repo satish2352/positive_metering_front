@@ -139,7 +139,7 @@ const Career = () => {
         <Row className="d-flex justify-content-center py-5">
           <Heading heading={"career OPPORTUNITIES"} />
           <Col xs={11} md={10} className="p-lg-5 pb-5 border-0 bg-white my-lg-5 shadow-lg">
-            <h4 className="text-center upcv py-3">Want to make career  with us</h4>
+            <h4 className="text-center upcv py-3">Want To Make Career With Us</h4>
             <Container>
               <Form onSubmit={handleSubmit}>
                 <Row className="">
