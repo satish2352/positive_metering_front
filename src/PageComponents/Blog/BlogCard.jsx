@@ -25,7 +25,7 @@ const BlogCard = () => {
       try {
         const response = await axios.get("/blogdetails/get-blogdetails");
         if (response.data.result) {
-          const truncatedData = response.data.responseData.map((blog) => ({
+          const truncatedData = response.data.responseData.filter(response => response.isActive).map((blog) => ({
             ...blog,
             shortDesc:
               blog.shortDesc.length > characterLimit

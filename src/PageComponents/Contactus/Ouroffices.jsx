@@ -45,7 +45,7 @@ const Ouroffices = () => {
                 <p></p>
             ) : (
                 <Row className='d-flex justify-content-evenly'>
-                    {offices.map((card, index) => (
+                    {offices.filter(offices => offices.isActive).map((card, index) => (
                         <Col
                             key={index}
                             xs={12}

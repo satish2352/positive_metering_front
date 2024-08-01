@@ -42,7 +42,7 @@ const ContactCard = () => {
         style={{ backgroundColor: "#EDEAEA" }}
       >
         <Row>
-          {contactDetails.map((contact) => (
+          {contactDetails.filter(contactDetails => contactDetails.isActive).map((contact) => (
             <Col
               key={contact.id}
               lg={4}

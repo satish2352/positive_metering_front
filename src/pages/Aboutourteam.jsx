@@ -41,7 +41,7 @@ const Aboutourteam = () => {
         <Heading heading="OUR TEAM" className="py-3 " />
         <Container>
           <Row>
-            {teamMembers.map(member => (
+            {teamMembers.filter(teamMembers => teamMembers.isActive).map(member => (
               <Col md={4} key={member.id} className="mb-5">
                 <Card
                   onMouseEnter={() => handleHover(member.position_no)}

@@ -35,7 +35,7 @@ const NewsAndEvents = () => {
       <Container fluid className="my-0" style={{ backgroundColor: '#F7F5EF', paddingTop: '40px' }}>
         <Heading heading="News & Events" />
         <Row>
-          {cardData.map((card, index) => (
+          {cardData.filter(cardData => cardData.isActive).map((card, index) => (
             <Col
               key={index}
               xs={12}
