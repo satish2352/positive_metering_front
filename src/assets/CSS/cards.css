@@ -1,36 +1,44 @@
 .caontatctcardback {
-    background: #FFFFFFCC;
-
-
-
+  background: #ffffffcc;
 }
 
 .caontatctcardimg {
-    position: relative;
+  position: relative;
 }
-
-.caontatctcardsubsection {
+@media screen and (max-width: 600px) {
+  .caontatctcardsubsection {
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 8px 10px 25px 0px rgba(0, 0, 0, 0.25);
-    width: 400px;
+    width: 300px !important;
     position: absolute;
     left: 60px;
     bottom: 0px;
+  }
+  .txtcontact {
+    font-size: 11px !important;
+  }
+}
+
+.caontatctcardsubsection {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 8px 10px 25px 0px rgba(0, 0, 0, 0.25);
+  width: 400px;
+  position: absolute;
+  left: 60px;
+  bottom: 0px;
 }
 
 .txtcontact {
-    font-size: 14px;
+  font-size: 14px;
 }
 @media screen and (min-width: 1600px) {
-    .caontatctcardsubsection {
-        
-        width:  410px;
-        position: absolute;
-        left: 100px;
-        bottom: 0px;
-    }
-    .caontatctcardsubsection p {
-        font-size: 17px;
-    }
-
+  .caontatctcardsubsection {
+    width: 410px;
+    position: absolute;
+    left: 100px;
+    bottom: 0px;
+  }
+  .caontatctcardsubsection p {
+    font-size: 17px;
+  }
 }

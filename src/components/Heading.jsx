@@ -6,7 +6,7 @@ const Heading = ({heading}) => {
         <>
             <Container>
                 <Row className=' text-center'>
-                    <p className='oueprd text-uppercase' >{heading}</p>
+                    <p className='oueprd text-uppercase mt-3' >{heading}</p>
                 </Row>
             </Container>
         </>

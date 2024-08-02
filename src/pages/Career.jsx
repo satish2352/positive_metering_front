@@ -148,7 +148,7 @@ const Career = () => {
             className="p-lg-5 pb-5 border-0 bg-white my-lg-5 shadow-lg"
           >
             <h4 className="text-center upcv py-3">
-              Want to make career with us
+              Want To Make Career With Us
             </h4>
             <Container>
               <Form onSubmit={handleSubmit}>

@@ -98,6 +98,15 @@
   .producttabimg {
     height: 300px !important;
   }
+  .eventimg{
+    height: 250px !important;
+    width: 350px !important;
+  }
+  .evntttle{
+ 
+    width: 320px !important;
+  }
+  
 }
 
 .prdimg {
@@ -156,4 +165,18 @@
   transform: translateZ(10px) rotateY(15deg);
   color: #e84c52; /* Change this color as needed */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.eventimg{
+  height: 300px;
+  width: 400px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);}
+  .evntttle{
+  background: #e84c52;
+  position: relative;
+  bottom: 60px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+  color: white;
+  width: 350px;
 }

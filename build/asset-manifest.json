@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.1e88d4ea.css",
-    "main.js": "/static/js/main.f7be2de8.js",
+    "main.css": "/static/css/main.e6f0e39c.css",
+    "main.js": "/static/js/main.a40fe9a0.js",
     "static/js/453.20b77820.chunk.js": "/static/js/453.20b77820.chunk.js",
     "static/media/WhatsApp-Video-2024-07-18-at-115.mp4": "/static/media/WhatsApp-Video-2024-07-18-at-115.74012b059b6cfbbced47.mp4",
     "static/media/positive.mp4": "/static/media/positive.cdaedc454545d55fb4d7.mp4",
@@ -20,7 +20,6 @@
     "static/media/2540 x 1018 (1).jpg": "/static/media/2540 x 1018 (1).d058922463f85d9e94f6.jpg",
     "static/media/2540 x 1018 (2).jpg": "/static/media/2540 x 1018 (2).c86b7fa99e6b033e91bc.jpg",
     "static/media/Group 1000003783.jpg": "/static/media/Group 1000003783.993394e1cbe04542657e.jpg",
-    "static/media/Group 1000004058.png": "/static/media/Group 1000004058.2132fd675dfb61d1c5ea.png",
     "static/media/blogdetails_img1.png": "/static/media/blogdetails_img1.a6561d75c6793c095c31.png",
     "static/media/background6.png": "/static/media/background6.48bd9759234cc456d70f.png",
     "static/media/Progress.png": "/static/media/Progress.82bd9dd50fd8e61b0c9a.png",
@@ -39,8 +38,10 @@
     "static/media/Frame 19.png": "/static/media/Frame 19.6b6ea57c65cc6a8e71c7.png",
     "static/media/image 7.png": "/static/media/image 7.7e4044d2d1b477eedbf2.png",
     "static/media/back 19.png": "/static/media/back 19.199852fff126efeb06dc.png",
+    "static/media/baner welcome.jpg": "/static/media/baner welcome.cd99d06eb91a6e52ae0c.jpg",
     "static/media/Rectangle 4430.png": "/static/media/Rectangle 4430.217e9d2ddbd026ab9205.png",
     "static/media/image38.png": "/static/media/image38.e5abc36d5527ce65003a.png",
+    "static/media/WhatsApp Image 2024-08-01 at 5.45.10 PM.jpeg": "/static/media/WhatsApp Image 2024-08-01 at 5.45.10 PM.770d3c9728fa07eff771.jpeg",
     "static/media/Group 1000004058 (1).png": "/static/media/Group 1000004058 (1).1012cdc45e9dc1581da5.png",
     "static/media/HYDRAULIC.png": "/static/media/HYDRAULIC.24ea3059bec640a8233f.png",
     "static/media/Group 1000004134.png": "/static/media/Group 1000004134.f5497814a3e4b7b7119c.png",
@@ -62,12 +63,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.1e88d4ea.css.map": "/static/css/main.1e88d4ea.css.map",
-    "main.f7be2de8.js.map": "/static/js/main.f7be2de8.js.map",
+    "main.e6f0e39c.css.map": "/static/css/main.e6f0e39c.css.map",
+    "main.a40fe9a0.js.map": "/static/js/main.a40fe9a0.js.map",
     "453.20b77820.chunk.js.map": "/static/js/453.20b77820.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e88d4ea.css",
-    "static/js/main.f7be2de8.js"
+    "static/css/main.e6f0e39c.css",
+    "static/js/main.a40fe9a0.js"
   ]
 }

@@ -54,7 +54,7 @@ export const ProductProvider = ({ children }) => {
   useEffect(() => {
     const fetchnewevents = async () => {
       try {
-        const response = await axios.get('newsandevent/get-newevents');
+        const response = await axios.get('news/get-news');
         if (response.data.result) {
           setnewevents(response.data.responseData);
         } else {

@@ -55,7 +55,7 @@
   bottom: -6px;
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 1400px) {
   .header-logo {
     position: absolute;
     width: 130px;
@@ -192,7 +192,7 @@
   }
 
   .emailfeild {
-    width: 131px !important;
+    width: 145px !important;
   }
 
   .footerenqury {
@@ -332,4 +332,7 @@
 .blogbtnr{
   position: relative;
   bottom: 2px;
+}
+.closeButton{
+  position: absolute;
 }

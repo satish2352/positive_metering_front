@@ -42,44 +42,52 @@ const ContactCard = () => {
         style={{ backgroundColor: "#EDEAEA" }}
       >
         <Row>
-          {contactDetails.filter(contactDetails => contactDetails.isActive).map((contact) => (
-            <Col
-              key={contact.id}
-              lg={4}
-              md={6}
-              className="caontatctcardimg py-4"
-              data-aos="zoom-in"
-              data-aos-easing="linear"
-              data-aos-duration="1500"
-            >
-              <div>
-                <img src={contact.img} alt="" className="img-fluid" />
-              </div>
-              <div className="caontatctcardsubsection  py-4">
-                <h4 className="fw-bolder ps-3">{contact.title}</h4>
-               
+          {contactDetails
+            .filter((contactDetails) => contactDetails.isActive)
+            .map((contact) => (
+              <Col
+                key={contact.id}
+                lg={4}
+                md={6}
+                className="caontatctcardimg py-4"
+                data-aos="zoom-in"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+              >
+                <div>
+                  <img src={contact.img} alt="" className="img-fluid" />
+                </div>
+                <div className="caontatctcardsubsection  py-4">
+                  <h4 className="fw-bolder ps-3">{contact.title}</h4>
+
                   <Container className="txtcontact">
                     <Row className="pt-1">
-                      <Col xs={3}><b>ContactTo</b></Col>
+                      <Col xs={3}>
+                        <b>ContactTo</b>
+                      </Col>
                       <Col xs={9}>: {contact.person_name}</Col>
                     </Row>
                     <Row className="pt-1">
                       <Col xs={3}>
-                        <b>Mobile No </b>
+                        <b>Mobile No</b>
                       </Col>
-                      <Col xs={9}>: {contact.phone}</Col>
+                      <Col xs={9}>
+                        : <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+                      </Col>
                     </Row>
                     <Row className="pt-1">
                       <Col xs={3}>
-                        <b>Email Id </b>
+                        <b>Email Id</b>
                       </Col>
-                      <Col xs={9}>: {contact.email}</Col>
+                      <Col xs={9}>
+                        :{" "}
+                        <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                      </Col>
                     </Row>
                   </Container>
-               
-              </div>
-            </Col>
-          ))}
+                </div>
+              </Col>
+            ))}
         </Row>
       </Container>
     </>

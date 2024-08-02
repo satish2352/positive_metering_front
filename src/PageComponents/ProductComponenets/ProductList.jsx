@@ -23,6 +23,7 @@ const ProductList = () => {
   const [technicalData, setTechnicalData] = useState([]);
   const [optionsData, setOptionsData] = useState([]);
   const [materialData, setMaterialData] = useState([]);
+  const [ApplicationData, setApplicationData] = useState([]);
   const productDetailsRef = useRef(null); // Ref for scrolling
 
   useEffect(() => {
@@ -36,6 +37,7 @@ const ProductList = () => {
           setTechnicalData(response.data.responseData.technicalData);
           setOptionsData(response.data.responseData.optionsData);
           setMaterialData(response.data.responseData.materialData);
+          setApplicationData(response.data.responseData.applicationData);
         } else {
           console.log("Failed to fetch product details");
         }
@@ -124,12 +126,15 @@ const ProductList = () => {
                     />
                   </div>
                   <h1 className="p-2">Application</h1>
-                  <div
-                    style={{ fontSize: "17px", fontFamily: "Poppins" }}
-                    dangerouslySetInnerHTML={{
-                      __html: productDetails.application,
-                    }}
-                  ></div>
+                  
+                  {ApplicationData.map((data) => (
+                    <div
+                      key={data.id}
+                      dangerouslySetInnerHTML={{
+                        __html: data.applicationDescription,
+                      }}
+                    ></div>
+                  ))}
                 </>
               )}
             </div>
@@ -185,7 +190,7 @@ const ProductList = () => {
                   Plunger type dosing pumps Technical Data
                 </h1>
                 <Container className="d-flex justify-content-center">
-                  <Col lg={8}>
+                  <Col lg={8} className="horizontal-scroll">
                     {technicalData.map((data) => (
                       <div
                         key={data.id}

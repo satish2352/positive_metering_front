@@ -80,3 +80,7 @@
   background-image: url("../img//productimgs/image\ 7.png");
   background-size: cover;
 }
+.horizontal-scroll {
+  overflow-x: auto;
+  white-space: nowrap;
+}

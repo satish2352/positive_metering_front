@@ -1,5 +1,6 @@
-import React, { useState,useRef} from "react";
+import React, { useState, useRef } from "react";
 import "./blogdetails.css";
+import { IoMdClose } from "react-icons/io";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -15,8 +16,8 @@ import Form from "react-bootstrap/Form";
 import Heading from "../components/Heading";
 import ResponsiveImage from "./ResponsiveImage";
 
-import imgmobile from '../assets/img/services/mobileview.png'
-import imgtop from '../assets/img/services/diskimg.png'
+import imgmobile from "../assets/img/services/mobileview.png";
+import imgtop from "../assets/img/services/diskimg.png";
 
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -105,7 +106,14 @@ function MyVerticallyCenteredModal(props) {
   return (
     <Modal {...props} centered closeButton>
       <Modal.Body className=" getquoteformback">
-        <Modal.Header className="text-white" closeButton></Modal.Header>
+        <div className="d-flex justify-content-end">
+          <Modal.Header
+            className="text-white border border-0  "
+            closeButton
+          >
+            <IoMdClose />
+          </Modal.Header>
+        </div>
         <form onSubmit={handleSubmit} className=" formbacks d-grid p-lg-5">
           <input
             type="text"
@@ -215,13 +223,11 @@ function Blogdetails({ image, title, longetxt }) {
           </Col>
         </Row>
         <div className="mt-3"></div>
-        <h5>
-          {title}
-        </h5>
+        <h5>{title}</h5>
       </Container>
       <div className="mt-3"></div>
       <Container>
-        <div  dangerouslySetInnerHTML={{ __html: longetxt }}></div>
+        <div dangerouslySetInnerHTML={{ __html: longetxt }}></div>
       </Container>
       <div className="mb-5"></div>
     </>

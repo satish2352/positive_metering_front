@@ -97,7 +97,7 @@ const Footer = () => {
                       type="email"
                       className=" emailfeild"
                       style={{ border: "none", outline: "none" }}
-                      placeholder="Enter Your Email Address"
+                      placeholder="Enter Your Email Id"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                     />

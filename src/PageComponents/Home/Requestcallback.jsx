@@ -129,7 +129,7 @@ const Requestcallback = () => {
                     Request A CALL BACK
                   </h4>
                 </div>
-                <div className="p-3 px-5">
+                <div className="p-3 px-lg-5">
                   <form onSubmit={handleSubmit}>
                     <div className="d-grid fw-bold">
                       <label className="requestinputlb ms-2 p-2">
@@ -255,7 +255,7 @@ const Requestcallback = () => {
                     Request A CALL BACK
                   </h4>
                 </div>
-                <div className="p-3 px-5">
+                <div className="p-3 px-lg-5">
                   <form onSubmit={handleSubmit}>
                     <div className="d-grid fw-bold requestinputlb">
                       <label className="requestinputlb ms-2 p-2">

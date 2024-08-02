@@ -21,6 +21,7 @@ import Newnavbar from './components/Newnavbar'
 import ProductList from './PageComponents/ProductComponenets/ProductList'
 import { ProductContext } from './ProductContext'
 import Eventdetails from './pages/Eventdetails'
+import Eventspage from './pages/Eventspage'
 const Router = () => {
     const { blog,newevents } = useContext(ProductContext);
 
@@ -31,10 +32,10 @@ const Router = () => {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path="/blog" element={<Blog />} />
-                <Route path='/product' element={<Product />} />
                 <Route path='/contactus' element={<Contactus />} />
                 <Route path='/career' element={<Career />} />
-                <Route path='/news-event' element={<NewsAndEvents />} />
+                <Route path='/news' element={<NewsAndEvents />} />
+                <Route path='/event' element={<Eventspage/>} />
                 <Route path='/service' element={<Service />} />
                 <Route path='/blogdetails' element={<Blogdetails />} />
                 <Route path='/aboutleadership' element={<Aboutleadership />} />

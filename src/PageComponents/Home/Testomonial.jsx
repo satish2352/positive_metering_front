@@ -47,22 +47,28 @@ const Testimonial = () => {
   };
 
   const settings = {
-    infinite: false,
+    // infinite: false,
     speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 4,
+    // slidesToShow: 4,
+    // slidesToScroll: 4,
     initialSlide: 0,
     autoplay: true,
-    speed: 20000,
+    // speed: 20000,
     autoplaySpeed: 7000,
-    cssEase: "linear",
+    // cssEase: "linear",
+    // infinite: true,
+    pauseOnHover: true,
+    dots: true,
     infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1600,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -137,46 +143,7 @@ const Testimonial = () => {
                 </Col>
               </div>
             ))}
-            {testimonial
-              .filter((testimonial) => testimonial.isActive)
-              .map((testimonial) => {
-                console.log("testimonials", testimonial);
-                return (
-                  <div key={testimonial.id} className="text-center">
-                    <Col style={{ marginTop: "-50px" }}>
-                      <div className="profileposition">
-                        <img
-                          src={testimonial.img}
-                          alt=""
-                          className="testomonialprofile img-fluid"
-                        />
-                      </div>
-                      <div className="testback">
-                        <h1>{testimonial.title}</h1>
-                        <p>
-                          {truncateReview(testimonial.review, 200)}
-                          {testimonial.review.length > 200 && (
-                            <span
-                              className="read-more"
-                              onClick={() => handleShowModal(testimonial)}
-                            >
-                              ... <b>read more</b>
-                            </span>
-                          )}
-                        </p>
-                        <Rating
-                          iconsCount={5}
-                          initialValue={testimonial.star}
-                          size={20}
-                          readonly
-                          fillColor="orange"
-                          emptyColor="gray"
-                        />
-                      </div>
-                    </Col>
-                  </div>
-                );
-              })}
+            
           </Slider>
 
           <Modal show={showModal} onHide={handleCloseModal}>
@@ -185,11 +152,7 @@ const Testimonial = () => {
             </Modal.Header>
             <Modal.Body>
               <div className="profileposition">
-                <img
-                  src={selectedTestimonial?.img}
-                  alt=""
-                  className="testomonialprofile img-fluid"
-                />
+             
               </div>
               <div className="testback">
                 <p>{selectedTestimonial?.review}</p>
