@@ -73,7 +73,7 @@ function OurProducts() {
   };
 
   return (
-    <Container fluid className="my-5 py-lg-0">
+    <Container fluid className="my-5 py-lg-0 d-block d-lg-none">
       {loading ? (
         <p></p>
       ) : error ? (

@@ -18,9 +18,9 @@ const ProductTab = ({ no }) => {
   const [activeTab, setActiveTab] = useState(no || 0); // initialize `activeTab` with `no` prop as well
   const handleProductClick = (productId) => {
     navigate(`/product/${productId}`);
-    window.scrollTo(0, 270) // Adjust timeout as needed to ensure navigation completes
-    
+    window.scrollTo(0, 270); // Adjust timeout as needed to ensure navigation completes
   };
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -47,6 +47,7 @@ const ProductTab = ({ no }) => {
   }, []);
 
   const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init();
   }, []);
@@ -164,43 +165,68 @@ const ProductTab = ({ no }) => {
                           __html: activeProduct.application,
                         }}
                       ></div>
-                      <div className=" d-flex alignbtn  justify-content-end">
-                        {" "}
+                      <div className="d-flex alignbtn justify-content-end">
                         <Button
                           variant="outline-dark"
-                          className="rounded-5 py-2 fs-6 px-4 m-lg-3   shadow-sm"
+                          className="rounded-5 py-2 fs-6 px-4 m-lg-3 shadow-sm"
                           onClick={() => handleProductClick(activeProduct.id)}
                         >
                           Read More
                         </Button>
-                      </div>{" "}
+                      </div>
                     </>
                   )}
                 </div>
                 <div className="pb-3">
-                  <Slider {...settings}>
-                    {products.map((product) => (
-                      <div
-                        key={product.id}
-                        className={`plungercard mx-1 d-grid justify-content-center ${
-                          activeTab === product.id ? "active" : ""
-                        }`}
-                        onClick={() => handleTabClick(product.id)}
-                      >
-                        <img
-                          variant="top"
-                          src={product.img}
-                          className="prdimg img-fluid p-2"
-                        />
-                        <div
-                          style={{ fontSize: "12px" }}
-                          className="text-center pb-3"
+                  {products.length < 2 ? (
+                    <Row>
+                      {products.map((product) => (
+                        <Col
+                          key={product.id}
+                          className={`plungercard mx-1 d-grid justify-content-center ${
+                            activeTab === product.id ? "active" : ""
+                          }`}
+                          onClick={() => handleTabClick(product.id)}
                         >
-                          {product.productName}
+                          <img
+                            variant="top"
+                            src={product.img}
+                            className="prdimg img-fluid p-2"
+                          />
+                          <div
+                            style={{ fontSize: "12px" }}
+                            className="text-center pb-3"
+                          >
+                            {product.productName}
+                          </div>
+                        </Col>
+                      ))}
+                    </Row>
+                  ) : (
+                    <Slider {...settings}>
+                      {products.map((product) => (
+                        <div
+                          key={product.id}
+                          className={`plungercard mx-1 d-grid justify-content-center ${
+                            activeTab === product.id ? "active" : ""
+                          }`}
+                          onClick={() => handleTabClick(product.id)}
+                        >
+                          <img
+                            variant="top"
+                            src={product.img}
+                            className="prdimg img-fluid p-2"
+                          />
+                          <div
+                            style={{ fontSize: "12px" }}
+                            className="text-center pb-3"
+                          >
+                            {product.productName}
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                  </Slider>
+                      ))}
+                    </Slider>
+                  )}
                 </div>
               </Col>
             </Row>

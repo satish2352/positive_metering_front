@@ -10,12 +10,12 @@ import '../assets/CSS/Service.css';
 import image1 from '../assets/img/About/Frame 19.png';
 import image2 from '../assets/img/About/Frame 20.png';
 import image3 from '../assets/img/About/Frame 21.png';
-import back1 from '../assets/img/About/back 19.png';
+import back1 from '../assets/img/aa/PRE ORDER SERVICE (1).png';
 import back2 from '../assets/img/About/back 20.png';
 import back3 from '../assets/img/About/back 21.png';
 import ResponsiveImage from "./ResponsiveImage";
-import imgmobile from "../assets/img/services/mobileview.png";
-import imgtop from "../assets/img/services/baner welcome.jpg";
+import imgmobile from "../assets/img/aa/mobile/service PAGE.jpg";
+import imgtop from "../assets/img/aa/baner/BANER services.jpg";
 
 const services = [
   {
@@ -55,7 +55,7 @@ const Service = () => {
 
       <Container>
         <Heading heading="Services" />
-        <p className='text-center mx-5 mb-5 ptext'>
+        <p className='text-center mx-lg-5 mx-2 mb-5 ptext'>
           We consider ourselves a Solution Providing Business. Therefore, offering Services to our customers is considered to be a core activity. Our organization is built around offering services in three stages.
         </p>
 

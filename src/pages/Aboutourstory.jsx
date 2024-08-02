@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import banner from '../assets/img/About/Rectangle 4417 (1).png';
-import infrastructure from "../assets/img/About/infrastructure.jpeg"
+import infrastructure from "../assets/img/aa/about us our story image.jpg"
 import HomeAboutus from '../PageComponents/Home/HomeAboutus';
 import VisionMission from '../PageComponents/About/VisionMission';
 import Getaquote from '../PageComponents/About/Getaquote';

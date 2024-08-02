@@ -148,7 +148,7 @@ const Testimonial = () => {
 
           <Modal show={showModal} onHide={handleCloseModal}>
             <Modal.Header closeButton>
-              <Modal.Title>{selectedTestimonial?.title}</Modal.Title>
+         
             </Modal.Header>
             <Modal.Body>
               <div className="profileposition">

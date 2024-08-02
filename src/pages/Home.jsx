@@ -13,12 +13,14 @@ import progress_img from "../assets/img/Home/Progress.png";
 import Progress_cavity_screw_pump from "../PageComponents/Home/Progress_cavity_screw_pump";
 import Shopnowhome from "../PageComponents/Home/Shopnowhome";
 import { ProductContext } from "../ProductContext";
+import OurProducts2 from "../PageComponents/Home/OurProducts2";
 const Home = () => {
   return (
     <>
       <Homebaner />
       <HomeAboutus />
       <OurProducts />
+      {/* <OurProducts2 /> */}
       <Producttab />
       <Shopnowhome />
       <Testomonial />

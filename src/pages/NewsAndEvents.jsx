@@ -4,8 +4,8 @@ import axios from "axios";
 import "../assets/CSS/aboutus.css";
 import Heading from "../components/Heading";
 import ResponsiveImage from "./ResponsiveImage";
-import imgmobile from "../assets/img/services/mobileview.png";
-import imgtop from "../assets/img/services/diskimg.png";
+import imgmobile from "../assets/img/aa/mobile/news PAGE.jpg";
+import imgtop from "../assets/img/aa/baner/BANER news.jpg";
 import { useNavigate } from "react-router-dom";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -15,7 +15,7 @@ const NewsAndEvents = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    axios.get('/newsandevent/get-newevents')
+    axios.get('/news/get-news')
       .then(response => {
         setCardData(response.data.responseData);
       })
@@ -33,7 +33,7 @@ const NewsAndEvents = () => {
     <>
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
       <Container fluid className="my-0" style={{ backgroundColor: '#F7F5EF', paddingTop: '40px' }}>
-        <Heading heading="News & Events" />
+        <Heading heading="News " />
         <Row>
           {cardData.filter(cardData => cardData.isActive).map((card, index) => (
             <Col

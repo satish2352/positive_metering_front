@@ -40,12 +40,12 @@ const Ouroffices = () => {
         <Container className="my-lg-5 my-5">
             <Heading heading="OUR OFFICES" />
             {loading ? (
-                <p></p>
+                <p>Loading...</p>
             ) : error ? (
-                <p></p>
+                <p>{error}</p>
             ) : (
                 <Row className='d-flex justify-content-evenly'>
-                    {offices.filter(offices => offices.isActive).map((card, index) => (
+                    {offices.filter(office => office.isActive).map((office, index) => (
                         <Col
                             key={index}
                             xs={12}
@@ -59,15 +59,15 @@ const Ouroffices = () => {
                             data-aos-duration="500"
                         >
                             <Card className="h-100 rounded-4 infrastructurecard border-bottom border-3 border-danger border-end-0 border-top-0 border-start-0">
-                                <Card.Img variant="top" src={card.img} alt={card.title} className='rounded-4 w-100 h-100' />
+                                <Card.Img variant="top" src={office.img} alt={office.title} className='rounded-4 w-100 h-100' />
                                 <Card.Body className='pb-4'>
-                                    <Card.Title className='fw-bolder fs-4'>{card.title}</Card.Title>
+                                    <Card.Title className='fw-bolder fs-4'>{office.title}</Card.Title>
                                     <Card.Text className='px-lg-3'>
-                                        {card.address}
+                                        {office.address}
                                         <br />
-                                        {card.phone}
+                                        <a href={`tel:${office.phone}`}  className=" text-dark text-decoration-none">{office.phone}</a>
                                         <br />
-                                        {card.email}
+                                        <a href={`mailto:${office.email}`}  className=" text-dark text-decoration-none">{office.email}</a>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>

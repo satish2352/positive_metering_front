@@ -72,7 +72,7 @@ const ContactCard = () => {
                         <b>Mobile No</b>
                       </Col>
                       <Col xs={9}>
-                        : <a href={`tel:${contact.phone}`}>{contact.phone}</a>
+                        : <a href={`tel:${contact.phone}`} className=" text-dark text-decoration-none" >{contact.phone}</a>
                       </Col>
                     </Row>
                     <Row className="pt-1">
@@ -81,7 +81,7 @@ const ContactCard = () => {
                       </Col>
                       <Col xs={9}>
                         :{" "}
-                        <a href={`mailto:${contact.email}`}>{contact.email}</a>
+                        <a href={`mailto:${contact.email}`  } className='text-dark text-decoration-none'>{contact.email}</a>
                       </Col>
                     </Row>
                   </Container>

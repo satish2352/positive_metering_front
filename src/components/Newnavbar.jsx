@@ -29,8 +29,7 @@ const NewNavbar = () => {
   return (
     <div className="mobile-navbar d-lg-none d-block">
       <div className="navbar-header">
-        <Link to='/'>
-         
+        <Link to="/">
           <img src={logo} alt="Logo" className="logo" />
         </Link>
         <button className="toggle-button" onClick={toggleNavbar}>
@@ -134,15 +133,44 @@ const NewNavbar = () => {
           </Nav.Link>
         </Nav>
         <Nav className="me-auto">
-          <Nav.Link href="/news-event" onClick={closeNavbar}>
-            <Link
-              className={`${getNavLinkClass("/news-event")} nvlink fw-bold`}
-              onClick={() => window.scrollTo(0, 0)}
-              to="/news-event"
+          <NavDropdown
+            title="NEWS&EVENTS"
+            style={{ backgroundColor: "#333" }}
+            className="my-0 ms-3 fw-bold mx-xxl-3 text-black nvlink"
+            id="collapsible-nav-dropdown"
+          >
+            <NavDropdown.Item
+              style={{ backgroundColor: "#333" }}
+              href=""
+              onClick={closeNavbar}
             >
-              NEWS & EVENT
-            </Link>
-          </Nav.Link>
+              <Link
+                className={`${getNavLinkClass(
+                  "/news"
+                )} fw-bold nvlink mx-xxl-3`}
+                onClick={() => window.scrollTo(0, 0)}
+                to="/news"
+              >
+                NEWS
+              </Link>
+            </NavDropdown.Item>
+            <NavDropdown.Item
+              style={{ backgroundColor: "#333" }}
+              href=""
+              onClick={closeNavbar}
+            >
+              <Link
+                className={`${getNavLinkClass(
+                  "/events"
+                )} fw-bold nvlink mx-xxl-3`}
+                onClick={() => window.scrollTo(0, 0)}
+                to="/events"
+              >
+               EVENTS
+              </Link>
+            </NavDropdown.Item>
+           
+          </NavDropdown>
           <Nav.Link href="/career" onClick={closeNavbar}>
             <Link
               className={`${getNavLinkClass(

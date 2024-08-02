@@ -16,7 +16,6 @@ import Footer from './components/Footer';
 import Banner from './PageComponents/Banner/Banner'
 import { useContext } from 'react'
 import Productlistimgs from './PageComponents/ProductComponenets/Productlistimgs'
-import Hydraulic_Diaphragm_Pumps from './PageComponents/ProductComponenets/Hydraulic_Diaphragm_Pumps'
 import Newnavbar from './components/Newnavbar'
 import ProductList from './PageComponents/ProductComponenets/ProductList'
 import { ProductContext } from './ProductContext'

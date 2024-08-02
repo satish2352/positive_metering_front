@@ -8,8 +8,8 @@ import ResponsiveImage from "../../pages/ResponsiveImage";
 import "../../assets/CSS/productlist.css";
 import ProductTechnicaldata from "./ProductTechnicaldata";
 import ProductTab from "../Home/Producttab";
-import imgmobile from "../../assets/img/productimgs/productmobileview.png";
-import imgtop from "../../assets/img/services/diskimg.png";
+import imgmobile from "../../assets/img/aa/product PAGE.jpg";
+import imgtop from "../../assets/img/aa/BANER product.jpg";
 
 const ProductList = () => {
   const { products, loading, error, productNo } = useContext(ProductContext);
@@ -242,7 +242,7 @@ const ProductList = () => {
           </Col>
         </Tab.Container>
       </Container>
-
+                      
       <ProductTechnicaldata />
     </>
   );

@@ -1,29 +1,65 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import im from "../assets/img/DGHGF.png";
 import Heading from "../components/Heading";
 import ResponsiveImage from "./ResponsiveImage";
-import imgmobile from "../assets/img/services/mobileview.png";
-import imgtop from "../assets/img/services/diskimg.png";
-import { Container, Row, Col } from "react-bootstrap";
+import imgmobile from "../assets/img/aa/events PAGE.jpg";
+import imgtop from "../assets/img/aa/BANER event.jpg";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+
 const Eventspage = () => {
+  const [events, setEvents] = useState([]);
+  const [showModal, setShowModal] = useState(false);
+  const [modalImage, setModalImage] = useState("");
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get("/events/get-events");
+        setEvents(response.data.responseData);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
+  const handleImageClick = (imageUrl) => {
+    setModalImage(imageUrl);
+    setShowModal(true);
+  };
+
+  const handleClose = () => setShowModal(false);
+
   return (
     <div>
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
-      <Heading heading="News & Events" />
+      <Heading heading="Events" />
 
       <Container>
         <Row>
-          <Col xs={12} lg={4}>
-            <img src={im} className="eventimg rounded-4" alt="" />
-            <div className=" d-grid justify-content-center">
-              <div className="evntttle rounded-pill p-3">
-                o maintain precise chemical dosing and control. Dosing Pumps
-                economy in
-              </div>
-            </div>
-          </Col>
+          {events.map((event) => (
+            <Col key={event.id} xs={12} lg={4} className="mb-4">
+              <img
+                src={event.img}
+                className="eventimg rounded-4"
+                alt={event.title}
+                onClick={() => handleImageClick(event.img )}
+                style={{ cursor: "pointer" }}
+              />
+             
+            </Col>
+          ))}
         </Row>
       </Container>
+
+      <Modal show={showModal} onHide={handleClose} centered>
+        <Modal.Header className="bg-transparent" closeButton></Modal.Header>
+        <Modal.Body className="p-0 d-flex justify-content-center align-items-center">
+          <img src={modalImage} className="img-fluid" alt="Event" style={{ width: "100%", height: "auto" }} />
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };

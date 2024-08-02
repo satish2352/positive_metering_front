@@ -16,8 +16,8 @@ import Form from "react-bootstrap/Form";
 import Heading from "../components/Heading";
 import ResponsiveImage from "./ResponsiveImage";
 
-import imgmobile from "../assets/img/services/mobileview.png";
-import imgtop from "../assets/img/services/diskimg.png";
+import imgmobile from "../assets/img/aa/mobile/blog PAGE.jpg";
+import imgtop from "../assets/img/aa/baner/BANER blog.jpg";
 
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -225,7 +225,7 @@ function Blogdetails({ image, title, longetxt }) {
         <div className="mt-3"></div>
         <h5>{title}</h5>
       </Container>
-      <div className="mt-3"></div>
+      <div className="mt-3 mx-3"></div>
       <Container>
         <div dangerouslySetInnerHTML={{ __html: longetxt }}></div>
       </Container>

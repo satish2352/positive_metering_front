@@ -217,12 +217,12 @@ const Header = () => {
                     )} nvlink fw-bold mx-xxl-3`}
                     onClick={() => window.scrollTo(0, 0)}
                     to="/news"
-                  >
-                    {" "}
-                    NEWS
+                  >NEWS <hr className="m-0 border-2" />
+                 
+                    
                   </Link>
                 </NavDropdown.Item>
-                <hr className="m-0" />
+           
                 <NavDropdown.Item
                   className="py-0 dropdown-menu-btn"
                   to="/aboutourstory"
@@ -233,9 +233,9 @@ const Header = () => {
                     )} nvlink fw-bold mx-xxl-3`}
                     onClick={() => window.scrollTo(0, 0)}
                     to="/event"
-                  >
-                    {" "}
-                    EVENT
+                  >EVENT <hr className="m-0 border-2" />
+                  
+                    
                   </Link>
                 </NavDropdown.Item>
         

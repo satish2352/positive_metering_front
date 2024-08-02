@@ -9,6 +9,7 @@ import im1 from "../../assets/img/Home/image.png";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
+import { IoIosCloseCircle } from "react-icons/io";
 
 function MyVerticallyCenteredModal(props) {
   const [fullname, setfullname] = useState("");
@@ -94,9 +95,10 @@ function MyVerticallyCenteredModal(props) {
   // }
   return (
     <Modal {...props} centered closeButton>
-      <Modal.Body className=" getquoteformback">
-        <Modal.Header className="text-white" closeButton></Modal.Header>
-        <form onSubmit={handleSubmit} className=" formbacks d-grid p-lg-5">
+      <Modal.Body className=" getquoteformback d-grid">
+      <Modal.Header  style={{  color: 'white' }} ><IoIosCloseCircle />
+      </Modal.Header>
+      <form onSubmit={handleSubmit} className=" formbacks d-grid p-lg-5">
           <input
             type="text"
             name="fullName"

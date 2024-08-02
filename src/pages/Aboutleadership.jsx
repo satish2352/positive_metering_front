@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "../assets/CSS/aboutus.css";
-import banner from "../assets/img/About/Rectangle 4417.png";
-import New from "../assets/img/About/Frame 19.png";
+import banner from "../assets/img/About/BANER about us.jpg";
+import New from "../assets/img/About/about us  PAGE.jpg";
 import lder1 from "../assets/img/About/Group 1000004058 (1).png";
 import lder2 from "../assets/img/About/leadershipimg1.png";
 import lder3 from "../assets/img/About/leadershipimg2.png";
@@ -55,7 +55,7 @@ const Aboutleadership = () => {
       {/* <Heading heading="leadership"/> */}
 
       <Container fluid className="px-0">
-        <ResponsiveImage mobileSrc={banner} desktopSrc={banner} />
+        <ResponsiveImage mobileSrc={New} desktopSrc={banner} />
       </Container>
       <Container fluid className=" mt-1">
         {leadershipData.map((leader, index) => (
@@ -86,30 +86,30 @@ const Aboutleadership = () => {
                   data-aos-easing="ease-out-cubic"
                   data-aos-duration="2000"
                 >
-                  <div>
+                  <div className=" textinfff">
                     <h3
                       className="text-uppercase abtname fw-bold"
                       style={{
                         letterSpacing: "1px",
                         fontFamily: "Roboto",
-                        paddingLeft: "20px",
+                 
                       }}
                     >
                       {leader.name}
                     </h3>
-                    <h5 style={{ paddingLeft: "20px" }}>{leader.title}</h5>
+                    <h5 >{leader.title}</h5>
                     <p
                       className="fw-medium abouttxt lh-base"
                       style={{
                         fontFamily: "Roboto",
                         textAlign: "justify",
-                        paddingLeft: "20px",
+                     
                         paddingup: "20px",
                       }}
                     >
                       {leader.description}
                     </p>
-                    <div style={{ paddingLeft: "20px" }} className="social-icons">
+                    <div  className="social-icons">
                       <FaFacebook className="icon" />
                       <FaInstagram className="icon" />
                       <FaLinkedin className="icon" />
