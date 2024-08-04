@@ -164,7 +164,7 @@ const NewNavbar = () => {
                   "/events"
                 )} fw-bold nvlink mx-xxl-3`}
                 onClick={() => window.scrollTo(0, 0)}
-                to="/events"
+                to="/event"
               >
                EVENTS
               </Link>

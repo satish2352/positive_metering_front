@@ -6,6 +6,7 @@ import ResponsiveImage from "./ResponsiveImage";
 import imgmobile from "../assets/img/aa/events PAGE.jpg";
 import imgtop from "../assets/img/aa/BANER event.jpg";
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
+import { IoMdClose } from "react-icons/io";
 
 const Eventspage = () => {
   const [events, setEvents] = useState([]);
@@ -45,19 +46,37 @@ const Eventspage = () => {
                 src={event.img}
                 className="eventimg rounded-4"
                 alt={event.title}
-                onClick={() => handleImageClick(event.img )}
+                onClick={() => handleImageClick(event.img)}
                 style={{ cursor: "pointer" }}
               />
-             
             </Col>
           ))}
         </Row>
       </Container>
 
       <Modal show={showModal} onHide={handleClose} centered>
-        <Modal.Header className="bg-transparent" closeButton></Modal.Header>
         <Modal.Body className="p-0 d-flex justify-content-center align-items-center">
-          <img src={modalImage} className="img-fluid" alt="Event" style={{ width: "100%", height: "auto" }} />
+          <div className="d-flex justify-content-end">
+            <Button
+              onClick={handleClose}
+              style={{ backgroundColor: "transparent", border: "none" }}
+            >
+              <IoMdClose
+                style={{
+                  color: "white",
+                  fontSize: "20px",
+                  backgroundColor: "transparent",
+                }}
+              />
+            </Button>
+       
+            <img
+              src={modalImage}
+              className="img-fluid"
+              alt="Event"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </div>
         </Modal.Body>
       </Modal>
     </div>

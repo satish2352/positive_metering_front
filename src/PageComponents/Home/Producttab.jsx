@@ -148,11 +148,9 @@ const ProductTab = ({ no }) => {
                 <div className="p-lg-3 p-4" style={{ textAlign: "justify" }}>
                   {activeProduct && (
                     <>
-                      <h1 className="pulgertitle" style={{ color: "#434343" }}>
-                        <span className="firstWord">{firstWord}</span>
-                        <br />
-                        <span className="restOfText"> {restOfText}</span>
-                      </h1>
+                      <h4  className="pulgertitle" style={{ color: "#434343" }}>
+                       {activeProduct.productName}
+                      </h4>
                       <h3
                         className="pulgersubtitle"
                         style={{ fontFamily: "Poppins", fontSize: "20px" }}
@@ -160,7 +158,7 @@ const ProductTab = ({ no }) => {
                         {activeProduct.subtitle}
                       </h3>
                       <div
-                        className="productapplictions"
+                        className="me-lg-5 me-0"
                         dangerouslySetInnerHTML={{
                           __html: activeProduct.application,
                         }}

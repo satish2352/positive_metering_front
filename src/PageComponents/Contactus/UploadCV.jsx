@@ -9,7 +9,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 const UploadCV = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
+  // const [subject, setSubject] = useState("");
   const [mobile, setMobile] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
@@ -29,10 +29,10 @@ const UploadCV = () => {
       errors.name = "Name is required";
       isValid = false;
     }
-    if (!subject.trim()) {
-      errors.subject = "Subject is required";
-      isValid = false;
-    }
+    // if (!subject.trim()) {
+    //   errors.subject = "Subject is required";
+    //   isValid = false;
+    // }
 
     if (!mobile.trim()) {
       errors.mobile = "Mobile number is required";
@@ -71,7 +71,7 @@ const UploadCV = () => {
         const formData = new FormData();
         formData.append("name", name);
         formData.append("email", email);
-        formData.append("subject", subject);
+        // formData.append("subject", subject);
         formData.append("message", message);
         formData.append("phone", mobile);
 
@@ -94,7 +94,7 @@ const UploadCV = () => {
         // Reset form fields and state after successful submission
         setName("");
         setEmail("");
-        setSubject("");
+        // setSubject("");
         setMobile("");
         setMessage("");
         setErrors({});
@@ -180,7 +180,7 @@ const UploadCV = () => {
                   </Form.Group>
                 </Col>
 
-                <Col xl={6}>
+                {/* <Col xl={6}>
                   <Form.Group
                     className="mb-3"
                     controlId="exampleForm.ControlInput1"
@@ -198,9 +198,9 @@ const UploadCV = () => {
                       </span>
                     )}
                   </Form.Group>
-                </Col>
+                </Col> */}
 
-                <Col xl={12}>
+                <Col xl={6}>
                   <Form.Group
                     className="mb-3"
                     controlId="exampleForm.ControlTextarea1"

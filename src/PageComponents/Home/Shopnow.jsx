@@ -11,13 +11,15 @@ import Modal from "react-bootstrap/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
 import { IoIosCloseCircle } from "react-icons/io";
 
-function MyVerticallyCenteredModal(props) {
+import { IoMdClose } from "react-icons/io";
+function MyVerticallyCenteredModal({ show, onHide }) {
   const [fullname, setfullname] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setmobile] = useState("");
   const [message, setmessage] = useState("");
   const [errors, setErrors] = useState({});
   const [isCaptchaVerified, setCaptchaVerified] = useState(false);
+
   const captchaRef = useRef(null);
 
   const onChange = (value) => {
@@ -89,16 +91,15 @@ function MyVerticallyCenteredModal(props) {
     }
   };
 
-  // const handlesubmit = (e) => {
-  //   e.preventDefault();
-  //   alert('Thank you for your feedback')
-  // }
   return (
-    <Modal {...props} centered closeButton>
-      <Modal.Body className=" getquoteformback d-grid">
-      <Modal.Header  style={{  color: 'white' }} ><IoIosCloseCircle />
-      </Modal.Header>
-      <form onSubmit={handleSubmit} className=" formbacks d-grid p-lg-5">
+    <Modal show={show} onHide={onHide} centered>
+      <Modal.Body className="getquoteformback">
+        <div className="d-flex justify-content-end">
+          <Button onClick={onHide} style={{backgroundColor:'transparent',border:'none' }}>
+            <IoMdClose style={{ color: "white",fontSize:"20px", backgroundColor:'transparent' }} />
+          </Button>
+        </div>
+        <form onSubmit={handleSubmit} className="formbacks d-grid p-lg-5">
           <input
             type="text"
             name="fullName"
@@ -133,14 +134,14 @@ function MyVerticallyCenteredModal(props) {
             required
           />
           {errors.mobile && (
-            <span className=" ps-4 text-danger">{errors.mobile}</span>
+            <span className="error text-danger">{errors.mobile}</span>
           )}
           <textarea
             name="message"
             placeholder="Enter Message"
             value={message}
             style={{ marginLeft: "7px" }}
-            className="bannertxtarea2 bannertxtarea ps-3 "
+            className="bannertxtarea2 bannertxtarea ps-3"
             onChange={(e) => setmessage(e.target.value)}
             required
           />
@@ -148,12 +149,9 @@ function MyVerticallyCenteredModal(props) {
             <span className="error text-danger">{errors.message}</span>
           )}
           <ReCAPTCHA
-            className=" my-4 ms-2"
+            className="my-4 ms-2"
             ref={captchaRef}
-            //  testserver
             sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
-            // local
-            // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
             onChange={onChange}
           />
           {errors.captcha && (

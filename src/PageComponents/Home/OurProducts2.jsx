@@ -76,7 +76,7 @@ function OurProducts2() {
   const activeProducts = products.filter((product) => product.isActive);
 
   return (
-    <Container fluid className="my-5 py-lg-0 d-none d-lg-block">
+    <Container fluid className="my-5 py-lg-0 d-none  d-lg-block">
       {activeProducts.length > 5 ? (
         <Slider {...settings}>
           {activeProducts.map((product) => (

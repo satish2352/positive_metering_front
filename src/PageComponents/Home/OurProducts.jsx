@@ -5,18 +5,17 @@ import { Container, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import Heading from "../../components/Heading";
 
-function OurProducts() {
+function OurProducts2() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchContacts = async () => {
+    const fetchProducts = async () => {
       try {
         const response = await axios.get("carrousal/get-carrousal");
         if (response.data.result) {
           setProducts(response.data.responseData);
-          console.log(response);
         } else {
           setError(response.data.message);
         }
@@ -27,11 +26,11 @@ function OurProducts() {
       }
     };
 
-    fetchContacts();
+    fetchProducts();
   }, []);
 
   const slidesToShow = 5;
-  const slidesToScroll = 0;
+  const slidesToScroll = 1;
 
   const settings = {
     speed: 500,
@@ -39,7 +38,6 @@ function OurProducts() {
     infinite: true,
     slidesToShow: slidesToShow,
     slidesToScroll: slidesToScroll,
-    initialSlide: slidesToShow,
     autoplay: true,
     speed: 3500,
     autoplaySpeed: 3500,
@@ -72,48 +70,45 @@ function OurProducts() {
     ],
   };
 
+  if (loading) return <p></p>;
+  if (error) return <p></p>;
+
+  const activeProducts = products.filter((product) => product.isActive);
+
   return (
-    <Container fluid className="my-5 py-lg-0 d-block d-lg-none">
-      {loading ? (
-        <p></p>
-      ) : error ? (
-        <p> </p>
-      ) : products.length > 5 ? (
+    <Container fluid className="my-5 py-lg-0 d-block  d-lg-none">
+      {activeProducts.length > 2 ? (
         <Slider {...settings}>
-          {products
-            .filter((product) => product.isActive)
-            .map((product) => (
-              <div
-                key={product.id}
-                className="ourprdcard d-flex justify-content-center p-4"
-              >
-                <img
-                  src={product.img}
-                  className="img-fluid ourprdimg w-100 h-100"
-                  alt=""
-                />
-              </div>
-            ))}
+          {activeProducts.map((product) => (
+            <div
+              key={product.id}
+              className="ourprdcard d-flex justify-content-center p-4"
+            >
+              <img
+                src={product.img}
+                className="img-fluid ourprdimg w-100 h-100"
+                alt={product.name || "Product Image"}
+              />
+            </div>
+          ))}
         </Slider>
       ) : (
         <Row>
-          {products
-            .filter((product) => product.isActive)
-            .map((product) => (
-              <Col key={product.id} xs={12} sm={6} md={2} className="mb-4">
-                <div className=" d-flex justify-content-center ">
-                  <img
-                    src={product.img}
-                    className="img-fluid ourprdimg w-100 h-100"
-                    alt=""
-                  />
-                </div>
-              </Col>
-            ))}
+          {activeProducts.map((product) => (
+            <Col key={product.id} xs={12} sm={6} md={2} className="mb-4">
+              <div className="d-flex justify-content-center">
+                <img
+                  src={product.img}
+                  className="img-fluid ourprdimg w-100 h-100"
+                  alt={product.name || "Product Image"}
+                />
+              </div>
+            </Col>
+          ))}
         </Row>
       )}
     </Container>
   );
 }
 
-export default OurProducts;
+export default OurProducts2;

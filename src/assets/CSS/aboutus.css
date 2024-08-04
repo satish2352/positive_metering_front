@@ -14,12 +14,11 @@
 .abouttxt {
   font-size: 15px !important;
 }
-
 .firstWord {
-  font-size: 4rem !important;
+  font-size: 2rem !important;
 }
 .restOfText {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 670px) {
@@ -36,11 +35,14 @@
   .restOfText {
     font-size: 1.5rem;
   }
+  .alignbtn{
+    margin-right: 1%;
+  }
 }
 
 @media screen and (min-width: 1400px) {
   .producttabimg {
-    height: 600px !important;
+    height: auto !important;
   }
 }
 

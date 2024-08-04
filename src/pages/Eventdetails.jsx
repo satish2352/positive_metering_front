@@ -15,8 +15,8 @@ import Form from "react-bootstrap/Form";
 import Heading from "../components/Heading";
 import ResponsiveImage from "./ResponsiveImage";
 
-import imgmobile from "../assets/img/services/mobileview.png";
-import imgtop from "../assets/img/services/diskimg.png";
+import imgmobile from "../assets/img/aa/mobile/news PAGE.jpg";
+import imgtop from "../assets/img/aa/baner/BANER news.jpg";
 
 function Eventdetails({ image, title, longetxt }) {
   window.scrollTo(0, 0);
@@ -26,7 +26,7 @@ function Eventdetails({ image, title, longetxt }) {
   return (
     <>
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
-      <Heading heading={"News and Events"} />
+      <Heading heading={"News"} />
       <Container className=" p-2 p-lg-5" heading={"Blog"}>
         <Row>
           <Col lg={5} md={6} sm={12}>

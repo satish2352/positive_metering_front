@@ -1,8 +1,9 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
-import { Col, Container, Row, Nav, Tab } from "react-bootstrap";
+import { Col, Container, Row, Nav, Tab ,Button} from "react-bootstrap";
 import { ProductContext } from "../../ProductContext";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
+import Slider from "react-slick";
 
 import ResponsiveImage from "../../pages/ResponsiveImage";
 import "../../assets/CSS/productlist.css";
@@ -11,8 +12,7 @@ import ProductTab from "../Home/Producttab";
 import imgmobile from "../../assets/img/aa/product PAGE.jpg";
 import imgtop from "../../assets/img/aa/BANER product.jpg";
 
-const ProductList = () => {
-  const { products, loading, error, productNo } = useContext(ProductContext);
+const ProductList = ({no}) => {
   const { id } = useParams();
 
   const navigate = useNavigate();
@@ -25,7 +25,74 @@ const ProductList = () => {
   const [materialData, setMaterialData] = useState([]);
   const [ApplicationData, setApplicationData] = useState([]);
   const productDetailsRef = useRef(null); // Ref for scrolling
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [productNo, setProductNo] = useState(no);
+  const [activeTab, setActiveTab] = useState(no); // initialize `activeTab` with `no` prop as well
 
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("/productdetails/get-productdetails");
+        if (response.data.result) {
+          const productData = response.data.responseData;
+          setProducts(productData);
+          if (productData.length > 0) {
+            const defaultProductNo = productData[0].id;
+            setProductNo(defaultProductNo);
+            setActiveTab(defaultProductNo); // Set default active tab to the first product
+          }
+        } else {
+          setError("Failed to fetch product details");
+        }
+      } catch (err) {
+        setError("Error fetching product details");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
+  const activeProduct = products.find((product) => product.id === activeTab);
+  const handleTabClick = (ids) => {
+    setActiveTab(ids);
+  };
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
@@ -96,7 +163,7 @@ const ProductList = () => {
                 {products.map((product, index) => (
                   <div
                     key={index}
-                    onClick={() => handleProductClick(product.id)}
+                    onClick={() => { handleTabClick(product.id); handleProductClick(product.id); }}
                     className={`mx-xxl-3 product-list-item`}
                   >
                     <p
@@ -142,7 +209,133 @@ const ProductList = () => {
         </Row>
       </Container>
 
-      <ProductTab />
+ <>
+  <Container
+      fluid
+      className="mt-3 p-lg-5"
+      style={{ background: "#EFEFEF", position: "relative" }}
+    >
+      <Row className="d-flex align-items-center">
+        <Col
+          lg={1}
+          className="d-grid align-items-center round d-none d-lg-block"
+        >
+          <div className="graycircle"></div>
+        </Col>
+        <Col
+          lg={11}
+          style={{ backgroundColor: "#fff", position: "relative" }}
+          className="box border-1 border-dark-subtle border p-lg-4"
+        >
+       
+            <Row className="align-items-center chartslider">
+              <Col lg={6} className="px-0">
+                {activeProduct && (
+                  <img
+                    data-aos="fade-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500"
+                    src={activeProduct.img}
+                    alt={activeProduct.productName}
+                    className="img-fluid producttabimg p-5 p-lg-1"
+                  />
+                )}
+              </Col>
+              <Col
+                lg={6}
+                className="homeaboutinfo text-black"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+              >
+                <div className="p-lg-3 p-4" style={{ textAlign: "justify" }}>
+                  {activeProduct && (
+                    <>
+                      <h4  className="pulgertitle" style={{ color: "#434343" }}>
+                       {activeProduct.productName}
+                      </h4>
+                      <h3
+                        className="pulgersubtitle"
+                        style={{ fontFamily: "Poppins", fontSize: "20px" }}
+                      >
+                        {activeProduct.subtitle}
+                      </h3>
+                      <div
+                        className="me-lg-5 me-0"
+                        dangerouslySetInnerHTML={{
+                          __html: activeProduct.application,
+                        }}
+                      ></div>
+                      <div className="d-flex alignbtn justify-content-end">
+                        <Button
+                          variant="outline-dark"
+                          className="rounded-5 py-2 fs-6 px-4 m-lg-3 shadow-sm"
+                          onClick={() => handleProductClick(activeProduct.id)}
+                        >
+                          Read More
+                        </Button>
+                      </div>
+                    </>
+                  )}
+                </div>
+                <div className="pb-3">
+                  {products.length < 2 ? (
+                    <Row>
+                      {products.map((product) => (
+                        <Col
+                          key={product.id}
+                          className={`plungercard mx-1 d-grid justify-content-center ${
+                            activeTab === product.id ? "active" : ""
+                          }`}
+                          onClick={() => { handleTabClick(product.id); handleProductClick(product.id); }}
+                        >
+                          <img
+                            variant="top"
+                            src={product.img}
+                            className="prdimg img-fluid p-2"
+                          />
+                          <div
+                            style={{ fontSize: "12px" }}
+                            className="text-center pb-3"
+                          >
+                            {product.productName}
+                          </div>
+                        </Col>
+                      ))}
+                    </Row>
+                  ) : (
+                    <Slider {...settings}>
+                      {products.map((product) => (
+                        <div
+                          key={product.id}
+                          className={`plungercard mx-1 d-grid justify-content-center ${
+                            activeTab === product.id ? "active" : ""
+                          }`}
+                         onClick={() => { handleTabClick(product.id); handleProductClick(product.id); }}
+                        >
+                          <img
+                            variant="top"
+                            src={product.img}
+                            className="prdimg img-fluid p-2"
+                          />
+                          <div
+                            style={{ fontSize: "12px" }}
+                            className="text-center pb-3"
+                          >
+                            {product.productName}
+                          </div>
+                        </div>
+                      ))}
+                    </Slider>
+                  )}
+                </div>
+              </Col>
+            </Row>
+          
+        </Col>
+      </Row>
+    </Container>
+ </>
 
       <Container fluid className="productTechnicaldata mt-5 mb-4">
         <Tab.Container id="left-tabs-example" defaultActiveKey="TECHNICAL">
@@ -187,7 +380,7 @@ const ProductList = () => {
             <Tab.Content>
               <Tab.Pane eventKey="TECHNICAL">
                 <h1 className="tableheadstyle text-center pt-5 pb-3">
-                  Plunger type dosing pumps Technical Data
+                  Technical Data
                 </h1>
                 <Container className="d-flex justify-content-center">
                   <Col lg={8} className="horizontal-scroll">

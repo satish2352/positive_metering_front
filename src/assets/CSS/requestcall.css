@@ -3,10 +3,9 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 505px) {
   .requestcallback {
-    height: 530px;
+    height: 730px !important;
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -20,6 +19,33 @@
   }
   .viod {
     padding-top: 240px;
+  }
+}
+@media only screen and (min-width: 705px) and (max-width: 767px) {
+  .requestcallback {
+    height: 430px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .requestcallbackleft {
+    background: rgba(222, 222, 222, 0.79);
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    position: relative;
+    top: -991px !important;
+  }
+  .viod {
+    padding-top: 240px;
+  }
+}
+@media only screen and (min-width: 7675px) and (max-width: 1200px) {
+   .requestcallbackleft {
+    background: rgba(222, 222, 222, 0.79);
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    position: relative;
+    top: -491px !important;
   }
 }
 

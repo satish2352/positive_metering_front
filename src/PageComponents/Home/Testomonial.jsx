@@ -154,7 +154,7 @@ const Testimonial = () => {
               <div className="profileposition">
              
               </div>
-              <div className="testback">
+              <div className="testback2">
                 <p>{selectedTestimonial?.review}</p>
                 <Rating
                   iconsCount={5}

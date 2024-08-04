@@ -282,7 +282,7 @@
 }
 
 .logo {
-  height: 40px;
+  height: 45px;
 }
 
 .toggle-button {
@@ -335,4 +335,13 @@
 }
 .closeButton{
   position: absolute;
+}
+.pstext {
+  text-align: justify;
+}
+
+@media (min-width: 992px) {
+  .pstext {
+    text-align: center;
+  }
 }
