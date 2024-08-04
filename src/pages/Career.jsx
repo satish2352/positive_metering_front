@@ -32,12 +32,12 @@ const Career = () => {
     let isValid = true;
 
     if (!name.trim()) {
-      errors.name = "Name is required";
+      errors.name = "Name is Required";
       isValid = false;
     }
 
     if (!mobile.trim()) {
-      errors.mobile = "Mobile is required";
+      errors.mobile = "Mobile No is Required";
       isValid = false;
     } else if (!/^\d{10}$/.test(mobile)) {
       errors.mobile = "Mobile number must be exactly 10 digits";
@@ -45,7 +45,7 @@ const Career = () => {
     }
 
     if (!email.trim()) {
-      errors.email = "Email is required";
+      errors.email = "Email Id is Required";
       isValid = false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       errors.email = "Invalid Email ID";
@@ -107,7 +107,7 @@ const Career = () => {
             },
           }
         );
-        alert("Data Submitted Successfully");
+        alert("Thank you. we will connect with you soon..");
         console.log("Response data:", response.data);
 
         // Reset form fields
@@ -130,7 +130,24 @@ const Career = () => {
         }
       } catch (error) {
         console.error("Error submitting the form:", error);
-        alert("Failed to submit the form");
+        const newErrors = { ...errors };
+
+        // Check if the error is a validation error for mobile number or email
+        if (
+          error.response?.data?.message ===
+          "Validation error: Phone number already exists."
+        ) {
+          newErrors.mobile = "Mobile number already exists.";
+        } else if (
+          error.response?.data?.message ===
+          "Validation error: Email already exists."
+        ) {
+          newErrors.email = "Email already exists.";
+        } else {
+          newErrors.general = "Failed to submit data. Please try again later.";
+        }
+
+        setErrors(newErrors);
       }
     }
   };
@@ -141,7 +158,7 @@ const Career = () => {
 
       <Container fluid className="creerback">
         <Row className="d-flex justify-content-center py-5">
-          <Heading heading={"career OPPORTUNITIES"} />
+          {/* <Heading heading={"career OPPORTUNITIES"} /> */}
           <Col
             xs={11}
             md={10}
@@ -233,7 +250,15 @@ const Career = () => {
                       className="mb-3"
                       controlId="exampleForm.ControlInput1"
                     >
-                      <Form.Label>Upload CV <span className=" text-danger" style={{fontSize:"13px"}} >(file size should be less than 400kb)</span></Form.Label>
+                      <Form.Label>
+                        Upload CV{" "}
+                        <span
+                          className=" text-danger"
+                          style={{ fontSize: "13px" }}
+                        >
+                          (file size should be less than 400kb)
+                        </span>
+                      </Form.Label>
                       <Form.Control
                         type="file"
                         accept=".pdf"
@@ -272,9 +297,9 @@ const Career = () => {
                     <ReCAPTCHA
                       ref={captchaRef}
                       //  testserver
-                      sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+                      // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
                       // local
-                      // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+                      sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                       onChange={onChange}
                     />
                     {errors.captcha && (
@@ -283,8 +308,6 @@ const Career = () => {
                       </span>
                     )}
                   </Col>
-
-             
                 </Row>
                 <div className="text-center text-center mt-xl-5 mb-xl-4">
                   <Button

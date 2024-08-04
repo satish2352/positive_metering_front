@@ -45,7 +45,7 @@ const BlogCard = () => {
   }, []);
 
   const renderBlogCard = (blog, index, reverse) => (
-    <Col key={blog.id} xl={6} lg={6} md={6} sm={12} className=" my-2 my-lg-0">
+    <Col key={blog.id} xl={6} lg={6} md={12} sm={12} className=" my-2 my-lg-0">
       <Card className="border-0 h-100 text-white">
         <Row className="align-items-center">
           {reverse ? (

@@ -41,7 +41,7 @@ const Eventspage = () => {
       <Container>
         <Row>
           {events.map((event) => (
-            <Col key={event.id} xs={12} lg={4} className="mb-4">
+            <Col key={event.id} xs={12} lg={4} md={6} className="mb-4">
               <img
                 src={event.img}
                 className="eventimg rounded-4"
@@ -54,31 +54,35 @@ const Eventspage = () => {
         </Row>
       </Container>
 
-      <Modal show={showModal} onHide={handleClose} centered>
-        <Modal.Body className="p-0 d-flex justify-content-center align-items-center">
-          <div className="d-flex justify-content-end">
-            <Button
-              onClick={handleClose}
-              style={{ backgroundColor: "transparent", border: "none" }}
-            >
-              <IoMdClose
-                style={{
-                  color: "white",
-                  fontSize: "20px",
-                  backgroundColor: "transparent",
-                }}
-              />
-            </Button>
-       
-            <img
-              src={modalImage}
-              className="img-fluid"
-              alt="Event"
-              style={{ width: "100%", height: "auto" }}
-            />
-          </div>
-        </Modal.Body>
-      </Modal>
+      <Modal show={showModal} onHide={handleClose} centered>    <Button
+          onClick={handleClose}
+          style={{
+            position: "absolute",
+            top: "10px",
+            right: "10px",
+            backgroundColor: "transparent",
+            border: "none",
+            zIndex: 9999
+          }}
+        >
+          <IoMdClose
+            style={{
+              color: "white",
+              fontSize: "24px",
+              backgroundColor: "transparent",
+            }}
+          />
+        </Button>
+      <Modal.Body className="p-0 d-flex justify-content-center align-items-center position-relative">
+    
+        <img
+          src={modalImage}
+          className="img-fluid"
+          alt="Event"
+          style={{ width: "100%", height: "auto" }}
+        />
+      </Modal.Body>
+    </Modal>
     </div>
   );
 };

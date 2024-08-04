@@ -39,7 +39,7 @@
     padding-top: 240px;
   }
 }
-@media only screen and (min-width: 7675px) and (max-width: 1200px) {
+@media only screen and (min-width: 767px) and (max-width: 1200px) {
    .requestcallbackleft {
     background: rgba(222, 222, 222, 0.79);
     padding-left: 0px !important;

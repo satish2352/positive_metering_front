@@ -79,17 +79,17 @@
 }
 
 .plungercard {
-  box-shadow: 5px 5px 20px 0px #00000040;
+  box-shadow: 5px 5px 0px 0px #00000040;
   background: #efefef;
-  height: auto;
+  height: 160px;
   width: 170px !important;
 }
 
 @media (max-width: 526px) {
   .plungercard {
-    box-shadow: 1px 1px 2px 0px #00000040;
+    box-shadow: 5px 5px 2px 0px #00000040;
     background: #efefef;
-    height: auto;
+    height: 190px;
     width: 170px !important;
   }
 
@@ -126,8 +126,8 @@
   padding-left: 20px;
 }
 .prdimg {
-  height: 150px;
-  width: 150px;
+  height: auto;
+  width: auto;
 }
 
 .sencodetext {

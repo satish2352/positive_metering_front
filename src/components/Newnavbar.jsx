@@ -25,7 +25,6 @@ const NewNavbar = () => {
   const closeNavbar = () => {
     setIsOpen(false);
   };
-
   return (
     <div className="mobile-navbar d-lg-none d-block">
       <div className="navbar-header">
@@ -134,7 +133,7 @@ const NewNavbar = () => {
         </Nav>
         <Nav className="me-auto">
           <NavDropdown
-            title="NEWS&EVENTS"
+            title={<span>NEWS &nbsp;  & &nbsp; EVENTS</span>}
             style={{ backgroundColor: "#333" }}
             className="my-0 ms-3 fw-bold mx-xxl-3 text-black nvlink"
             id="collapsible-nav-dropdown"

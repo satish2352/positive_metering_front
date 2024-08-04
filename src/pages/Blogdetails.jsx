@@ -21,13 +21,14 @@ import imgtop from "../assets/img/aa/baner/BANER blog.jpg";
 
 import ReCAPTCHA from "react-google-recaptcha";
 
-function MyVerticallyCenteredModal(props) {
-  const [fullname, setfullname] = useState("");
+function MyVerticallyCenteredModal({ show, onHide }) {
+  const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
-  const [mobile, setmobile] = useState("");
-  const [message, setmessage] = useState("");
+  const [mobile, setMobile] = useState("");
+  const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
   const [isCaptchaVerified, setCaptchaVerified] = useState(false);
+
   const captchaRef = useRef(null);
 
   const onChange = (value) => {
@@ -64,10 +65,12 @@ function MyVerticallyCenteredModal(props) {
       errors.message = "Message is required";
       isValid = false;
     }
+
     if (!isCaptchaVerified) {
       errors.captcha = "Please complete the reCAPTCHA before submitting.";
       isValid = false;
     }
+
     setErrors(errors);
     return isValid;
   };
@@ -83,49 +86,58 @@ function MyVerticallyCenteredModal(props) {
           message,
         });
         if (response.status === 200) {
-          alert("Thank you. we will connect with you soon..");
-          console.log("newData", response.data);
+          // Reset form fields and state after successful submission
+          setFullname("");
+          setEmail("");
+          setMobile("");
+          setMessage("");
+          setErrors({});
+          setCaptchaVerified(false);
+          if (captchaRef.current) {
+            captchaRef.current.reset();
+          }
         } else {
-          alert("Failed to submit data.");
+          console.log("Failed to submit data.");
+          // Handle failed submission without alert
         }
-        setEmail("");
-        setmessage("");
-        setmobile("");
-        setfullname("");
       } catch (error) {
-        alert("Failed to submit data.");
         console.error("Error submitting form:", error);
+        console.error("Error response data:", error.response?.data);
+
+        const newErrors = { ...errors };
+        // Check if the error is a validation error for mobile number or email
+        if (error.response?.data?.message === "Validation error: Mobile number already exists.") {
+          newErrors.mobile = "Mobile number already exists.";
+        } else if (error.response?.data?.message === "Validation error: Email already exists.") {
+          newErrors.email = "Email already exists.";
+        } else {
+          newErrors.general = "Failed to submit data. Please try again later.";
+        }
+        setErrors(newErrors);
       }
     }
   };
 
-  // const handlesubmit = (e) => {
-  //   e.preventDefault();
-  //   alert('Thank you for your feedback')
-  // }
   return (
-    <Modal {...props} centered closeButton>
-      <Modal.Body className=" getquoteformback">
+    <Modal show={show} onHide={onHide} centered>
+      <Modal.Body className="getquoteformback">
         <div className="d-flex justify-content-end">
-          <Modal.Header
-            className="text-white border border-0  "
-            closeButton
-          >
-            <IoMdClose />
-          </Modal.Header>
+          <Button onClick={onHide} style={{ backgroundColor: 'transparent', border: 'none' }}>
+            <IoMdClose style={{ color: "white", fontSize: "20px", backgroundColor: 'transparent' }} />
+          </Button>
         </div>
-        <form onSubmit={handleSubmit} className=" formbacks d-grid p-lg-5">
+        <form onSubmit={handleSubmit} className="formbacks d-grid p-lg-5">
           <input
             type="text"
             name="fullName"
             className="bannerinp ms-2"
             placeholder="Enter Full Name"
             value={fullname}
-            onChange={(e) => setfullname(e.target.value)}
+            onChange={(e) => setFullname(e.target.value)}
             required
           />
           {errors.fullname && (
-            <span className="error text-danger">{errors.fullname}</span>
+            <span className="error ms-2 fw-light text-danger">{errors.fullname}</span>
           )}
           <input
             type="email"
@@ -137,7 +149,7 @@ function MyVerticallyCenteredModal(props) {
             required
           />
           {errors.email && (
-            <span className="error text-danger">{errors.email}</span>
+            <span className="error ms-2 fw-light text-danger">{errors.email}</span>
           )}
           <input
             type="tel"
@@ -145,35 +157,33 @@ function MyVerticallyCenteredModal(props) {
             placeholder="Enter Mobile No."
             className="bannerinp ms-2"
             value={mobile}
-            onChange={(e) => setmobile(e.target.value)}
+            onChange={(e) => setMobile(e.target.value)}
             required
           />
           {errors.mobile && (
-            <span className="error text-danger">{errors.mobile}</span>
+            <span className="error ms-2 fw-light text-danger">{errors.mobile}</span>
           )}
           <textarea
             name="message"
             placeholder="Enter Message"
             value={message}
             style={{ marginLeft: "7px" }}
-            className="bannertxtarea2 bannertxtarea ps-3 "
-            onChange={(e) => setmessage(e.target.value)}
+            className="bannertxtarea2 bannertxtarea ps-3"
+            onChange={(e) => setMessage(e.target.value)}
             required
           />
           {errors.message && (
-            <span className="error text-danger">{errors.message}</span>
+            <span className="error ms-2 fw-light text-danger">{errors.message}</span>
           )}
           <ReCAPTCHA
-            className=" my-4 ms-2"
+            className="my-4 ms-2"
             ref={captchaRef}
-            //  testserver
             sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
-            // local
             // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
             onChange={onChange}
           />
           {errors.captcha && (
-            <span className="error text-danger">{errors.captcha}</span>
+            <span className="error ms-2 fw-light text-danger">{errors.captcha}</span>
           )}
           <button
             type="submit"
@@ -181,6 +191,11 @@ function MyVerticallyCenteredModal(props) {
           >
             SUBMIT
           </button>
+          {errors.general && (
+            <div className="text-center mt-3 text-danger">
+              {errors.general}
+            </div>
+          )}
         </form>
       </Modal.Body>
     </Modal>

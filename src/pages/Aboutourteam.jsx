@@ -51,7 +51,7 @@ const Aboutourteam = () => {
             {teamMembers
               .filter((teamMembers) => teamMembers.isActive)
               .map((member) => (
-                <Col md={4} key={member.id} className="mb-5">
+                <Col md={6} lg={4} key={member.id} className="mb-5">
                   <Card
                     onMouseEnter={() => handleHover(member.position_no)}
                     onMouseLeave={handleLeave}

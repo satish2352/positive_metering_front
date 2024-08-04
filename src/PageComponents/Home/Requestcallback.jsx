@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import { Container, Row, Col } from "react-bootstrap";
+import ReCAPTCHA from "react-google-recaptcha";
 import "../../assets/CSS/requestcall.css";
 import homepagevideo from "../../assets/video/positive.mp4";
 import mobilepagevideo from "../../assets/video/WhatsApp-Video-2024-07-18-at-115.mp4";
@@ -12,6 +13,9 @@ const Requestcallback = () => {
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
+  const [isCaptchaVerified, setCaptchaVerified] = useState(false);
+
+  const captchaRef = useRef(null);
 
   const validateForm = () => {
     let errors = {};
@@ -34,12 +38,17 @@ const Requestcallback = () => {
       errors.mobile = "Mobile is required";
       isValid = false;
     } else if (!/^\d{10}$/.test(mobile)) {
-      errors.mobile = "Mobile No Must Be  10 Digits";
+      errors.mobile = "Mobile No Must Be 10 Digits";
       isValid = false;
     }
 
     if (!message.trim()) {
       errors.message = "Message is required";
+      isValid = false;
+    }
+
+    if (!isCaptchaVerified) {
+      errors.captcha = "Please complete the reCAPTCHA before submitting.";
       isValid = false;
     }
 
@@ -74,6 +83,11 @@ const Requestcallback = () => {
     }
   };
 
+  const handleCaptchaChange = (value) => {
+    setCaptchaVerified(true);
+    console.log("Captcha value:", value);
+  };
+
   return (
     <>
       <Container fluid className="requestcallbackcontainer d-none d-md-block">
@@ -91,7 +105,7 @@ const Requestcallback = () => {
         <div className="requestcallback d-flex align-items-center justify-content-evenly">
           <Container className="p-4">
             <Row className="d-flex justify-content-evenly fw-bold">
-              <Col md={7} className="requestcallbackleft">
+              <Col lg={7} className="requestcallbackleft d-none d-lg-block">
                 <div className="requestcallbacklefttop">
                   <h4 className="text-white text-center py-3">
                     PLUNGER TYPE DOSING PUMPS
@@ -123,7 +137,7 @@ const Requestcallback = () => {
                   </p>
                 </div>
               </Col>
-              <Col md={4} className="requestcallbackleft">
+              <Col lg={4} className="requestcallbackleft">
                 <div className="requestcallbacklefttop">
                   <h4 className="text-white text-center py-3 text-uppercase">
                     Request A CALL BACK
@@ -200,6 +214,18 @@ const Requestcallback = () => {
                         </span>
                       )}
                     </div>
+                    <ReCAPTCHA
+                      className="my-4"
+                      ref={captchaRef}
+                      // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+                      sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+                      onChange={handleCaptchaChange}
+                    />
+                    {errors.captcha && (
+                      <span className="error text-danger">
+                        {errors.captcha}
+                      </span>
+                    )}
                     <div className="d-flex justify-content-end pt-4">
                       <button
                         className="px-4 py-2 text-center formrequestbtn"
@@ -233,20 +259,22 @@ const Requestcallback = () => {
             <Row className="d-flex justify-content-evenly fw-bold">
               <Col md={7} className="requestcallbackleft">
                 <div className="requestcallbacklefttop">
-                  <h4 className="text-white text-center py-3">
+                  <h5 className="text-white text-center py-3">
                     PLUNGER TYPE DOSING PUMPS
-                  </h4>
+                  </h5>
                 </div>
-                <div className="p-3 p-lg-5" style={{ textAlign: "justify" }}>
-                  <p>
-                    Dosing Pumps are extensively utilized in a range of
-                    industries to maintain precise chemical dosing and control.
-                    Dosing Pumps economy in India has played a essential role in
-                    various sectors, like Oil and Gas, Water treatment,
-                    Chemical, Pharmaceutical, Agriculture, which brings
-                    Precision, cost-effectiveness and efficiency in various
-                    processes. This enhances productivity and quality standards.
-                  </p>
+                <div className="p-3 p-lg-5 fw-lighter" style={{ textAlign: "justify" }}>
+                 
+                    <div class=" fs-4">Plunger Type Dosing Pumps</div>
+                    <div >
+                      Unlock unparalleled dosing precision and reliability with
+                      our state-of-the-art Plunger Type Dosing Pumps. Engineered
+                      to surpass industry standards and meet the most demanding
+                      applications, our pumps redefine excellence in fluid
+                      handling.
+                    </div>
+                    
+                  
                 </div>
               </Col>
               <Col md={4} className="requestcallbackleft">
@@ -326,6 +354,18 @@ const Requestcallback = () => {
                         </span>
                       )}
                     </div>
+                    <ReCAPTCHA
+                      className="my-4"
+                      ref={captchaRef}
+                      sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+                      // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+                      onChange={handleCaptchaChange}
+                    />
+                    {errors.captcha && (
+                      <span className="error text-danger">
+                        {errors.captcha}
+                      </span>
+                    )}
                     <div className="d-flex justify-content-end pt-4">
                       <button
                         className="px-4 py-2 text-center formrequestbtn"

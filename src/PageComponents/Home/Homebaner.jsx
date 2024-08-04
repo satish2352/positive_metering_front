@@ -7,7 +7,7 @@ import banner3 from "../../assets/img/Home/2540 x 1018.jpg";
 import banner1Mobile from "../../assets/img/Home/Rectangle 4430.png";
 import banner2Mobile from "../../assets/img/Home/image 45.png";
 import banner3Mobile from "../../assets/img/Home/Group 1000004134.png";
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
 import "../../assets/CSS/homebanner.css";
 import axios from "axios";
@@ -22,14 +22,8 @@ function Homebaner() {
   const [errors, setErrors] = useState({});
 
   const defaultImages = {
-    desktop: [
-      { img: banner1, view: "desktop", isActive: true },
-
-    ],
-    mobile: [
-      { img: banner1Mobile, view: "mobile", isActive: true },
-
-    ],
+    desktop: [{ img: banner1, view: "desktop", isActive: true }],
+    mobile: [{ img: banner1Mobile, view: "mobile", isActive: true }],
   };
 
   useEffect(() => {
@@ -37,13 +31,15 @@ function Homebaner() {
     axios
       .get("/homeslider/get-homeslider")
       .then((response) => {
-        const data = response.data.responseData.filter(slide => slide.isActive);
-        const desktopSlides = data.filter(slide => slide.view === "desktop");
-        const mobileSlides = data.filter(slide => slide.view === "mobile");
-        
+        const data = response.data.responseData.filter(
+          (slide) => slide.isActive
+        );
+        const desktopSlides = data.filter((slide) => slide.view === "desktop");
+        const mobileSlides = data.filter((slide) => slide.view === "mobile");
+
         const finalSlides = [
-          ...desktopSlides.length ? desktopSlides : defaultImages.desktop,
-          ...mobileSlides.length ? mobileSlides : defaultImages.mobile
+          ...(desktopSlides.length ? desktopSlides : defaultImages.desktop),
+          ...(mobileSlides.length ? mobileSlides : defaultImages.mobile),
         ];
         sethomeslider(finalSlides);
       })
@@ -84,7 +80,7 @@ function Homebaner() {
       errors.mobile = "Mobile is required";
       isValid = false;
     } else if (!/^\d{10}$/.test(mobile)) {
-      errors.mobile = "Mobile number must be exactly 10 digits";
+      errors.mobile = "Mobile No must  10 digits";
       isValid = false;
     }
 
@@ -118,141 +114,171 @@ function Homebaner() {
         setmobile("");
         setfullname("");
       } catch (error) {
-        alert("Failed to submit data.");
         console.error("Error submitting form:", error);
+        const newErrors = { ...errors };
+        if (
+          error.response?.data?.message ===
+          "Validation error: Mobile number already exists."
+        ) {
+          newErrors.mobile = "Mobile number already exists.";
+        } else if (
+          error.response?.data?.message ===
+          "Validation error: Email already exists."
+        ) {
+          newErrors.email = "Email already exists.";
+        } else {
+          newErrors.general = "Failed to submit data. Please try again later.";
+        }
+        setErrors(newErrors);
       }
     }
   };
 
   return (
-    <>
+    <div style={{ position: "relative" }}>
       <Carousel className="homebannerback">
         {homeslider
-          .filter((a) => a.isActive && (isMobile ? a.view === "mobile" : a.view === "desktop"))
+          .filter(
+            (a) =>
+              a.isActive &&
+              (isMobile ? a.view === "mobile" : a.view === "desktop")
+          )
           .map((a, index) => (
             <Carousel.Item key={index} interval={1000}>
               <Image src={a.img} rounded className="img-fluid carsimg" />
-              <Carousel.Caption>
-                <Row className="sticky-top">
-                  <Col lg={1}></Col>
-                  <Col lg={9}>
-                    <div className="homebannertext p-10">
-                      <div
-                        className={`text-white ${
-                          isMobile ? "fs-1" : "fs-4 fw-bold"
-                        }`}
-                      >
-                        <span
-                          className="fw-bolder"
-                          style={{
-                            color: "white",
-                            fontSize: isMobile ? "60px" : "inherit",
-                          }}
-                        >
-                          <TypeAnimation
-                            sequence={[`WELCOME`, 1000, ""]}
-                            speed={50}
-                            repeat={Infinity}
-                            style={{ fontSize: "30px" }}
-                          />
-                        </span>
-                        <br />
-                        TO POSITIVE METERING PUMPS
-                      </div>
-                      {!isMobile && (
-                        <p
-                          className="text-white bannertext"
-                          style={{ textAlign: "justify" }}
-                        >
-                          Dosing Pumps are extensively utilized in a range of
-                          industries to maintain precise chemical dosing and
-                          control. Dosing Pumps economy in India has played a
-                          essential role in various sectors, like Oil and Gas,
-                          Water treatment, Chemical, Pharmaceutical,
-                          Agriculture, which brings Precision, cost-effectiveness
-                          and efficiency in various processes. Which enhance
-                          Productivity and Quality standards. We, Positive
-                          Metering Pumps India Pvt Ltd, are among the well
-                          established companies engaged in manufacturing of all
-                          your Dosing needs.
-                        </p>
-                      )}
-                    </div>
-                  </Col>
-                  <Col lg={3} sm={12} className="bannerform my-5 sticky-top">
-                    <div className="contact-form">
-                      <h2 className="py-3">CONTACT</h2>
-                      <form onSubmit={handleSubmit} className="sticky-top">
-                        <input
-                          type="text"
-                          name="fullName"
-                          className="bannerinp"
-                          placeholder="Enter Full Name"
-                          value={fullname}
-                          onChange={(e) => setfullname(e.target.value)}
-                          required
-                        />
-                        {errors.fullname && (
-                          <span className="error text-danger">
-                            {errors.fullname}
-                          </span>
-                        )}
-                        <input
-                          type="email"
-                          name="email"
-                          placeholder="Enter Email Id"
-                          className="bannerinp"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          required
-                        />
-                        {errors.email && (
-                          <span className="error text-danger">
-                            {errors.email}
-                          </span>
-                        )}
-                        <input
-                          type="tel"
-                          name="mobileNumber"
-                          placeholder="Enter Mobile No."
-                          className="bannerinp"
-                          value={mobile}
-                          onChange={(e) => setmobile(e.target.value)}
-                          required
-                        />
-                        {errors.mobile && (
-                          <span className="error text-danger">
-                            {errors.mobile}
-                          </span>
-                        )}
-                        <textarea
-                          name="message"
-                          placeholder="Enter Message"
-                          className="bannertxtarea"
-                          value={message}
-                          onChange={(e) => setmessage(e.target.value)}
-                          required
-                        />
-                        {errors.message && (
-                          <span className="error text-danger">
-                            {errors.message}
-                          </span>
-                        )}
-                        <button
-                          type="submit"
-                          className="bannerbtn px-5 py-2 m-3 me-4 float-end"
-                        >
-                          SUBMIT
-                        </button>
-                      </form>
-                    </div>
-                  </Col>
-                </Row>
+              <Carousel.Caption >
+                <div
+                  className={`text-white d-block d-lg-none ${isMobile ? "fs-1" : "fs-4 fw-bold"}`}
+                >
+                  <span
+                    className="fw-bolder"
+                    style={{
+                      color: "white",
+                      fontSize: isMobile ? "60px" : "inherit",
+                    }}
+                  >
+                    <TypeAnimation
+                      sequence={[`WELCOME`, 1000, ""]}
+                      speed={50}
+                      repeat={Infinity}
+                      style={{ fontSize: "30px" }}
+                    />
+                  </span>
+                  <br />
+                  TO POSITIVE METERING PUMPS
+                </div>
               </Carousel.Caption>
             </Carousel.Item>
           ))}
       </Carousel>
-    </>
+      <Container fluid className=" contentbanner  d-none d-lg-block">
+        <Row className="sticky-top">
+          <Col lg={1}></Col>
+          <Col lg={9}>
+            <div className="homebannertext p-10">
+              <div
+                className={`text-white ${isMobile ? "fs-1" : "fs-4 fw-bold"}`}
+              >
+                <span
+                  className="fw-bolder"
+                  style={{
+                    color: "white",
+                    fontSize: isMobile ? "60px" : "inherit",
+                  }}
+                >
+                  <TypeAnimation
+                    sequence={[`WELCOME`, 1000, ""]}
+                    speed={50}
+                    repeat={Infinity}
+                    style={{ fontSize: "30px" }}
+                  />
+                </span>
+                <br />
+                TO POSITIVE METERING PUMPS
+              </div>
+              {!isMobile && (
+                <p
+                  className="text-white bannertext"
+                  style={{ textAlign: "justify" }}
+                >
+                  Dosing Pumps are extensively utilized in a range of industries
+                  to maintain precise chemical dosing and control. Dosing Pumps
+                  economy in India has played a essential role in various
+                  sectors, like Oil and Gas, Water treatment, Chemical,
+                  Pharmaceutical, Agriculture, which brings Precision,
+                  cost-effectiveness and efficiency in various processes. Which
+                  enhance Productivity and Quality standards. We, Positive
+                  Metering Pumps India Pvt Ltd, are among the well established
+                  companies engaged in manufacturing of all your Dosing needs.
+                </p>
+              )}
+            </div>
+          </Col>
+          <Col lg={3} sm={12} className="bannerform my-5 sticky-top">
+            <div className="contact-form">
+              <h2 className="py-3">CONTACT</h2>
+              <form onSubmit={handleSubmit} className="sticky-top">
+                <input
+                  type="text"
+                  name="fullName"
+                  className="bannerinp"
+                  placeholder="Enter Full Name"
+                  value={fullname}
+                  onChange={(e) => setfullname(e.target.value)}
+                  required
+                />
+                {errors.fullname && (
+                  <span className="error text-danger">{errors.fullname}</span>
+                )}
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter Email Id"
+                  className="bannerinp"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                {errors.email && (
+                  <span className="error text-start text-danger">
+                    {errors.email}
+                  </span>
+                )}
+                <input
+                  type="tel"
+                  name="mobileNumber"
+                  placeholder="Enter Mobile No."
+                  className="bannerinp"
+                  value={mobile}
+                  onChange={(e) => setmobile(e.target.value)}
+                  required
+                />
+                {errors.mobile && (
+                  <span className="error text-danger">{errors.mobile}</span>
+                )}
+                <textarea
+                  name="message"
+                  placeholder="Enter Message"
+                  className="bannertxtarea"
+                  value={message}
+                  onChange={(e) => setmessage(e.target.value)}
+                  required
+                />
+                {errors.message && (
+                  <span className="error text-danger">{errors.message}</span>
+                )}
+                <button
+                  type="submit"
+                  className="bannerbtn px-5 py-2 m-3 me-4 float-end"
+                >
+                  SUBMIT
+                </button>
+              </form>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   );
 }
 
