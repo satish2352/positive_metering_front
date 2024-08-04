@@ -257,7 +257,7 @@ const Requestcallback = () => {
                 </div>
                 <div className="p-3 px-lg-5">
                   <form onSubmit={handleSubmit}>
-                    <div className="d-grid fw-bold requestinputlb">
+                    <div className="d-grid fw-bold">
                       <label className="requestinputlb ms-2 p-2">
                         Full Name
                       </label>
@@ -267,37 +267,48 @@ const Requestcallback = () => {
                         placeholder="Enter Full Name"
                         value={fullname}
                         onChange={(e) => setFullname(e.target.value)}
+                        required
                       />
                       {errors.fullname && (
-                        <span className=" text-danger">{errors.fullname}</span>
+                        <span className="error text-danger">
+                          {errors.fullname}
+                        </span>
                       )}
                     </div>
                     <div className="d-grid">
                       <label className="requestinputlb ms-2 p-2">
-                        Email id
+                        Email Id
                       </label>
                       <input
                         type="text"
                         className="requestinput"
-                        placeholder="Enter Email id"
+                        placeholder="Enter Email Id"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        required
                       />
                       {errors.email && (
-                        <span className=" text-danger">{errors.email}</span>
+                        <span className=" ms-4 fw-light text-danger">
+                          {errors.email}
+                        </span>
                       )}
                     </div>
                     <div className="d-grid">
-                      <label className="requestinputlb ms-2 p-2">Mobile</label>
+                      <label className="requestinputlb ms-2 p-2">
+                        Mobile No
+                      </label>
                       <input
                         type="text"
                         className="requestinput"
-                        placeholder="Enter Mobile"
+                        placeholder="Enter Mobile No"
                         value={mobile}
                         onChange={(e) => setMobile(e.target.value)}
+                        required
                       />
                       {errors.mobile && (
-                        <span className=" text-danger">{errors.mobile}</span>
+                        <span className=" ms-4 fw-light text-danger">
+                          {errors.mobile}
+                        </span>
                       )}
                     </div>
                     <div className="d-grid">
@@ -307,9 +318,12 @@ const Requestcallback = () => {
                         placeholder="Enter Message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
+                        required
                       ></textarea>
                       {errors.message && (
-                        <span className=" text-danger">{errors.message}</span>
+                        <span className="error text-danger">
+                          {errors.message}
+                        </span>
                       )}
                     </div>
                     <div className="d-flex justify-content-end pt-4">

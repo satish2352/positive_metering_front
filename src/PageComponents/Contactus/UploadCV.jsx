@@ -9,7 +9,6 @@ import ReCAPTCHA from "react-google-recaptcha";
 const UploadCV = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  // const [subject, setSubject] = useState("");
   const [mobile, setMobile] = useState("");
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
@@ -68,52 +67,51 @@ const UploadCV = () => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const formData = new FormData();
-        formData.append("name", name);
-        formData.append("email", email);
-        // formData.append("subject", subject);
-        formData.append("message", message);
-        formData.append("phone", mobile);
-
-        // Log the FormData entries
-        for (let pair of formData.entries()) {
-          console.log(`${pair[0]}: ${pair[1]}`);
+        const response = await axios.post("/carousal-form/addcarousalform", {
+          name: name,
+          email,
+          mobile,
+          message,
+        });
+        if (response.status === 200) {
+          alert("Thank you. We will connect with you soon.");
+          console.log("newData", response.data);
+        } else {
+          alert("Failed to submit data.");
         }
-
-        const response = await axios.post(
-          "/getintouch/add-getintouch",
-          formData,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
         console.log("Server Response:", response.data);
-
+  
         // Reset form fields and state after successful submission
         setName("");
         setEmail("");
-        // setSubject("");
         setMobile("");
         setMessage("");
         setErrors({});
         setCaptchaVerified(false);
-
+  
         // Reset reCAPTCHA
         if (captchaRef.current) {
           captchaRef.current.reset();
         }
-
+  
         alert("Data Submitted Successfully.");
       } catch (error) {
         console.error("Error submitting data:", error);
         console.error("Error response data:", error.response?.data);
-        alert("Failed to submit data. Please try again later.");
+  
+        // Check if the error is a validation error for mobile number or email
+        if (error.response?.data?.message === "Validation error: Mobile number already exists.") {
+          alert("Validation error: Mobile number already exists.");
+        } else if (error.response?.data?.message === "Validation error: Email already exists.") {
+          alert("Validation error: Email already exists.");
+        } else {
+          alert("Failed to submit data. Please try again later.");
+        }
       }
     }
   };
-
+  
+  
   return (
     <>
       <Container fluid style={{ position: "relative" }} id="target-element-id">
@@ -225,28 +223,26 @@ const UploadCV = () => {
                   <ReCAPTCHA
                     ref={captchaRef}
                     //  testserver
-                    sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+                    // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
                     // local
-                    // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+                    sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                     onChange={onChange}
                   />
                   {errors.captcha && (
                     <span className="error text-danger">{errors.captcha}</span>
                   )}
                 </Col>
-
-               
               </Row>
               <div className="text-center text-center mt-xl-5 mb-xl-4">
-                  <Button
-                    variant="danger"
-                    type="submit"
-                    className="py-3 px-5  fs-6"
-                    style={{ borderRadius: "30px", letterSpacing: "2px" }}
-                  >
-                    Submit
-                  </Button>
-                </div>
+                <Button
+                  variant="danger"
+                  type="submit"
+                  className="py-3 px-5  fs-6"
+                  style={{ borderRadius: "30px", letterSpacing: "2px" }}
+                >
+                  Submit
+                </Button>
+              </div>
               <div className="text-center mt-xl-5 mb-xl-4"></div>
             </Form>
           </Col>
