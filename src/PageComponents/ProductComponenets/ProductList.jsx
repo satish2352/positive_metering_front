@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
-import { Col, Container, Row, Nav, Tab ,Button} from "react-bootstrap";
+import { Col, Container, Row, Nav, Tab, Button } from "react-bootstrap";
 import { ProductContext } from "../../ProductContext";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
@@ -12,7 +12,7 @@ import ProductTab from "../Home/Producttab";
 import imgmobile from "../../assets/img/aa/product PAGE.jpg";
 import imgtop from "../../assets/img/aa/BANER product.jpg";
 
-const ProductList = ({no}) => {
+const ProductList = ({ no }) => {
   const { id } = useParams();
 
   const navigate = useNavigate();
@@ -65,6 +65,7 @@ const ProductList = ({no}) => {
       },
     ],
   };
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -75,7 +76,6 @@ const ProductList = ({no}) => {
           if (productData.length > 0) {
             const defaultProductNo = productData[0].id;
             setProductNo(defaultProductNo);
-            setActiveTab(defaultProductNo); // Set default active tab to the first product
           }
         } else {
           setError("Failed to fetch product details");
@@ -88,13 +88,20 @@ const ProductList = ({no}) => {
     };
 
     fetchProducts();
-  }, []);
-  const activeProduct = products.find((product) => product.id === activeTab);
+  }, [id]);
+
+  useEffect(() => {
+    setActiveTab(id || no);
+  }, [id, no]);
+
   const handleTabClick = (ids) => {
     setActiveTab(ids);
   };
+
   useEffect(() => {
+    setActiveTab(id || no);
     const fetchProductDetails = async () => {
+      setLoading(true);
       try {
         const response = await axios.get(
           `productAggregate/get-all-productdata/${id}`
@@ -110,11 +117,13 @@ const ProductList = ({no}) => {
         }
       } catch (err) {
         console.log("Error fetching product details");
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchProductDetails();
-  }, [id]);
+  }, [id, no]);
 
   const getNavLinkClass = (path) => {
     return currentPath === path
@@ -163,7 +172,10 @@ const ProductList = ({no}) => {
                 {products.map((product, index) => (
                   <div
                     key={index}
-                    onClick={() => { handleTabClick(product.id); handleProductClick(product.id); }}
+                    onClick={() => {
+                      handleTabClick(product.id);
+                      handleProductClick(product.id);
+                    }}
                     className={`mx-xxl-3 product-list-item`}
                   >
                     <p
@@ -193,7 +205,7 @@ const ProductList = ({no}) => {
                     />
                   </div>
                   <h1 className="p-2">Application</h1>
-                  
+
                   {ApplicationData.map((data) => (
                     <div
                       key={data.id}
@@ -209,133 +221,133 @@ const ProductList = ({no}) => {
         </Row>
       </Container>
 
- <>
-  <Container
-      fluid
-      className="mt-3 p-lg-5"
-      style={{ background: "#EFEFEF", position: "relative" }}
-    >
-      <Row className="d-flex align-items-center">
-        <Col
-          lg={1}
-          className="d-grid align-items-center round d-none d-lg-block"
+      <>
+        <Container
+          fluid
+          className="mt-3 p-lg-5"
+          style={{ background: "#EFEFEF", position: "relative" }}
         >
-          <div className="graycircle"></div>
-        </Col>
-        <Col
-          lg={11}
-          style={{ backgroundColor: "#fff", position: "relative" }}
-          className="box border-1 border-dark-subtle border p-lg-4"
-        >
-       
-            <Row className="align-items-center chartslider">
-              <Col lg={6} className="px-0">
-                {activeProduct && (
-                  <img
-                    data-aos="fade-up"
-                    data-aos-easing="linear"
-                    data-aos-duration="1500"
-                    src={activeProduct.img}
-                    alt={activeProduct.productName}
-                    className="img-fluid producttabimg p-5 p-lg-1"
-                  />
-                )}
-              </Col>
-              <Col
-                lg={6}
-                className="homeaboutinfo text-black"
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-              >
-                <div className="p-lg-3 p-4" style={{ textAlign: "justify" }}>
-                  {activeProduct && (
-                    <>
-                      <h4  className="pulgertitle" style={{ color: "#434343" }}>
-                       {activeProduct.productName}
-                      </h4>
-                      <h3
-                        className="pulgersubtitle"
-                        style={{ fontFamily: "Poppins", fontSize: "20px" }}
-                      >
-                        {activeProduct.subtitle}
-                      </h3>
-                      <div
-                        className="me-lg-5 me-0"
-                        dangerouslySetInnerHTML={{
-                          __html: activeProduct.application,
-                        }}
-                      ></div>
-                      <div className="d-flex alignbtn justify-content-end">
-                        <Button
-                          variant="outline-dark"
-                          className="rounded-5 py-2 fs-6 px-4 m-lg-3 shadow-sm"
-                          onClick={() => handleProductClick(activeProduct.id)}
-                        >
-                          Read More
-                        </Button>
-                      </div>
-                    </>
+          <Row className="d-flex align-items-center">
+            <Col
+              lg={1}
+              className="d-grid align-items-center round d-none d-lg-block"
+            >
+              <div className="graycircle"></div>
+            </Col>
+            <Col
+              lg={11}
+              style={{ backgroundColor: "#fff", position: "relative" }}
+              className="box border-1 border-dark-subtle border p-lg-4"
+            >
+              <Row className="align-items-center chartslider">
+                <Col lg={6} className="px-0">
+                  {productDetails && (
+                    <img
+                      data-aos="fade-up"
+                      data-aos-easing="linear"
+                      data-aos-duration="1500"
+                      src={`http://positivebackend.sumagodemo.com/${productDetails.img}`}
+                      alt={productDetails.productName}
+                      className="img-fluid producttabimg p-5 p-lg-1 d-none d-lg-block"
+                    />
                   )}
-                </div>
-                <div className="pb-3">
-                  {products.length < 2 ? (
-                    <Row>
-                      {products.map((product) => (
-                        <Col
-                          key={product.id}
-                          className={`plungercard mx-1 d-grid justify-content-center ${
-                            activeTab === product.id ? "active" : ""
-                          }`}
-                          onClick={() => { handleTabClick(product.id); handleProductClick(product.id); }}
+                </Col>
+                <Col
+                  lg={6}
+                  className="homeaboutinfo text-black"
+                  data-aos="fade-up"
+                  data-aos-easing="linear"
+                  data-aos-duration="1500"
+                >
+                  <div className="p-lg-3 p-4" style={{ textAlign: "justify" }}>
+                    {productDetails && (
+                      <>
+                        <h4
+                          className="pulgertitle"
+                          style={{ color: "#434343" }}
                         >
-                          <img
-                            variant="top"
-                            src={product.img}
-                            className="prdimg img-fluid p-2"
-                          />
-                          <div
-                            style={{ fontSize: "12px" }}
-                            className="text-center pb-3"
-                          >
-                            {product.productName}
-                          </div>
-                        </Col>
-                      ))}
-                    </Row>
-                  ) : (
-                    <Slider {...settings}>
-                      {products.map((product) => (
+                          {productDetails.productName}
+                        </h4>
+                        <h3
+                          className="pulgersubtitle"
+                          style={{ fontFamily: "Poppins", fontSize: "20px" }}
+                        >
+                          {productDetails.subtitle}
+                        </h3>
                         <div
-                          key={product.id}
-                          className={`plungercard mx-1 d-grid justify-content-center ${
-                            activeTab === product.id ? "active" : ""
+                          className="me-lg-5 me-0"
+                          dangerouslySetInnerHTML={{
+                            __html: productDetails.application,
+                          }}
+                        ></div>
+                       
+                      </>
+                    )}
+                  </div>
+                  <div className="pb-3">
+                    {products.length < 2 ? (
+                      <Row>
+                        {products.map((product) => (
+                          <Col
+                            key={product.id}
+                            className={`plungercard mx-1 d-grid justify-content-center  ${getNavLinkClass(
+                              `/product/${product.id}`
+                            )}
                           }`}
-                         onClick={() => { handleTabClick(product.id); handleProductClick(product.id); }}
-                        >
-                          <img
-                            variant="top"
-                            src={product.img}
-                            className="prdimg img-fluid p-2"
-                          />
-                          <div
-                            style={{ fontSize: "12px" }}
-                            className="text-center pb-3"
+                            onClick={() => {
+                              handleTabClick(product.id);
+                              handleProductClick(product.id);
+                            }}
                           >
-                            {product.productName}
+                            <img
+                              variant="top"
+                              src={product.img}
+                              className="prdimg img-fluid p-2"
+                            />
+                            <div
+                              style={{ fontSize: "12px" }}
+                              className="text-center pb-3"
+                            >
+                              {product.productName}
+                            </div>
+                          </Col>
+                        ))}
+                      </Row>
+                    ) : (
+                      <Slider {...settings}>
+                        {products.map((product) => (
+                          <div
+                            key={product.id}
+                            className={`plungercard mx-1 d-grid justify-content-center ${
+                              activeTab === product.id ? "active" : ""
+                            }`}
+                            onClick={() => {
+                              handleTabClick(product.id);
+                              handleProductClick(product.id);
+                            }}
+                          >
+                            <img
+                              variant="top"
+                              src={product.img}
+                              className="prdimg img-fluid p-2"
+                            />
+                            <div
+                              style={{ fontSize: "12px" }}
+                              className="text-center pb-3"
+                            >
+                              {product.productName}
+                            </div>
                           </div>
-                        </div>
-                      ))}
-                    </Slider>
-                  )}
-                </div>
-              </Col>
-            </Row>
-          
-        </Col>
-      </Row>
-    </Container>
- </>
+                        ))}
+                      </Slider>
+                    )}
+                  </div>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </>
 
       <Container fluid className="productTechnicaldata mt-5 mb-4">
         <Tab.Container id="left-tabs-example" defaultActiveKey="TECHNICAL">
@@ -435,7 +447,7 @@ const ProductList = ({no}) => {
           </Col>
         </Tab.Container>
       </Container>
-                      
+
       <ProductTechnicaldata />
     </>
   );

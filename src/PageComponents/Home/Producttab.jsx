@@ -18,7 +18,6 @@ const ProductTab = ({ no }) => {
   const [activeTab, setActiveTab] = useState(no || 0); // initialize `activeTab` with `no` prop as well
   const handleProductClick = (productId) => {
     navigate(`/product/${productId}`);
-    window.scrollTo(0, 270); // Adjust timeout as needed to ensure navigation completes
   };
 
   useEffect(() => {

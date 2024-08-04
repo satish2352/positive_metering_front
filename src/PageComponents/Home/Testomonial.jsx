@@ -116,7 +116,7 @@ const Testimonial = () => {
         >
           <Heading heading={"TESTIMONIALS"} />
           <Slider {...settings}>
-            {testimonial.map((testimonial) => (
+            {testimonial.filter((testimonial) => testimonial.isActive).map((testimonial) => (
               <div key={testimonial.id} className="text-center">
                 <Col>
                   <div className="testback">
