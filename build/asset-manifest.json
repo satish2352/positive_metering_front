@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.4fa1108a.css",
-    "main.js": "/static/js/main.9277288e.js",
+    "main.css": "/static/css/main.e0a2abec.css",
+    "main.js": "/static/js/main.444efc06.js",
     "static/js/453.20b77820.chunk.js": "/static/js/453.20b77820.chunk.js",
     "static/media/WhatsApp-Video-2024-07-18-at-115.mp4": "/static/media/WhatsApp-Video-2024-07-18-at-115.74012b059b6cfbbced47.mp4",
     "static/media/positive.mp4": "/static/media/positive.cdaedc454545d55fb4d7.mp4",
@@ -41,6 +41,7 @@
     "static/media/about us our story image.jpg": "/static/media/about us our story image.287885c4f480501f76a2.jpg",
     "static/media/BANER services.jpg": "/static/media/BANER services.5695c9d4579f42b0fd3c.jpg",
     "static/media/BANER blog.jpg": "/static/media/BANER blog.da82fc4c7c3f552e4a75.jpg",
+    "static/media/sssssssssssss 1 (1).jpg": "/static/media/sssssssssssss 1 (1).56ba20252c73796ef9a2.jpg",
     "static/media/Rectangle 4430.png": "/static/media/Rectangle 4430.217e9d2ddbd026ab9205.png",
     "static/media/image38.png": "/static/media/image38.e5abc36d5527ce65003a.png",
     "static/media/Group 1000004058 (1).png": "/static/media/Group 1000004058 (1).1012cdc45e9dc1581da5.png",
@@ -74,12 +75,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.4fa1108a.css.map": "/static/css/main.4fa1108a.css.map",
-    "main.9277288e.js.map": "/static/js/main.9277288e.js.map",
+    "main.e0a2abec.css.map": "/static/css/main.e0a2abec.css.map",
+    "main.444efc06.js.map": "/static/js/main.444efc06.js.map",
     "453.20b77820.chunk.js.map": "/static/js/453.20b77820.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4fa1108a.css",
-    "static/js/main.9277288e.js"
+    "static/css/main.e0a2abec.css",
+    "static/js/main.444efc06.js"
   ]
 }

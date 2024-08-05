@@ -8,7 +8,7 @@
 .visionMissionp {
   font-size: 18px;
 }
-.alignbtn{
+.alignbtn {
   margin-right: 15%;
 }
 .abouttxt {
@@ -35,7 +35,7 @@
   .restOfText {
     font-size: 1.5rem;
   }
-  .alignbtn{
+  .alignbtn {
     margin-right: 1%;
   }
 }
@@ -100,29 +100,28 @@
   .producttabimg {
     height: 300px !important;
   }
-  .eventimg{
+  .eventimg {
     height: 250px !important;
     width: 350px !important;
   }
-  .evntttle{
- 
+  .evntttle {
     width: 320px !important;
   }
-  
-.social-icons .icon {
-  font-size: 3rem !important;
 
-  padding: 5px;
-  margin: 5px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
-}
+  .social-icons .icon {
+    font-size: 3rem !important;
 
-.textinfff{
-  padding-left: 5px !important;
+    padding: 5px;
+    margin: 5px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, color 0.3s, box-shadow 0.3s;
+  }
+
+  .textinfff {
+    padding-left: 5px !important;
+  }
 }
-}
-.textinfff{
+.textinfff {
   padding-left: 20px;
 }
 .prdimg {
@@ -140,7 +139,7 @@
   width: 100%;
 }
 .abtname {
-  color:  #e84c52;
+  color: #e84c52;
 }
 .sencodesubtext {
   background: #e84c52;
@@ -182,16 +181,22 @@
   color: #e84c52; /* Change this color as needed */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-
-.eventimg{
+@media (min-width: 526px) and (max-width: 1300px) {
+  .eventimg {
+    height: 220px !important;
+    width: 340px !important;
+  }
+}
+.eventimg {
   height: 300px;
   width: 400px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);}
-  .evntttle{
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+.evntttle {
   background: #e84c52;
   position: relative;
   bottom: 60px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 
   color: white;
   width: 350px;

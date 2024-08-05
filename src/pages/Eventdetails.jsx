@@ -32,7 +32,7 @@ function Eventdetails({ image, title, longetxt }) {
           <Col lg={5} md={6} sm={12}>
             <Image src={`${image}`} height={"500rem"} fluid />
           </Col>
-          <Col lg={7} md={6} sm={12}>
+          <Col lg={7} md={6} sm={12} className=" mt-5 mt-lg-0">
             <h5>{title}</h5>
             
             <p dangerouslySetInnerHTML={{ __html: longetxt }}></p>

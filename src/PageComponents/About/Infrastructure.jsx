@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Container, Row, Col, Card, Button, Modal } from 'react-bootstrap';
-import '../../assets/CSS/aboutus.css';
-import Heading from '../../components/Heading';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Container, Row, Col, Card, Button, Modal } from "react-bootstrap";
+import "../../assets/CSS/aboutus.css";
+import Heading from "../../components/Heading";
 
 const Infrastructure = () => {
   const [infrastructureData, setInfrastructureData] = useState([]);
@@ -12,11 +12,11 @@ const Infrastructure = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/infrastructure/get-infrastructure');
+        const response = await axios.get("/infrastructure/get-infrastructure");
         setInfrastructureData(response.data.responseData);
         console.log(response);
       } catch (error) {
-        console.error('Error fetching the infrastructure data:', error);
+        console.error("Error fetching the infrastructure data:", error);
       }
     };
 
@@ -34,22 +34,39 @@ const Infrastructure = () => {
   };
 
   return (
-    <Container style={{ backgroundColor: 'white' }}>
+    <Container style={{ backgroundColor: "white" }}>
       <Heading heading="Infrastructure" />
       <Row>
-        {infrastructureData.filter(item => item.isActive).map((card, index) => (
-          <Col key={index} xs={12} md={6} lg={4} className="mb-4 rounded-4 p-lg-4 text-center">
-            <Card className="h-100 rounded-4 infrastructurecard border-bottom border-3 border-danger border-end-0 border-top-0 border-start-0">
-              <Card.Img variant="top" src={card.img} alt={card.title} className="rounded-4" />
-              <Card.Body className="infrastructurecardinfo">
-                <Card.Title className="fw-bolder">{card.title}</Card.Title>
-                <Card.Text className="px-lg-3">{card.desc}</Card.Text>
-                <p  onClick={() => handleShowModal(card)}>  Read More...</p>
-           
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
+        {infrastructureData
+          .filter((item) => item.isActive)
+          .map((card, index) => (
+            <Col
+              key={index}
+              xs={12}
+              md={6}
+              lg={4}
+              className="mb-4 rounded-4 p-lg-4 text-center"
+            >
+              <Card className="h-100 rounded-4 infrastructurecard border-bottom border-3 border-danger border-end-0 border-top-0 border-start-0">
+                <Card.Img
+                  variant="top"
+                  src={card.img}
+                  alt={card.title}
+                  className="rounded-4"
+                />
+                <Card.Body className="infrastructurecardinfo">
+                  <Card.Title className="fw-bolder">{card.title}</Card.Title>
+                  <Card.Text className="px-lg-3">
+                    {card.desc.length > 70
+                      ? `${card.desc.substring(0, 70)}...`
+                      : card.desc}
+                  </Card.Text>
+
+                  <p onClick={() => handleShowModal(card)}> Read More...</p>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
       </Row>
 
       <Modal show={showModal} onHide={handleCloseModal}>
@@ -57,10 +74,13 @@ const Infrastructure = () => {
           <Modal.Title>{selectedCard?.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img src={selectedCard?.img} alt={selectedCard?.title} className="img-fluid rounded-4 mb-3" />
+          <img
+            src={selectedCard?.img}
+            alt={selectedCard?.title}
+            className="img-fluid rounded-4 mb-3"
+          />
           <p>{selectedCard?.desc}</p>
         </Modal.Body>
-    
       </Modal>
     </Container>
   );

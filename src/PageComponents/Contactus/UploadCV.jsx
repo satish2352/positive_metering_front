@@ -197,7 +197,8 @@ const UploadCV = () => {
                 <Col xl={12}>
                   <ReCAPTCHA
                     ref={captchaRef}
-                    sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+                    // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+                    sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
                     onChange={onChange}
                   />
                   {errors.captcha && (

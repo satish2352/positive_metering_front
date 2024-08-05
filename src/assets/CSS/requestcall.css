@@ -39,13 +39,16 @@
     padding-top: 240px;
   }
 }
-@media only screen and (min-width: 767px) and (max-width: 1200px) {
-   .requestcallbackleft {
+@media only screen and (min-width: 767px) and (max-width: 1300px) {
+  .requestcallback {
+    height: 550px !important;
+  }
+  .requestcallbackleft {
     background: rgba(222, 222, 222, 0.79);
     padding-left: 0px !important;
     padding-right: 0px !important;
     position: relative;
-    top: -491px !important;
+    top: -581px !important;
   }
 }
 

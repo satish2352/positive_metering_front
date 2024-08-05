@@ -4,8 +4,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
 import "../../assets/CSS/cards.css";
-import imgtop from "../../assets/img/aa/Group 1000004142.jpg";
-import imgmobile from "../../assets/img/Contactus/mobileview.png";
+import imgtop from "../../assets/img/aa/Group 1000004142 (2).jpg";
+import imgmobile from "../../assets/img/aa/Group 1000004143 (1).jpg";
 import ResponsiveImage from "../../pages/ResponsiveImage";
 
 const ContactCard = () => {
@@ -58,7 +58,7 @@ const ContactCard = () => {
                   <img src={contact.img} alt="" className="img-fluid" />
                 </div>
                 <div className="caontatctcardsubsection  py-4">
-                  <h4 className="fw-bolder ps-3">{contact.title}</h4>
+                  <h5 className="fw-bolder ps-3">{contact.title}</h5>
 
                   <Container className="txtcontact">
                     <Row className="pt-1">

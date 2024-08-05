@@ -287,6 +287,7 @@ const Footer = () => {
                           >
                             {capitalizeFirstLetter(a.productName)}
                           </Link>
+                          <hr className=" m-0 p-0" />
                         </li>
                       </>
                     );

@@ -65,7 +65,7 @@ const BlogCard = () => {
                 >
                   <div>
                     <Card.Title
-                      className="blogCardTitle fw-bolder pt-3"
+                      className="blogCardTitle fw-bolder pt-lg-3"
                       style={{
                         fontWeight: "600",
                         fontSize: "0.95rem",
@@ -104,7 +104,7 @@ const BlogCard = () => {
                 <Card.Img
                   variant="top"
                   src={blog.img}
-                  className="bg-light img-fluid w-100 h-100"
+                  className="bg-light img-fluid blogcrd "
                   data-aos="zoom-in"
                   data-aos-duration="2000"
                 />
@@ -116,7 +116,7 @@ const BlogCard = () => {
                 <Card.Img
                   variant="top"
                   src={blog.img}
-                  className="bg-light img-fluid w-100 h-100"
+                  className="bg-light img-fluid blogcrd"
                   data-aos="zoom-in"
                   data-aos-duration="2000"
                 />

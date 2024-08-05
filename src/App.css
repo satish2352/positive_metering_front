@@ -286,13 +286,13 @@
 }
 
 .toggle-button {
-  font-size: 24px;
+  font-size: 18px;
   background: none;
   border: none;
   cursor: pointer;
   color: #000000;
   background-color: white;
-  padding: 10px;
+  padding: 6px;
   margin-right: 10px;
   z-index: 1001;
 }
@@ -326,8 +326,9 @@
   display: block;
 }
 
+@media (max-width:1200px) {}
 .blogcrd {
-  height: 300px !important;
+  height: 340px !important;
 }
 .blogbtnr{
   position: relative;
@@ -340,8 +341,4 @@
   text-align: justify;
 }
 
-@media (min-width: 992px) {
-  .pstext {
-    text-align: center;
-  }
-}
+

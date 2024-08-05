@@ -111,30 +111,30 @@ const Requestcallback = () => {
                     PLUNGER TYPE DOSING PUMPS
                   </h4>
                 </div>
-                <div className="p-3 p-lg-5" style={{ textAlign: "justify" }}>
-                  <p>
-                    <div class="title">Plunger Type Dosing Pumps</div>
-                    <div class="description">
-                      Unlock unparalleled dosing precision and reliability with
-                      our state-of-the-art Plunger Type Dosing Pumps. Engineered
-                      to surpass industry standards and meet the most demanding
-                      applications, our pumps redefine excellence in fluid
-                      handling.
-                    </div>
-                    <ul class="features">
-                      <li>Plunger-style dosing pump featuring gland packing</li>
-                      <li>Accurate metering instruments</li>
-                      <li>
-                        Consistent metering accuracy regardless of back pressure
-                      </li>
-                      <li>
-                        Flow rate linearly related to changes in stroke length
-                      </li>
-                      <li>
-                        Optional external setup for flushing the gland packing
-                      </li>
-                    </ul>
-                  </p>
+                <div
+                  className="p-3 p-lg-5 d-grid align-items-center"
+                  style={{ textAlign: "justify" }}
+                >
+                  <div className="description">
+                    Unlock unparalleled dosing precision and reliability with
+                    our state-of-the-art Plunger Type Dosing Pumps. Engineered
+                    to surpass industry standards and meet the most demanding
+                    applications, our pumps redefine excellence in fluid
+                    handling.
+                  </div>
+                  <ul className="features">
+                    <li>Plunger-style dosing pump featuring gland packing</li>
+                    <li>Accurate metering instruments</li>
+                    <li>
+                      Consistent metering accuracy regardless of back pressure
+                    </li>
+                    <li>
+                      Flow rate linearly related to changes in stroke length
+                    </li>
+                    <li>
+                      Optional external setup for flushing the gland packing
+                    </li>
+                  </ul>
                 </div>
               </Col>
               <Col lg={4} className="requestcallbackleft">
@@ -217,8 +217,8 @@ const Requestcallback = () => {
                     <ReCAPTCHA
                       className="my-4"
                       ref={captchaRef}
-                      // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
-                      sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+                      sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+                      // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                       onChange={handleCaptchaChange}
                     />
                     {errors.captcha && (
@@ -263,18 +263,18 @@ const Requestcallback = () => {
                     PLUNGER TYPE DOSING PUMPS
                   </h5>
                 </div>
-                <div className="p-3 p-lg-5 fw-lighter" style={{ textAlign: "justify" }}>
-                 
-                    <div class=" fs-4">Plunger Type Dosing Pumps</div>
-                    <div >
-                      Unlock unparalleled dosing precision and reliability with
-                      our state-of-the-art Plunger Type Dosing Pumps. Engineered
-                      to surpass industry standards and meet the most demanding
-                      applications, our pumps redefine excellence in fluid
-                      handling.
-                    </div>
-                    
-                  
+                <div
+                  className="p-3 p-lg-5 fw-lighter"
+                  style={{ textAlign: "justify" }}
+                >
+                  <div class=" fs-4">Plunger Type Dosing Pumps</div>
+                  <div>
+                    Unlock unparalleled dosing precision and reliability with
+                    our state-of-the-art Plunger Type Dosing Pumps. Engineered
+                    to surpass industry standards and meet the most demanding
+                    applications, our pumps redefine excellence in fluid
+                    handling.
+                  </div>
                 </div>
               </Col>
               <Col md={4} className="requestcallbackleft">
