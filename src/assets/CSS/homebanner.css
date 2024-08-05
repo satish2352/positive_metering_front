@@ -71,11 +71,11 @@
     width: 300px;
     position: relative;
     left: 75%;
-    top: -790px;
+    top: -850px;
 }
 @media screen and (min-width: 1800px) {
     .bannerform {
-        top: -490px;
+        top: -690px;
     }
 }
 

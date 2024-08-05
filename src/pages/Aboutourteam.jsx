@@ -37,75 +37,84 @@ const Aboutourteam = () => {
 
   return (
     <>
-      <Container fluid className="px-0">
-        <ResponsiveImage mobileSrc={New} desktopSrc={banner} />
-      </Container>
-      <Container
-        fluid
-        style={{ background: "#F7F5EF", paddingTop: "30px" }}
-        className="pb-lg-5"
-      >
-        <Heading heading="OUR TEAM" className="py-3 " />
-        <Container>
-          <Row>
-            {teamMembers
-              .filter((teamMembers) => teamMembers.isActive)
-              .map((member) => (
-                <Col md={6} lg={4} key={member.id} className="mb-5">
-                  <Card
-                    onMouseEnter={() => handleHover(member.position_no)}
-                    onMouseLeave={handleLeave}
-                    className="team-card"
-                  >
-                    <div className="image-container">
-                      <img
-                        variant="top"
-                        src={member.img}
-                        className={
-                          hoveredCard === member.position_no
-                            ? "colored-image teamimg"
-                            : "black-white-image teamimg"
-                        }
-                        style={{ backgroundColor: "#363636" }}
-                      />
-                    </div>
-                    <Card.Body
-                      className={
-                        hoveredCard === member.position_no
-                          ? "d-none"
-                          : "d-block"
-                      }
-                    >
-                      <div className="px-2 py-4">
-                        <h5 className="fw-bold text-center">{member.name}</h5>
-                        <Card.Text className="text-center">
-                          {member.designation}
-                        </Card.Text>
-                      </div>
-                    </Card.Body>
-                    <Card.Body
-                      className={
-                        hoveredCard === member.position_no
-                          ? "d-block sencodetext"
-                          : "d-none"
-                      }
-                    >
-                      <div className="sencodesubtext p-lg-3 p-2 text-white">
-                        <h5 className="text-center">{member.name}</h5>
-                        <Card.Subtitle className="mb-lg-2 text-center">
-                          {member.designation}
-                        </Card.Subtitle>
-                        <Card.Text style={{ fontSize: "12px" }}>
-                          {member.description}
-                        </Card.Text>
-                      </div>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              ))}
-          </Row>
-        </Container>
-      </Container>
+      {" "}
+      {teamMembers.length === 0 ? (
+        <> Data Not Found</>
+      ) : (
+        <>
+          <Container fluid className="px-0">
+            <ResponsiveImage mobileSrc={New} desktopSrc={banner} />
+          </Container>
+          <Container
+            fluid
+            style={{ background: "#F7F5EF", paddingTop: "30px" }}
+            className="pb-lg-5"
+          >
+            <Heading heading="OUR TEAM" className="py-3 " />
+            <Container>
+              <Row>
+                {teamMembers
+                  .filter((teamMembers) => teamMembers.isActive)
+                  .map((member) => (
+                    <Col md={6} lg={4} key={member.id} className="mb-5">
+                      <Card
+                        onMouseEnter={() => handleHover(member.position_no)}
+                        onMouseLeave={handleLeave}
+                        className="team-card"
+                      >
+                        <div className="image-container">
+                          <img
+                            variant="top"
+                            src={member.img}
+                            className={
+                              hoveredCard === member.position_no
+                                ? "colored-image teamimg"
+                                : "black-white-image teamimg"
+                            }
+                            style={{ backgroundColor: "#363636" }}
+                          />
+                        </div>
+                        <Card.Body
+                          className={
+                            hoveredCard === member.position_no
+                              ? "d-none"
+                              : "d-block"
+                          }
+                        >
+                          <div className="px-2 py-4">
+                            <h5 className="fw-bold text-center">
+                              {member.name}
+                            </h5>
+                            <Card.Text className="text-center">
+                              {member.designation}
+                            </Card.Text>
+                          </div>
+                        </Card.Body>
+                        <Card.Body
+                          className={
+                            hoveredCard === member.position_no
+                              ? "d-block sencodetext"
+                              : "d-none"
+                          }
+                        >
+                          <div className="sencodesubtext p-lg-3 p-2 text-white">
+                            <h5 className="text-center">{member.name}</h5>
+                            <Card.Subtitle className="mb-lg-2 text-center">
+                              {member.designation}
+                            </Card.Subtitle>
+                            <Card.Text style={{ fontSize: "12px" }}>
+                              {member.description}
+                            </Card.Text>
+                          </div>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  ))}
+              </Row>
+            </Container>
+          </Container>
+        </>
+      )}
     </>
   );
 };

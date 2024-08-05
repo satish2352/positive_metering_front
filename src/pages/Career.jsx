@@ -214,7 +214,7 @@ const Career = () => {
                     >
                       <Form.Label>Mobile No.</Form.Label>
                       <Form.Control
-                        type="number"
+                        type="tel"
                         placeholder="Enter Your Mobile No."
                         value={mobile}
                         onChange={(e) => setMobile(e.target.value)}
@@ -256,7 +256,7 @@ const Career = () => {
                           className=" text-danger"
                           style={{ fontSize: "13px" }}
                         >
-                          (file size should be less than 400kb)
+                          (file size should be less than 400kb and PDF only)
                         </span>
                       </Form.Label>
                       <Form.Control
@@ -293,7 +293,9 @@ const Career = () => {
                       )}
                     </Form.Group>
                   </Col>
-                  <Col xl={12}>
+                </Row>
+                <Row>
+                  <Col xl={4}>
                     <ReCAPTCHA
                       ref={captchaRef}
                       //  testserver
@@ -308,27 +310,34 @@ const Career = () => {
                       </span>
                     )}
                   </Col>
+                  <Col className="text-center text-center mt-xl-5 mb-xl-4" sm={4}>
+                    <Button
+                      variant="danger"
+                      type="submit"
+                      className="py-3 px-5  fs-6"
+                      style={{
+                        borderRadius: "30px",
+                        letterSpacing: "2px",
+                        backgroundColor: "#E84C52",
+                      }}
+                    >
+                      Submit
+                    </Button>
+                  </Col>
+
+                  <Col sm={4}>
+                    <Image
+                      src={formImg}
+                      rounded
+                      fluid
+                      className="img-fluid d-none d-lg-block"
+                    />
+                  </Col>
                 </Row>
-                <div className="text-center text-center mt-xl-5 mb-xl-4">
-                  <Button
-                    variant="danger"
-                    type="submit"
-                    className="py-3 px-5  fs-6"
-                    style={{ borderRadius: "30px", letterSpacing: "2px" }}
-                  >
-                    Submit
-                  </Button>
-                </div>
               </Form>
             </Container>
           </Col>
         </Row>
-        <Image
-          src={formImg}
-          rounded
-          fluid
-          className="formImg d-none d-lg-block"
-        />
       </Container>
     </>
   );

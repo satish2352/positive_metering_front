@@ -56,18 +56,21 @@ const Footer = () => {
         setEmail("");
         setErrors({});
       } catch (error) {
-        const newErrors = { ...errors };  
+        const newErrors = { ...errors };
         console.error("Error submitting data:", error);
-        if (error.response?.data?.message === "Validation error: Email already exists.") {
+        if (
+          error.response?.data?.message ===
+          "Validation error: Email already exists."
+        ) {
           newErrors.email = "Email Id already exists.";
         } else {
           newErrors.email = "Failed to submit data. Please try again.";
         }
-        setErrors(newErrors);  // <- Ensure errors are set
-      } 
+        setErrors(newErrors); // <- Ensure errors are set
+      }
     }
   };
-  
+
   return (
     <Container className="footerback " fluid>
       <Container>
@@ -116,7 +119,7 @@ const Footer = () => {
                   </InputGroup>
                   <div className=" text-start">
                     {errors.email && (
-                      <span className=" text-white mt-1">{errors.email}</span>
+                      <span className=" text-white bg-danger mt-1">{errors.email}</span>
                     )}
                   </div>
                 </Form>
@@ -146,7 +149,7 @@ const Footer = () => {
               process. Which enhance Productivity and Quality standards. We,
               Positive Metering Pumps India Pvt Ltd, are among the well
               established companies engaged in manufacturing of all your Dosing
-              needs
+              needs.
             </p>
           </Col>
 
@@ -157,10 +160,20 @@ const Footer = () => {
                 <Link
                   className="nvlink"
                   onClick={() => window.scrollTo(0, 0)}
+                  to="/"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  Home
+                </Link>
+              </li>
+              <li className="pt-1 ">
+                <Link
+                  className="nvlink"
+                  onClick={() => window.scrollTo(0, 0)}
                   to="/aboutourstory"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  About
+                  About Us
                 </Link>
               </li>
               <li className="pt-1 ">
@@ -173,16 +186,7 @@ const Footer = () => {
                   Services
                 </Link>
               </li>
-              <li className="pt-1">
-                <Link
-                  className="nvlink"
-                  onClick={() => window.scrollTo(0, 400)}
-                  to={`/product/${productNo}`}
-                  style={{ textDecoration: "none", color: "black" }}
-                >
-                  Product
-                </Link>
-              </li>
+
               <li className="pt-1">
                 <Link
                   className="nvlink"
@@ -197,12 +201,14 @@ const Footer = () => {
                 <Link
                   className="nvlink"
                   onClick={() => window.scrollTo(0, 0)}
-                  to="/contactus"
+                  to="/event"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  Contact Us
+                  News And Events
                 </Link>
               </li>
+
+            
               <li className="pt-1">
                 <Link
                   className="nvlink"
@@ -217,23 +223,28 @@ const Footer = () => {
                 <Link
                   className="nvlink"
                   onClick={() => window.scrollTo(0, 0)}
-                  to="/news-event"
+                  to="/contactus"
                   style={{ textDecoration: "none", color: "black" }}
                 >
-                  News And Events
+                  Contact Us
                 </Link>
               </li>
             </ul>
           </Col>
-          <Col xs={12} md={8} lg={5} className=" d-none d-lg-block">
-            <h5 className=" fw-bold mb-lg-5">Product</h5>
+          <Col
+            xs={12}
+            md={8}
+            lg={5}
+            className=" d-none d-lg-block d-grid align-items-start"
+          >
+            <h5 className=" fw-bold mb-lg-2">Product</h5>
             <Row>
               <Col xs={12} md={6} lg={6} className="mx-lg-3x  pt-lg-0">
-                <ul className="list-unstyled lh-lg">
+                <ul className=" lh-lg list-style-type:disc">
                   {firstHalf.map((a) => {
                     return (
                       <>
-                        <li className="pt-1">
+                        <li className="pt-2">
                           <Link
                             className="nvlink"
                             onClick={() => window.scrollTo(0, 500)}
@@ -249,11 +260,11 @@ const Footer = () => {
                 </ul>
               </Col>
               <Col xs={12} md={6} lg={6} className="mx-lg-3x">
-                <ul className="list-unstyled lh-lg">
+                <ul className=" lh-lg list-style-type:disc">
                   {secondHalf.map((a) => {
                     return (
                       <>
-                        <li className="pt-1">
+                        <li className="pt-2">
                           <Link
                             className="nvlink"
                             onClick={() => window.scrollTo(0, 500)}
@@ -273,7 +284,12 @@ const Footer = () => {
           <Col xs={12} md={8} lg={5} className=" d-block d-lg-none">
             <h5 className=" fw-bold mb-lg-5">Product</h5>
             <Row>
-              <Col xs={12} md={6} lg={6} className="mx-lg-3x  pt-lg-0">
+              <Col
+                xs={12}
+                md={6}
+                lg={6}
+                className="mx-lg-3x  pt-lg-0 d-grid align-content-lg-start"
+              >
                 <ul className="list-unstyled lh-lg">
                   {products.map((a) => {
                     return (

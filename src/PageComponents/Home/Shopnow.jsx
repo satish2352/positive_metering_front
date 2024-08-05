@@ -148,6 +148,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
             type="tel"
             name="mobileNumber"
             placeholder="Enter Mobile No."
+            pattern="^\d{10}$"
             className="bannerinp ms-2"
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
@@ -228,7 +229,7 @@ const Shopnow = () => {
               Phone: +91-253-6613206/6613218/6613214
             </a>
             <br />
-            <a href="" className="BannerT " style={{ textDecoration: "none" }}>
+            <a href="mailto:info@positivemetering.com" className="BannerT " style={{ textDecoration: "none" }}>
               Mail: info@positivemetering.com
             </a>
             <br />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Col, Row, Button } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import about from "../../assets/img/System 1bb 1 (1) (1).jpg"
+import about from "../../assets/img/System 1bb 1 (1) (1).jpg";
 import Heading from "../../components/Heading";
 import { useNavigate } from "react-router-dom"; // Assuming you're using React Router
 
@@ -29,7 +29,7 @@ const HomeAboutus = () => {
   const truncatedText = fullText.split(" ").slice(0, 87).join(" ") + "";
 
   return (
-    <Container fluid className="mt-lg-5 mt-2">
+    <Container fluid className="mt-lg-3 mt-2">
       <Row>
         <Col
           lg={5}
@@ -56,12 +56,9 @@ const HomeAboutus = () => {
               {isMobile ? truncatedText : fullText}
               {isMobile && (
                 <Col
-               
                   className=" fs-5"
                   onClick={() => navigate("/aboutleadership")}
-                >
-                
-                </Col>
+                ></Col>
               )}
             </p>
           </div>

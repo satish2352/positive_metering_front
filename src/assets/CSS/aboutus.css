@@ -1,6 +1,6 @@
 .visionMission {
   background-image: url("../img/About/vision.png");
-  height: 400px;
+  height: 250px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -60,10 +60,12 @@
   transition: background-color 0.3s, color 0.3s;
   border: 1px solid #c8c8c8;
   box-shadow: 8px 10px 10px 0px #00000040;
+  color: white !important;
+  background: #cd4247;
 }
 
 .black-white-image {
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
   transition: filter 0.3s ease-out;
 }
 

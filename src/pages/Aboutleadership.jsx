@@ -6,6 +6,7 @@ import New from "../assets/img/About/about us  PAGE.jpg";
 import lder1 from "../assets/img/About/Group 1000004058 (1).png";
 import lder2 from "../assets/img/About/leadershipimg1.png";
 import lder3 from "../assets/img/About/leadershipimg2.png";
+import lder4 from "../assets/img/About/madhuli.jpeg";
 import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 import Heading from "../components/Heading";
 import AOS from "aos";
@@ -35,7 +36,7 @@ const leadershipData = [
       "Mr. Malhar Sudhir Mutalik, 27, is a second-generation entrepreneur and the chief operating officer (COO) of the pumps division. He graduated as a mechanical engineer in 2019 and now leads the company's R&D wing. In 2018, he designed mechanical diaphragm pumps, leading to a new business vertical that dispatched over 2000 pumps in fiscal 2024. The following year, he developed GRM pumps with electrical actuators, making PMP the only Indian manufacturer with this technology, with the first consignment sent to Uzbekistan. In 2020, he designed and manufactured API-compliant pressure relief valves now used by major refineries in India and abroad. By 2022, he led the development of metallic diaphragm pumps, positioning PMP as one of three Indian companies with this product.",
   },
   {
-    imgSrc: lder2,
+    imgSrc: lder4,
     name: "Ms. Madhuli Mutalik",
     title: "Chief Material Manager",
     description:

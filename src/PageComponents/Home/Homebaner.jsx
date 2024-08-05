@@ -11,6 +11,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { TypeAnimation } from "react-type-animation";
 import "../../assets/CSS/homebanner.css";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Homebaner() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -20,6 +21,7 @@ function Homebaner() {
   const [mobile, setmobile] = useState("");
   const [message, setmessage] = useState("");
   const [errors, setErrors] = useState({});
+  const [recaptchaToken, setRecaptchaToken] = useState("");
 
   const defaultImages = {
     desktop: [{ img: banner1, view: "desktop", isActive: true }],
@@ -27,7 +29,7 @@ function Homebaner() {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+ 
     axios
       .get("/homeslider/get-homeslider")
       .then((response) => {
@@ -89,6 +91,11 @@ function Homebaner() {
       isValid = false;
     }
 
+    if (!recaptchaToken) {
+      errors.recaptcha = "Please complete the reCAPTCHA";
+      isValid = false;
+    }
+
     setErrors(errors);
     return isValid;
   };
@@ -102,9 +109,10 @@ function Homebaner() {
           email,
           mobile,
           message,
+          recaptchaToken,
         });
         if (response.status === 200) {
-          alert("Data Submitted Successfully.");
+          alert("we Will Connect With You Soon.");
           console.log("newData", response.data);
         } else {
           alert("Failed to submit data.");
@@ -113,6 +121,7 @@ function Homebaner() {
         setmessage("");
         setmobile("");
         setfullname("");
+        setRecaptchaToken("");
       } catch (error) {
         console.error("Error submitting form:", error);
         const newErrors = { ...errors };
@@ -146,9 +155,11 @@ function Homebaner() {
           .map((a, index) => (
             <Carousel.Item key={index} interval={1000}>
               <Image src={a.img} rounded className="img-fluid carsimg" />
-              <Carousel.Caption >
+              <Carousel.Caption>
                 <div
-                  className={`text-white d-block d-lg-none ${isMobile ? "fs-1" : "fs-4 fw-bold"}`}
+                  className={`text-white d-block d-lg-none ${
+                    isMobile ? "fs-1" : "fs-4 fw-bold"
+                  }`}
                 >
                   <span
                     className="fw-bolder"
@@ -248,6 +259,7 @@ function Homebaner() {
                   type="tel"
                   name="mobileNumber"
                   placeholder="Enter Mobile No."
+                  pattern="^\d{10}$"
                   className="bannerinp"
                   value={mobile}
                   onChange={(e) => setmobile(e.target.value)}
@@ -263,6 +275,13 @@ function Homebaner() {
                   value={message}
                   onChange={(e) => setmessage(e.target.value)}
                   required
+                />
+
+                <ReCAPTCHA
+                  className="recaptcha-container mt-2"
+                  sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+                    // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+                  onChange={(token) => setRecaptchaToken(token)}
                 />
                 {errors.message && (
                   <span className="error text-danger">{errors.message}</span>

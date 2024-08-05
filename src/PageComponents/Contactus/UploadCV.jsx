@@ -30,7 +30,7 @@ const UploadCV = () => {
     }
 
     if (!mobile.trim()) {
-      errors.mobile = "Mobile No is Required";
+      errors.mobile = "Mobile No. is Required";
       isValid = false;
     } else if (!/^\d{10}$/.test(mobile)) {
       errors.mobile = "Mobile number must be exactly 10 digits";
@@ -86,7 +86,7 @@ const UploadCV = () => {
           console.log("Failed to submit data.");
         }
         console.log("Server Response:", response.data);
-        alert("thank you will connect with you soon")
+        alert("thank you will connect with you soon");
       } catch (error) {
         console.error("Error submitting data:", error);
         console.error("Error response data:", error.response?.data);
@@ -94,9 +94,15 @@ const UploadCV = () => {
         const newErrors = { ...errors };
 
         // Check if the error is a validation error for mobile number or email
-        if (error.response?.data?.message === "Validation error: Mobile number already exists.") {
+        if (
+          error.response?.data?.message ===
+          "Validation error: Mobile number already exists."
+        ) {
           newErrors.mobile = "Mobile number already exists.";
-        } else if (error.response?.data?.message === "Validation error: Email already exists.") {
+        } else if (
+          error.response?.data?.message ===
+          "Validation error: Email already exists."
+        ) {
           newErrors.email = "Email already exists.";
         } else {
           newErrors.general = "Failed to submit data. Please try again later.";
@@ -162,7 +168,8 @@ const UploadCV = () => {
                   >
                     <Form.Label>Mobile No.</Form.Label>
                     <Form.Control
-                      type="number"
+                      type="tel"
+                      pattern="^\d{10}$"
                       placeholder="Enter Your Mobile No."
                       value={mobile}
                       onChange={(e) => setMobile(e.target.value)}

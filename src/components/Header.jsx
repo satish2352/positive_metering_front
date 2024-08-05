@@ -53,7 +53,16 @@ const Header = () => {
       ? "text-decoration-none text-danger"
       : "text-decoration-none text-black";
   };
-
+  const isAboutActive = () => {
+    return ["/aboutleadership", "/aboutourstory", "/aboutourteam"].includes(
+      currentPath
+    );
+  };
+  const isnewsActive = () => {
+    return ["/event", "/news"].includes(
+      currentPath
+    );
+  };
   return (
     <div className="d-none d-lg-block">
       <Container fluid>
@@ -110,7 +119,9 @@ const Header = () => {
                 </Link>
               </Nav.Link>
               <NavDropdown
-                title="ABOUT"
+                title={  <span className={isAboutActive() ? "text-danger" : "text-dark"}>
+                ABOUT
+              </span>}
                 className="fw-bold mx-xxl-3 text-dark nvlink"
                 id="collapsible-nav-dropdown"
               >
@@ -204,41 +215,40 @@ const Header = () => {
               />
             </Link>
             <Nav className="me-auto">
-             
               <NavDropdown
-                title="NEWS & EVENT"
+     
+                title={  <span className={isnewsActive() ? "text-danger" : "text-dark"}>
+                NEWS & EVENT
+              </span>}
                 className="fw-bold mx-xxl-3 text-dark nvlink"
                 id="collapsible-nav-dropdown"
               >
                 <NavDropdown.Item className="py-0 dropdown-menu-btn">
                   <Link
                     className={`${getNavLinkClass(
-                      "/aboutleadership "
+                      "/news "
                     )} nvlink fw-bold mx-xxl-3`}
                     onClick={() => window.scrollTo(0, 0)}
                     to="/news"
-                  >NEWS <hr className="m-0 border-2" />
-                 
-                    
+                  >
+                    NEWS <hr className="m-0 border-2" />
                   </Link>
                 </NavDropdown.Item>
-           
+
                 <NavDropdown.Item
                   className="py-0 dropdown-menu-btn"
-                  to="/aboutourstory"
+                  to="/event"
                 >
                   <Link
                     className={`${getNavLinkClass(
-                      "/aboutourstory"
+                      "/event"
                     )} nvlink fw-bold mx-xxl-3`}
                     onClick={() => window.scrollTo(0, 0)}
                     to="/event"
-                  >EVENT <hr className="m-0 border-2" />
-                  
-                    
+                  >
+                    EVENT <hr className="m-0 border-2" />
                   </Link>
                 </NavDropdown.Item>
-        
               </NavDropdown>
               <Nav.Link>
                 <Link

@@ -155,6 +155,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
             type="tel"
             name="mobileNumber"
             placeholder="Enter Mobile No."
+            pattern="^\d{10}$"
             className="bannerinp ms-2"
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}
@@ -203,7 +204,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
 }
 
 function Blogdetails({ image, title, longetxt }) {
-  window.scrollTo(0, 0);
+
 
   const [modalShow, setModalShow] = React.useState(false);
 

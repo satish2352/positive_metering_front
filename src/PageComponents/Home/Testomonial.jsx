@@ -107,7 +107,7 @@ const Testimonial = () => {
       ) : error ? (
         <></>
       ) : testimonial.length === 0 ? (
-        <></>
+        <>Data Not Found</>
       ) : (
         <Container
           fluid
@@ -116,54 +116,53 @@ const Testimonial = () => {
         >
           <Heading heading={"TESTIMONIALS"} />
           <Slider {...settings}>
-            {testimonial.filter((testimonial) => testimonial.isActive).map((testimonial) => (
-              <div key={testimonial.id} className="text-center">
-                <Col>
-                  <div className="testback">
-                    <p>
-                      {truncateReview(testimonial.review, 200)}
-                      {testimonial.review.length > 200 && (
-                        <span
-                          className="read-more"
-                          onClick={() => handleShowModal(testimonial)}
-                        >
-                          ... <b>read more</b>
-                        </span>
-                      )}
-                    </p>
-                    <Rating
-                      iconsCount={5}
-                      initialValue={testimonial.star}
-                      size={20}
-                      readonly
-                      fillColor="orange"
-                      emptyColor="gray"
-                    />
-                  </div>
-                </Col>
-              </div>
-            ))}
-            
+            {testimonial
+              .filter((testimonial) => testimonial.isActive)
+              .map((testimonial) => (
+                <div key={testimonial.id} className="text-center">
+                  <Col>
+                    <div className="testback">
+                      <p>
+                        {truncateReview(testimonial.review, 200)}
+                        {testimonial.review.length > 200 && (
+                          <span
+                            className="read-more"
+                            onClick={() => handleShowModal(testimonial)}
+                          >
+                            ... <b>read more</b>
+                          </span>
+                        )}
+                      </p>
+                      <Rating
+                        iconsCount={5}
+                        initialValue={testimonial.star}
+                        size={20}
+                        readonly
+                        fillColor="orange"
+                        emptyColor="gray"
+                      />
+                    </div>
+                  </Col>
+                </div>
+              ))}
           </Slider>
 
-          <Modal show={showModal} onHide={handleCloseModal}>
-            <Modal.Header closeButton>
-         
-            </Modal.Header>
-            <Modal.Body>
-              <div className="profileposition">
-             
-              </div>
-              <div className="testback2">
+          <Modal show={showModal} onHide={handleCloseModal}  centered>
+            <Modal.Header closeButton></Modal.Header>
+            <Modal.Body className=" p-4">
+              <div className="">
                 <p>{selectedTestimonial?.review}</p>
-                <Rating
-                  iconsCount={5}
-                  initialValue={selectedTestimonial?.star}
-                  size={20}
-                  readonly
-                  fillColor="orange"
-                  emptyColor="gray"
-                />
+                <div className=" text-center">
+                  {" "}
+                  <Rating
+                    iconsCount={5}
+                    initialValue={selectedTestimonial?.star}
+                    size={20}
+                    readonly
+                    fillColor="orange"
+                    emptyColor="gray"
+                  />
+                </div>
               </div>
             </Modal.Body>
           </Modal>

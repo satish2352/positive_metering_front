@@ -141,6 +141,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
             type="tel"
             name="mobileNumber"
             placeholder="Enter Mobile No."
+            pattern="^\d{10}$"
             className="bannerinp ms-2"
             value={mobile}
             onChange={(e) => setMobile(e.target.value)}

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../../assets/CSS/mainbanner.css";
 import Slider from "react-slick";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Modal } from "react-bootstrap";
+import { FaTimes } from "react-icons/fa";
 import axios from "axios";
 import Heading from "../../components/Heading";
 
@@ -9,6 +10,8 @@ function OurProducts2() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -75,39 +78,81 @@ function OurProducts2() {
 
   const activeProducts = products.filter((product) => product.isActive);
 
+  const handleImageClick = (image) => {
+    setSelectedImage(image);
+    setShowModal(true);
+  };
+
+  const handleClose = () => {
+    setShowModal(false);
+    setSelectedImage(null);
+  };
+
   return (
-    <Container fluid className="my-5 py-lg-0 d-none  d-lg-block">
-      {activeProducts.length > 5 ? (
-        <Slider {...settings}>
-          {activeProducts.map((product) => (
-            <div
-              key={product.id}
-              className="ourprdcard d-flex justify-content-center p-4"
-            >
-              <img
-                src={product.img}
-                className="img-fluid ourprdimg w-100 h-100"
-                alt={product.name || "Product Image"}
-              />
-            </div>
-          ))}
-        </Slider>
-      ) : (
-        <Row>
-          {activeProducts.map((product) => (
-            <Col key={product.id} xs={12} sm={6} md={2} className="mb-4">
-              <div className="d-flex justify-content-center">
+    <>
+      <Container fluid className="my-5 py-lg-0 d-none d-lg-block">
+        {activeProducts.length > 5 ? (
+          <Slider {...settings}>
+            {activeProducts.map((product) => (
+              <div
+                key={product.id}
+                className="ourprdcard d-flex justify-content-center p-4"
+                onClick={() => handleImageClick(product.img)}
+              >
                 <img
                   src={product.img}
                   className="img-fluid ourprdimg w-100 h-100"
                   alt={product.name || "Product Image"}
                 />
               </div>
-            </Col>
-          ))}
-        </Row>
-      )}
-    </Container>
+            ))}
+          </Slider>
+        ) : (
+          <Row className="d-flex justify-content-center">
+            {activeProducts.map((product) => (
+              <Col key={product.id} xs={12} sm={6} md={2} className="mb-4">
+                <div className="d-flex justify-content-center">
+                  <img
+                    src={product.img}
+                    className="img-fluid ourprdimg w-100 h-100"
+                    alt={product.name || "Product Image"}
+                    onClick={() => handleImageClick(product.img)}
+                  />
+                </div>
+              </Col>
+            ))}
+          </Row>
+        )}
+      </Container>
+
+      <Modal
+        show={showModal}
+        onHide={handleClose}
+        style={{
+          backgroundColor: "transparent",
+        }}
+        centered
+      >
+        <Modal.Body className="position-relative p-0" style={{
+          backgroundColor: "transparent",
+        }}>
+          <button
+            type="button"
+            className=" position-absolute top-0 end-0 m-2"
+            onClick={handleClose}
+            style={{
+              backgroundColor: "transparent",
+              border: "none",
+              fontSize: "1.5rem",
+              color: "white",
+            }}
+          >
+            <FaTimes />
+          </button>
+          <img src={selectedImage} className="img-fluid w-100" alt="Product" />
+        </Modal.Body>
+      </Modal>
+    </>
   );
 }
 

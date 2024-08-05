@@ -36,52 +36,60 @@ const Infrastructure = () => {
   return (
     <Container style={{ backgroundColor: "white" }}>
       <Heading heading="Infrastructure" />
-      <Row>
-        {infrastructureData
-          .filter((item) => item.isActive)
-          .map((card, index) => (
-            <Col
-              key={index}
-              xs={12}
-              md={6}
-              lg={4}
-              className="mb-4 rounded-4 p-lg-4 text-center"
-            >
-              <Card className="h-100 rounded-4 infrastructurecard border-bottom border-3 border-danger border-end-0 border-top-0 border-start-0">
-                <Card.Img
-                  variant="top"
-                  src={card.img}
-                  alt={card.title}
-                  className="rounded-4"
-                />
-                <Card.Body className="infrastructurecardinfo">
-                  <Card.Title className="fw-bolder">{card.title}</Card.Title>
-                  <Card.Text className="px-lg-3">
-                    {card.desc.length > 70
-                      ? `${card.desc.substring(0, 70)}...`
-                      : card.desc}
-                  </Card.Text>
+      {infrastructureData.length === 0 ? (
+        <> Data Not Found</>
+      ) : (
+        <>
+          <Row>
+            {infrastructureData
+              .filter((item) => item.isActive)
+              .map((card, index) => (
+                <Col
+                  key={index}
+                  xs={12}
+                  md={6}
+                  lg={4}
+                  className="mb-4 rounded-4 p-lg-4 text-center"
+                >
+                  <Card className="h-100 rounded-4 infrastructurecard border-bottom border-3 border-danger border-end-0 border-top-0 border-start-0">
+                    <Card.Img
+                      variant="top"
+                      src={card.img}
+                      alt={card.title}
+                      className="rounded-4"
+                    />
+                    <Card.Body className="infrastructurecardinfo">
+                      <Card.Title className="fw-bolder">
+                        {card.title}
+                      </Card.Title>
+                      <Card.Text className="px-lg-3">
+                        {card.desc.length > 70
+                          ? `${card.desc.substring(0, 70)}...`
+                          : card.desc}
+                      </Card.Text>
 
-                  <p onClick={() => handleShowModal(card)}> Read More...</p>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-      </Row>
+                      <p onClick={() => handleShowModal(card)}> Read More...</p>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+          </Row>
 
-      <Modal show={showModal} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>{selectedCard?.title}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <img
-            src={selectedCard?.img}
-            alt={selectedCard?.title}
-            className="img-fluid rounded-4 mb-3"
-          />
-          <p>{selectedCard?.desc}</p>
-        </Modal.Body>
-      </Modal>
+          <Modal show={showModal} onHide={handleCloseModal}>
+            <Modal.Header closeButton>
+              <Modal.Title>{selectedCard?.title}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <img
+                src={selectedCard?.img}
+                alt={selectedCard?.title}
+                className="img-fluid rounded-4 mb-3"
+              />
+              <p>{selectedCard?.desc}</p>
+            </Modal.Body>
+          </Modal>
+        </>
+      )}
     </Container>
   );
 };

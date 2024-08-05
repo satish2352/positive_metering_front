@@ -143,139 +143,171 @@ const ProductList = ({ no }) => {
   return (
     <>
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
-
-      <Container fluid className="py-4 px-lg-5">
-        <Row>
-          <Col lg={4}>
-            <Container className="produclistbox">
-              <div className="py-3 px-4" id="menu">
-                <h4
-                  style={{ letterSpacing: "3px" }}
-                  className="text-white text-center py-3"
-                >
-                  PRODUCTS
-                </h4>
-
-                {products
-                  .filter((product) => product.isActive)
-                  .map((product, index) => (
-                    <div
-                      key={index}
-                      onClick={() => {
-                        handleProductClick(product.id);
-                      }}
-                      className={`mx-xxl-3 product-list-item`}
-                    >
-                      <p
-                        className={` ${getNavLinkClass(
-                          `/product/${product.id}`
-                        )} produclistcontetst ps-3 mx-lg-3 pb-2`}
-                        style={{ fontFamily: "Poppins" }}
-                      >
-                        {product.productName}
-                      </p>
-                    </div>
-                  ))}
-              </div>
-            </Container>
-          </Col>
-          <Col lg={8}>
-            <div ref={productDetailsRef}>
-              {productDetails && (
-                <>
-                  <div className="prdimgs">
-                    <img
-                      src={`http://positivebackend.sumagodemo.com/${productDetails.img}`}
-                      rounded
-                      fluid
-                      className="rounded mx-auto img-fluid d-block"
-                      style={{ height: "23rem" }}
-                    />
-                  </div>
-                  <h1 className="p-2">Application</h1>
-
-                  {ApplicationData.map((data) => (
-                    <div
-                      key={data.id}
-                      dangerouslySetInnerHTML={{
-                        __html: data.applicationDescription,
-                      }}
-                    ></div>
-                  ))}
-                </>
-              )}
-            </div>
-          </Col>
-        </Row>
-      </Container>
-
+      {products.length === 0 ? (
+        <> Data Not Found</>
+      ) : (
       <>
-        <Container
-          fluid
-          className="mt-3 p-lg-5"
-          style={{ background: "#EFEFEF", position: "relative" }}
-        >
-          <Row className="d-flex align-items-center">
-            <Col
-              lg={1}
-              className="d-grid align-items-center round d-none d-lg-block"
-            >
-              <div className="graycircle"></div>
+        <Container fluid className="py-4 px-lg-5">
+          <Row>
+            <Col lg={4}>
+              <Container className="produclistbox">
+                <div className="py-3 px-4" id="menu">
+                  <h4
+                    style={{ letterSpacing: "3px" }}
+                    className="text-white text-center py-3"
+                  >
+                    PRODUCTS
+                  </h4>
+
+                  {products
+                    .filter((product) => product.isActive)
+                    .map((product, index) => (
+                      <div
+                        key={index}
+                        onClick={() => {
+                          handleProductClick(product.id);
+                          window.scrollTo(0, 400);
+                        }}
+                        className={`mx-xxl-3 product-list-item`}
+                      >
+                        <p
+                          className={` ${getNavLinkClass(
+                            `/product/${product.id}`
+                          )} produclistcontetst ps-3 mx-lg-3 pb-2 mb-0 pt-3`}
+                          style={{ fontFamily: "Poppins" }}
+                        >
+                          {product.productName}
+                        </p>
+                      </div>
+                    ))}
+                </div>
+              </Container>
             </Col>
-            <Col
-              lg={11}
-              style={{ backgroundColor: "#fff", position: "relative" }}
-              className="box border-1 border-dark-subtle border p-lg-4"
-            >
-              <Row className="align-items-center chartslider">
-                <Col lg={6} className="px-0">
-                  {productDetails && (
-                    <img
-                      src={`http://positivebackend.sumagodemo.com/${productDetails.img}`}
-                      alt={productDetails.productName}
-                      className="img-fluid producttabimg p-5 p-lg-1 d-none d-lg-block"
-                    />
-                  )}
-                </Col>
-                <Col lg={6} className="homeaboutinfo text-black">
-                  <div className="p-lg-3 p-4" style={{ textAlign: "justify" }}>
+            <Col lg={8}>
+              <div ref={productDetailsRef}>
+                {productDetails && (
+                  <>
+                    <div className="prdimgs">
+                      <img
+                        src={`http://positivebackend.sumagodemo.com/${productDetails.img}`}
+                        rounded
+                        fluid
+                        className="rounded mx-auto img-fluid d-block"
+                        style={{ height: "23rem" }}
+                      />
+                    </div>
+                    <h1 className="p-2">Application</h1>
+
+                    {ApplicationData.map((data) => (
+                      <div
+                        key={data.id}
+                        dangerouslySetInnerHTML={{
+                          __html: data.applicationDescription,
+                        }}
+                      ></div>
+                    ))}
+                  </>
+                )}
+              </div>
+            </Col>
+          </Row>
+        </Container>
+
+        <>
+          <Container
+            fluid
+            className="mt-3 p-lg-5"
+            style={{ background: "#EFEFEF", position: "relative" }}
+          >
+            <Row className="d-flex align-items-center">
+              <Col
+                lg={1}
+                className="d-grid align-items-center round d-none d-lg-block"
+              >
+                <div className="graycircle"></div>
+              </Col>
+              <Col
+                lg={11}
+                style={{ backgroundColor: "#fff", position: "relative" }}
+                className="box border-1 border-dark-subtle border p-lg-4"
+              >
+                <Row className="align-items-center chartslider">
+                  <Col lg={6} className="px-0">
                     {productDetails && (
-                      <>
-                        <h4
-                          className="pulgertitle"
-                          style={{ color: "#434343" }}
-                        >
-                          {productDetails.productName}
-                        </h4>
-                        <h3
-                          className="pulgersubtitle"
-                          style={{ fontFamily: "Poppins", fontSize: "20px" }}
-                        >
-                          {productDetails.subtitle}
-                        </h3>
-                        <div
-                          className="me-lg-5 me-0"
-                          dangerouslySetInnerHTML={{
-                            __html: productDetails.application,
-                          }}
-                        ></div>
-                      </>
+                      <img
+                        src={`http://positivebackend.sumagodemo.com/${productDetails.img}`}
+                        alt={productDetails.productName}
+                        className="img-fluid producttabimg p-5 p-lg-1 d-none d-lg-block"
+                      />
                     )}
-                  </div>
-                  <div className="pb-3">
-                    {products.length < 2 ? (
-                      <Row>
-                        {products
-                          .filter((product) => product.isActive)
-                          .map((product) => (
-                            <Col
-                              key={product.id}
-                              className={`plungercard mx-1 d-grid justify-content-center  ${getNavLinkClass(
-                                `/product/${product.id}`
-                              )}
+                  </Col>
+                  <Col lg={6} className="homeaboutinfo text-black">
+                    <div
+                      className="p-lg-3 p-4"
+                      style={{ textAlign: "justify" }}
+                    >
+                      {productDetails && (
+                        <>
+                          <h4
+                            className="pulgertitle"
+                            style={{ color: "#434343" }}
+                          >
+                            {productDetails.productName}
+                          </h4>
+                          <h3
+                            className="pulgersubtitle"
+                            style={{ fontFamily: "Poppins", fontSize: "20px" }}
+                          >
+                            {productDetails.subtitle}
+                          </h3>
+                          <div
+                            className="me-lg-5 me-0"
+                            dangerouslySetInnerHTML={{
+                              __html: productDetails.application,
+                            }}
+                          ></div>
+                        </>
+                      )}
+                    </div>
+                    <div className="pb-3">
+                      {products.length < 2 ? (
+                        <Row>
+                          {products
+                            .filter((product) => product.isActive)
+                            .map((product) => (
+                              <Col
+                                key={product.id}
+                                className={`plungercard mx-1 d-grid justify-content-center  ${getNavLinkClass(
+                                  `/product/${product.id}`
+                                )}
                           }`}
+                                onClick={() => {
+                                  handleProductClick(product.id);
+                                  window.scrollTo(0, 400);
+                                }}
+                              >
+                                <img
+                                  variant="top"
+                                  src={product.img}
+                                  className="prdimg img-fluid p-2"
+                                />
+                                <div
+                                  style={{ fontSize: "12px" }}
+                                  className="text-center pb-3"
+                                >
+                                  {product.productName}
+                                </div>
+                              </Col>
+                            ))}
+                        </Row>
+                      ) : (
+                        <Slider {...settings}>
+                          {products.map((product) => (
+                            <div
+                              key={product.id}
                               onClick={() => {
                                 handleProductClick(product.id);
+                                window.scrollTo(0, 400);
                               }}
                             >
                               <img
@@ -289,118 +321,73 @@ const ProductList = ({ no }) => {
                               >
                                 {product.productName}
                               </div>
-                            </Col>
-                          ))}
-                      </Row>
-                    ) : (
-                      <Slider {...settings}>
-                        {products.map((product) => (
-                          <div
-                            key={product.id}
-                            onClick={() => {
-                              handleProductClick(product.id);
-                            }}
-                          >
-                            <img
-                              variant="top"
-                              src={product.img}
-                              className="prdimg img-fluid p-2"
-                            />
-                            <div
-                              style={{ fontSize: "12px" }}
-                              className="text-center pb-3"
-                            >
-                              {product.productName}
                             </div>
-                          </div>
-                        ))}
-                      </Slider>
-                    )}
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
-      </>
-
-      <Container fluid className="productTechnicaldata mt-5 mb-4">
-        <Tab.Container id="left-tabs-example" defaultActiveKey="TECHNICAL">
-          <Container>
-            <Col>
-              <Nav variant="pills" className="d-flex justify-content-center">
-                <Col lg={2} className="mx-2 mt-lg-0 mt-4">
-                  <Nav.Item>
-                    <Nav.Link
-                      eventKey="TECHNICAL"
-                      className="tabbuttons tabname text-center"
-                    >
-                      TECHNICAL
-                    </Nav.Link>
-                  </Nav.Item>
-                </Col>
-
-                <Col lg={2} className="mx-2 mt-lg-0 mt-4">
-                  <Nav.Item>
-                    <Nav.Link
-                      eventKey="OPTION"
-                      className="tabbuttons tabname text-center"
-                    >
-                      OPTION
-                    </Nav.Link>
-                  </Nav.Item>
-                </Col>
-
-                <Col lg={4} className="mx-2 mt-lg-0 mt-4">
-                  <Nav.Item>
-                    <Nav.Link
-                      eventKey="MATERIAL OF CONSTRUCTION"
-                      className="tabbuttons tabname text-center"
-                    >
-                      MATERIAL OF CONSTRUCTION
-                    </Nav.Link>
-                  </Nav.Item>
-                </Col>
-              </Nav>
-            </Col>
-          </Container>
-
-          <Col>
-            <Tab.Content>
-              <Tab.Pane eventKey="TECHNICAL">
-                <h1 className="tableheadstyle text-center pt-5 pb-3">
-                  Technical Data
-                </h1>
-                <Container className="d-flex justify-content-center">
-                  <Col lg={8} className="horizontal-scroll">
-                    {technicalData.length > 0 ? (
-                      technicalData.map((data) => (
-                        <div
-                          key={data.id}
-                          dangerouslySetInnerHTML={{
-                            __html: data.technicalDescription,
-                          }}
-                        ></div>
-                      ))
-                    ) : (
-                      <div>No data found</div>
-                    )}
+                          ))}
+                        </Slider>
+                      )}
+                    </div>
                   </Col>
-                </Container>
-              </Tab.Pane>
-              <Tab.Pane eventKey="OPTION">
-                <h1 className="tableheadstyle text-center pt-5 pb-3">
-                Options Data
-                </h1>
-                <Container>
-                  <Row className="d-flex justify-content-center">
-                    <Col lg={8}>
-                      {optionsData.length > 0 ? (
-                        optionsData.map((data) => (
+                </Row>
+              </Col>
+            </Row>
+          </Container>
+        </>
+
+        <Container fluid className="productTechnicaldata mt-5 mb-4">
+          <Tab.Container id="left-tabs-example" defaultActiveKey="TECHNICAL">
+            <Container>
+              <Col>
+                <Nav variant="pills" className="d-flex justify-content-center">
+                  <Col lg={2} className="mx-2 mt-lg-0 mt-4">
+                    <Nav.Item>
+                      <Nav.Link
+                        eventKey="TECHNICAL"
+                        className="tabbuttons tabname text-center"
+                      >
+                        TECHNICAL
+                      </Nav.Link>
+                    </Nav.Item>
+                  </Col>
+
+                  <Col lg={2} className="mx-2 mt-lg-0 mt-4">
+                    <Nav.Item>
+                      <Nav.Link
+                        eventKey="OPTION"
+                        className="tabbuttons tabname text-center"
+                      >
+                        OPTION
+                      </Nav.Link>
+                    </Nav.Item>
+                  </Col>
+
+                  <Col lg={4} className="mx-2 mt-lg-0 mt-4">
+                    <Nav.Item>
+                      <Nav.Link
+                        eventKey="MATERIAL OF CONSTRUCTION"
+                        className="tabbuttons tabname text-center"
+                      >
+                        MATERIAL OF CONSTRUCTION
+                      </Nav.Link>
+                    </Nav.Item>
+                  </Col>
+                </Nav>
+              </Col>
+            </Container>
+
+            <Col>
+              <Tab.Content>
+                <Tab.Pane eventKey="TECHNICAL">
+                  <h1 className="tableheadstyle text-center pt-5 pb-3">
+                    Technical Data
+                  </h1>
+                  <Container className="d-flex justify-content-center">
+                    <Col lg={8} className="horizontal-scroll">
+                      {technicalData.length > 0 ? (
+                        technicalData.map((data) => (
                           <div
                             key={data.id}
                             dangerouslySetInnerHTML={{
-                              __html: data.optionsDescription,
+                              __html: data.technicalDescription,
                             }}
                           ></div>
                         ))
@@ -408,36 +395,59 @@ const ProductList = ({ no }) => {
                         <div>No data found</div>
                       )}
                     </Col>
-                  </Row>
-                </Container>
-              </Tab.Pane>
-              <Tab.Pane eventKey="MATERIAL OF CONSTRUCTION">
-                <h1 className="tableheadstyle text-center pt-5 pb-3">
-                  Material Of Construction
-                </h1>
-                <Container>
-                  <Row className="d-flex justify-content-center">
-                    <Col lg={8}>
-                      {materialData.length > 0 ? (
-                        materialData.map((data) => (
-                          <div
-                            key={data.id}
-                            dangerouslySetInnerHTML={{
-                              __html: data.materialDescription,
-                            }}
-                          ></div>
-                        ))
-                      ) : (
-                        <div>No data found</div>
-                      )}
-                    </Col>
-                  </Row>
-                </Container>
-              </Tab.Pane>
-            </Tab.Content>
-          </Col>
-        </Tab.Container>
-      </Container>
+                  </Container>
+                </Tab.Pane>
+                <Tab.Pane eventKey="OPTION">
+                  <h1 className="tableheadstyle text-center pt-5 pb-3">
+                    Options Data
+                  </h1>
+                  <Container>
+                    <Row className="d-flex justify-content-center">
+                      <Col lg={8}>
+                        {optionsData.length > 0 ? (
+                          optionsData.map((data) => (
+                            <div
+                              key={data.id}
+                              dangerouslySetInnerHTML={{
+                                __html: data.optionsDescription,
+                              }}
+                            ></div>
+                          ))
+                        ) : (
+                          <div>No data found</div>
+                        )}
+                      </Col>
+                    </Row>
+                  </Container>
+                </Tab.Pane>
+                <Tab.Pane eventKey="MATERIAL OF CONSTRUCTION">
+                  <h1 className="tableheadstyle text-center pt-5 pb-3">
+                    Material Of Construction
+                  </h1>
+                  <Container>
+                    <Row className="d-flex justify-content-center">
+                      <Col lg={8}>
+                        {materialData.length > 0 ? (
+                          materialData.map((data) => (
+                            <div
+                              key={data.id}
+                              dangerouslySetInnerHTML={{
+                                __html: data.materialDescription,
+                              }}
+                            ></div>
+                          ))
+                        ) : (
+                          <div>No data found</div>
+                        )}
+                      </Col>
+                    </Row>
+                  </Container>
+                </Tab.Pane>
+              </Tab.Content>
+            </Col>
+          </Tab.Container>
+        </Container>
+      </>)}
 
       <ProductTechnicaldata />
     </>

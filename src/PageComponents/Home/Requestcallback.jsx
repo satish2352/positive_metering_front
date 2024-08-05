@@ -186,9 +186,11 @@ const Requestcallback = () => {
                         Mobile No
                       </label>
                       <input
-                        type="text"
+                                              type="number"
+
                         className="requestinput"
                         placeholder="Enter Mobile No"
+                        pattern="^\d{10}$"
                         value={mobile}
                         onChange={(e) => setMobile(e.target.value)}
                         required
@@ -202,7 +204,8 @@ const Requestcallback = () => {
                     <div className="d-grid">
                       <label className="requestinputlb ms-2 p-2">Message</label>
                       <textarea
-                        className="requesttext"
+                        className="requesttext "
+                        style={{padding:"12px",paddingLeft:"22px"}}
                         placeholder="Enter Message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
@@ -326,7 +329,8 @@ const Requestcallback = () => {
                         Mobile No
                       </label>
                       <input
-                        type="text"
+                                             type="tel"
+
                         className="requestinput"
                         placeholder="Enter Mobile No"
                         value={mobile}

@@ -19,7 +19,7 @@ import imgmobile from "../assets/img/aa/mobile/news PAGE.jpg";
 import imgtop from "../assets/img/aa/baner/BANER news.jpg";
 
 function Eventdetails({ image, title, longetxt }) {
-  window.scrollTo(0, 0);
+
 
   const [modalShow, setModalShow] = React.useState(false);
 
