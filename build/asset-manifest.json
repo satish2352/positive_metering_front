@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.e5d68be8.css",
-    "main.js": "/static/js/main.aed9b3a3.js",
+    "main.css": "/static/css/main.d2a38c93.css",
+    "main.js": "/static/js/main.78db11c5.js",
     "static/js/453.20b77820.chunk.js": "/static/js/453.20b77820.chunk.js",
     "static/media/WhatsApp-Video-2024-07-18-at-115.mp4": "/static/media/WhatsApp-Video-2024-07-18-at-115.74012b059b6cfbbced47.mp4",
     "static/media/positive.mp4": "/static/media/positive.cdaedc454545d55fb4d7.mp4",
@@ -18,10 +18,12 @@
     "static/media/Group 1000003783.jpg": "/static/media/Group 1000003783.993394e1cbe04542657e.jpg",
     "static/media/blogdetails_img1.png": "/static/media/blogdetails_img1.a6561d75c6793c095c31.png",
     "static/media/background6.png": "/static/media/background6.48bd9759234cc456d70f.png",
+    "static/media/career PAGE.jpg": "/static/media/career PAGE.d3acc38b477bbcceda49.jpg",
     "static/media/Progress.png": "/static/media/Progress.82bd9dd50fd8e61b0c9a.png",
     "static/media/Plunger.png": "/static/media/Plunger.117c5bc03308cfa5efde.png",
     "static/media/homepage img mobileview.png": "/static/media/homepage img mobileview.32f3e636fbb5cc0b2f43.png",
     "static/media/Rectangle161.png": "/static/media/Rectangle161.3e4f88c0912d5f4f1086.png",
+    "static/media/BANER career.jpg": "/static/media/BANER career.6814b0da45e145a121bc.jpg",
     "static/media/back 20.png": "/static/media/back 20.bb412a87cc4061ef4052.png",
     "static/media/back 21.png": "/static/media/back 21.d141dc659e454aaf4cca.png",
     "static/media/Frame 21.png": "/static/media/Frame 21.a19b164ffe7cb208208e.png",
@@ -44,11 +46,9 @@
     "static/media/Rectangle 4430.png": "/static/media/Rectangle 4430.217e9d2ddbd026ab9205.png",
     "static/media/image38.png": "/static/media/image38.e5abc36d5527ce65003a.png",
     "static/media/Group 1000004058 (1).png": "/static/media/Group 1000004058 (1).1012cdc45e9dc1581da5.png",
-    "static/media/BANER career.jpg": "/static/media/BANER career.d38c5484395e5fd2093a.jpg",
     "static/media/Group 1000004134.png": "/static/media/Group 1000004134.f5497814a3e4b7b7119c.png",
     "static/media/leadershipimg2.png": "/static/media/leadershipimg2.91461f9c6594790e19d3.png",
     "static/media/events PAGE.jpg": "/static/media/events PAGE.0fa961268b0208cce48e.jpg",
-    "static/media/career PAGE.jpg": "/static/media/career PAGE.77541571f5235f21a24e.jpg",
     "static/media/Group 1000004137.png": "/static/media/Group 1000004137.f0c33984dac7646c5a65.png",
     "static/media/service PAGE.jpg": "/static/media/service PAGE.599f63f73b527af8343b.jpg",
     "static/media/about us  PAGE.jpg": "/static/media/about us  PAGE.6a3dedb32bbec130e23c.jpg",
@@ -76,12 +76,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.e5d68be8.css.map": "/static/css/main.e5d68be8.css.map",
-    "main.aed9b3a3.js.map": "/static/js/main.aed9b3a3.js.map",
+    "main.d2a38c93.css.map": "/static/css/main.d2a38c93.css.map",
+    "main.78db11c5.js.map": "/static/js/main.78db11c5.js.map",
     "453.20b77820.chunk.js.map": "/static/js/453.20b77820.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5d68be8.css",
-    "static/js/main.aed9b3a3.js"
+    "static/css/main.d2a38c93.css",
+    "static/js/main.78db11c5.js"
   ]
 }

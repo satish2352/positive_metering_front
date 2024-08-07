@@ -218,7 +218,7 @@ const Header = () => {
               <NavDropdown
      
                 title={  <span className={isnewsActive() ? "text-danger" : "text-dark"}>
-                NEWS & EVENT
+                NEWS & EVENTS
               </span>}
                 className="fw-bold mx-xxl-3 text-dark nvlink"
                 id="collapsible-nav-dropdown"
@@ -246,7 +246,7 @@ const Header = () => {
                     onClick={() => window.scrollTo(0, 0)}
                     to="/event"
                   >
-                    EVENT <hr className="m-0 border-2" />
+                    EVENTS <hr className="m-0 border-2" />
                   </Link>
                 </NavDropdown.Item>
               </NavDropdown>

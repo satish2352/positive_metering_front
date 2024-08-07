@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import axios from "axios";
 import Heading from "../components/Heading";
-import imgmobile from "../assets/img/aa/mobile/career PAGE.jpg";
-import imgtop from "../assets/img/aa/baner/BANER career.jpg";
+import imgmobile from "../assets/img/aa/career PAGE.jpg";
+import imgtop from "../assets/img/aa/BANER career.jpg";
 import { Button, Card, Col, Container, Form, Row } from "react-bootstrap";
 import formImg from "../assets/img/Career/image-removebg-preview (89) 1.png";
 import Image from "react-bootstrap/Image";
