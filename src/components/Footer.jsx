@@ -127,7 +127,7 @@ const Footer = () => {
             </div>
           </Col>
         </Row>
-        <Row className="justify-content-center align-items-center fw-medium footertext">
+        <Row className="justify-content-center align-items-start fw-medium footertext">
           <Col xs={12} md={10} lg={4} className=" footertext mb-4 mx-lg-3 ">
             <div className="d-grid justify-content-center">
               {" "}
@@ -140,7 +140,7 @@ const Footer = () => {
                 />
               </Link>
             </div>
-            <p className="mt-3" style={{ textAlign: "justify" }}>
+            <p className="mt-3" >
               Dosing Pumps are extensively utilized in a range of industries to
               maintain precise chemical dosing and control. Dosing Pumps economy
               in India has played a essential role in various sectors, like Oil

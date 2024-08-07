@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Button, Carousel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -9,7 +9,7 @@ import "aos/dist/aos.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../../assets/CSS/aboutus.css";
-
+import ImageMagnifier from '../ProductComponenets/ImageMagnifier'
 const ProductTab = ({ no }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -125,16 +125,39 @@ const ProductTab = ({ no }) => {
             <div></div>
           ) : (
             <Row className="align-items-center chartslider">
-              <Col lg={6} className="px-0">
+              {/* <Col lg={6} className="px-0">
                 {activeProduct && (
                   <img
                     data-aos="fade-up"
                     data-aos-easing="linear"
                     data-aos-duration="1500"
-                    src={activeProduct.img}
+                    src={`https://positivebackend.sumagodemo.com/${activeProduct.images[0].img}`}
                     alt={activeProduct.productName}
                     className="img-fluid producttabimg p-5 p-lg-1"
                   />
+                )}
+              </Col> */}
+              <Col lg={6} className="px-0">
+                {activeProduct && (
+                  <Carousel
+                    prevIcon={<span className="carousel-control-prev-icon" />}
+                    nextIcon={<span className="carousel-control-next-icon" />}
+                  >
+                    {activeProduct.images.map((image) => (
+                      <Carousel.Item key={image.id} interval={400} >
+                        <div className=" d-flex justify-content-center">
+                          <ImageMagnifier
+                            src={`https://positivebackend.sumagodemo.com/${activeProduct.images[0].img}`}
+                            className="img-fluid "
+                            magnifierWidth={200}
+                            magnifierHeight={200}
+                            zoomLevel={2}
+                          />
+
+                        </div>
+                      </Carousel.Item>
+                    ))}
+                  </Carousel>
                 )}
               </Col>
               <Col
@@ -147,8 +170,8 @@ const ProductTab = ({ no }) => {
                 <div className="p-lg-3 p-4" style={{ textAlign: "justify" }}>
                   {activeProduct && (
                     <>
-                      <h4  className="pulgertitle" style={{ color: "#434343" }}>
-                       {activeProduct.productName}
+                      <h4 className="pulgertitle" style={{ color: "#434343" }}>
+                        {activeProduct.productName}
                       </h4>
                       <h3
                         className="pulgersubtitle"
@@ -180,19 +203,20 @@ const ProductTab = ({ no }) => {
                       {products.map((product) => (
                         <Col
                           key={product.id}
-                          className={`plungercard mx-1 d-grid justify-content-center ${
-                            activeTab === product.id ? "active" : ""
-                          }`}
+                          className={`plungercard mx-1 d-grid justify-content-center ${activeTab === product.id ? "active" : ""
+                            }`}
                           onClick={() => handleTabClick(product.id)}
                         >
-                          <img
-                            variant="top"
-                            src={product.img}
-                            className="prdimg img-fluid p-2"
-                          />
+                          <div className="prdimg">
+                            <img
+                              variant="top"
+                              src={`https://positivebackend.sumagodemo.com/${product.images[0].img}`}
+                              className=" img-fluid p-2"
+                            />
+                          </div>
                           <div
                             style={{ fontSize: "12px" }}
-                            className="text-center pb-3"
+                            className="text-center text-dark pb-3"
                           >
                             {product.productName}
                           </div>
@@ -204,19 +228,20 @@ const ProductTab = ({ no }) => {
                       {products.map((product) => (
                         <div
                           key={product.id}
-                          className={`plungercard mx-1 d-grid justify-content-center ${
-                            activeTab === product.id ? "active" : ""
-                          }`}
+                          className={`plungercard mx-1 d-grid justify-content-center ${activeTab === product.id ? "active" : ""
+                            }`}
                           onClick={() => handleTabClick(product.id)}
                         >
-                          <img
-                            variant="top"
-                            src={product.img}
-                            className="prdimg img-fluid p-2"
-                          />
+                          <div className="prdimg">
+                            <img
+                              variant="top"
+                              src={`https://positivebackend.sumagodemo.com/${product.images[0].img}`}
+                              className=" img-fluid p-2"
+                            />
+                          </div>
                           <div
                             style={{ fontSize: "12px" }}
-                            className="text-center pb-3"
+                            className="text-center text-dark pb-3"
                           >
                             {product.productName}
                           </div>
