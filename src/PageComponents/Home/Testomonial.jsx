@@ -151,6 +151,7 @@ const Testimonial = () => {
             <Modal.Header closeButton></Modal.Header>
             <Modal.Body className=" p-4">
               <div className="">
+                
                 <p>{selectedTestimonial?.review}</p>
                 <div className=" text-center">
                   {" "}
