@@ -69,7 +69,7 @@ const Career = () => {
       const allowedExtensions = /(\.pdf)$/i;
       if (uploadcv.size > 300 * 1024) {
         // 1MB size limit
-        errors.uploadcv = "file size should be less than 300kb";
+        errors.uploadcv = "file size should be less than 1MB";
         isValid = false;
       } else if (!allowedExtensions.exec(uploadcv.name)) {
         errors.uploadcv = "file type not allowed. Allowed types: .pdf";
@@ -256,7 +256,7 @@ const Career = () => {
                           className=" text-danger"
                           style={{ fontSize: "13px" }}
                         >
-                          (file size should be less than 400kb and PDF only)
+                          (file size should be less than 1MB and PDF only)
                         </span>
                       </Form.Label>
                       <Form.Control

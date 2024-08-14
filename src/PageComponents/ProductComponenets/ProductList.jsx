@@ -117,7 +117,6 @@ const ProductList = ({ no }) => {
       ? "text-decoration-none text-white fw-bold"
       : "text-decoration-none text-white";
   };
-
   const isMobileView = () => {
     return window.innerWidth <= 768; // You can adjust this width as per your design
   };
@@ -157,25 +156,23 @@ const ProductList = ({ no }) => {
                       className="text-white text-center py-3"
                     >
                       PRODUCTS
-                    </h4>
+                    </h4>                           
+
 
                     {products
-                      .filter((product) => product.isActive)
+                      // .filter((product) => product.isActive)
                       .map((product, index) => (
                         <div
-                          key={index}
-                          onClick={() => {
-                            handleProductClick(product.id);
-                            window.scrollTo(0, 400);
-                          }}
-                          className={`mx-xxl-3 product-list-item`}
+                        key={index}
+                        onClick={() => {handleProductClick(product.id); window.scrollTo(0, 400);}}
+                        className={`mx-xxl-3 product-list-item`}
+                      >
+                        <p
+                          className={` ${getNavLinkClass(
+                            `/product/${product.id}`
+                          )} produclistcontetst ps-3 mx-lg-3 pb-2`}
+                          style={{ fontFamily: "Poppins" }}
                         >
-                          <p
-                            className={` ${getNavLinkClass(
-                              `/product/${product.id}`
-                            )} produclistcontetst ps-3 mx-lg-3 pb-2 mb-0 pt-3`}
-                            style={{ fontFamily: "Poppins" }}
-                          >
                             {product.productName}
                           </p>
                         </div>
@@ -187,16 +184,16 @@ const ProductList = ({ no }) => {
                 <div ref={productDetailsRef}>
                   {productDetails && (
                     <>
-                      <div>
+                      <div className="prdimgs">
+                        {productDetails.images && productDetails.images.length > 0 && (
+                          <img
 
-                        <img
-
-                          src={`https://positivebackend.sumagodemo.com/${productDetails.images[0].img}`}
-                          rounded
-                          fluid
-                          className="rounded mx-auto img-fluid d-block"
-                          style={{ height: "23rem" }}
-                        />
+                            src={`https://positivebackend.sumagodemo.com/${productDetails.images[0].img}`}
+                            rounded
+                            fluid
+                            className="rounded mx-auto img-fluid d-block"
+                            style={{ height: "23rem" }}
+                          />)}
                       </div>
                       <h1 className="p-2">Application</h1>
 
@@ -237,18 +234,17 @@ const ProductList = ({ no }) => {
                     <Col lg={6} className="px-0">
                       {productDetails && (
                         <Carousel
+                          key={productDetails.id}
                           prevIcon={<span className="carousel-control-prev-icon" />}
                           nextIcon={<span className="carousel-control-next-icon" />}
                         >{productDetails.images.map((image) => (
 
-                          <Carousel.Item key={image.id} interval={400} >
+                          <Carousel.Item key={image.id} interval={700} >
                             <div className=" d-flex justify-content-center">
-                              <ImageMagnifier
-                                src={`https://positivebackend.sumagodemo.com/${productDetails.images.img}`}
+                              <img
+                                src={`https://positivebackend.sumagodemo.com/${image.img}`}
                                 className="img-fluid "
-                                magnifierWidth={200}
-                                magnifierHeight={200}
-                                zoomLevel={2}
+                               
                               /></div>
                           </Carousel.Item>))}  </Carousel>
                       )}
@@ -282,28 +278,26 @@ const ProductList = ({ no }) => {
                         )}
                       </div>
                       <div className="pb-3">
-                        {products.length < 2 ? (
+                        {products.length < 3 ? (
                           <Row>
                             {products
                               .filter((product) => product.isActive)
                               .map((product) => (
                                 <Col
                                   key={product.id}
-                                  className={`plungercard mx-1 d-grid justify-content-center  ${getNavLinkClass(
-                                    `/product/${product.id}`
-                                  )}
-                          }`}
+                                  className={`plungercard mx-1 d-grid justify-content-center  ${getNavLinkClass(`/product/${product.id}`)}}`}
                                   onClick={() => {
                                     handleProductClick(product.id);
                                     window.scrollTo(0, 400);
                                   }}
                                 >
                                   <div className="prdimg">
-                                    <img
-                                      variant="top"
-                                      src={`https://positivebackend.sumagodemo.com/${product.images[-1].img}`}
-                                      className=" img-fluid p-2"
-                                    />
+                                    {product.images && product.images.length > 0 && (
+                                      <img
+                                        variant="top"
+                                        src={`https://positivebackend.sumagodemo.com/${product.images[0].img}`}
+                                        className=" img-fluid p-2"
+                                      />)}
                                   </div>
                                   <div
                                     style={{ fontSize: "12px" }}
@@ -317,19 +311,23 @@ const ProductList = ({ no }) => {
                         ) : (
                           <Slider {...settings}>
                             {products.map((product) => (
-                              <div
+                              <Col
                                 key={product.id}
+                                className={`plungercard mx-1 d-grid justify-content-center  ${getNavLinkClass(`/product/${product.id}`)}}`}
+
                                 onClick={() => {
                                   handleProductClick(product.id);
                                   window.scrollTo(0, 400);
                                 }}
                               >
                                 <div className="prdimg">
-                                  <img
-                                    variant="top"
-                                    src={`https://positivebackend.sumagodemo.com/${product.images[0].img}`}
-                                    className=" img-fluid p-2"
-                                  />
+                                  {product.images && product.images.length > 0 && (
+                                    <img
+                                      variant="top"
+                                      src={`${product.images[0].img}`}
+
+                                      className=" img-fluid p-2"
+                                    />)}
                                 </div>
                                 <div
                                   style={{ fontSize: "12px" }}
@@ -337,7 +335,7 @@ const ProductList = ({ no }) => {
                                 >
                                   {product.productName}
                                 </div>
-                              </div>
+                              </Col>
                             ))}
                           </Slider>
                         )}
@@ -408,7 +406,7 @@ const ProductList = ({ no }) => {
                             ></div>
                           ))
                         ) : (
-                          <div>No data found</div>
+                          <div className=" text-center">No data found</div>
                         )}
                       </Col>
                     </Container>
@@ -430,7 +428,7 @@ const ProductList = ({ no }) => {
                               ></div>
                             ))
                           ) : (
-                            <div>No data found</div>
+                            <div className=" text-center">No data found</div>
                           )}
                         </Col>
                       </Row>
@@ -453,7 +451,7 @@ const ProductList = ({ no }) => {
                               ></div>
                             ))
                           ) : (
-                            <div>No data found</div>
+                            <div className=" text-center">No data found</div>
                           )}
                         </Col>
                       </Row>

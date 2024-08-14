@@ -140,26 +140,27 @@ const ProductTab = ({ no }) => {
               <Col lg={6} className="px-0">
                 {activeProduct && (
                   <Carousel
+                    key={activeProduct.id}  // Ensure the carousel resets when `activeProduct` changes
                     prevIcon={<span className="carousel-control-prev-icon" />}
                     nextIcon={<span className="carousel-control-next-icon" />}
                   >
                     {activeProduct.images.map((image) => (
-                      <Carousel.Item key={image.id} interval={400} >
-                        <div className=" d-flex justify-content-center">
-                          <ImageMagnifier
-                            src={`https://positivebackend.sumagodemo.com/${activeProduct.images[0].img}`}
-                            className="img-fluid "
-                            magnifierWidth={200}
-                            magnifierHeight={200}
-                            zoomLevel={2}
+                      <Carousel.Item key={image.id} interval={400}>
+                        <div className="d-flex justify-content-center">
+                          <img
+                            src={image.img}
+                            className="img-fluid"
+                         
                           />
-
                         </div>
                       </Carousel.Item>
                     ))}
                   </Carousel>
                 )}
               </Col>
+
+
+
               <Col
                 lg={6}
                 className="homeaboutinfo text-black"
@@ -198,21 +199,22 @@ const ProductTab = ({ no }) => {
                   )}
                 </div>
                 <div className="pb-3">
-                  {products.length < 2 ? (
+                  {products.length < 4 ? (
                     <Row>
                       {products.map((product) => (
                         <Col
                           key={product.id}
-                          className={`plungercard mx-1 d-grid justify-content-center ${activeTab === product.id ? "active" : ""
-                            }`}
+                          className={`plungercard mx-1 d-grid justify-content-center ${activeTab === product.id ? "active" : ""}`}
                           onClick={() => handleTabClick(product.id)}
                         >
                           <div className="prdimg">
-                            <img
-                              variant="top"
-                              src={`https://positivebackend.sumagodemo.com/${product.images[0].img}`}
-                              className=" img-fluid p-2"
-                            />
+                            {product.images && product.images.length > 0 && (
+                              <img
+                                variant="top"
+                                src={`${product.images[0].img}`}
+                                className="img-fluid p-2"
+                              />
+                            )}
                           </div>
                           <div
                             style={{ fontSize: "12px" }}
@@ -228,16 +230,17 @@ const ProductTab = ({ no }) => {
                       {products.map((product) => (
                         <div
                           key={product.id}
-                          className={`plungercard mx-1 d-grid justify-content-center ${activeTab === product.id ? "active" : ""
-                            }`}
+                          className={`plungercard mx-1 d-grid justify-content-center ${activeTab === product.id ? "active" : ""}`}
                           onClick={() => handleTabClick(product.id)}
                         >
                           <div className="prdimg">
-                            <img
-                              variant="top"
-                              src={`https://positivebackend.sumagodemo.com/${product.images[0].img}`}
-                              className=" img-fluid p-2"
-                            />
+                            {product.images && product.images.length > 0 && (
+                              <img
+                                variant="top"
+                                src={`${product.images[0].img}`}
+                                className="img-fluid p-2"
+                              />
+                            )}
                           </div>
                           <div
                             style={{ fontSize: "12px" }}
@@ -250,6 +253,7 @@ const ProductTab = ({ no }) => {
                     </Slider>
                   )}
                 </div>
+
               </Col>
             </Row>
           )}

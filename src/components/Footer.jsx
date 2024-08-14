@@ -51,7 +51,7 @@ const Footer = () => {
         const response = await axios.post("/subscribe/add-subscribeemail", {
           email,
         });
-        alert("thank you will connect with you soon");
+        alert("Thank you for subscribing to us!");
         console.log("Response:", response.data);
         setEmail("");
         setErrors({});

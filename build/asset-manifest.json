@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.a6b33a6c.css",
-    "main.js": "/static/js/main.7140c902.js",
+    "main.css": "/static/css/main.c1d31eb9.css",
+    "main.js": "/static/js/main.6b63f776.js",
     "static/js/453.20b77820.chunk.js": "/static/js/453.20b77820.chunk.js",
     "static/media/WhatsApp-Video-2024-07-18-at-115.mp4": "/static/media/WhatsApp-Video-2024-07-18-at-115.74012b059b6cfbbced47.mp4",
     "static/media/positive.mp4": "/static/media/positive.cdaedc454545d55fb4d7.mp4",
@@ -11,7 +11,6 @@
     "static/media/2540 x 1018.jpg": "/static/media/2540 x 1018.58c0a8cac3173b2aa397.jpg",
     "static/media/image112.png": "/static/media/image112.f245cbbec9fe209ff355.png",
     "static/media/image29.png": "/static/media/image29.76d48c01190f29fc0f5a.png",
-    "static/media/Group 63.png": "/static/media/Group 63.ee22e2641b6f612f16c0.png",
     "static/media/aboutmobileview.png": "/static/media/aboutmobileview.4c33a7713b1a7459b057.png",
     "static/media/2540 x 1018 (1).jpg": "/static/media/2540 x 1018 (1).d058922463f85d9e94f6.jpg",
     "static/media/2540 x 1018 (2).jpg": "/static/media/2540 x 1018 (2).c86b7fa99e6b033e91bc.jpg",
@@ -21,12 +20,14 @@
     "static/media/career PAGE.jpg": "/static/media/career PAGE.d3acc38b477bbcceda49.jpg",
     "static/media/Progress.png": "/static/media/Progress.82bd9dd50fd8e61b0c9a.png",
     "static/media/Plunger.png": "/static/media/Plunger.117c5bc03308cfa5efde.png",
+    "static/media/Group 1000004158.jpg": "/static/media/Group 1000004158.4c123c5ed269ba9be53d.jpg",
     "static/media/homepage img mobileview.png": "/static/media/homepage img mobileview.32f3e636fbb5cc0b2f43.png",
     "static/media/Rectangle161.png": "/static/media/Rectangle161.3e4f88c0912d5f4f1086.png",
     "static/media/BANER career.jpg": "/static/media/BANER career.6814b0da45e145a121bc.jpg",
     "static/media/back 20.png": "/static/media/back 20.bb412a87cc4061ef4052.png",
     "static/media/back 21.png": "/static/media/back 21.d141dc659e454aaf4cca.png",
     "static/media/Frame 21.png": "/static/media/Frame 21.a19b164ffe7cb208208e.png",
+    "static/media/Group 68 (1).jpg": "/static/media/Group 68 (1).278f482a197a0e794146.jpg",
     "static/media/Frame 20.png": "/static/media/Frame 20.2addcaa7a91238da34f9.png",
     "static/media/leadershipimg1.png": "/static/media/leadershipimg1.fc4b276a1e80b5f0793e.png",
     "static/media/blogdetails_img2.png": "/static/media/blogdetails_img2.73462fe1f181026908b7.png",
@@ -55,11 +56,11 @@
     "static/media/image.png": "/static/media/image.12c6ba1169092471769c.png",
     "static/media/Group 1000004140 (1) (1).png": "/static/media/Group 1000004140 (1) (1).f5305b2cc52afb91adaf.png",
     "static/media/blog PAGE.jpg": "/static/media/blog PAGE.7e332cd7f8e0d28595a8.jpg",
-    "static/media/product PAGE (1).jpg": "/static/media/product PAGE (1).13970b125c9aed5e090b.jpg",
+    "static/media/product PAGE.jpg": "/static/media/product PAGE.1f61df68072288b85e1c.jpg",
     "static/media/news PAGE.jpg": "/static/media/news PAGE.ee7e64bfe5aa1534e499.jpg",
     "static/media/BANER event.jpg": "/static/media/BANER event.1814fec759948a073235.jpg",
     "static/media/Group 1000004142 (2).jpg": "/static/media/Group 1000004142 (2).21fe5c3965a10f2d499c.jpg",
-    "static/media/BANER product (1).jpg": "/static/media/BANER product (1).2d5f1ef8893cd622a483.jpg",
+    "static/media/BANER product.jpg": "/static/media/BANER product.e1c37bfaef215e2bd9eb.jpg",
     "static/media/Group 1000004143 (1).jpg": "/static/media/Group 1000004143 (1).5e51bd5c905dd0af122c.jpg",
     "static/media/image-removebg-preview (89) 1.png": "/static/media/image-removebg-preview (89) 1.aad8a2abbaa95c71ffb0.png",
     "static/media/madhuli.jpeg": "/static/media/madhuli.d9fedfd56bbf16c22314.jpeg",
@@ -76,12 +77,12 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/index.html",
-    "main.a6b33a6c.css.map": "/static/css/main.a6b33a6c.css.map",
-    "main.7140c902.js.map": "/static/js/main.7140c902.js.map",
+    "main.c1d31eb9.css.map": "/static/css/main.c1d31eb9.css.map",
+    "main.6b63f776.js.map": "/static/js/main.6b63f776.js.map",
     "453.20b77820.chunk.js.map": "/static/js/453.20b77820.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a6b33a6c.css",
-    "static/js/main.7140c902.js"
+    "static/css/main.c1d31eb9.css",
+    "static/js/main.6b63f776.js"
   ]
 }

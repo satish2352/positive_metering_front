@@ -82,7 +82,7 @@ const Header = () => {
                   href={`tel:${contacts[0]?.phone1}`}
                   style={{ textDecoration: "none" }}
                 >
-                  {contacts[0]?.phone1}
+                 +91 {contacts[0]?.phone1}
                 </a>
               </Col>
               <Col xs={4} md={1}></Col>
@@ -93,7 +93,7 @@ const Header = () => {
                   href={`tel:${contacts[0]?.phone2}`}
                   style={{ textDecoration: "none" }}
                 >
-                  {contacts[0]?.phone2}
+                 +91 {contacts[0]?.phone2}
                 </a>
               </Col>
             </>

@@ -96,7 +96,7 @@ function OurProducts() {
             {activeProducts.map((product) => (
               <div
                 key={product.id}
-                className="ourprdcard d-flex justify-content-center p-4"
+                className="ourprdcard prdimgs d-flex justify-content-center p-4"
                 onClick={() => handleImageClick(product.img)}
               >
                 <img
@@ -111,7 +111,7 @@ function OurProducts() {
           <Row>
             {activeProducts.map((product) => (
               <Col key={product.id} xs={12} sm={6} md={2} className="mb-4">
-                <div className="d-flex justify-content-center">
+                <div className="d-flex  justify-content-center">
                   <img
                     src={product.img}
                     className="img-fluid ourprdimg w-100 h-100"
