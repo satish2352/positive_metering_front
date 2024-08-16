@@ -9,6 +9,7 @@ import imgmobile from "../../assets/img/aa/Group 1000004143 (1).jpg";
 import ResponsiveImage from "../../pages/ResponsiveImage";
 import Card from 'react-bootstrap/Card';
 import Heading from "../../components/Heading";
+import { FaPhoneAlt , FaEnvelope, FaUser } from 'react-icons/fa';
 
 const ConatactCardFORSERVEICES = () => {
   const [contactDetails, setContactDetails] = useState([]);
@@ -53,41 +54,42 @@ const ConatactCardFORSERVEICES = () => {
                       xs={12}
                       md={6}
                       lg={4}
-                      className="mb-4 rounded-4 p-lg-4 "
+                      className="mb-4 rounded-4 p-lg-5"
                     >
-                      <Card className="h-100 rounded-4 infrastructurecard border-bottom border-3 border-danger border-end-0 border-top-0 border-start-0">
+                      <Card className="h-100 rounded-4 infrastructurecard border-bottom border-3 border-danger border-end-0 border-top-0 border-start-0 ">
                         <Card.Img
                           variant="top"
                           src={contact.img}
                           className="rounded-4"
                         />
+                             <h5 className="fw-bolder ps-3 text-center">{contact.title}</h5>
                         <Card.Body className="infrastructurecardinfo">
                           <Container className="txtcontact1">
                             <Row className="pt-1">
-                              <Col xs={3}>
-                                <b>ContactTo</b>
+                              <Col xs={2}>
+                                <FaUser className="digital-icon" />
                               </Col>
-                              <Col xs={9}>: {contact.person_name}</Col>
+                              <Col xs={10}> {contact.person_name}</Col>
                             </Row>
                             <Row className="pt-1">
-                              <Col xs={3}>
-                                <b>Mobile No</b>
+                              <Col xs={2}>
+                                <FaPhoneAlt  className="digital-icon" />
                               </Col>
-                              <Col xs={9}>
-                                : <a href={`tel:${contact.phone}`} className=" text-dark text-decoration-none" >{contact.phone}</a>
+                              <Col xs={10}>
+                                 <a href={`tel:${contact.phone}`} className="text-dark text-decoration-none">{contact.phone}</a>
                               </Col>
                             </Row>
                             <Row className="pt-1">
-                              <Col xs={3}>
-                                <b>Email Id</b>
+                              <Col xs={2}>
+                                <FaEnvelope className="digital-icon" />
                               </Col>
-                              <Col xs={9}>
-                                :{" "}
-                                <a href={`mailto:${contact.email}`} className='text-dark text-decoration-none'>{contact.email}</a>
+                              <Col xs={10}>
+                                 <a href={`mailto:${contact.email}`} className='text-dark text-decoration-none'>{contact.email}</a>
                               </Col>
                             </Row>
                           </Container>
                         </Card.Body>
+
                       </Card>
                     </Col>
                   </>

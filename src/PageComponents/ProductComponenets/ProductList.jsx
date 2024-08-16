@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
-import { Col, Container, Row, Nav, Tab, Carousel } from "react-bootstrap";
+import { Col, Container, Row, Nav, Tab, Carousel, Modal, Button } from "react-bootstrap";
 import { ProductContext } from "../../ProductContext";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
@@ -11,10 +11,12 @@ import ProductTechnicaldata from "./ProductTechnicaldata";
 import ProductTab from "../Home/Producttab";
 import imgmobile from "../../assets/img/changes/changes/product PAGE.jpg";
 import imgtop from "../../assets/img/changes/changes/BANER product.jpg";
+import { IoMdClose } from "react-icons/io";
 
 const ProductList = ({ no }) => {
   const { id } = useParams();
-
+  const [showModal, setShowModal] = useState(false);
+  const [modalImage, setModalImage] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const currentPath = location.pathname;
@@ -65,6 +67,12 @@ const ProductList = ({ no }) => {
     ],
   };
 
+  const handleImageClick = (imageUrl) => {
+    setModalImage(imageUrl);
+    setShowModal(true);
+  };
+
+  const handleClose = () => setShowModal(false);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -99,7 +107,7 @@ const ProductList = ({ no }) => {
           setProductDetails(response.data.responseData.productDetails);
           setTechnicalData(response.data.responseData.technicalData);
           setOptionsData(response.data.responseData.optionsData);
-          setMaterialData(response.data.responseData.materialData);
+          setMaterialData(response.data.responseData.productDetails.images);
           setApplicationData(response.data.responseData.applicationData);
         } else {
           console.log("Failed to fetch product details");
@@ -156,23 +164,23 @@ const ProductList = ({ no }) => {
                       className="text-white text-center py-3"
                     >
                       PRODUCTS
-                    </h4>                           
+                    </h4>
 
 
                     {products
                       // .filter((product) => product.isActive)
                       .map((product, index) => (
                         <div
-                        key={index}
-                        onClick={() => {handleProductClick(product.id); window.scrollTo(0, 400);}}
-                        className={`mx-xxl-3 product-list-item`}
-                      >
-                        <p
-                          className={` ${getNavLinkClass(
-                            `/product/${product.id}`
-                          )} produclistcontetst ps-3 mx-lg-3 pb-2`}
-                          style={{ fontFamily: "Poppins" }}
+                          key={index}
+                          onClick={() => { handleProductClick(product.id); window.scrollTo(0, 400); }}
+                          className={`mx-xxl-3 product-list-item`}
                         >
+                          <p
+                            className={` ${getNavLinkClass(
+                              `/product/${product.id}`
+                            )} produclistcontetst ps-3 mx-lg-3 pb-2`}
+                            style={{ fontFamily: "Poppins" }}
+                          >
                             {product.productName}
                           </p>
                         </div>
@@ -244,7 +252,7 @@ const ProductList = ({ no }) => {
                               <img
                                 src={`https://positivebackend.sumagodemo.com/${image.img}`}
                                 className="img-fluid "
-                               
+
                               /></div>
                           </Carousel.Item>))}  </Carousel>
                       )}
@@ -392,7 +400,7 @@ const ProductList = ({ no }) => {
                 <Tab.Content>
                   <Tab.Pane eventKey="Models">
                     <h1 className="tableheadstyle text-center pt-5 pb-3">
-                    Models
+                      Models
                     </h1>
                     <Container className="d-flex justify-content-center">
                       <Col lg={8} className="horizontal-scroll">
@@ -413,7 +421,7 @@ const ProductList = ({ no }) => {
                   </Tab.Pane>
                   <Tab.Pane eventKey="Accessories & Optional">
                     <h1 className="tableheadstyle text-center pt-5 pb-3">
-                      Options Data
+                      Accessories & Optional
                     </h1>
                     <Container>
                       <Row className="d-flex justify-content-center">
@@ -435,27 +443,62 @@ const ProductList = ({ no }) => {
                     </Container>
                   </Tab.Pane>
                   <Tab.Pane eventKey="Gallery">
-                    <h1 className="tableheadstyle text-center pt-5 pb-3">
-                      Gallery
-                    </h1>
+                    <h1 className="tableheadstyle text-center pt-5 pb-3">Gallery</h1>
                     <Container>
                       <Row className="d-flex justify-content-center">
-                        <Col lg={8}>
+                        <Col lg={12}>
                           {materialData.length > 0 ? (
-                            materialData.map((data) => (
-                              <div
-                                key={data.id}
-                                dangerouslySetInnerHTML={{
-                                  __html: data.materialDescription,
-                                }}
-                              ></div>
-                            ))
+                            <Container>
+                              <Row>
+                                {materialData.map((data) => (
+                                  <Col key={data.id} xs={12} lg={3} md={6} className="mb-4">
+                                    <img
+                                      src={`https://positivebackend.sumagodemo.com/${data.img}`}
+                                      className="eventimg img-fluid rounded-4"
+                                      alt={data.title}
+                                      onClick={() => handleImageClick(`https://positivebackend.sumagodemo.com/${data.img}`)}
+                                      style={{ cursor: "pointer" }}
+                                    />
+                                  </Col>
+                                ))}
+                              </Row>
+                            </Container>
                           ) : (
-                            <div className=" text-center">No data found</div>
+                            <div className="text-center">No data found</div>
                           )}
                         </Col>
                       </Row>
                     </Container>
+
+                    <Modal show={showModal} onHide={handleClose} centered>
+                      <Button
+                        onClick={handleClose}
+                        style={{
+                          position: "absolute",
+                          top: "10px",
+                          right: "10px",
+                          backgroundColor: "black",
+                          border: "none",
+                          zIndex: 9999,
+                        }}
+                      >
+                        <IoMdClose
+                          style={{
+                            color: "white",
+                            fontSize: "24px",
+                            backgroundColor: "transparent",
+                          }}
+                        />
+                      </Button>
+                      <Modal.Body className="p-0 d-flex justify-content-center align-items-center position-relative">
+                        <img
+                          src={modalImage}
+                          className="img-fluid"
+                          alt="Event"
+                          style={{ width: "100%", height: "auto" }}
+                        />
+                      </Modal.Body>
+                    </Modal>
                   </Tab.Pane>
                 </Tab.Content>
               </Col>

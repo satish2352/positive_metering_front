@@ -43,7 +43,7 @@
 
 .headerphone {
   color: black;
-  font-size: 17px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 2px;
 }
@@ -62,7 +62,12 @@
     left: 48.5%;
     bottom: -14px;
   }
-
+  .headerphone {
+    color: black;
+    font-size: 17px !important;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
   .navbarspacing {
     margin-bottom: 15px !important;
   }
@@ -194,6 +199,7 @@
   .emailfeild {
     width: 145px !important;
   }
+
 
   .footerenqury {
     padding-left: 20px;

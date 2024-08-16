@@ -1,6 +1,17 @@
 .caontatctcardback {
   background: #ffffffcc;
 }
+.digital-icon {
+  color: #ffffff; /* Neon green color for a digital effect */
+  font-size: 1.5rem; /* Adjust size as needed */
+  transition: all 0.3s ease;
+  border: 9px solid rgb(120, 118, 118);
+  background-color: rgb(120, 118, 118);
+  border-radius: 50%;
+ font-size: 40px;
+}
+
+
 
 .caontatctcardimg {
   position: relative;
@@ -32,10 +43,7 @@
 .txtcontact {
   font-size: 14px;
 }
-.txtcontact1{
-  font-size: 11px !important;
 
-}
 @media screen and (min-width: 1800px) {
   .caontatctcardsubsection {
     width: 410px;
@@ -46,8 +54,5 @@
   .caontatctcardsubsection p {
     font-size: 17px;
   }
-  .txtcontact1{
-    font-size: 15px !important;
-  
-  }
+
 }
