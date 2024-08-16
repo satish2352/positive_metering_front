@@ -39,7 +39,7 @@ const services = [
     id: 3,
     frontImage: image3,
     backImage: back3,
-    frontText: 'Post Order Services',
+    frontText: 'Site Services',
     backText: 'Application Engineering is one of our main strengths. Our expert engineers have excellent field experience who can perfectly match our products with customer\'s needs. Special care is taken by us to offer a cost-effective solution in the right time. We help our customers in structuring their budgets and submitting bids to their customers.'
   }
 ];

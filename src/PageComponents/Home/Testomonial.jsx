@@ -95,15 +95,15 @@ const Testomonial = () => {
   };
 
   return (
-    testimonial.length > 0 && (
-        <Container fluid className='testomonialback py-5 text-center d-block d-lg-none' style={{ marginTop: '-90px' }}>
-          <Heading heading={'TESTIMONIALS'} />
 
-          {testimonial.length < 2 ? (
-            <Row className="justify-content-center">
-              {testimonial.filter((testimonial) => testimonial.isActive).map((testimonial) => (
-                <Col key={testimonial.id} md={4} className='text-center' style={{ marginTop: '-50px' }}>
-                <div onClick={() => handleShowModal(testimonial)}>
+    <Container fluid className='testomonialback py-5 text-center d-block d-lg-none' style={{ marginTop: '-90px' }}>
+      <Heading heading={'TESTIMONIALS'} />
+
+      {testimonial.length < 2 ? (
+        <Row className="">
+          {testimonial.filter((testimonial) => testimonial.isActive).map((testimonial) => (
+            <Col key={testimonial.id} md={4} className='text-center' style={{ marginTop: '-50px' }}>
+              <div onClick={() => handleShowModal(testimonial)}>
                 <div className='profileposition'>
                   <img src={testimonial.img} alt='' className='testomonialprofile img-fluid' />
 
@@ -136,85 +136,86 @@ const Testomonial = () => {
                 </div>
 
               </div>
-                </Col>
-              ))}
-            </Row>
-          ) : (
-            <Slider {...settings}>
-              {testimonial.filter((testimonial) => testimonial.isActive).map((testimonial) => (
-                 <div onClick={() => handleShowModal(testimonial)}>
-                 <div className='profileposition'>
-                   <img src={testimonial.img} alt='' className='testomonialprofile img-fluid' />
- 
-                 </div>
-                 <div className='testback'>
-                   <h4>{testimonial.company_Name}</h4>
- 
-                   <p>
-                     {truncateReview(testimonial.review, 200)}
-                     {testimonial.review.length > 200 && (
-                       <span className='read-more' onClick={() => handleShowModal(testimonial)}>
-                         ... <b>read more</b>
-                       </span>
-                     )}
-                   </p>
-                   <Rating
-                     iconsCount={5}
-                     initialValue={testimonial.star}
-                     size={20}
-                     readonly
-                     fillColor='orange'
-                     emptyColor='gray'
-                   />
-                   <div className='text-dark py-2' style={{ fontStyle: "italic" }}>
-                     -{testimonial.name}
-                     <h1 className='testomonialprofile2'>{testimonial.experience}</h1>
-                   </div>
-                   {/* <div className=' d-flex jus'>                  <h1 className='testomonialprofile2'>{testimonial.experience}</h1>
-                     </div> */}
-                 </div>
- 
-               </div>
-              ))}
-            </Slider>
-          )}
 
-          <Modal show={showModal} onHide={handleCloseModal}>
-            <Modal.Header closeButton>
-              <Modal.Title>{selectedTestimonial?.title}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-            <Col className='text-center' style={{ marginTop: '-50px' }}>
 
-<div className='profileposition'>
-  <img src={selectedTestimonial?.img} alt='' className='testomonialprofile img-fluid' />
-</div>
-<div className='testback2'>
-  <h4>{selectedTestimonial?.company_Name}</h4>
 
-  <p>{selectedTestimonial?.review}</p>
-  <Rating
-    iconsCount={5}
-    initialValue={selectedTestimonial?.star}
-    size={20}
-    readonly
-    fillColor='orange'
-    emptyColor='gray'
-  />
-  <div className='text-dark py-2' style={{ fontStyle: "italic" }}>
-    -{selectedTestimonial?.name}
-    <h1 className='testomonialprofile2'>{selectedTestimonial?.experience}</h1>
-  </div>
-</div>
-</Col>
-            </Modal.Body>
-          </Modal>
-        </Container>
-    )
-  );
+            </Col>
+          ))}
+        </Row>
+      ) : (
+        <Slider {...settings}>
+          {testimonial.filter((testimonial) => testimonial.isActive).map((testimonial) => (
+           <div onClick={() => handleShowModal(testimonial)}>
+           <div className='profileposition'>
+             <img src={testimonial.img} alt='' className='testomonialprofile img-fluid' />
+
+           </div>
+           <div className='testback'>
+             <h4>{testimonial.company_Name}</h4>
+
+             <p>
+               {truncateReview(testimonial.review, 200)}
+               {testimonial.review.length > 200 && (
+                 <span className='read-more' onClick={() => handleShowModal(testimonial)}>
+                   ... <b>read more</b>
+                 </span>
+               )}
+             </p>
+             <Rating
+               iconsCount={5}
+               initialValue={testimonial.star}
+               size={20}
+               readonly
+               fillColor='orange'
+               emptyColor='gray'
+             />
+             <div className='text-dark py-2' style={{ fontStyle: "italic" }}>
+               -{testimonial.name}
+               <h1 className='testomonialprofile2'>{testimonial.experience}</h1>
+             </div>
+             {/* <div className=' d-flex jus'>                  <h1 className='testomonialprofile2'>{testimonial.experience}</h1>
+               </div> */}
+           </div>
+
+         </div>
+          ))}
+        </Slider>
+      )}
+
+      <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>{selectedTestimonial?.title}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body >
+          <Col className='text-center' style={{ marginTop: '-50px' }}>
+
+            <div className='profileposition'>
+              <img src={selectedTestimonial?.img} alt='' className='testomonialprofile img-fluid' />
+            </div>
+            <div className='testback2'>
+              <h4>{selectedTestimonial?.company_Name}</h4>
+
+              <p>{selectedTestimonial?.review}</p>
+              <Rating
+                iconsCount={5}
+                initialValue={selectedTestimonial?.star}
+                size={20}
+                readonly
+                fillColor='orange'
+                emptyColor='gray'
+              />
+              <div className='text-dark py-2' style={{ fontStyle: "italic" }}>
+                -{selectedTestimonial?.name}
+                <h1 className='testomonialprofile2'>{selectedTestimonial?.experience}</h1>
+              </div>
+            </div>
+          </Col>
+        </Modal.Body>
+      </Modal>
+    </Container>)
+
 };
 
 
 
-
-export default Testomonial;
+export default Testomonial

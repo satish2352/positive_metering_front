@@ -348,28 +348,17 @@ const ProductList = ({ no }) => {
           </>
 
           <Container fluid className="productTechnicaldata mt-5 mb-4">
-            <Tab.Container id="left-tabs-example" defaultActiveKey="TECHNICAL">
+            <Tab.Container id="left-tabs-example" defaultActiveKey="Models">
               <Container>
                 <Col>
                   <Nav variant="pills" className="d-flex justify-content-center">
                     <Col lg={2} className="mx-2 mt-lg-0 mt-4">
                       <Nav.Item>
                         <Nav.Link
-                          eventKey="TECHNICAL"
+                          eventKey="Models"
                           className="tabbuttons tabname text-center"
                         >
-                          TECHNICAL
-                        </Nav.Link>
-                      </Nav.Item>
-                    </Col>
-
-                    <Col lg={2} className="mx-2 mt-lg-0 mt-4">
-                      <Nav.Item>
-                        <Nav.Link
-                          eventKey="OPTION"
-                          className="tabbuttons tabname text-center"
-                        >
-                          OPTION
+                          Models
                         </Nav.Link>
                       </Nav.Item>
                     </Col>
@@ -377,10 +366,21 @@ const ProductList = ({ no }) => {
                     <Col lg={4} className="mx-2 mt-lg-0 mt-4">
                       <Nav.Item>
                         <Nav.Link
-                          eventKey="MATERIAL OF CONSTRUCTION"
+                          eventKey="Accessories & Optional"
                           className="tabbuttons tabname text-center"
                         >
-                          MATERIAL OF CONSTRUCTION
+                          Accessories & Optional
+                        </Nav.Link>
+                      </Nav.Item>
+                    </Col>
+
+                    <Col lg={2} className="mx-2 mt-lg-0 mt-4">
+                      <Nav.Item>
+                        <Nav.Link
+                          eventKey="Gallery"
+                          className="tabbuttons tabname text-center"
+                        >
+                          Gallery
                         </Nav.Link>
                       </Nav.Item>
                     </Col>
@@ -390,9 +390,9 @@ const ProductList = ({ no }) => {
 
               <Col>
                 <Tab.Content>
-                  <Tab.Pane eventKey="TECHNICAL">
+                  <Tab.Pane eventKey="Models">
                     <h1 className="tableheadstyle text-center pt-5 pb-3">
-                      Technical Data
+                    Models
                     </h1>
                     <Container className="d-flex justify-content-center">
                       <Col lg={8} className="horizontal-scroll">
@@ -411,7 +411,7 @@ const ProductList = ({ no }) => {
                       </Col>
                     </Container>
                   </Tab.Pane>
-                  <Tab.Pane eventKey="OPTION">
+                  <Tab.Pane eventKey="Accessories & Optional">
                     <h1 className="tableheadstyle text-center pt-5 pb-3">
                       Options Data
                     </h1>
@@ -434,9 +434,9 @@ const ProductList = ({ no }) => {
                       </Row>
                     </Container>
                   </Tab.Pane>
-                  <Tab.Pane eventKey="MATERIAL OF CONSTRUCTION">
+                  <Tab.Pane eventKey="Gallery">
                     <h1 className="tableheadstyle text-center pt-5 pb-3">
-                      Material Of Construction
+                      Gallery
                     </h1>
                     <Container>
                       <Row className="d-flex justify-content-center">

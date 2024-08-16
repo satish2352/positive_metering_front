@@ -225,8 +225,9 @@ function Homebaner() {
               )}
             </div>
           </Col>
-          <Col lg={3} sm={12} className="bannerform my-5 sticky-top">
-            <div className="contact-form">
+          {/* <Col lg={3} sm={12} className="bannerform my-5 sticky-top"> */}
+          <Col lg={3} sm={12} >
+            {/* <div className="contact-form">
               <h2 className="py-3">CONTACT</h2>
               <form onSubmit={handleSubmit} className="sticky-top">
                 <input
@@ -293,7 +294,7 @@ function Homebaner() {
                   SUBMIT
                 </button>
               </form>
-            </div>
+            </div> */}
           </Col>
         </Row>
       </Container>
