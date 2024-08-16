@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import ReactCardFlip from 'react-card-flip';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Heading from '../components/Heading';
 import '../assets/CSS/Service.css';
+import Card from 'react-bootstrap/Card';
+
 import image1 from '../assets/img/About/Frame 19.png';
 import image2 from '../assets/img/About/Frame 20.png';
 import image3 from '../assets/img/About/Frame 21.png';
@@ -16,7 +17,9 @@ import back3 from '../assets/img/About/back 21.png';
 import ResponsiveImage from "./ResponsiveImage";
 import imgmobile from "../assets/img/aa/mobile/service PAGE.jpg";
 import imgtop from "../assets/img/aa/baner/BANER services.jpg";
-
+import ContactCard from '../PageComponents/Contactus/ConatactCard';
+import ConatactCardFORSERVEICES from '../PageComponents/Contactus/ConatactCardFORSERVEICES';
+import Getaquote from '../PageComponents/About/Getaquote';
 const services = [
   {
     id: 1,
@@ -91,6 +94,8 @@ const Service = () => {
           ))}
         </Row>
       </Container>
+        
+        <ConatactCardFORSERVEICES/>
     </>
   );
 };

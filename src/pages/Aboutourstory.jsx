@@ -13,15 +13,15 @@ const Aboutourstory = () => {
   window.scrollTo(0, 0);
   return (
     <>
-    {/* <Heading  heading="Our story"/> */}
-    
-    <Container fluid className="px-0">
+      {/* <Heading  heading="Our story"/> */}
+
+      <Container fluid className="px-0">
         <ResponsiveImage mobileSrc={ss} desktopSrc={infrastructure} />
       </Container>
-      <HomeAboutus/>
-      <VisionMission/>
-      <Getaquote/>
-      <Infrastructure/>
+      <HomeAboutus />
+      <VisionMission />
+      <Getaquote />
+      <Infrastructure />
     </>
   )
 }

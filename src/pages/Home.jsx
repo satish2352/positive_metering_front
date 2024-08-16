@@ -14,6 +14,7 @@ import Progress_cavity_screw_pump from "../PageComponents/Home/Progress_cavity_s
 import Shopnowhome from "../PageComponents/Home/Shopnowhome";
 import { ProductContext } from "../ProductContext";
 import OurProducts2 from "../PageComponents/Home/OurProducts2";
+import Testomonial2 from "../PageComponents/Home/Testomonial2";
 const Home = () => {
   return (
     <>
@@ -24,6 +25,7 @@ const Home = () => {
       <Producttab />
       <Shopnowhome />
       <Testomonial />
+      <Testomonial2/>
       <Requestcallback />
       <Progress_cavity_screw_pump />
     </>
