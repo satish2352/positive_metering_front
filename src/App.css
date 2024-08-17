@@ -332,7 +332,12 @@
   display: block;
 }
 
-@media (max-width:1200px) {}
+@media (max-width:1400px) {
+  
+.homeaboutinfo{
+  font-size: 10px !important;
+}
+}
 .blogcrd {
   height: 340px !important;
 }
@@ -348,3 +353,6 @@
 }
 
 
+.homeaboutinfo{
+  font-size: 16px;
+}

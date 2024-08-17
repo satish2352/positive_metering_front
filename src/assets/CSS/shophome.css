@@ -41,8 +41,8 @@
     background: rgb(255, 255, 255);
     border-radius: 15px;
     box-shadow: 4px 4px 40px 0px #00000040;
-    height: 350px !important;
-    padding: 30px;
+    height: auto !important;
+
     padding-top: 60px;
     margin: 20px;
   }
@@ -104,23 +104,8 @@
 
 .testomonialprofile {
   border-radius: 50%;
-  height: 130px;
-  width: 130px;
-  border: 7px solid rgb(242, 236, 236);
-  box-shadow: 4px 4px 40px 0px #00000040;
-  text-align: center;
-  align-content: center;
-  background-color: #EE585D ;
-  color:  white;
-  /* background: linear-gradient(to left, rgba(238, 88, 93, 0) 0%, rgba(238, 88, 93, 0.2) 18.61%, rgba(238, 88, 93, 0.814196) 61.08%, #EE585D 81.38%); */
-
-}
-.testomonialprofile2 {
-  position: relative;
-  bottom: 40px;
-  border-radius: 50%;
-  height: 80px;
-  width: 80px;
+  height: 90px;
+  width: 90px;
   border: 7px solid rgb(242, 236, 236);
   box-shadow: 4px 4px 40px 0px #00000040;
   text-align: center;
@@ -145,7 +130,7 @@
   background: rgb(255, 255, 255);
   border-radius: 15px;
   box-shadow: 4px 4px 40px 0px #00000040;
-  height: 350px;
+  height: 330px;
   padding: 30px;
   padding-top: 60px;
   margin: 20px;
@@ -156,9 +141,9 @@
   border-radius: 15px;
   box-shadow: 4px 4px 40px 0px #00000040;
   height: auto !important;
-  padding: 30px;
+  padding: 10px;
   padding-top: 60px;
-  margin: 20px;
+  margin: 10px;
 }
 
 .testback h1 {
@@ -166,9 +151,13 @@
   letter-spacing: 3px;
   font-weight: 700;
 }
+.testback2 p {
+  text-align: justify;
 
+}
 .testback p {
   font-size: 16px;
+  text-align: justify;
 }
 
 .star {

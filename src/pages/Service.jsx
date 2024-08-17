@@ -8,9 +8,9 @@ import Heading from '../components/Heading';
 import '../assets/CSS/Service.css';
 import Card from 'react-bootstrap/Card';
 
-import image1 from '../assets/img/About/Frame 19.png';
-import image2 from '../assets/img/About/Frame 20.png';
-import image3 from '../assets/img/About/Frame 21.png';
+import image1 from '../assets/img/aa/new/preorder.png';
+import image2 from '../assets/img/aa/new/Frame 20.png';
+import image3 from '../assets/img/aa/new/siteservices.png';
 import back1 from '../assets/img/aa/PRE ORDER SERVICE (1).png';
 import back2 from '../assets/img/About/back 20.png';
 import back3 from '../assets/img/About/back 21.png';

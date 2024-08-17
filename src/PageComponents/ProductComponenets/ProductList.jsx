@@ -247,7 +247,7 @@ const ProductList = ({ no }) => {
                           nextIcon={<span className="carousel-control-next-icon" />}
                         >{productDetails.images.map((image) => (
 
-                          <Carousel.Item key={image.id} interval={700} >
+                          <Carousel.Item key={image.id} interval={900} >
                             <div className=" d-flex justify-content-center">
                               <img
                                 src={`https://positivebackend.sumagodemo.com/${image.img}`}

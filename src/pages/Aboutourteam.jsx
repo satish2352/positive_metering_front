@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Heading from "../components/Heading";
-import banner from "../assets/img/About/BANER about us.jpg";
-import New from "../assets/img/About/about us  PAGE.jpg";
+import banner from "../assets/img/aa/new/CHANGES EMAIL/TEAM  WEB.jpg";
+import New from "../assets/img/aa/new/CHANGES EMAIL/TEAM  MOBILE.jpg";
 import ResponsiveImage from "./ResponsiveImage";
 const Aboutourteam = () => {
   const [hoveredCard, setHoveredCard] = useState(null);

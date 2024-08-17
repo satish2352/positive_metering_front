@@ -52,7 +52,7 @@ const HomeAboutus = () => {
             data-aos-duration="1500"
           >
             <h1 style={{ letterSpacing: "4px" }}>ABOUT US</h1>
-            <p style={{ fontSize: "15px" }}>
+            <p className="pooja">
               {isMobile ? truncatedText : fullText}
               {isMobile && (
                 <Col

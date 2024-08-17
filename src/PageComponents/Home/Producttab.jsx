@@ -145,7 +145,7 @@ const ProductTab = ({ no }) => {
                     nextIcon={<span className="carousel-control-next-icon" />}
                   >
                     {activeProduct.images.map((image) => (
-                      <Carousel.Item key={image.id} interval={400}>
+                      <Carousel.Item key={image.id} interval={900}>
                         <div className="d-flex justify-content-center">
                           <img
                             src={image.img}
