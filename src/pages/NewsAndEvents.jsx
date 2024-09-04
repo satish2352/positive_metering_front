@@ -8,7 +8,9 @@ import imgmobile from "../assets/img/aa/mobile/news PAGE.jpg";
 import imgtop from "../assets/img/aa/baner/BANER news.jpg";
 import { useNavigate } from "react-router-dom";
 import AOS from "aos";
+import { FaDownload } from "react-icons/fa6";
 import "aos/dist/aos.css";
+
 const NewsAndEvents = () => {
   const [cardData, setCardData] = useState([]);
   const navigate = useNavigate();
@@ -23,12 +25,19 @@ const NewsAndEvents = () => {
         console.error("There was an error fetching the data!", error);
       });
   }, []);
+
   useEffect(() => {
     AOS.init({
       duration: 1000, // Animation duration
-      // Whether animation should happen only once - while scrolling down
     });
   }, []);
+
+  const handleDownload = (pdfUrl) => {
+    if (pdfUrl) {
+      window.open(pdfUrl, "_blank");
+    }
+  };
+
   return (
     <>
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
@@ -90,6 +99,26 @@ const NewsAndEvents = () => {
                   </div>
 
                   <div className="d-flex justify-content-end pb-3 pe-4">
+                    {card.pdf && (
+                      <button
+                        className="rounded-5 border-3 mx-3 px-3 py-2 border border-danger fw-bolder d-none d-lg-block"
+                        onClick={() => handleDownload(card.pdf)}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <FaDownload />
+                      </button>
+                    )}
+                     {card.pdf && (
+                      <a
+                        className="rounded-5 border-3 mx-3 px-3 py-2 border border-danger fw-bolder text-dark d-block d-lg-none"
+                        // onClick={() => handleDownload(card.pdf)}
+                        target="_blank"
+                        href={card.pdf}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <FaDownload />
+                      </a>
+                    )}
                     <button
                       style={{ backgroundColor: "transparent" }}
                       className="rounded-5 border-3 px-3 py-2 border border-danger fw-bolder"

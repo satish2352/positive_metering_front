@@ -196,7 +196,7 @@ const ProductList = ({ no }) => {
                         {productDetails.images && productDetails.images.length > 0 && (
                           <img
 
-                            src={`https://positivebackend.sumagodemo.com/${productDetails.images[0].img}`}
+                            src={`http://api.positivemetering.ae.sumagodemo.com/${productDetails.images[0].img}`}
                             rounded
                             fluid
                             className="rounded mx-auto img-fluid d-block"
@@ -250,7 +250,7 @@ const ProductList = ({ no }) => {
                           <Carousel.Item key={image.id} interval={900} >
                             <div className=" d-flex justify-content-center">
                               <img
-                                src={`https://positivebackend.sumagodemo.com/${image.img}`}
+                                src={`http://api.positivemetering.ae.sumagodemo.com/${image.img}`}
                                 className="img-fluid "
 
                               /></div>
@@ -303,7 +303,7 @@ const ProductList = ({ no }) => {
                                     {product.images && product.images.length > 0 && (
                                       <img
                                         variant="top"
-                                        src={`https://positivebackend.sumagodemo.com/${product.images[0].img}`}
+                                        src={`http://api.positivemetering.ae.sumagodemo.com/${product.images[0].img}`}
                                         className=" img-fluid p-2"
                                       />)}
                                   </div>
@@ -360,7 +360,7 @@ const ProductList = ({ no }) => {
               <Container>
                 <Col>
                   <Nav variant="pills" className="d-flex justify-content-center">
-                    <Col lg={2} className="mx-2 mt-lg-0 mt-4">
+                    <Col lg={2} className="mx-2 mt-lg-0 mt-4 order-1 order-lg-1 ">
                       <Nav.Item>
                         <Nav.Link
                           eventKey="Models"
@@ -371,7 +371,7 @@ const ProductList = ({ no }) => {
                       </Nav.Item>
                     </Col>
 
-                    <Col lg={4} className="mx-2 mt-lg-0 mt-4">
+                    <Col lg={4} className="mx-2 mt-lg-0 mt-4  order-3 order-lg-2">
                       <Nav.Item>
                         <Nav.Link
                           eventKey="Accessories & Optional"
@@ -382,7 +382,7 @@ const ProductList = ({ no }) => {
                       </Nav.Item>
                     </Col>
 
-                    <Col lg={2} className="mx-2 mt-lg-0 mt-4">
+                    <Col lg={2} className="mx-2 mt-lg-0 mt-4 order-2 order-lg-3">
                       <Nav.Item>
                         <Nav.Link
                           eventKey="Gallery"
@@ -399,10 +399,10 @@ const ProductList = ({ no }) => {
               <Col>
                 <Tab.Content>
                   <Tab.Pane eventKey="Models">
-                    <h1 className="tableheadstyle text-center pt-5 pb-3">
+                    {/* <h1 className="tableheadstyle text-center pt-5 pb-3">
                       Models
-                    </h1>
-                    <Container className="d-flex justify-content-center">
+                    </h1> */}
+                    <Container className="d-flex justify-content-center my-lg-5 my-3">
                       <Col lg={8} className="horizontal-scroll">
                         {technicalData.length > 0 ? (
                           technicalData.map((data) => (
@@ -420,11 +420,11 @@ const ProductList = ({ no }) => {
                     </Container>
                   </Tab.Pane>
                   <Tab.Pane eventKey="Accessories & Optional">
-                    <h1 className="tableheadstyle text-center pt-5 pb-3">
+                    {/* <h1 className="tableheadstyle text-center pt-5 pb-3">
                       Accessories & Optional
-                    </h1>
+                    </h1> */}
                     <Container>
-                      <Row className="d-flex justify-content-center">
+                      <Row className="d-flex justify-content-center my-lg-5 my-3">
                         <Col lg={8}>
                           {optionsData.length > 0 ? (
                             optionsData.map((data) => (
@@ -443,20 +443,20 @@ const ProductList = ({ no }) => {
                     </Container>
                   </Tab.Pane>
                   <Tab.Pane eventKey="Gallery">
-                    <h1 className="tableheadstyle text-center pt-5 pb-3">Gallery</h1>
+                    {/* <h1 className="tableheadstyle text-center pt-5 pb-3">Gallery</h1> */}
                     <Container>
-                      <Row className="d-flex justify-content-center">
+                      <Row className="d-flex justify-content-center my-lg-5 my-3">
                         <Col lg={12}>
                           {materialData.length > 0 ? (
                             <Container>
-                              <Row>
+                              <Row className="d-flex justify-content-center">
                                 {materialData.map((data) => (
                                   <Col key={data.id} xs={12} lg={3} md={6} className="mb-4">
                                     <img
-                                      src={`https://positivebackend.sumagodemo.com/${data.img}`}
+                                      src={`http://api.positivemetering.ae.sumagodemo.com/${data.img}`}
                                       className="eventimg img-fluid rounded-4"
                                       alt={data.title}
-                                      onClick={() => handleImageClick(`https://positivebackend.sumagodemo.com/${data.img}`)}
+                                      onClick={() => handleImageClick(`http://api.positivemetering.ae.sumagodemo.com/${data.img}`)}
                                       style={{ cursor: "pointer" }}
                                     />
                                   </Col>
@@ -477,14 +477,14 @@ const ProductList = ({ no }) => {
                           position: "absolute",
                           top: "10px",
                           right: "10px",
-                          backgroundColor: "black",
+                          backgroundColor: "transparent",
                           border: "none",
                           zIndex: 9999,
                         }}
                       >
                         <IoMdClose
                           style={{
-                            color: "white",
+                            color: "black",
                             fontSize: "24px",
                             backgroundColor: "transparent",
                           }}

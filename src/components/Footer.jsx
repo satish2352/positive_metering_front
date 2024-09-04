@@ -14,33 +14,66 @@ import { ProductContext } from "../ProductContext";
 import { useNavigate } from "react-router-dom";
 const Footer = () => {
   const navigate = useNavigate();
+
+  const [socialLinks, setSocialLinks] = useState({});
+  console.log("socialLinks", socialLinks);
+
+  useEffect(() => {
+    // Fetching social media links
+    axios
+      .get("/social-contact/get-socialcontacts")
+      .then((response) => {
+        setSocialLinks(response.data.responseData[0]);
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the social media links!", error);
+      });
+  }, []);
+
   const { products, productNo } = useContext(ProductContext);
   const half = Math.ceil(products.length / 2);
   const firstHalf = products.slice(0, half);
   const secondHalf = products.slice(half);
-  const [email, setEmail] = useState("");
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
-  const [errors, setErrors] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
   const capitalizeFirstLetter = (str) => {
     if (!str) return str;
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
   };
 
-  const validateForm = () => {
-    let errors = {};
-    let isValid = true;
 
-    if (!email.trim()) {
-      errors.email = "Email is required";
-      isValid = false;
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      errors.email = "Invalid email address";
-      isValid = false;
-    }
-    setErrors(errors);
-    return isValid;
+  const [cardData, setCardData] = useState([]);
+  const [abc, setAbc] = useState(null);
+  const [email, setEmail] = useState("");
+  const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("/news/get-news")
+      .then((response) => {
+        const data = response.data.responseData;
+        setCardData(data);
+        // Extract the pdf from the last object
+        const lastObjectPdf = data.length > 0 ? data[data.length - 1].pdf : null;
+        setAbc(lastObjectPdf);
+      })
+      .catch((error) => {
+        console.error("There was an error fetching the data!", error);
+      });
+  }, []);
+  const capitalizeWords = (str) => {
+    if (!str) return str;
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  };
+
+  const validateForm = () => {
+    // Your form validation logic here
+    return true; // Return true if the form is valid
   };
 
   const handleSubmit = async (e) => {
@@ -55,6 +88,11 @@ const Footer = () => {
         console.log("Response:", response.data);
         setEmail("");
         setErrors({});
+
+        // Open the PDF in a new tab after a successful subscription
+        if (abc) {
+          window.open(abc, "_blank");
+        }
       } catch (error) {
         const newErrors = { ...errors };
         console.error("Error submitting data:", error);
@@ -66,7 +104,9 @@ const Footer = () => {
         } else {
           newErrors.email = "Failed to submit data. Please try again.";
         }
-        setErrors(newErrors); // <- Ensure errors are set
+        setErrors(newErrors);
+      } finally {
+        setIsLoading(false);
       }
     }
   };
@@ -208,7 +248,7 @@ const Footer = () => {
                 </Link>
               </li>
 
-            
+
               <li className="pt-1">
                 <Link
                   className="nvlink"
@@ -251,7 +291,7 @@ const Footer = () => {
                             to={`/product/${a.id}`}
                             style={{ textDecoration: "none", color: "black" }}
                           >
-                            {capitalizeFirstLetter(a.productName)}
+                            {capitalizeWords(a.productName)}
                           </Link>
                         </li>
                       </>
@@ -271,7 +311,7 @@ const Footer = () => {
                             to={`/product/${a.id}`}
                             style={{ textDecoration: "none", color: "black" }}
                           >
-                            {capitalizeFirstLetter(a.productName)}
+                            {capitalizeWords(a.productName)}
                           </Link>
                         </li>
                       </>
@@ -301,7 +341,7 @@ const Footer = () => {
                             to={`/product/${a.id}`}
                             style={{ textDecoration: "none", color: "black" }}
                           >
-                            {capitalizeFirstLetter(a.productName)}
+                            {capitalizeWords(a.productName)}
                           </Link>
                           <hr className=" m-0 p-0" />
                         </li>
@@ -315,47 +355,41 @@ const Footer = () => {
         </Row>
         <hr />
         <Row className="mt-3 d-flex pb-3">
-          {/* <Col
+          <Col
             xs={12}
             lg={6}
             className="text-center d-flex justify-content-evenly align-items-center"
-          >
-            {" "} */}
-          {/* <div>
-              <a href="https://www.sumagoinfotech.com/" target="_blank" className="smglink">
-                &copy; {currentYear} Copyright :{" "}
-                <ins className=""> Made with Passion by Sumago Infotech</ins>{" "}
+          > <div>
+              <a href="https://website.positivemetering.in/" className="smglink">
+                &copy; {currentYear}
+                <ins className="">  Positive Metering Pumps All Rights Reserved.</ins>{" "}
               </a>
-            </div> */}
-          {/* </Col> */}
-          <Col xs={12} lg={12}>
+            </div>
+          </Col>
+          <Col xs={12} lg={6}>
             <div className=" text-center d-grid d-lg-flex justify-content-center align-items-center">
               <div className="d-flex justify-content-center">
-                <a
-                  href="https://www.facebook.com/PositiveMetering"
-                  target="_blank"
-                >
-                  <CiFacebook className="icon-hover mx-2 " />
-                </a>
-                <a
-                  href="https://www.instagram.com/positive_metering_pumps/?hl=en"
-                  target="_blank"
-                >
-                  <FaInstagram className="icon-hover mx-2" />
-                </a>
-                <a href="mailto:info@positivemetering.com" target="_blank">
-                  <MdOutlineMail className="icon-hover mx-2" />
-                </a>
-                <a href={`https://wa.me/${91 - 253 - 6613218}`} target="_blank">
-                  <FaWhatsapp className="icon-hover mx-2" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/positive-metering-pumps-i-pvt-ltd/"
-                  target="_blank"
-                >
-                  {" "}
-                  <CiLinkedin className="icon-hover mx-2" />
-                </a>
+
+                {socialLinks && (
+                  <>
+                    <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer">
+                      <CiFacebook className="icon-hover mx-2" />
+                    </a>
+                    <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer">
+                      <FaInstagram className="icon-hover mx-2" />
+                    </a>
+                    <a href="mailto:info@positivemetering.com" target="_blank" rel="noopener noreferrer">
+                      <MdOutlineMail className="icon-hover mx-2" />
+                    </a>
+                    <a href={`https://wa.me/${socialLinks.whatsapp}`} target="_blank" rel="noopener noreferrer">
+                      <FaWhatsapp className="icon-hover mx-2" />
+                    </a>
+                    <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
+                      <CiLinkedin className="icon-hover mx-2" />
+                    </a>
+                  </>
+                )}
+
               </div>
             </div>
           </Col>

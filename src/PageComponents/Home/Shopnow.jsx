@@ -172,7 +172,8 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           <ReCAPTCHA
             className="my-4 ms-2"
             ref={captchaRef}
-            sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+            // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+               sitekey="6Ld2KC4qAAAAAJJS-pB0oUBITPMIO39Ry9xAnThq"
             // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
             onChange={onChange}
           />

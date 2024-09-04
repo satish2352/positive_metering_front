@@ -1,21 +1,18 @@
 .caontatctcardback {
   background: #ffffffcc;
 }
-.digital-icon {
-  color: #ffffff; /* Neon green color for a digital effect */
-  font-size: 1.5rem; /* Adjust size as needed */
-  transition: all 0.3s ease;
-  border: 9px solid rgb(120, 118, 118);
-  background-color: rgb(120, 118, 118);
-  border-radius: 50%;
- font-size: 40px;
-}
+
 
 
 
 .caontatctcardimg {
   position: relative;
 }
+
+.txtcontact1 {
+  font-size: 14px;
+}
+
 @media screen and (max-width: 1300px) {
   .caontatctcardsubsection {
     background: rgba(255, 255, 255, 0.8);
@@ -25,10 +22,30 @@
     left: 60px;
     bottom: 0px;
   }
+
   .txtcontact {
     font-size: 11px !important;
   }
- 
+
+  .digital-icon {
+    color: #ffffff;
+    padding: 7px !important;
+    transition: all 0.3s ease;
+    border: 1px solid rgb(120, 118, 118);
+    background-color: rgb(120, 118, 118);
+    border-radius: 50%;
+    font-size: 40px !important;
+  }
+
+}
+.digital-icon {
+  color: #ffffff;
+  padding: 3px !important;
+  transition: all 0.3s ease;
+  border: 1px solid rgb(120, 118, 118);
+  background-color: rgb(120, 118, 118);
+  border-radius: 50%;
+  font-size: 30px !important;
 }
 
 .caontatctcardsubsection {
@@ -51,6 +68,7 @@
     left: 100px;
     bottom: 0px;
   }
+
   .caontatctcardsubsection p {
     font-size: 17px;
   }

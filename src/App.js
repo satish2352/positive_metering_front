@@ -6,7 +6,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Router from './Router';
 import axios from 'axios';
 function App() {
-  axios.defaults.baseURL = 'https://positivebackend.sumagodemo.com/';
+  axios.defaults.baseURL = 'http://api.positivemetering.ae.sumagodemo.com/';
+  // axios.defaults.baseURL = 'http://api.positivemetering.ae.sumagodemo.com/';
   return (
     <>
       <Router />

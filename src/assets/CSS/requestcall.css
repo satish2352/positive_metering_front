@@ -3,54 +3,30 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 @media only screen and (max-width: 505px) {
-  .requestcallback {
-    height: 730px !important;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
+ 
 
   .requestcallbackleft {
-    background: rgba(222, 222, 222, 0.79);
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-    position: relative;
-    top: -691px !important;
-  }
-  .viod {
-    padding-top: 240px;
-  }
-}
-@media only screen and (min-width: 705px) and (max-width: 767px) {
-  .requestcallback {
-    height: 430px;
-    background-size: cover;
-    background-repeat: no-repeat;
+    top: -591px !important;
   }
 
-  .requestcallbackleft {
-    background: rgba(222, 222, 222, 0.79);
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-    position: relative;
-    top: -991px !important;
-  }
-  .viod {
-    padding-top: 240px;
-  }
+ 
 }
-@media only screen and (min-width: 767px) and (max-width: 1300px) {
+
+/* @media only screen and (min-width: 705px) and (max-width: 990px) {
   .requestcallback {
-    height: 550px !important;
   }
   .requestcallbackleft {
-    background: rgba(222, 222, 222, 0.79);
-    padding-left: 0px !important;
-    padding-right: 0px !important;
-    position: relative;
-    top: -581px !important;
   }
 }
+@media only screen and (min-width: 990px) and (max-width: 1210px) {
+  .requestcallback {
+  }
+  .requestcallbackleft {
+  }
+} */
+
 
 .requestcallbackleft {
   background: rgba(222, 222, 222, 0.79);
@@ -60,6 +36,52 @@
   top: -690px;
 }
 
+@media only screen and (min-width: 1280px) and (max-width: 1500px) {
+  .requestcallbackleft {
+    top: -613px !important;
+  }
+}
+
+@media only screen and (min-width: 1232px) and (max-width: 1280px) {
+  .requestcallbackleft {
+    top: -575px !important;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1232px) {
+  .requestcallbackleft {
+    top: -565px !important;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .requestcallbackleft {
+    top: -480px !important;
+  }
+}
+@media only screen and (min-width: 695px) and (max-width: 767px) {
+  .requestcallbackleft {
+    top: -831px !important;
+  }
+}
+@media only screen and (min-width: 553px) and (max-width: 694px) {
+  .requestcallbackleft {
+    top: -735px !important;
+  }
+}
+@media only screen and (min-width: 493px) and (max-width: 552px) {
+  .requestcallbackleft {
+    top: -726px !important;
+  }
+}
+@media only screen and (max-width: 492px) {
+ 
+
+  .requestcallbackleft {
+    top: -591px !important;
+  }
+
+ 
+}
 .requestcallbacklefttop {
   background: rgba(238, 88, 93, 1);
   position: relative;
@@ -86,14 +108,17 @@
   border-radius: 20px;
   scrollbar-width: none;
 }
+
 .requesttext::placeholder {
   color: #999;
 }
+
 .requesttext:focus {
   color: #999;
   outline: none;
   padding: 5px 20px;
 }
+
 .requestinput {
   border: 1px solid rgb(224, 205, 205) !important;
   background-color: white;
@@ -123,28 +148,32 @@
 
 .requestinputlb {
   font-size: 16px !important;
- 
+
 }
 
 .buttonpart {
   margin-top: -500px;
 }
+
 .title {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 20px;
 }
+
 .description {
   font-size: 16px;
   line-height: 1.6;
   margin-bottom: 20px;
 }
+
 .features {
   font-size: 16px;
   line-height: 1.6;
   list-style-type: disc;
   padding-left: 20px;
 }
+
 .features li {
   margin-bottom: 10px;
 }

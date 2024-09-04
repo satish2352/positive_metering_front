@@ -68,8 +68,9 @@ const Infrastructure = () => {
                           : card.desc}
                       </Card.Text>
 
-                      <p onClick={() => handleShowModal(card)}> Read More...</p>
                     </Card.Body>
+                    
+                    <p onClick={() => handleShowModal(card)} className=" fw-bold" style={ {position:"relative" , bottom:"-1px"}}> Read More</p>
                   </Card>
                 </Col>
               ))}

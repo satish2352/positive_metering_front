@@ -49,7 +49,7 @@ const Testomonial = () => {
   var settings = {
     fade: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
     waitForAnimate: false,
@@ -110,7 +110,7 @@ const Testomonial = () => {
                   {truncateReview(testimonial.review, 200)}
                   {testimonial.review.length > 200 && (
                     <span className='read-more' onClick={() => handleShowModal(testimonial)}>
-                      ... <b>read more</b>
+                      ... <b>Read More</b>
                     </span>
                   )}
                 </p>
@@ -152,7 +152,7 @@ const Testomonial = () => {
                   {truncateReview(testimonial.review, 200)}
                   {testimonial.review.length > 200 && (
                     <span className='read-more' onClick={() => handleShowModal(testimonial)}>
-                      ... <b>read more</b>
+                      ... <b>Read More</b>
                     </span>
                   )}
                 </p>

@@ -131,7 +131,7 @@ const ProductTab = ({ no }) => {
                     data-aos="fade-up"
                     data-aos-easing="linear"
                     data-aos-duration="1500"
-                    src={`https://positivebackend.sumagodemo.com/${activeProduct.images[0].img}`}
+                    src={`http://api.positivemetering.ae.sumagodemo.com/${activeProduct.images[0].img}`}
                     alt={activeProduct.productName}
                     className="img-fluid producttabimg p-5 p-lg-1"
                   />

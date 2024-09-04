@@ -356,3 +356,9 @@
 .homeaboutinfo{
   font-size: 16px;
 }
+
+.abcd{
+  background: url('./assets/img/News/okkok.jpg');
+  background-size: cover;
+  
+}

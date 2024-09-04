@@ -205,7 +205,8 @@ const UploadCV = () => {
                   <ReCAPTCHA
                     ref={captchaRef}
                     // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
-                    sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+                    // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+                    sitekey="6Ld2KC4qAAAAAJJS-pB0oUBITPMIO39Ry9xAnThq"
                     onChange={onChange}
                   />
                   {errors.captcha && (

@@ -26,21 +26,21 @@ const services = [
     frontImage: image1,
     backImage: back1,
     frontText: 'Pre Order Services',
-    backText: 'Application Engineering is one of our main strengths. Our expert engineers have excellent field experience who can perfectly match our products with customer\'s needs. Special care is taken by us to offer a cost-effective solution in the right time. We help our customers in structuring.'
+    backText: "Application Engineering is one of our main strenghts. Our expert engineers have excellent field experience who can perfectly match our products with customer's needs. Special care is taken by us to offer a cost effective solution in right time. We help our customers in structuring their budgets and submitting bids to their customers"
   },
   {
     id: 2,
     frontImage: image2,
     backImage: back2,
     frontText: 'Execution',
-    backText: 'Application Engineering is one of our main strengths. Our expert engineers have excellent field experience who can perfectly match our products with customer\'s needs. Special care is taken by us to offer a cost-effective solution in the right time. We help our customers in structuring.'
+    backText: 'A contract specific execution plan is prepared immedietly after receipt of the contract and shared with the customer to make them aware about the schedule and stages of execution. We share status reports with a regular frequency proactively to save our customers efforts in expediting the execution. Well known customers in the process industries have expressed their happiness about services during execution and delivering the products in right time'
   },
   {
     id: 3,
     frontImage: image3,
     backImage: back3,
     frontText: 'Site Services',
-    backText: 'Application Engineering is one of our main strengths. Our expert engineers have excellent field experience who can perfectly match our products with customer\'s needs. Special care is taken by us to offer a cost-effective solution in the right time. We help our customers in structuring their budgets and submitting bids to their customers.'
+    backText: " We have a structured plan in place to offer services to our customers at their site. We offer support to our customers for supervision of installation and commissioning anywhere in the world, if the contract needs so. We are very prompt in offering services - anywhere in the world - in case of breakdown in our products as we realise our customers' stakes in a project or in a process. Our products have proved their reliability and very rarely we have attended breadowns due to manufacturing or design defects. 80% of our business comes from our existing customers that proves our products generally do not fail due to manufacturing or design defects. 7 out 10 first customers who had placed orders on us 24 years ago - in the year 1996 - have continued to place orders on us till today"
   }
 ];
 
@@ -78,14 +78,14 @@ const Service = () => {
                     </Card.Text>
                   </div>
                   <div
-                    className="card card-back border-0 d-flex align-items-center justify-content-center"
+                    className="card card-back border-0 d-flex  justify-content-center"
                     onMouseEnter={() => handleMouseEnter(service.id)}
                     onMouseLeave={() => handleMouseLeave(service.id)}
                   >
                     <BackCard image={service.backImage} />
                     <div className="text-center px-4 text-white mt-4">
                       <h3 className='backH'>{service.frontText}</h3>
-                      <p className='backP'>{service.backText}</p>
+                      <div className='backP'>{service.backText}.</div>
                     </div>
                   </div>
                 </ReactCardFlip>

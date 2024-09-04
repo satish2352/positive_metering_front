@@ -54,7 +54,7 @@
   box-shadow: 20px 10px 80px 0px #00000040;
 }
 .infrastructurecardinfo {
-  height: 170px !important;
+  /* height: 170px !important; */
 }
 .team-card {
   transition: background-color 0.3s, color 0.3s;

@@ -20,10 +20,26 @@
 }
 
 .backH {
-  margin-top: -400px;
+  margin-top: -550px;
   text-align: center;
   color: #ffffff;
 }
-.backP {
-  text-align: justify !important;
+
+.backP{
+  font-size: 16px !important;
+}
+
+@media only screen and (max-width: 492px) {
+ 
+
+  .backH {
+    margin-top: -448px;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  .backP{
+    font-size: 13px !important;
+  }
+ 
 }

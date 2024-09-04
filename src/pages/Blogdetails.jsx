@@ -179,7 +179,8 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           <ReCAPTCHA
             className="my-4 ms-2"
             ref={captchaRef}
-            sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+            // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+               sitekey="6Ld2KC4qAAAAAJJS-pB0oUBITPMIO39Ry9xAnThq"
             // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
             onChange={onChange}
           />
@@ -213,9 +214,11 @@ function Blogdetails({ image, title, longetxt }) {
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
       <Heading heading={"Blog"} />
       <Container className="mt-3" heading={"Blog"}>
-        <Row>
-          <Col lg={8} md={8} sm={12}>
-            <Image src={image} className="blogdetailimg rounded-4" fluid />
+        <Row className="d-flex justify-content-between align-content-center">
+          <Col lg={8} md={8} sm={12} className="d-flex justify-content-center">
+            <div className=" col-lg-7">
+              <img src={image} className="img-fluid rounded-4" fluid />
+            </div>
           </Col>
           <Col lg={4} md={4} sm={12} className=" d-none d-lg-block">
             <Image

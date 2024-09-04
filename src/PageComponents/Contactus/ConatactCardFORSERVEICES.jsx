@@ -54,7 +54,7 @@ const ConatactCardFORSERVEICES = () => {
                       xs={12}
                       md={6}
                       lg={4}
-                      className="mb-4 rounded-4 p-lg-5"
+                      className="mb-4  rounded-4 py-2 px-lg-4"
                     >
                       <Card className="h-100 rounded-4 infrastructurecard border-bottom border-3 border-danger border-end-0 border-top-0 border-start-0 ">
                         <Card.Img

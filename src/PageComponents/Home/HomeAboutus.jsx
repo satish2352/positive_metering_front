@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Col, Row, Button } from "react-bootstrap";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import about from "../../assets/img/System 1bb 1 (1) (1).jpg";
+import about from "../../assets/img/News/WhatsApp_Image_2024-08-21_at_4.16.04_PM-removebg-preview.png";
 import Heading from "../../components/Heading";
 import { useNavigate } from "react-router-dom"; // Assuming you're using React Router
 
@@ -33,12 +33,14 @@ const HomeAboutus = () => {
       <Row>
         <Col
           lg={5}
-          className="order-lg-1 d-none d-lg-block order-2 px-0"
+          className="abcd order-lg-1 d-none d-lg-block order-2 px-0 d-grid align-content-center"
           data-aos="fade-up"
           data-aos-easing="linear"
           data-aos-duration="1500"
         >
-          <img src={about} className="img-fluid h-100" alt="About Us" />
+        <div className=" d-flex align-content-center justify-content-center">
+        <img src={about} className="img-fluid" alt="About Us" />
+        </div>
         </Col>
         <Col
           lg={7}

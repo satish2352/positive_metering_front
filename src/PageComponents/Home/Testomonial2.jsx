@@ -101,7 +101,7 @@ const Testomonial2 = () => {
 
       {testimonial.length < 3 ? (
         <Row className="">
-          {testimonial.filter((testimonial) => testimonial.isActive).map((testimonial) => (
+          {testimonial.filter((testimonial) => !testimonial.isActive).map((testimonial) => (
             <Col key={testimonial.id} md={4} className='text-center' style={{ marginTop: '-50px' }}>
             <div onClick={() => handleShowModal(testimonial)}>
               <div className='profileposition'>
@@ -114,7 +114,7 @@ const Testomonial2 = () => {
                   {truncateReview(testimonial.review, 200)}
                   {testimonial.review.length > 200 && (
                     <span className='read-more' onClick={() => handleShowModal(testimonial)}>
-                      ... <b>read more</b>
+                      ... <b>Read More</b>
                     </span>
                   )}
                 </p>
@@ -156,7 +156,7 @@ const Testomonial2 = () => {
                 {truncateReview(testimonial.review, 200)}
                 {testimonial.review.length > 200 && (
                   <span className='read-more' onClick={() => handleShowModal(testimonial)}>
-                    ... <b>read more</b>
+                    ... <b>Read More</b>
                   </span>
                 )}
               </p>

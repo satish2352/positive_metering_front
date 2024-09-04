@@ -7,6 +7,8 @@ import Shopnow from "../PageComponents/Home/Shopnow";
 import Progresspump from "../PageComponents/Home/Progresspump";
 import Testomonial from "../PageComponents/Home/Testomonial";
 import Requestcallback from "../PageComponents/Home/Requestcallback";
+import Requestcallback2 from "../PageComponents/Home/Requestcallback2";
+
 import { Container } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
 import progress_img from "../assets/img/Home/Progress.png";
@@ -27,6 +29,7 @@ const Home = () => {
       <Testomonial />
       <Testomonial2/>
       <Requestcallback />
+      <Requestcallback2/>
       <Progress_cavity_screw_pump />
     </>
   );

@@ -1,46 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
 import "./blogdetails.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import axios from "axios";
 import Image from "react-bootstrap/Image";
-import blogdetails_img1 from "../assets/img/Blogdetails/blogdetails_img1.png";
-import blogdetails_img2 from "../assets/img/Blogdetails/blogdetails_img2.png";
-
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-
-import Form from "react-bootstrap/Form";
-import Heading from "../components/Heading";
 import ResponsiveImage from "./ResponsiveImage";
+import Heading from "../components/Heading";
 
 import imgmobile from "../assets/img/aa/mobile/news PAGE.jpg";
 import imgtop from "../assets/img/aa/baner/BANER news.jpg";
 
+// Helper function to count words
+const countWords = (text) => {
+  return text.trim().split(/\s+/).length;
+};
+
 function Eventdetails({ image, title, longetxt }) {
-
-
-  const [modalShow, setModalShow] = React.useState(false);
+  // Determine grid classes based on word count
+  const isLongText = countWords(longetxt) > 190;
+  const imageColClass = isLongText ? "col-12 d-flex justify-content-center" : "col-lg-5  col-12";
+  const textColClass = isLongText ? "col-12  justify-content-center" : "col-lg-7 col-12  mt-5 mt-lg-0";
 
   return (
     <>
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
       <Heading heading={"News"} />
-      <Container className=" p-2 p-lg-5" heading={"Blog"}>
+      <Container className="p-2 p-lg-5 newspaper-layout">
         <Row>
-          <Col lg={5} md={6} sm={12}>
-            <Image src={`${image}`} height={"500rem"} fluid />
+          <Col className={imageColClass}>
+            <Image src={image}  fluid />
           </Col>
-          <Col lg={7} md={6} sm={12} className=" mt-5 mt-lg-0">
-            <h5>{title}</h5>
-            
-            <p dangerouslySetInnerHTML={{ __html: longetxt }}></p>
+          <Col className={textColClass}>
+            <h5 className="title">{title}</h5>
+            <p dangerouslySetInnerHTML={{ __html: longetxt }} className="content-text"></p>
           </Col>
         </Row>
       </Container>
-
-      <Container></Container>
     </>
   );
 }
