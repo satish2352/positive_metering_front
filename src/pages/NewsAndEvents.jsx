@@ -12,6 +12,7 @@ import { FaDownload } from "react-icons/fa6";
 import "aos/dist/aos.css";
 
 const NewsAndEvents = () => {
+  document.title = "News | Positive Metering"
   const [cardData, setCardData] = useState([]);
   const navigate = useNavigate();
 

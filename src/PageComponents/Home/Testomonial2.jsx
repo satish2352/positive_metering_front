@@ -95,125 +95,116 @@ const Testomonial2 = () => {
   };
 
   return (
-
-    <Container fluid className='testomonialback py-5 text-center d-none d-lg-block' style={{ marginTop: '-90px' }}>
+    <Container fluid className='testomonialback d-none d-lg-block py-5 text-center'>
       <Heading heading={'TESTIMONIALS'} />
-
-      {testimonial.length < 3 ? (
-        <Row className="">
-          {testimonial.filter((testimonial) => !testimonial.isActive).map((testimonial) => (
-            <Col key={testimonial.id} md={4} className='text-center' style={{ marginTop: '-50px' }}>
-            <div onClick={() => handleShowModal(testimonial)}>
+  
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>No Data Found</p>
+      ) : (
+        <>
+          {testimonial.length < 3 ? (
+            <Row>
+              {testimonial.map((testimonial) => (
+                <Col key={testimonial.id} md={4} className='text-center'>
+                  <div onClick={() => handleShowModal(testimonial)}>
+                    <div className='profileposition'>
+                      <h1 className='testomonialprofile'>{testimonial.experience}</h1>
+                    </div>
+                    <div className='testback'>
+                      <h4>{testimonial.company_Name}</h4>
+                      <p style={{fontSize:"13px"}}>
+                        {truncateReview(testimonial.review, 200)}
+                        {testimonial.review.length > 200 && (
+                          <span className='read-more'>
+                            ... <b>Read More</b>
+                          </span>
+                        )}
+                      </p>
+                      <Rating
+                        iconsCount={5}
+                        initialValue={testimonial.star}
+                        size={20}
+                        readonly
+                        fillColor='orange'
+                        emptyColor='gray'
+                      />
+                      <div className='text-dark py-2' style={{ fontStyle: 'italic' }}>
+                        -{testimonial.name}
+                      </div>
+                    </div>
+                  </div>
+                </Col>
+              ))}
+            </Row>
+          ) : (
+            <Slider {...settings}>
+              {testimonial.map((testimonial) => (
+                <div key={testimonial.id} onClick={() => handleShowModal(testimonial)}>
+                  <div className='profileposition'>
+                    <h1 className='testomonialprofile'>{testimonial.experience}</h1>
+                  </div>
+                  <div className='testback'>
+                    <p>
+                      {truncateReview(testimonial.review, 200)}
+                      {testimonial.review.length > 200 && (
+                        <span className='read-more'>
+                          ... <b>Read More</b>
+                        </span>
+                      )}
+                    </p>
+                    <Rating
+                      iconsCount={5}
+                      initialValue={testimonial.star}
+                      size={20}
+                      readonly
+                      fillColor='orange'
+                      emptyColor='gray'
+                    />
+                    <div className='text-dark py-2' style={{ fontStyle: 'italic' }}>
+                      -{testimonial.name}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </Slider>
+          )}
+        </>
+      )}
+  
+      {selectedTestimonial && (
+        <Modal show={showModal} onHide={handleCloseModal}>
+          <Modal.Header closeButton>
+            <Modal.Title>{selectedTestimonial.name}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Col className='text-center'>
               <div className='profileposition'>
-                <h1 className='testomonialprofile'>{testimonial.experience}</h1>
+                <h1 className='testomonialprofile'>{selectedTestimonial.experience}</h1>
               </div>
-              <div className='testback'>
-                <h4>{testimonial.company_Name}</h4>
-
-                <p>
-                  {truncateReview(testimonial.review, 200)}
-                  {testimonial.review.length > 200 && (
-                    <span className='read-more' onClick={() => handleShowModal(testimonial)}>
-                      ... <b>Read More</b>
-                    </span>
-                  )}
-                </p>
+              <div className='testback2'>
+                <h4>{selectedTestimonial.company_Name}</h4>
+                <p>{selectedTestimonial.review}</p>
                 <Rating
                   iconsCount={5}
-                  initialValue={testimonial.star}
+                  initialValue={selectedTestimonial.star}
                   size={20}
                   readonly
                   fillColor='orange'
                   emptyColor='gray'
                 />
-                <div className='text-dark py-2' style={{ fontStyle: "italic" }}>
-                  <div>
-                    -{testimonial.name}
-                  </div>
-                 
+                <div className='text-dark py-2' style={{ fontStyle: 'italic' }}>
+                  -{selectedTestimonial.name}
                 </div>
-           
               </div>
-
-            </div>
-
-
-
             </Col>
-          ))}
-        </Row>
-      ) : (
-        <Slider {...settings}>
-          {testimonial.filter((testimonial) => testimonial.isActive).map((testimonial) => (
-            <div onClick={() => handleShowModal(testimonial)}>
-            <div className='profileposition'>
-              <h1 className='testomonialprofile'>{testimonial.experience}</h1>
-            </div>
-            <div className='testback'>
-              {/* <h4>{testimonial.company_Name}</h4> */}
-
-              <p>
-                {truncateReview(testimonial.review, 200)}
-                {testimonial.review.length > 200 && (
-                  <span className='read-more' onClick={() => handleShowModal(testimonial)}>
-                    ... <b>Read More</b>
-                  </span>
-                )}
-              </p>
-              <Rating
-                iconsCount={5}
-                initialValue={testimonial.star}
-                size={20}
-                readonly
-                fillColor='orange'
-                emptyColor='gray'
-              />
-              <div className='text-dark py-2' style={{ fontStyle: "italic" }}>
-                <div>
-                  -{testimonial.name}
-                </div>
-               
-              </div>
-         
-            </div>
-
-          </div>
-
-          ))}
-        </Slider>
+          </Modal.Body>
+        </Modal>
       )}
-
-      <Modal show={showModal} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>{selectedTestimonial?.name}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body >
-          <Col className='text-center' >
-
-          <div className='profileposition'>
-              <h1 className='testomonialprofile'>{selectedTestimonial?.experience}</h1>
-
-            </div>
-            <div className='testback2'>
-              <h4>{selectedTestimonial?.company_Name}</h4>
-
-              <p >{selectedTestimonial?.review}</p>
-              <Rating
-                iconsCount={5}
-                initialValue={selectedTestimonial?.star}
-                size={20}
-                readonly
-                fillColor='orange'
-                emptyColor='gray'
-              />
-              <div className='text-dark py-2' style={{ fontStyle: "italic" }}>
-                -{selectedTestimonial?.name}
-              </div>
-            </div>
-          </Col>
-        </Modal.Body>
-      </Modal>
-    </Container>)
+    </Container>
+  );
+  
 
 };
 

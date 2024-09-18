@@ -3,9 +3,18 @@ import axios from "axios";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Heading from "../components/Heading";
 import New from "../assets/img/services/Frame 98 (1).jpg";
-import  banner from "../assets/img/services/2540 x 1023 222.jpg";
+import banner from "../assets/img/services/2540 x 1023 222.jpg";
 import ResponsiveImage from "./ResponsiveImage";
+import MetaTags from "../components/MetaTags";
+const metaDetails = {
+  title: 'About Positive Metering Pvt. Ltd: Leading Metering Pump Manufacturer',
+  description: 'Positive Metering Pvt. Ltd, a top manufacturer of metering pumps, including chlorine dosing pumps in India. Trust our dosing pump and diaphragm pump expertise.',
+  keywords: 'Metering Pump Manufacturer in India',
+  slug: 'aboutleadership',
+  alt: 'About Positive Metering Pvt. Ltd: Leading Metering Pump Manufacturer',
+};
 const Aboutourteam = () => {
+  document.title = "Aboutus | Positive Metering"
   const [hoveredCard, setHoveredCard] = useState(null);
   const [teamMembers, setTeamMembers] = useState([]);
 
@@ -37,6 +46,13 @@ const Aboutourteam = () => {
 
   return (
     <>
+      <MetaTags
+        title={metaDetails.title}
+        description={metaDetails.description}
+        keywords={metaDetails.keywords}
+        slug={metaDetails.slug}
+        alt={metaDetails.alt}
+      />
       {" "}
       {teamMembers.length === 0 ? (
         <> Data Not Found</>

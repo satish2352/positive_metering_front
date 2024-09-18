@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import "../../assets/CSS/aboutus.css";
 import ImageMagnifier from '../ProductComponenets/ImageMagnifier'
 const ProductTab = ({ no }) => {
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -19,6 +20,7 @@ const ProductTab = ({ no }) => {
   const handleProductClick = (productId) => {
     navigate(`/product/${productId}`);
   };
+
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -131,7 +133,7 @@ const ProductTab = ({ no }) => {
                     data-aos="fade-up"
                     data-aos-easing="linear"
                     data-aos-duration="1500"
-                    src={`http://api.positivemetering.ae.sumagodemo.com/${activeProduct.images[0].img}`}
+                    src={`https://positivebackend.sumagodemo.com/${activeProduct.images[0].img}`}
                     alt={activeProduct.productName}
                     className="img-fluid producttabimg p-5 p-lg-1"
                   />
@@ -150,7 +152,7 @@ const ProductTab = ({ no }) => {
                           <img
                             src={image.img}
                             className="img-fluid"
-                         
+
                           />
                         </div>
                       </Carousel.Item>
@@ -190,7 +192,11 @@ const ProductTab = ({ no }) => {
                         <Button
                           variant="outline-dark"
                           className="rounded-5 py-2 fs-6 px-4 m-lg-3 shadow-sm"
-                          onClick={() => handleProductClick(activeProduct.id)}
+                          onClick={() => {
+                            handleProductClick(activeProduct.id);
+                            // setprdname(activeProduct.productName);
+                          }}
+
                         >
                           Read More
                         </Button>
@@ -205,7 +211,9 @@ const ProductTab = ({ no }) => {
                         <Col
                           key={product.id}
                           className={`plungercard mx-1 d-grid justify-content-center ${activeTab === product.id ? "active" : ""}`}
-                          onClick={() => handleTabClick(product.id)}
+                          onClick={() => { handleTabClick(product.id);
+                            //  prdname(product.productName); 
+                            }}
                         >
                           <div className="prdimg">
                             {product.images && product.images.length > 0 && (

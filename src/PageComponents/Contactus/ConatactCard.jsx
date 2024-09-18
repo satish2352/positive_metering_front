@@ -55,7 +55,7 @@ const ContactCard = () => {
                 data-aos-duration="1500"
               >
                 <div>
-                  <img src={contact.img} alt="" className="img-fluid" />
+                  <img src={contact.img} alt={contact.title} className="img-fluid" />
                 </div>
                 <div className="caontatctcardsubsection  py-4">
                   <h5 className="fw-bolder ps-3">{contact.title}</h5>

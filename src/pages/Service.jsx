@@ -45,6 +45,7 @@ const services = [
 ];
 
 const Service = () => {
+  document.title="Services | Positive Metering"
   const [flippedStates, setFlippedStates] = useState(
     services.reduce((acc, service) => ({ ...acc, [service.id]: false }), {})
   );

@@ -5,6 +5,8 @@ import UploadCV from '../PageComponents/Contactus/UploadCV'
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 const Contactus = () => {
+  document.title = "Contactus | Positive Metering"
+
   const location = useLocation();
   useEffect(() => {
     if (location.state && location.state.scrollTo) {

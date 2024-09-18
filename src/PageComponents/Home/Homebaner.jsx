@@ -92,7 +92,7 @@ function Homebaner() {
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <Image src={a.img} rounded className="img-fluid " />
+                <Image src={a.img} rounded className="img-fluid " alt="Home banners" />
               )}
             </Carousel.Item>
           ))}

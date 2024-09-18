@@ -9,8 +9,19 @@ import Image from "react-bootstrap/Image";
 import "../assets/CSS/career.css";
 import ResponsiveImage from "./ResponsiveImage";
 import ReCAPTCHA from "react-google-recaptcha";
+import { Helmet } from "react-helmet";
+import MetaTags from "../components/MetaTags";
+const metaDetails = {
+  title: 'Join Positive Metering Pvt. Ltd: Apply for Jobs Today',
+  description: 'Explore exciting career opportunities at Positive Metering Pvt. Ltd. Apply now for rewarding positions and join our dynamic team',
+  keywords: 'Apply for Jobs',
+  slug: 'career',
+  alt: 'Apply for Jobs at Positive Metering Pvt. Ltd',
+};
 
 const Career = () => {
+  // document.title = "Career | Positive Metering"
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [mobile, setMobile] = useState("");
@@ -67,7 +78,7 @@ const Career = () => {
       isValid = false;
     } else {
       const allowedExtensions = /(\.pdf)$/i;
-      if (uploadcv.size > 300 * 1024) {
+      if (uploadcv.size > 1024 * 1024) {
         // 1MB size limit
         errors.uploadcv = "file size should be less than 1MB";
         isValid = false;
@@ -154,6 +165,13 @@ const Career = () => {
 
   return (
     <>
+      <MetaTags
+        title={metaDetails.title}
+        description={metaDetails.description}
+        keywords={metaDetails.keywords}
+        slug={metaDetails.slug}
+        alt={metaDetails.alt}
+      />
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
 
       <Container fluid className="creerback">
@@ -303,7 +321,10 @@ const Career = () => {
                       // local
                       // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                       // positive key
-                         sitekey="6Ld2KC4qAAAAAJJS-pB0oUBITPMIO39Ry9xAnThq"
+                      sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+
+                      // positive.ae
+                      // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
                       onChange={onChange}
                     />
                     {errors.captcha && (

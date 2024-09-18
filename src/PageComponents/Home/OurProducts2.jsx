@@ -102,7 +102,7 @@ function OurProducts2() {
                 <img
                   src={product.img}
                   className="img-fluid ourprdimg w-100 h-100"
-                  alt={product.name || "Product Image"}
+                  alt={"Product Image"}
                 />
                 <p className=" shadow-sm">{product.title}</p>
               </div>
@@ -116,7 +116,7 @@ function OurProducts2() {
                   <img
                     src={product.img}
                     className="img-fluid ourprdimg w-100 h-100"
-                    alt={product.name || "Product Image"}
+                    alt={product.title || "Product Image"}
                     onClick={() => handleImageClick(product.img)}
                   />
                   <p className=" shadow-sm">{product.title}</p>

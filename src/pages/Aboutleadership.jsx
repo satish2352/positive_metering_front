@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "../assets/CSS/aboutus.css";
-import banner from "../assets/img/About/BANER about us.jpg";
-import New from "../assets/img/About/about us  PAGE.jpg";
+import New   from "../assets/img/about us  PAGE.jpg";
+import  banner from "../assets/img/BANER about us.png";
 import lder1 from "../assets/img/About/Group 1000004058 (1).png";
 import lder2 from "../assets/img/About/leadershipimg1.png";
 import lder3 from "../assets/img/About/leadershipimg2.png";
@@ -12,6 +12,8 @@ import Heading from "../components/Heading";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ResponsiveImage from "./ResponsiveImage";
+import MetaTags from "../components/MetaTags";
+import { Helmet } from "react-helmet";
 
 const leadershipData = [
   {
@@ -40,10 +42,18 @@ const leadershipData = [
     name: "Ms. Madhuli Mutalik",
     title: "Chief Material Manager",
     description:
-      "Ms. Madhuli Mutalik is a second-generation entrepreneur and an integral part of Positive Metering Pumps (I) Pvt Ltd. She has been actively involved with the company for several years, starting her journey by mastering inventory management. Madhuli transformed our material flow by introducing practical approaches and implementing highly effective processes with guidance. She actively participates in material cost negotiations, aiming for win-win solutions that meet both parties' needs and goals. Together with her team, Madhuli ensures optimal inventory levels at all stages, from raw materials to final pump assembly, meeting production demands while minimizing excess stock. This includes generating appropriate reports, monitoring inventory levels and costs, and implementing .",   },
+      "Ms. Madhuli Mutalik is a second-generation entrepreneur and an integral part of Positive Metering Pumps (I) Pvt Ltd. She has been actively involved with the company for several years, starting her journey by mastering inventory management. Madhuli transformed our material flow by introducing practical approaches and implementing highly effective processes with guidance. She actively participates in material cost negotiations, aiming for win-win solutions that meet both parties' needs and goals. Together with her team, Madhuli ensures optimal inventory levels at all stages, from raw materials to final pump assembly, meeting production demands while minimizing excess stock. This includes generating appropriate reports, monitoring inventory levels and costs, and implementing .",
+  },
 ];
-
+const metaDetails = {
+  title: 'About Positive Metering Pvt. Ltd: Leading Metering Pump Manufacturer',
+  description: 'Positive Metering Pvt. Ltd, a top manufacturer of metering pumps, including chlorine dosing pumps in India. Trust our dosing pump and diaphragm pump expertise.',
+  keywords: 'Metering Pump Manufacturer in India',
+  slug: 'aboutleadership',
+  alt: 'About Positive Metering Pvt. Ltd: Leading Metering Pump Manufacturer',
+};
 const Aboutleadership = () => {
+  document.title = "Aboutus | Positive Metering"
   window.scrollTo(0, 0);
   useEffect(() => {
     AOS.init({
@@ -54,7 +64,13 @@ const Aboutleadership = () => {
   return (
     <>
       {/* <Heading heading="leadership"/> */}
-
+      <MetaTags
+        title={metaDetails.title}
+        description={metaDetails.description}
+        keywords={metaDetails.keywords}
+        slug={metaDetails.slug}
+        alt={metaDetails.alt}
+      />
       <Container fluid className="px-0">
         <ResponsiveImage mobileSrc={New} desktopSrc={banner} />
       </Container>
@@ -93,7 +109,7 @@ const Aboutleadership = () => {
                       style={{
                         letterSpacing: "1px",
                         fontFamily: "Roboto",
-                 
+
                       }}
                     >
                       {leader.name}
@@ -104,13 +120,13 @@ const Aboutleadership = () => {
                       style={{
                         fontFamily: "Roboto",
                         textAlign: "justify",
-                     
+
                         paddingup: "20px",
                       }}
                     >
                       {leader.description}
                     </p>
-                    <div  className="social-icons">
+                    <div className="social-icons">
                       <FaFacebook className="icon" />
                       <FaInstagram className="icon" />
                       <FaLinkedin className="icon" />

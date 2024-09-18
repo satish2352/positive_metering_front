@@ -9,12 +9,27 @@ import Infrastructure from '../PageComponents/About/Infrastructure';
 import ss from '../assets/img/blog/1 (2).jpeg'
 import Heading from '../assets/img/blog/1 (2).jpeg';
 import ResponsiveImage from './ResponsiveImage';
+import MetaTags from '../components/MetaTags';
+const metaDetails = {
+  title: 'About Positive Metering Pvt. Ltd: Leading Metering Pump Manufacturer',
+  description: 'Positive Metering Pvt. Ltd, a top manufacturer of metering pumps, including chlorine dosing pumps in India. Trust our dosing pump and diaphragm pump expertise.',
+  keywords: 'Metering Pump Manufacturer in India',
+  slug: 'aboutleadership',
+  alt: 'About Positive Metering Pvt. Ltd: Leading Metering Pump Manufacturer',
+};
 const Aboutourstory = () => {
+  document.title = "Aboutus | Positive Metering"
   window.scrollTo(0, 0);
   return (
     <>
       {/* <Heading  heading="Our story"/> */}
-
+      <MetaTags
+        title={metaDetails.title}
+        description={metaDetails.description}
+        keywords={metaDetails.keywords}
+        slug={metaDetails.slug}
+        alt={metaDetails.alt}
+      />
       <Container fluid className="px-0">
         <ResponsiveImage mobileSrc={ss} desktopSrc={infrastructure} />
       </Container>

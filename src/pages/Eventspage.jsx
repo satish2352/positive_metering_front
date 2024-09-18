@@ -9,6 +9,8 @@ import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import { IoMdClose } from "react-icons/io";
 
 const Eventspage = () => {
+    document.title="Events | Positive Metering"
+
   const [events, setEvents] = useState([]);
   const [showModal, setShowModal] = useState(false);
   const [modalImage, setModalImage] = useState("");

@@ -17,9 +17,26 @@ import Shopnowhome from "../PageComponents/Home/Shopnowhome";
 import { ProductContext } from "../ProductContext";
 import OurProducts2 from "../PageComponents/Home/OurProducts2";
 import Testomonial2 from "../PageComponents/Home/Testomonial2";
+import MetaTags from "../components/MetaTags";
 const Home = () => {
+  document.title = "Positive Metering"
+
+  const metaDetails = {
+    title: 'Leading Metering Pump Manufacturer in India | Positive Metering Pvt. Ltd',
+    description: 'Explore top-quality metering pumps, including chlorine dosing pumps, by Positive Metering Pvt. Ltd, the trusted manufacturer in India.',
+    keywords: 'Metering Pump Manufacturer in India',
+    slug: '',
+    alt: 'Leading Metering Pump Manufacturer - Positive Metering Pvt. Ltd',
+  };
   return (
     <>
+      <MetaTags
+        title={metaDetails.title}
+        description={metaDetails.description}
+        keywords={metaDetails.keywords}
+        slug={metaDetails.slug}
+        alt={metaDetails.alt}
+      />
       <Homebaner />
       <HomeAboutus />
       <OurProducts />
@@ -27,9 +44,9 @@ const Home = () => {
       <Producttab />
       <Shopnowhome />
       <Testomonial />
-      <Testomonial2/>
+      <Testomonial2 />
       <Requestcallback />
-      <Requestcallback2/>
+      <Requestcallback2 />
       <Progress_cavity_screw_pump />
     </>
   );

@@ -16,6 +16,8 @@ const countWords = (text) => {
 };
 
 function Eventdetails({ image, title, longetxt }) {
+  document.title="Events | Positive Metering"
+
   // Determine grid classes based on word count
   const isLongText = countWords(longetxt) > 190;
   const imageColClass = isLongText ? "col-12 d-flex justify-content-center" : "col-lg-5  col-12";

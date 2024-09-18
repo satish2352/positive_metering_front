@@ -287,7 +287,9 @@ const Footer = () => {
                         <li className="pt-2">
                           <Link
                             className="nvlink"
-                            onClick={() => window.scrollTo(0, 500)}
+                            onClick={() => { window.scrollTo(0, 500);
+                              //  setprdname(a.productName) 
+                              }}
                             to={`/product/${a.id}`}
                             style={{ textDecoration: "none", color: "black" }}
                           >
@@ -307,7 +309,9 @@ const Footer = () => {
                         <li className="pt-2">
                           <Link
                             className="nvlink"
-                            onClick={() => window.scrollTo(0, 500)}
+                            onClick={() => { window.scrollTo(0, 500);
+                              //  setprdname(a.productName) 
+                              }}
                             to={`/product/${a.id}`}
                             style={{ textDecoration: "none", color: "black" }}
                           >
@@ -337,7 +341,9 @@ const Footer = () => {
                         <li className="pt-1">
                           <Link
                             className="nvlink"
-                            onClick={() => window.scrollTo(0, 500)}
+                            onClick={() => { window.scrollTo(0, 500);
+                              //  setprdname(a.productName) 
+                              }}
                             to={`/product/${a.id}`}
                             style={{ textDecoration: "none", color: "black" }}
                           >

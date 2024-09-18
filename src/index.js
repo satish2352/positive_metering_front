@@ -6,15 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import 'aos/dist/aos.css';
 import { ProductProvider } from './ProductContext';
-
+import { HelmetProvider } from 'react-helmet-async';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ProductProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ProductProvider>
+    <HelmetProvider>
+      <ProductProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ProductProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );
 

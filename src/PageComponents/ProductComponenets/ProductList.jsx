@@ -12,8 +12,11 @@ import ProductTab from "../Home/Producttab";
 import imgmobile from "../../assets/img/changes/changes/product PAGE.jpg";
 import imgtop from "../../assets/img/changes/changes/BANER product.jpg";
 import { IoMdClose } from "react-icons/io";
-
+import MetaTags from "../../components/MetaTags";
 const ProductList = ({ no }) => {
+  const [prdname, setprdname] = useState("Product")
+
+  document.title = `Product | Positive Metering`
   const { id } = useParams();
   const [showModal, setShowModal] = useState(false);
   const [modalImage, setModalImage] = useState("");
@@ -143,12 +146,87 @@ const ProductList = ({ no }) => {
       }, 400); // Adjust timeout as needed to ensure navigation completes
     }
   };
+  const metaData = [
+    {
+      id: 25,
+      title: "Precision Plunger Dosing Pumps | Positive Metering Pvt. Ltd.",
+      description: "Discover precision dosing pumps for chemicals like chlorine with Positive Metering Pvt. Ltd. Trust PC technology for accuracy and efficiency in dosing solutions.",
+      focusKeyword: "chemical Dosing plunger pump",
+      slug: "plunger-dosing-pump",
+      altTag: "chemical high pressure plunger pump"
+    },
+    {
+      id: 26,
+      title: "Hydraulic Diaphragm Pump | Positive Metering Pvt. Ltd",
+      description: "Our high-pressure hydraulic diaphragm pump for accurate chemical dosing. Trust Positive Metering Pvt. Ltd for reliable & efficient diaphragm metering solutions.",
+      focusKeyword: "Hydraulic Diaphragm dosing Pump",
+      slug: "hydraulic-diaphragm-dosing-pump",
+      altTag: "Hydraulic Diaphragm dosing Pump - Positive Metering Pvt. Ltd"
+    },
+    {
+      id: 27,
+      title: "Mechanical Diaphragm Dosing Pump | Positive Metering Pvt. Ltd",
+      description: "Our reliable mechanical diaphragm dosing pump for precise chemical dosing water treatment applications. Trust Positive Metering Pvt. Ltd for quality solutions.",
+      focusKeyword: "mechanical diaphragm dosing pump",
+      slug: "mechanical-diaphragm-dosing-pump",
+      altTag: "Mechanical Diaphragm Dosing Pump"
+    },
+    {
+      id: 28,
+      title: "ED Series Electronic Dosing Pump | Positive Metering Pvt. Ltd",
+      description: "Precise dosing with our ED Series Electronic Dosing Pump. Trust Positive Metering Pvt. Ltd for digital metering pumps & accurate chemical dosing solutions.",
+      focusKeyword: "Electronic Dosing Pump",
+      slug: "ed-series-electronic-dosing-pump",
+      altTag: "ED Series Electronic Dosing Pump"
+    },
+    {
+      id: 1,
+      title: "DD Series Electronic Dosing Pump | Positive Metering Pvt. Ltd",
+      description: "Discover precise dosing with our DD Series Electronic Dosing Pump. Trust Positive Metering Pvt. Ltd for accurate chemical dosing solutions.",
+      focusKeyword: "Electronic Dosing Pump",
+      slug: "dd-series-electronic-dosing-pump",
+      altTag: "DD Series Electronic Dosing Pump"
+    },
+    {
+      id: 29,
+      title: "Progressive Cavity Screw Pump | Positive Metering Pvt. Ltd",
+      description: "Discover our reliable progressive cavity screw pump for precise dosing, including chlorine. Trust Positive Metering Pvt. Ltd, leaders in screw pump manufacturing.",
+      focusKeyword: "Progressive Cavity Screw Pump",
+      slug: "progressive-cavity-screw-pump",
+      altTag: "Progressive Cavity Screw Pump - Positive Metering Pvt. Ltd"
+    },
+    {
+      id: 30,
+      title: "Chemical Injection Skid by Positive Metering Pvt. Ltd",
+      description: "Our dependable chemical injection skid for precise dosing in cooling water systems. Trust Positive Metering Pvt. Ltd for efficient chemical dosing solutions.",
+      focusKeyword: "Chemical Injection Skid",
+      slug: "chemical-injection-skid",
+      altTag: "Chemical Injection Skid"
+    },
+    {
+      id: 31,
+      title: "High-Efficiency Agitators | Positive Metering Pvt. Ltd",
+      description: "Discover high-efficiency agitators, like flash mixers, for optimal mixing. Trust Positive Metering Pvt. Ltd for superior agitation solutions.",
+      focusKeyword: "Agitators",
+      slug: "high-efficiency-agitators",
+      altTag: "High-Efficiency Agitators - Positive Metering Pvt. Ltd"
+    }
+  ];
 
+  const metaDetails = metaData.find(meta => meta.id === parseInt(id, 10)) ;
   if (loading) return <p></p>;
   if (error) return <p></p>;
 
   return (
     <>
+
+      <MetaTags
+        title={metaDetails?.title}
+        description={metaDetails?.description}
+        keywords={metaDetails?.focusKeyword}
+        slug={metaDetails?.slug}
+        alt={metaDetails?.altTag}
+      />
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
       {products.length === 0 ? (
         <> Data Not Found</>
@@ -172,7 +250,7 @@ const ProductList = ({ no }) => {
                       .map((product, index) => (
                         <div
                           key={index}
-                          onClick={() => { handleProductClick(product.id); window.scrollTo(0, 400); }}
+                          onClick={() => { handleProductClick(product.id); window.scrollTo(0, 400); setprdname(product.productName) }}
                           className={`mx-xxl-3 product-list-item`}
                         >
                           <p
@@ -195,8 +273,8 @@ const ProductList = ({ no }) => {
                       <div className="prdimgs">
                         {productDetails.images && productDetails.images.length > 0 && (
                           <img
-
-                            src={`http://api.positivemetering.ae.sumagodemo.com/${productDetails.images[0].img}`}
+                            alt={productDetails.productName}
+                            src={`https://api.positivemetering.in/${productDetails.images[0].img}`}
                             rounded
                             fluid
                             className="rounded mx-auto img-fluid d-block"
@@ -250,7 +328,8 @@ const ProductList = ({ no }) => {
                           <Carousel.Item key={image.id} interval={900} >
                             <div className=" d-flex justify-content-center">
                               <img
-                                src={`http://api.positivemetering.ae.sumagodemo.com/${image.img}`}
+                                alt={productDetails.productName}
+                                src={`https://api.positivemetering.in/${image.img}`}
                                 className="img-fluid "
 
                               /></div>
@@ -302,8 +381,9 @@ const ProductList = ({ no }) => {
                                   <div className="prdimg">
                                     {product.images && product.images.length > 0 && (
                                       <img
+                                        alt={product.productName}
                                         variant="top"
-                                        src={`http://api.positivemetering.ae.sumagodemo.com/${product.images[0].img}`}
+                                        src={`https://api.positivemetering.in/${product.images[0].img}`}
                                         className=" img-fluid p-2"
                                       />)}
                                   </div>
@@ -331,6 +411,8 @@ const ProductList = ({ no }) => {
                                 <div className="prdimg">
                                   {product.images && product.images.length > 0 && (
                                     <img
+
+                                      alt={product.productName}
                                       variant="top"
                                       src={`${product.images[0].img}`}
 
@@ -453,10 +535,11 @@ const ProductList = ({ no }) => {
                                 {materialData.map((data) => (
                                   <Col key={data.id} xs={12} lg={3} md={6} className="mb-4">
                                     <img
-                                      src={`http://api.positivemetering.ae.sumagodemo.com/${data.img}`}
+                                      alt={data.productName}
+
+                                      src={`https://api.positivemetering.in/${data.img}`}
                                       className="eventimg img-fluid rounded-4"
-                                      alt={data.title}
-                                      onClick={() => handleImageClick(`http://api.positivemetering.ae.sumagodemo.com/${data.img}`)}
+                                      onClick={() => handleImageClick(`https://api.positivemetering.in/${data.img}`)}
                                       style={{ cursor: "pointer" }}
                                     />
                                   </Col>
