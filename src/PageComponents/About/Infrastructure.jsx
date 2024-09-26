@@ -84,6 +84,7 @@ const Infrastructure = () => {
               <img
                 src={selectedCard?.img}
                 alt={selectedCard?.title}
+                title={selectedCard?.title}
                 className="img-fluid rounded-4 mb-3"
               />
               <p>{selectedCard?.desc}</p>

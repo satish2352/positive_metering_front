@@ -14,7 +14,7 @@ const metaDetails = {
   alt: 'About Positive Metering Pvt. Ltd: Leading Metering Pump Manufacturer',
 };
 const Aboutourteam = () => {
-  document.title = "Aboutus | Positive Metering"
+  document.title = "Aboutus | Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators"
   const [hoveredCard, setHoveredCard] = useState(null);
   const [teamMembers, setTeamMembers] = useState([]);
 
@@ -82,6 +82,8 @@ const Aboutourteam = () => {
                           <img
                             variant="top"
                             src={member.img}
+                            alt={member.name}
+                            title={member.name}
                             className={
                               hoveredCard === member.position_no
                                 ? "colored-image teamimg"

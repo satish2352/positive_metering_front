@@ -9,7 +9,6 @@ import "aos/dist/aos.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../../assets/CSS/aboutus.css";
-import ImageMagnifier from '../ProductComponenets/ImageMagnifier'
 const ProductTab = ({ no }) => {
 
   const [products, setProducts] = useState([]);
@@ -152,7 +151,8 @@ const ProductTab = ({ no }) => {
                           <img
                             src={image.img}
                             className="img-fluid"
-
+                            alt={image.productName}
+                            title={image.productName}
                           />
                         </div>
                       </Carousel.Item>
@@ -221,6 +221,8 @@ const ProductTab = ({ no }) => {
                                 variant="top"
                                 src={`${product.images[0].img}`}
                                 className="img-fluid p-2"
+                                alt={product.productName}
+                                title={product.productName}
                               />
                             )}
                           </div>
@@ -247,6 +249,8 @@ const ProductTab = ({ no }) => {
                                 variant="top"
                                 src={`${product.images[0].img}`}
                                 className="img-fluid p-2"
+                                alt={product.productName}
+                                title={product.productName} 
                               />
                             )}
                           </div>

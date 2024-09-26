@@ -30,7 +30,8 @@ function Eventdetails({ image, title, longetxt }) {
       <Container className="p-2 p-lg-5 newspaper-layout">
         <Row>
           <Col className={imageColClass}>
-            <Image src={image}  fluid />
+            <Image src={image} 
+            alt="Join Positive Metering" title="Join Positive Metering" fluid />
           </Col>
           <Col className={textColClass}>
             <h5 className="title">{title}</h5>

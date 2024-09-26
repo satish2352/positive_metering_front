@@ -48,6 +48,7 @@ const Eventspage = () => {
                 src={event.img}
                 className="eventimg rounded-4"
                 alt={event.title}
+                title={event.title}
                 onClick={() => handleImageClick(event.img)}
                 style={{ cursor: "pointer" }}
               />
@@ -81,6 +82,7 @@ const Eventspage = () => {
           src={modalImage}
           className="img-fluid"
           alt="Event"
+          title="Event"
           style={{ width: "100%", height: "auto" }}
         />
       </Modal.Body>

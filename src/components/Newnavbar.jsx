@@ -29,7 +29,7 @@ const NewNavbar = () => {
     <div className="mobile-navbar d-lg-none d-block">
       <div className="navbar-header">
         <Link to="/">
-          <img src={logo} alt="Company Logo" className="logo" />
+          <img src={logo} alt="Company Logo" title="Company Logo" className="logo" />
         </Link>
         <button className="toggle-button" onClick={toggleNavbar}>
           {isOpen ? <FaTimes /> : <FaBars />}

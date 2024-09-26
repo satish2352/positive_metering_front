@@ -172,12 +172,12 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           <ReCAPTCHA
             className="my-4 ms-2"
             ref={captchaRef}
-           // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+          //  sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
                         // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                         // positive.in
-                         sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+                        //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
                         // positive.ae
-                        // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+                        sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
             onChange={onChange}
           />
           {errors.captcha && (
@@ -226,14 +226,14 @@ const Shopnow = () => {
             </a>
             <br />
             <a
-              href="tel:+91-253-6613206"
+              href="tel:+91-253-6613206"aria-label="Positive Metering Pumps"
               className="BannerT "
               style={{ textDecoration: "none" }}
             >
               Phone: +91-253-6613206/6613218/6613214
             </a>
             <br />
-            <a href="mailto:info@positivemetering.com" className="BannerT " style={{ textDecoration: "none" }}>
+            <a href="mailto:info@positivemetering.com" aria-label="Positive Metering Pumps" className="BannerT " style={{ textDecoration: "none" }}>
               Mail: info@positivemetering.com
             </a>
             <br />
@@ -256,7 +256,7 @@ const Shopnow = () => {
           xs={12}
           className="d-none d-lg-flex align-items-end justify-content-end"
         >
-          <img className="imshopnow" src={im1} alt="Shop Now" />
+          <img className="imshopnow" src={im1} alt="Shop Now" title="Shop Now" />
         </Col>
       </Row>
     </Container>

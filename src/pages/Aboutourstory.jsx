@@ -18,7 +18,7 @@ const metaDetails = {
   alt: 'About Positive Metering Pvt. Ltd: Leading Metering Pump Manufacturer',
 };
 const Aboutourstory = () => {
-  document.title = "Aboutus | Positive Metering"
+  document.title = "Aboutus | Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators"
   window.scrollTo(0, 0);
   return (
     <>

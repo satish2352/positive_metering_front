@@ -181,6 +181,8 @@ const Producttabmobile = ({ no }) => {
                             variant="top"
                             src={product.img}
                             className="prdimg img-fluid p-2"
+                            alt={product.productName}
+                            title={product.productName}
                           />
                           <div
                             style={{ fontSize: "12px" }}
@@ -205,6 +207,8 @@ const Producttabmobile = ({ no }) => {
                             variant="top"
                             src={product.img}
                             className="prdimg img-fluid p-2"
+                            alt={product.productName}
+                            title={product.productName}
                           />
                           <div
                             style={{ fontSize: "12px" }}

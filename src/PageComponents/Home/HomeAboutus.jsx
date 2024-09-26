@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Container, Col, Row, Button } from "react-bootstrap";
 import AOS from "aos";
+import axios from "axios";
 import "aos/dist/aos.css";
-import about from "../../assets/img/News/WhatsApp_Image_2024-08-21_at_4.16.04_PM-removebg-preview.png";
-import Heading from "../../components/Heading";
 import { useNavigate } from "react-router-dom"; // Assuming you're using React Router
 
 const HomeAboutus = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [aboutData, setAboutData] = useState(null); // State to store fetched data
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,9 +26,22 @@ const HomeAboutus = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const fullText = `Positive Metering Pumps (India) Private Limited, established in 1996, is a well-established manufacturer of Chemical Dosing Pumps and Skid Mounted Process Plants & Systems, serving various process industries. We offer a wide range of customized services and tailored solutions to meet the diverse needs of our clients. Our operations are divided into two main divisions: Pumps Division and Skid Mounted Process Plant Packages Division. Our state-of-the-art manufacturing facilities are located in Nashik and Sinnar, Maharashtra, India, and adhere to ISO/IS 9001:2015, ISO/IS 14001:2015, and ISO/IS 18001:2018 quality standards. Simplifying chemical treatments worldwide, our esteemed market position is a testament to the dedicated efforts of our mentor, Mr. Sudhir Mutalik, a Mechanical Engineering BE graduate with 28 years of experience. His expertise has enabled us to design and customize products that meet the specific needs of our clients. We have earned a reputation for our user-friendly range, establishing a broad client network across India, and in Latin American, African, Asian, and European countries. To date, we have completed over 250,000 installations in 40 countries worldwide. For over two and a half decades, our core objectives and beliefs have centered around quality and customer satisfaction. We are a quality-driven company committed to continuous improvement in quality system inspection facilities to achieve total customer satisfaction. We prioritize environmental concerns in all aspects of our operations, ensuring that our products are designed according to mutually agreed specifications and terms.`;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/about/get-about");
+        setAboutData(response.data.responseData[0]);
+        setLoading(false);
+      } catch (err) {
+        setError("Failed to fetch data");
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
 
-  const truncatedText = fullText.split(" ").slice(0, 87).join(" ") + "";
+  const fullText = aboutData?.description || "No description available.";
+  const truncatedText = fullText.split(" ").slice(0, 87).join(" ") + "...";
 
   return (
     <Container fluid className="mt-lg-3 mt-2">
@@ -38,9 +53,13 @@ const HomeAboutus = () => {
           data-aos-easing="linear"
           data-aos-duration="1500"
         >
-        <div className=" d-flex align-content-center justify-content-center">
-        <img src={about} className="img-fluid" alt="About Us" />
-        </div>
+          <div className=" d-flex align-content-center justify-content-center">
+            {loading ? <p>Loading...</p> : 
+              error ? <p className="text-danger">{error}</p> : 
+              aboutData ? (
+                <img src={aboutData.img} className="img-fluid" title="About Us" alt="About Us" />
+              ) : <p>No image available</p>}
+          </div>
         </Col>
         <Col
           lg={7}
@@ -54,15 +73,18 @@ const HomeAboutus = () => {
             data-aos-duration="1500"
           >
             <h1 style={{ letterSpacing: "4px" }}>ABOUT US</h1>
-            <p className="pooja">
-              {isMobile ? truncatedText : fullText}
-              {isMobile && (
-                <Col
-                  className=" fs-5"
-                  onClick={() => navigate("/aboutleadership")}
-                ></Col>
-              )}
-            </p>
+            {loading ? <p>Loading...</p> : 
+              error ? <p className="text-danger">{error}</p> : (
+              <p className="pooja">
+                {isMobile ? truncatedText : fullText}
+                {isMobile && (
+                  <Col
+                    className=" fs-5"
+                    onClick={() => navigate("/aboutleadership")}
+                  ></Col>
+                )}
+              </p>
+            )}
           </div>
         </Col>
       </Row>

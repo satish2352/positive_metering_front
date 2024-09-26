@@ -27,7 +27,7 @@ function Banner() {
                         </Row>
                     </Col>
                     <Col lg={6} md={6} sm={12}>
-                        <Image src={blogdetails_img1} fluid style={{ height: '18rem',  width:'100%'}} />
+                        <Image src={blogdetails_img1} alt='POSITIVE METERING' title='POSITIVE METERING ' fluid style={{ height: '18rem',  width:'100%'}} />
                     </Col>
                 </Row>
             </Container>

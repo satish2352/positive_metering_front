@@ -11,9 +11,9 @@ function Progress_cavity_screw_pump() {
         <div className='buttonpart' ></div>
             <div style={{ backgroundColor: '#efefef',padding:'20px' }}>
                 <Container>
-                    <Image src={progress_img} fluid className='mt-5 mb-5 d-none d-md-block'data-aos="fade-up"data-aos-easing="linear"
+                    <Image src={progress_img} alt='Progress_cavity_screw_pump' title='Progress_cavity_screw_pump' fluid className='mt-5 mb-5 d-none d-md-block'data-aos="fade-up"data-aos-easing="linear"
               data-aos-duration="1500" />
-                    <Image src={im3} fluid className='mt-5 mb-5 d-block d-md-none' data-aos="fade-up"data-aos-easing="linear"
+                    <Image src={im3} alt='Progress_cavity_screw_pump' title='Progress_cavity_screw_pump' fluid className='mt-5 mb-5 d-block d-md-none' data-aos="fade-up"data-aos-easing="linear"
               data-aos-duration="1500"/>
 
                 </Container>

@@ -102,11 +102,11 @@ const Service = () => {
 };
 
 const FrontCard = ({ image }) => (
-  <img src={image} alt="Front" style={{ width: '100%' }} />
+  <img src={image} alt="Front" title='front' style={{ width: '100%' }} />
 );
 
 const BackCard = ({ image }) => (
-  <img src={image} alt="Back" style={{ width: '100%' }} />
+  <img src={image} alt="Back" title='Back' style={{ width: '100%' }} />
 );
 
 export default Service;

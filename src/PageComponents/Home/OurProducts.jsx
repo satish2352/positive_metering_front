@@ -103,6 +103,7 @@ function OurProducts() {
                   src={product.img}
                   className="img-fluid ourprdimg w-100 h-100"
                   alt={product.title || "Product Image"}
+                  title={product.title || "Product Image"}
                 />
                 <p className=" shadow-sm">{product.title}</p>
               </div>
@@ -117,6 +118,7 @@ function OurProducts() {
                     src={product.img}
                     className="img-fluid ourprdimg w-100 h-100"
                     alt={product.title || "Product Image"}
+                    title={product.title || "Product Image"}
                     onClick={() => handleImageClick(product.img)}
                   />
                   <p className=" shadow-sm">{product.title}</p>
@@ -153,7 +155,7 @@ function OurProducts() {
           >
             <FaTimes />
           </button>
-          <img src={selectedImage} className="img-fluid w-100" alt="Product" />
+          <img src={selectedImage} className="img-fluid w-100" alt="Product"  title="Product"/>
         </Modal.Body>
       </Modal>
     </>

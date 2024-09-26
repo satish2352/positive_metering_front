@@ -19,37 +19,37 @@ import OurProducts2 from "../PageComponents/Home/OurProducts2";
 import Testomonial2 from "../PageComponents/Home/Testomonial2";
 import MetaTags from "../components/MetaTags";
 const Home = () => {
-  document.title = "Positive Metering"
+  document.title = "Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators"
 
   const metaDetails = {
     title: 'Leading Metering Pump Manufacturer in India | Positive Metering Pvt. Ltd',
-    description: 'Explore top-quality metering pumps, including chlorine dosing pumps, by Positive Metering Pvt. Ltd, the trusted manufacturer in India.',
-    keywords: 'Metering Pump Manufacturer in India',
+    description: 'Explore top-quality metering pumps, including chlorine dosing pumps, by Positive Metering Pvt. Ltd, the trusted manufacturer in India. |    Positive Metering Pumps |    Explore our advanced industrial agitators, dosing pumps,    dosing skids, dosing systems, and injection packages.    Achieve precise mixing, accurate dosing, and efficientchemical injection for various industrial applications.',
+  keywords: 'Metering Pump Manufacturer in India',
     slug: '',
-    alt: 'Leading Metering Pump Manufacturer - Positive Metering Pvt. Ltd',
+      alt: 'Leading Metering Pump Manufacturer - Positive Metering Pvt. Ltd',
   };
-  return (
-    <>
-      <MetaTags
-        title={metaDetails.title}
-        description={metaDetails.description}
-        keywords={metaDetails.keywords}
-        slug={metaDetails.slug}
-        alt={metaDetails.alt}
-      />
-      <Homebaner />
-      <HomeAboutus />
-      <OurProducts />
-      <OurProducts2 />
-      <Producttab />
-      <Shopnowhome />
-      <Testomonial />
-      <Testomonial2 />
-      <Requestcallback />
-      <Requestcallback2 />
-      <Progress_cavity_screw_pump />
-    </>
-  );
+return (
+  <>
+    <MetaTags
+      title={metaDetails.title}
+      description={metaDetails.description}
+      keywords={metaDetails.keywords}
+      slug={metaDetails.slug}
+      alt={metaDetails.alt}
+    />
+    <Homebaner />
+    <HomeAboutus />
+    <OurProducts />
+    <OurProducts2 />
+    <Producttab />
+    <Shopnowhome />
+    <Testomonial />
+    <Testomonial2 />
+    <Requestcallback />
+    <Requestcallback2 />
+    <Progress_cavity_screw_pump />
+  </>
+);
 };
 
 export default Home;

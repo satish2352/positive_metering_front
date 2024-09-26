@@ -10,8 +10,12 @@ import { FaWhatsapp } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { FaXTwitter } from "react-icons/fa6";
+
 import { ProductContext } from "../ProductContext";
 import { useNavigate } from "react-router-dom";
+import { CiTwitter } from "react-icons/ci";
+
 const Footer = () => {
   const navigate = useNavigate();
 
@@ -176,6 +180,7 @@ const Footer = () => {
                 <img
                   src={logo}
                   alt="Company Logo"
+                   title="Company Logo"
                   style={{ maxWidth: "100px" }}
                 />
               </Link>
@@ -287,9 +292,10 @@ const Footer = () => {
                         <li className="pt-2">
                           <Link
                             className="nvlink"
-                            onClick={() => { window.scrollTo(0, 500);
+                            onClick={() => {
+                              window.scrollTo(0, 500);
                               //  setprdname(a.productName) 
-                              }}
+                            }}
                             to={`/product/${a.id}`}
                             style={{ textDecoration: "none", color: "black" }}
                           >
@@ -309,9 +315,10 @@ const Footer = () => {
                         <li className="pt-2">
                           <Link
                             className="nvlink"
-                            onClick={() => { window.scrollTo(0, 500);
+                            onClick={() => {
+                              window.scrollTo(0, 500);
                               //  setprdname(a.productName) 
-                              }}
+                            }}
                             to={`/product/${a.id}`}
                             style={{ textDecoration: "none", color: "black" }}
                           >
@@ -341,9 +348,10 @@ const Footer = () => {
                         <li className="pt-1">
                           <Link
                             className="nvlink"
-                            onClick={() => { window.scrollTo(0, 500);
+                            onClick={() => {
+                              window.scrollTo(0, 500);
                               //  setprdname(a.productName) 
-                              }}
+                            }}
                             to={`/product/${a.id}`}
                             style={{ textDecoration: "none", color: "black" }}
                           >
@@ -366,7 +374,7 @@ const Footer = () => {
             lg={6}
             className="text-center d-flex justify-content-evenly align-items-center"
           > <div>
-              <a href="https://website.positivemetering.in/" className="smglink">
+              <a href="https://website.positivemetering.in/" className="smglink" aria-label="Positive Metering Pumps">
                 &copy; {currentYear}
                 <ins className="">  Positive Metering Pumps All Rights Reserved.</ins>{" "}
               </a>
@@ -378,20 +386,23 @@ const Footer = () => {
 
                 {socialLinks && (
                   <>
-                    <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer">
+                    <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps">
                       <CiFacebook className="icon-hover mx-2" />
                     </a>
-                    <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer">
+                    <a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps">
                       <FaInstagram className="icon-hover mx-2" />
                     </a>
-                    <a href="mailto:info@positivemetering.com" target="_blank" rel="noopener noreferrer">
+                    <a href="mailto:info@positivemetering.com" target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps">
                       <MdOutlineMail className="icon-hover mx-2" />
                     </a>
-                    <a href={`https://wa.me/${socialLinks.whatsapp}`} target="_blank" rel="noopener noreferrer">
+                    {/* <a href={`https://wa.me/${socialLinks.whatsapp}`} target="_blank" rel="noopener noreferrer">
                       <FaWhatsapp className="icon-hover mx-2" />
-                    </a>
-                    <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer">
+                    </a> */}
+                    <a href={socialLinks.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps">
                       <CiLinkedin className="icon-hover mx-2" />
+                    </a>
+                    <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps">
+                      <FaXTwitter className="icon-hover fw-bolder mx-2" />
                     </a>
                   </>
                 )}

@@ -12,7 +12,7 @@ import { FaDownload } from "react-icons/fa6";
 import "aos/dist/aos.css";
 
 const NewsAndEvents = () => {
-  document.title = "News | Positive Metering"
+  document.title = "News | Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators"
   const [cardData, setCardData] = useState([]);
   const navigate = useNavigate();
 
@@ -113,7 +113,7 @@ const NewsAndEvents = () => {
                       <a
                         className="rounded-5 border-3 mx-3 px-3 py-2 border border-danger fw-bolder text-dark d-block d-lg-none"
                         // onClick={() => handleDownload(card.pdf)}
-                        target="_blank"
+                        target="_blank"aria-label="Positive Metering Pumps"
                         href={card.pdf}
                         style={{ cursor: "pointer" }}
                       >

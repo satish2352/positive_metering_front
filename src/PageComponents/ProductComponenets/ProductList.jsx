@@ -4,7 +4,7 @@ import { ProductContext } from "../../ProductContext";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import Slider from "react-slick";
-import ImageMagnifier from './ImageMagnifier'
+
 import ResponsiveImage from "../../pages/ResponsiveImage";
 import "../../assets/CSS/productlist.css";
 import ProductTechnicaldata from "./ProductTechnicaldata";
@@ -16,7 +16,7 @@ import MetaTags from "../../components/MetaTags";
 const ProductList = ({ no }) => {
   const [prdname, setprdname] = useState("Product")
 
-  document.title = `Product | Positive Metering`
+  document.title = `Product |Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators`
   const { id } = useParams();
   const [showModal, setShowModal] = useState(false);
   const [modalImage, setModalImage] = useState("");
@@ -274,14 +274,15 @@ const ProductList = ({ no }) => {
                         {productDetails.images && productDetails.images.length > 0 && (
                           <img
                             alt={productDetails.productName}
-                            src={`https://api.positivemetering.in/${productDetails.images[0].img}`}
+                            title={productDetails.productName}
+                            src={`https://api.positivemetering.ae/${productDetails.images[0].img}`}
                             rounded
                             fluid
                             className="rounded mx-auto img-fluid d-block"
                             style={{ height: "23rem" }}
                           />)}
                       </div>
-                      <h1 className="p-2">Application</h1>
+                      <h2 className="p-2 fs-1">Application</h2>
 
                       {ApplicationData.map((data) => (
                         <div
@@ -329,7 +330,8 @@ const ProductList = ({ no }) => {
                             <div className=" d-flex justify-content-center">
                               <img
                                 alt={productDetails.productName}
-                                src={`https://api.positivemetering.in/${image.img}`}
+                                title={productDetails.productName}
+                                src={`https://api.positivemetering.ae/${image.img}`}
                                 className="img-fluid "
 
                               /></div>
@@ -382,8 +384,9 @@ const ProductList = ({ no }) => {
                                     {product.images && product.images.length > 0 && (
                                       <img
                                         alt={product.productName}
+                                        title={product.productName}
                                         variant="top"
-                                        src={`https://api.positivemetering.in/${product.images[0].img}`}
+                                        src={`https://api.positivemetering.ae/${product.images[0].img}`}
                                         className=" img-fluid p-2"
                                       />)}
                                   </div>
@@ -411,7 +414,7 @@ const ProductList = ({ no }) => {
                                 <div className="prdimg">
                                   {product.images && product.images.length > 0 && (
                                     <img
-
+                                      title={product.productName}
                                       alt={product.productName}
                                       variant="top"
                                       src={`${product.images[0].img}`}
@@ -536,10 +539,10 @@ const ProductList = ({ no }) => {
                                   <Col key={data.id} xs={12} lg={3} md={6} className="mb-4">
                                     <img
                                       alt={data.productName}
-
-                                      src={`https://api.positivemetering.in/${data.img}`}
+                                      title={data.productName}
+                                      src={`https://api.positivemetering.ae/${data.img}`}
                                       className="eventimg img-fluid rounded-4"
-                                      onClick={() => handleImageClick(`https://api.positivemetering.in/${data.img}`)}
+                                      onClick={() => handleImageClick(`https://api.positivemetering.ae/${data.img}`)}
                                       style={{ cursor: "pointer" }}
                                     />
                                   </Col>
@@ -578,6 +581,7 @@ const ProductList = ({ no }) => {
                           src={modalImage}
                           className="img-fluid"
                           alt="Event"
+                          title="Event"
                           style={{ width: "100%", height: "auto" }}
                         />
                       </Modal.Body>

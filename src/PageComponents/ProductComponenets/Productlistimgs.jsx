@@ -22,7 +22,7 @@ const Productlistimgs = () => {
         <Container  >
 
             <Row className='productlistimgsback py-3'>
-                <Image src={img} rounded fluid className='rounded mx-auto d-block' style={{height:'27rem'}}/>
+                <Image src={img} rounded fluid alt='POSITIVE METERING' title='POSITIVE METERING ' className='rounded mx-auto d-block' style={{height:'27rem'}}/>
             </Row>
             <Row >
                 <h1 className='p-2'>Applications</h1>

@@ -76,7 +76,7 @@ const ConatactCardFORSERVEICES = () => {
                                 <FaPhoneAlt  className="digital-icon" />
                               </Col>
                               <Col xs={10}>
-                                 <a href={`tel:${contact.phone}`} className="text-dark text-decoration-none">{contact.phone}</a>
+                                 <a href={`tel:${contact.phone}`} aria-label="Positive Metering Pumps" className="text-dark text-decoration-none">{contact.phone}</a>
                               </Col>
                             </Row>
                             <Row className="pt-1">
@@ -84,7 +84,7 @@ const ConatactCardFORSERVEICES = () => {
                                 <FaEnvelope className="digital-icon" />
                               </Col>
                               <Col xs={10}>
-                                 <a href={`mailto:${contact.email}`} className='text-dark text-decoration-none'>{contact.email}</a>
+                                 <a href={`mailto:${contact.email}`} aria-label="Positive Metering Pumps" className='text-dark text-decoration-none'>{contact.email}</a>
                               </Col>
                             </Row>
                           </Container>

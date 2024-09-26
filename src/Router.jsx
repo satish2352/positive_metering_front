@@ -20,6 +20,7 @@ import ProductList from './PageComponents/ProductComponenets/ProductList'
 import { ProductContext } from './ProductContext'
 import Eventdetails from './pages/Eventdetails'
 import Eventspage from './pages/Eventspage'
+import Movingicon from './components/Movingicon'
 const Router = () => {
     const { blog,newevents } = useContext(ProductContext);
 
@@ -63,6 +64,7 @@ const Router = () => {
                     );
                 })}
             </Routes>
+            <Movingicon/>
             <Footer />
         </>
     )

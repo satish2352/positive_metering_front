@@ -69,6 +69,7 @@ export const ProductProvider = ({ children }) => {
 
     fetchnewevents();
   }, []);
+  
   return (
     <ProductContext.Provider value={{ products, loading, error, blog, newevents,productNo }}>
       {children}

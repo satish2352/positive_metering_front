@@ -22,7 +22,7 @@ import imgtop from "../assets/img/aa/baner/BANER blog.jpg";
 import ReCAPTCHA from "react-google-recaptcha";
 
 function MyVerticallyCenteredModal({ show, onHide }) {
-    document.title = "Blogs | Positive Metering"
+  document.title = "Blogs | Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators"
 
 
   const [fullname, setFullname] = useState("");
@@ -182,12 +182,12 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           <ReCAPTCHA
             className="my-4 ms-2"
             ref={captchaRef}
-     // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
-                        // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
-                        // positive.in
-                         sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
-                        // positive.ae
-                        // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+            // sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
+            // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+            // positive.in
+            //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+            // positive.ae
+            sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
             onChange={onChange}
           />
           {errors.captcha && (
@@ -223,14 +223,17 @@ function Blogdetails({ image, title, longetxt }) {
         <Row className="d-flex justify-content-between align-content-center">
           <Col lg={8} md={8} sm={12} className="d-flex justify-content-center">
             <div className=" col-lg-7">
-              <img src={image} className="img-fluid rounded-4" fluid />
+              <img src={image} className="img-fluid rounded-4" alt={title} title={title} fluid />
             </div>
           </Col>
           <Col lg={4} md={4} sm={12} className=" d-none d-lg-block">
             <Image
               src={blogdetails_img2}
               rounded
+        
               style={{ height: "31rem", width: "30rem" }}
+              alt={title}
+                  title={title}
               fluid
             />
             <Button

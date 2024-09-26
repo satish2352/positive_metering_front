@@ -53,6 +53,8 @@ const Testomonial = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     waitForAnimate: false,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
     responsive: [
       {
         breakpoint: 1400,
@@ -99,39 +101,44 @@ const Testomonial = () => {
         <Row className="">
           {testimonial.filter((testimonial) => testimonial.isActive).map((testimonial) => (
             <Col key={testimonial.id} md={4} className='text-center' style={{ marginTop: '-50px' }}>
-            <div onClick={() => handleShowModal(testimonial)}>
-              <div className='profileposition'>
-                <h1 className='testomonialprofile'>{testimonial.experience}</h1>
-              </div>
-              <div className='testback'>
-                <h4>{testimonial.company_Name}</h4>
+              <div onClick={() => handleShowModal(testimonial)}>
+                <div className='profileposition'>
+                  <h2
+                    className='testomonialprofile fs-1'
+                    style={{ backgroundImage: `url(${testimonial.img})` }}
+                  >{testimonial.experience}
+                    {/* &nbsp; */}
+                    {/* <span style={{ fontSize: "10px" }}>Years</span> */}
+                  </h2>                 </div>
+                <div className='testback'>
+                  <h4>{testimonial.company_Name}</h4>
 
-                <p>
-                  {truncateReview(testimonial.review, 200)}
-                  {testimonial.review.length > 200 && (
-                    <span className='read-more' onClick={() => handleShowModal(testimonial)}>
-                      ... <b>Read More</b>
-                    </span>
-                  )}
-                </p>
-                <Rating
-                  iconsCount={5}
-                  initialValue={testimonial.star}
-                  size={20}
-                  readonly
-                  fillColor='orange'
-                  emptyColor='gray'
-                />
-                <div className='text-dark py-2' style={{ fontStyle: "italic" }}>
-                  <div>
-                    -{testimonial.name}
+                  <p>
+                    {truncateReview(testimonial.review, 200)}
+                    {testimonial.review.length > 200 && (
+                      <span className='read-more' onClick={() => handleShowModal(testimonial)}>
+                        ... <b>Read More</b>
+                      </span>
+                    )}
+                  </p>
+                  <Rating
+                    iconsCount={5}
+                    initialValue={testimonial.star}
+                    size={20}
+                    readonly
+                    fillColor='orange'
+                    emptyColor='gray'
+                  />
+                  <div className='text-dark py-2' style={{ fontStyle: "italic" }}>
+                    <div>
+                      -{testimonial.name}
+                    </div>
+
                   </div>
-                 
-                </div>
-           
-              </div>
 
-            </div>
+                </div>
+
+              </div>
 
 
 
@@ -143,8 +150,15 @@ const Testomonial = () => {
           {testimonial.filter((testimonial) => testimonial.isActive).map((testimonial) => (
             <div onClick={() => handleShowModal(testimonial)}>
               <div className='profileposition'>
-                <h1 className='testomonialprofile'>{testimonial.experience}</h1>
-              </div>
+                <h1
+                  className='testomonialprofile'
+                  style={{ backgroundImage: `url(${testimonial.img})` }}
+                >
+                  {testimonial.experience}
+
+                  {/* &nbsp;
+                  <span style={{ fontSize: "10px" }}>Years</span> */}
+                </h1>              </div>
               <div className='testback'>
                 <h4>{testimonial.company_Name}</h4>
 
@@ -168,9 +182,9 @@ const Testomonial = () => {
                   <div>
                     -{testimonial.name}
                   </div>
-                 
+
                 </div>
-           
+
               </div>
 
             </div>
@@ -186,8 +200,13 @@ const Testomonial = () => {
           <Col className='text-center'>
 
             <div className='profileposition'>
-              <h1 className='testomonialprofile'>{selectedTestimonial?.experience}</h1>
-
+              <h2
+                className='testomonialprofile'
+                style={{ backgroundImage: `url(${selectedTestimonial?.img})` }}
+              >{selectedTestimonial?.experience}
+                {/* &nbsp;
+              <span style={{ fontSize: "10px" }}>Years</span>*/}
+              </h2>
             </div>
             <div className='testback2'>
               <h4>{selectedTestimonial?.company_Name}</h4>
@@ -215,3 +234,39 @@ const Testomonial = () => {
 
 
 export default Testomonial
+
+const CustomNextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        right: "10px", // Adjust position
+        zIndex: 1,
+      }}
+      onClick={onClick}
+    >
+      <i className="fas fa-chevron-right" style={{ fontSize: "24px" }}></i>
+    </div>
+  );
+};
+
+const CustomPrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        left: "1px", // Adjust position
+        zIndex: 1,
+      }}
+      onClick={onClick}
+    >
+      <i className="fas fa-chevron-left" style={{ fontSize: "24px" }}></i>
+    </div>
+  );
+};

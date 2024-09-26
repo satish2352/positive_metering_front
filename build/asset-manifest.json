@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.194ae982.css",
-    "main.js": "/static/js/main.1c61c985.js",
+    "main.css": "/static/css/main.2df9d100.css",
+    "main.js": "/static/js/main.b1c89c38.js",
     "static/js/453.20b77820.chunk.js": "/static/js/453.20b77820.chunk.js",
     "static/media/My Videodsgfdg.mp4": "/static/media/My Videodsgfdg.0ecdc297719790d2b60f.mp4",
     "static/media/WhatsApp-Video-2024-07-18-at-115.mp4": "/static/media/WhatsApp-Video-2024-07-18-at-115.74012b059b6cfbbced47.mp4",
@@ -42,8 +42,6 @@
     "static/media/1 (1).jpeg": "/static/media/1 (1).5864f6cd3dc15bb04eac.jpeg",
     "static/media/Untitled-1 2 (1) (1).png": "/static/media/Untitled-1 2 (1) (1).3708c2e553857453c963.png",
     "static/media/DGHGF.png": "/static/media/DGHGF.69b779b61fbe8b4f7e8b.png",
-    "static/media/image 7.png": "/static/media/image 7.7e4044d2d1b477eedbf2.png",
-    "static/media/WhatsApp_Image_2024-08-21_at_4.16.04_PM-removebg-preview.png": "/static/media/WhatsApp_Image_2024-08-21_at_4.16.04_PM-removebg-preview.f10f6b7aed6f6c052ef4.png",
     "static/media/1 (2).jpeg": "/static/media/1 (2).df171371b23b753ec329.jpeg",
     "static/media/BANER services.jpg": "/static/media/BANER services.5695c9d4579f42b0fd3c.jpg",
     "static/media/BANER blog.jpg": "/static/media/BANER blog.da82fc4c7c3f552e4a75.jpg",
@@ -80,12 +78,12 @@
     "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
-    "main.194ae982.css.map": "/static/css/main.194ae982.css.map",
-    "main.1c61c985.js.map": "/static/js/main.1c61c985.js.map",
+    "main.2df9d100.css.map": "/static/css/main.2df9d100.css.map",
+    "main.b1c89c38.js.map": "/static/js/main.b1c89c38.js.map",
     "453.20b77820.chunk.js.map": "/static/js/453.20b77820.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.194ae982.css",
-    "static/js/main.1c61c985.js"
+    "static/css/main.2df9d100.css",
+    "static/js/main.b1c89c38.js"
   ]
 }

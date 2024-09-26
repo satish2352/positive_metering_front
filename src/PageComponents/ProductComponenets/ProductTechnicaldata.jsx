@@ -33,9 +33,9 @@ const ProductTechnicaldata = (props) => {
         <Row>
           <Col xl={12} className="mb-4">
             {isSmallScreen ? (
-              <Image src={img2} className="w-100" />
+              <Image alt='POSITIVE METERING' title='POSITIVE METERING ' src={img2} className="w-100" />
             ) : (
-              <Image src={img1} className="w-100" />
+              <Image alt='POSITIVE METERING' title='POSITIVE METERING ' src={img1} className="w-100" />
             )}
           </Col>
         </Row>

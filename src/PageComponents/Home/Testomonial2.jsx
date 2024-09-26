@@ -57,6 +57,8 @@ const Testomonial2 = () => {
     autoplaySpeed: 7000,
     cssEase: 'linear',
     infinite: true,
+    nextArrow: <CustomNextArrow />,
+    prevArrow: <CustomPrevArrow />,
     responsive: [
       {
         breakpoint: 1400,
@@ -95,9 +97,9 @@ const Testomonial2 = () => {
   };
 
   return (
-    <Container fluid className='testomonialback d-none d-lg-block py-5 text-center'>
+    <Container fluid className='testomonialback d-none d-lg-block py-5 text-center px-4'>
       <Heading heading={'TESTIMONIALS'} />
-  
+
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
@@ -110,11 +112,14 @@ const Testomonial2 = () => {
                 <Col key={testimonial.id} md={4} className='text-center'>
                   <div onClick={() => handleShowModal(testimonial)}>
                     <div className='profileposition'>
-                      <h1 className='testomonialprofile'>{testimonial.experience}</h1>
+                      <h2
+                        className='testomonialprofile fs-1'
+                        style={{ backgroundImage: `url(${testimonial.img})` }}
+                      >{testimonial.experience}</h2>
                     </div>
                     <div className='testback'>
                       <h4>{testimonial.company_Name}</h4>
-                      <p style={{fontSize:"13px"}}>
+                      <p style={{ fontSize: "10px" }}>
                         {truncateReview(testimonial.review, 200)}
                         {testimonial.review.length > 200 && (
                           <span className='read-more'>
@@ -143,7 +148,14 @@ const Testomonial2 = () => {
               {testimonial.map((testimonial) => (
                 <div key={testimonial.id} onClick={() => handleShowModal(testimonial)}>
                   <div className='profileposition'>
-                    <h1 className='testomonialprofile'>{testimonial.experience}</h1>
+                    <h1
+                      className='testomonialprofile'
+                      style={{ backgroundImage: `url(${testimonial.img})` }}
+                    >{testimonial.experience}
+                      {/* &nbsp;
+                      <span style={{ fontSize: "10px" }}>Years</span> */}
+                    </h1>
+
                   </div>
                   <div className='testback'>
                     <p>
@@ -172,7 +184,7 @@ const Testomonial2 = () => {
           )}
         </>
       )}
-  
+
       {selectedTestimonial && (
         <Modal show={showModal} onHide={handleCloseModal}>
           <Modal.Header closeButton>
@@ -181,7 +193,13 @@ const Testomonial2 = () => {
           <Modal.Body>
             <Col className='text-center'>
               <div className='profileposition'>
-                <h1 className='testomonialprofile'>{selectedTestimonial.experience}</h1>
+                <h2
+                  className='testomonialprofile'
+                  style={{ backgroundImage: `url(${selectedTestimonial.img})` }}
+                >{selectedTestimonial.experience}
+                  {/* &nbsp;
+                  <span style={{ fontSize: "10px" }}>Years</span> */}
+                </h2>
               </div>
               <div className='testback2'>
                 <h4>{selectedTestimonial.company_Name}</h4>
@@ -204,10 +222,45 @@ const Testomonial2 = () => {
       )}
     </Container>
   );
-  
+
 
 };
 
+const CustomNextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        right: "10px", // Adjust position
+        zIndex: 1,
+      }}
+      onClick={onClick}
+    >
+      <i className="fas fa-chevron-right" style={{ fontSize: "24px" }}></i>
+    </div>
+  );
+};
+
+const CustomPrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        left: "1px", // Adjust position
+        zIndex: 1,
+      }}
+      onClick={onClick}
+    >
+      <i className="fas fa-chevron-left" style={{ fontSize: "24px" }}></i>
+    </div>
+  );
+};
 
 
 export default Testomonial2

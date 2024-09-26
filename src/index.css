@@ -4,6 +4,7 @@
   width: 330px;
   right: 150px;
 }
+
 .nvlink:hover {
   color: #ee585d !important;
 }
@@ -16,6 +17,7 @@
     width: 25%;
     bottom: 288px;
   }
+
   .formImg2 {
     position: absolute;
     left: 5%;
@@ -24,6 +26,7 @@
     height: 195px;
     width: 350px;
   }
+
   .sendmessagebtn {
     margin-top: 280px;
   }
@@ -32,12 +35,16 @@
 
 .captcha-container {
   width: 200px !important;
-  transform-origin: 0 0; /* Adjust the origin to keep the position consistent */
+  transform-origin: 0 0;
+  /* Adjust the origin to keep the position consistent */
   margin-left: 7px;
 }
+
 .recaptcha-container {
-  transform: scale(0.75); /* Adjust the scale value as needed */
-  transform-origin: 0 0; /* Ensure the scaling is done from the top-left corner */
+  transform: scale(0.75);
+  /* Adjust the scale value as needed */
+  transform-origin: 0 0;
+  /* Ensure the scaling is done from the top-left corner */
   width: 100%;
   height: 100%;
 }
@@ -49,6 +56,19 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+/* input[type=number] {
   -moz-appearance: textfield;
+} */
+
+.slick-prev:before,
+.slick-next:before {
+  opacity: 1;
+  color: #6e6e6e !important;
+  font-size: 25px;
+}
+
+img {
+  pointer-events: none;
+  -webkit-user-drag: none;
+
 }

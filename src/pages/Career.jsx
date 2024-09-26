@@ -12,7 +12,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { Helmet } from "react-helmet";
 import MetaTags from "../components/MetaTags";
 const metaDetails = {
-  title: 'Join Positive Metering Pvt. Ltd: Apply for Jobs Today',
+  title: 'Join Positive Metering Pvt. Ltd: Apply for Jobs Today | Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators',
   description: 'Explore exciting career opportunities at Positive Metering Pvt. Ltd. Apply now for rewarding positions and join our dynamic team',
   keywords: 'Apply for Jobs',
   slug: 'career',
@@ -317,14 +317,14 @@ const Career = () => {
                     <ReCAPTCHA
                       ref={captchaRef}
                       //  testserver
-                      // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+                      // sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
                       // local
                       // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                       // positive key
-                      sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+                      // sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
 
                       // positive.ae
-                      // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+                      sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
                       onChange={onChange}
                     />
                     {errors.captcha && (
@@ -353,6 +353,8 @@ const Career = () => {
                       src={formImg}
                       rounded
                       fluid
+                      alt="Join Positive Metering"
+                      title="Join Positive Metering"
                       className="img-fluid d-none d-lg-block"
                     />
                   </Col>

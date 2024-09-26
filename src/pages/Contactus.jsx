@@ -5,7 +5,7 @@ import UploadCV from '../PageComponents/Contactus/UploadCV'
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 const Contactus = () => {
-  document.title = "Contactus | Positive Metering"
+  document.title = "Contactus | Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators"
 
   const location = useLocation();
   useEffect(() => {

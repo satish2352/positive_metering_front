@@ -156,10 +156,10 @@ const QuoteForm = ({ onClose }) => {
       <ReCAPTCHA
         className="my-4 ms-2"
         ref={captchaRef}
-        // sitekey="6Ld6HxwqAAAAAMOTx6ZQC9PINxSPNpfAsWnO9_Ni"
+        sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
         // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
         // positive.in
-         sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+        //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
         // positive.ae
         // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
 
@@ -220,7 +220,7 @@ const Getaquote = () => {
     >
       <Row className="getaquoteback">
         <Col lg={3} className="d-none d-lg-block">
-          <img src={im} className="img-fluid h-50" alt="Contact" />
+          <img src={im} className="img-fluid h-50" alt="Contact" title="Contact" />
         </Col>
         <Col
           lg={6}
@@ -233,7 +233,7 @@ const Getaquote = () => {
           </h1>
         </Col>
         <Col lg={3}>
-          <img src={im1} alt="Get A Quote" className="getaquotebackleftimg img-fluid" />
+          <img src={im1} alt="Get A Quote" title="Get A Quote" className="getaquotebackleftimg img-fluid" />
           <div className="getaquotebackleft text-center px-3">
             <h4 className="text-white mx-4">
               Its Not Just About The Machinery..

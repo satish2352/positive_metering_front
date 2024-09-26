@@ -7,10 +7,9 @@ import Router from './Router';
 import axios from 'axios';
 
 function App() {
-  // axios.defaults.baseURL = 'https://apipositiveae.sumagodemo.com/';
+  // axios.defaults.baseURL = 'https://positive.api.sumagodemo.com/'
   //  axios.defaults.baseURL = 'https://nodetest.positivemetering.in';
-  axios.defaults.baseURL = 'https://api.positivemetering.in/'
-  // axios.defaults.baseURL = 'https://api.positivemetering.ae/'
+  axios.defaults.baseURL = 'https://api.positivemetering.ae/'
   return (
     <>
  

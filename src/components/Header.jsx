@@ -78,7 +78,7 @@ const Header = () => {
               >
                 <FiPhone className="callicon" />
                 <a
-                  className="headerphone"
+                  className="headerphone"aria-label="Positive Metering Pumps"
                   href={`tel:${contacts[0]?.phone1}`}
                   style={{ textDecoration: "none" }}
                 >
@@ -89,7 +89,7 @@ const Header = () => {
               <Col xs={4} lg={2} className="headercontact2 d-flex  p-2 ps-3">
                 <FiPhone className="callicon me-3" />
                 <a
-                  className="headerphone"
+                  className="headerphone"aria-label="Positive Metering Pumps"
                   href={`tel:${contacts[0]?.phone2}`}
                   style={{ textDecoration: "none" }}
                 >
@@ -208,7 +208,7 @@ const Header = () => {
             <Link to="/">
               <img
                 src={logo}
-                alt="Positive logo"
+                alt="Positive logo"          title="Positive logo"
                 className={`header-logo mt-md-2 ${
                   isFixed ? "small-logo ms-4 mb-2" : ""
                 }`}

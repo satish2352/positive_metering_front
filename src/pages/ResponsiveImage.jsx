@@ -19,9 +19,9 @@ const ResponsiveImage = ({ mobileSrc, desktopSrc }) => {
   return (
     <div>
       {isMobile ? (
-        <img src={mobileSrc} alt="Mobile View"  className=' img-fluid' width={'100%'}/>
+        <img src={mobileSrc} alt="Mobile View"  title='Mobile View' className=' img-fluid' width={'100%'}/>
       ) : (
-        <img src={desktopSrc} alt="Desktop View" width={'100%'} className=' img-fluid'/>
+        <img src={desktopSrc} alt="Desktop View" title='Desktop View' width={'100%'} className=' img-fluid'/>
       )}
     </div>
   );

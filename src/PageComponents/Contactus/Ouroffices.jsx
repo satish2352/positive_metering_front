@@ -65,9 +65,9 @@ const Ouroffices = () => {
                                     <Card.Text className='px-lg-3'>
                                         {office.address}
                                         <br />
-                                        <a href={`tel:${office.phone}`}  className=" text-dark text-decoration-none">{office.phone}</a>
+                                        <a href={`tel:${office.phone}`} aria-label="Positive Metering Pumps"  className=" text-dark text-decoration-none">{office.phone}</a>
                                         <br />
-                                        <a href={`mailto:${office.email}`}  className=" text-dark text-decoration-none">{office.email}</a>
+                                        <a href={`mailto:${office.email}`} aria-label="Positive Metering Pumps"  className=" text-dark text-decoration-none">{office.email}</a>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
