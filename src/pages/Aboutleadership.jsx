@@ -55,8 +55,12 @@ const metaDetails = {
 const Aboutleadership = () => {
   document.title = "Aboutus | Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators"
   window.scrollTo(0, 0);
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   const [leadershipData, setLeadershipData] = useState([]);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
     const fetchLeadershipData = async () => {
@@ -65,15 +69,15 @@ const Aboutleadership = () => {
         if (response.data.result) {
           setLeadershipData(response.data.responseData);
         } else {
-          console.error("Failed to fetch leadership data:", response.data.message);
+          setErrorMessage("Failed to load leadership data");
         }
       } catch (error) {
-        console.error("Error fetching leadership data:", error);
+        setErrorMessage("An error occurred while fetching data");
       }
     };
-
     fetchLeadershipData();
   }, []);
+
   return (
     <>
       {/* <Heading heading="leadership"/> */}
@@ -203,24 +207,24 @@ const Aboutleadership = () => {
                   data-aos-easing="ease-out-cubic"
                   data-aos-duration="2000"
                 >
-                  <div>
+                  <div className=" textinfff">
                     <h3
                       className="text-uppercase abtname fw-bold"
                       style={{
                         letterSpacing: "1px",
                         fontFamily: "Roboto",
-                        paddingLeft: "20px",
+
                       }}
                     >
-                      {leader.name}
+                      {leader.title}
                     </h3>
-                    <h5 className="" style={{ paddingLeft: "20px" }}>{leader.title}</h5>
+                    <h5 >{leader.designation}</h5>
                     <p
                       className="fw-medium abouttxt lh-base"
                       style={{
                         fontFamily: "Roboto",
                         textAlign: "justify",
-                        paddingLeft: "20px",
+
                         paddingup: "20px",
                       }}
                     >
@@ -257,6 +261,7 @@ const Aboutleadership = () => {
                         </span>
                       )}
                     </div>
+
 
                   </div>
                 </Col>
