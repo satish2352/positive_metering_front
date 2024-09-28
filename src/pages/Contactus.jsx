@@ -4,6 +4,7 @@ import Shopnow from '../PageComponents/Home/Shopnow'
 import UploadCV from '../PageComponents/Contactus/UploadCV'
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import ResponsiveIframe from './ResponsiveIframe';
 const Contactus = () => {
   document.title = "Contactus | Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators"
 
@@ -23,6 +24,7 @@ const Contactus = () => {
     <>
       <ConatactCard />
       <Shopnow />
+      <ResponsiveIframe/>
       <Ouroffices />
       <UploadCV />
 

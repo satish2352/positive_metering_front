@@ -47,7 +47,12 @@ const NewsAndEvents = () => {
         className="my-0"
         style={{ backgroundColor: "#F7F5EF", paddingTop: "40px" }}
       >
-        <Heading heading="News " />
+    
+        <Container>
+                <Row className=' text-center'>
+                    <h1 className='oueprd text-uppercase mt-3' >News</h1>
+                </Row>
+            </Container>
         <Row>
           {cardData
             .filter((cardData) => cardData.isActive)

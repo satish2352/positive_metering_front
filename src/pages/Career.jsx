@@ -182,9 +182,9 @@ const Career = () => {
             md={10}
             className="p-lg-5 pb-5 border-0 bg-white my-lg-5 shadow-lg"
           >
-            <h4 className="text-center upcv py-3">
+            <h1 className="text-center upcv py-3 fs-4">
               Want To Make Career With Us
-            </h4>
+            </h1>
             <Container>
               <Form onSubmit={handleSubmit}>
                 <Row className="">

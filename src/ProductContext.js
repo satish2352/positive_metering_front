@@ -10,7 +10,7 @@ export const ProductProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [newevents, setnewevents] = useState([])
   const [productNo, setProductNo] = useState(0);
-
+  const [productName,setproductName] =useState("")
   useEffect(() => {
     const fetchblogdeatil = async () => {
       try {
@@ -38,6 +38,7 @@ export const ProductProvider = ({ children }) => {
           setProducts(productData);
           if (productData.length > 0) {
             setProductNo(productData[0].id);
+            setproductName(productData[0].productName)
           }
         } else {
           setError('Failed to fetch product details');
@@ -71,7 +72,7 @@ export const ProductProvider = ({ children }) => {
   }, []);
   
   return (
-    <ProductContext.Provider value={{ products, loading, error, blog, newevents,productNo }}>
+    <ProductContext.Provider value={{ products,productName, loading, error, blog, newevents,productNo }}>
       {children}
     </ProductContext.Provider>
   );

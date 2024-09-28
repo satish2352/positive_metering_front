@@ -59,9 +59,9 @@ const Infrastructure = () => {
                       className="rounded-4"
                     />
                     <Card.Body className="infrastructurecardinfo">
-                      <Card.Title className="fw-bolder">
+                      <h4 className="fw-bolder">
                         {card.title}
-                      </Card.Title>
+                      </h4>
                       <Card.Text className="px-lg-3">
                         {card.desc.length > 70
                           ? `${card.desc.substring(0, 70)}...`

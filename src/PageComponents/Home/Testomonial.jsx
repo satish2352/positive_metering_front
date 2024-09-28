@@ -150,17 +150,17 @@ const Testomonial = () => {
           {testimonial.filter((testimonial) => testimonial.isActive).map((testimonial) => (
             <div onClick={() => handleShowModal(testimonial)}>
               <div className='profileposition'>
-                <h1
-                  className='testomonialprofile'
+                <div
+                  className='testomonialprofile fs-1'
                   style={{ backgroundImage: `url(${testimonial.img})` }}
                 >
                   {testimonial.experience}
 
                   {/* &nbsp;
                   <span style={{ fontSize: "10px" }}>Years</span> */}
-                </h1>              </div>
+                </div>              </div>
               <div className='testback'>
-                <h4>{testimonial.company_Name}</h4>
+                <h3 className=''>{testimonial.company_Name}</h3>
 
                 <p>
                   {truncateReview(testimonial.review, 200)}

@@ -13,7 +13,7 @@ const Header = () => {
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { productNo } = useContext(ProductContext);
+  const { productNo, productName } = useContext(ProductContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -78,22 +78,22 @@ const Header = () => {
               >
                 <FiPhone className="callicon" />
                 <a
-                  className="headerphone"aria-label="Positive Metering Pumps"
+                  className="headerphone" aria-label="Positive Metering Pumps"
                   href={`tel:${contacts[0]?.phone1}`}
                   style={{ textDecoration: "none" }}
                 >
-                 +91 {contacts[0]?.phone1}
+                  +91 {contacts[0]?.phone1}
                 </a>
               </Col>
               <Col xs={4} md={1}></Col>
               <Col xs={4} lg={2} className="headercontact2 d-flex  p-2 ps-3">
                 <FiPhone className="callicon me-3" />
                 <a
-                  className="headerphone"aria-label="Positive Metering Pumps"
+                  className="headerphone" aria-label="Positive Metering Pumps"
                   href={`tel:${contacts[0]?.phone2}`}
                   style={{ textDecoration: "none" }}
                 >
-                 +91 {contacts[0]?.phone2}
+                  +91 {contacts[0]?.phone2}
                 </a>
               </Col>
             </>
@@ -101,9 +101,8 @@ const Header = () => {
         </Row>
       </Container>
       <div
-        className={`header-wrapper ${
-          isFixed ? "fixed hedershadow " : "navbarspacing "
-        }`}
+        className={`header-wrapper ${isFixed ? "fixed hedershadow " : "navbarspacing "
+          }`}
       >
         <Navbar collapseOnSelect expand="lg">
           <Navbar.Collapse id="responsive-navbar-nav">
@@ -119,9 +118,9 @@ const Header = () => {
                 </Link>
               </Nav.Link>
               <NavDropdown
-                title={  <span className={isAboutActive() ? "text-danger" : "text-dark"}>
-                ABOUT
-              </span>}
+                title={<span className={isAboutActive() ? "text-danger" : "text-dark"}>
+                  ABOUT
+                </span>}
                 className="fw-bold mx-xxl-3 text-dark nvlink"
                 id="collapsible-nav-dropdown"
               >
@@ -171,11 +170,12 @@ const Header = () => {
               <Nav.Link>
                 <Link
                   style={{ letterSpacing: 3 }}
-                  onClick={() => window.scrollTo(0, 0)}
+                  onClick={() => { window.scrollTo(0, 0); localStorage.setItem("prd", productNo) }}
                   className={`${getNavLinkClass(
-                    `/product/${productNo}`
+                    `/product/${encodeURIComponent(productName.toLowerCase().replace(/\s+/g, '-'))}`
+
                   )}  nvlink fw-bold mx-xxl-3`}
-                  to={`/product/${productNo}`}
+                  to={`/product/${encodeURIComponent(productName.toLowerCase().replace(/\s+/g, '-'))}`}
                 >
                   PRODUCT
                 </Link>
@@ -196,9 +196,8 @@ const Header = () => {
                 <Link
                   style={{ letterSpacing: 3 }}
                   onClick={() => window.scrollTo(0, 0)}
-                  className={`${getNavLinkClass("/blog")} nvlink fw-bold ${
-                    isFixed ? "" : "blogspace"
-                  }`}
+                  className={`${getNavLinkClass("/blog")} nvlink fw-bold ${isFixed ? "" : "blogspace"
+                    }`}
                   to="/blog"
                 >
                   BLOG
@@ -208,18 +207,17 @@ const Header = () => {
             <Link to="/">
               <img
                 src={logo}
-                alt="Positive logo"          title="Positive logo"
-                className={`header-logo mt-md-2 ${
-                  isFixed ? "small-logo ms-4 mb-2" : ""
-                }`}
+                alt="Positive logo" title="Positive logo"
+                className={`header-logo mt-md-2 ${isFixed ? "small-logo ms-4 mb-2" : ""
+                  }`}
               />
             </Link>
             <Nav className="me-auto">
               <NavDropdown
-     
-                title={  <span className={isnewsActive() ? "text-danger" : "text-dark"}>
-                NEWS & EVENTS
-              </span>}
+
+                title={<span className={isnewsActive() ? "text-danger" : "text-dark"}>
+                  NEWS & EVENTS
+                </span>}
                 className="fw-bold mx-xxl-3 text-dark nvlink"
                 id="collapsible-nav-dropdown"
               >

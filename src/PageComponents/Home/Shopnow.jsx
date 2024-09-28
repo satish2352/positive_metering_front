@@ -211,9 +211,9 @@ const Shopnow = () => {
           xs={12}
           className="d-flex mt-5 justify-content-end align-items-center ls-2"
         >
-          <h2 className="bannerH text-center" style={{ letterSpacing: "3px" }}>
+          <h1 className="bannerH text-center fs-2" style={{ letterSpacing: "3px" }}>
             ADDRESS
-          </h2>
+          </h1>
         </Col>
         <Col
           md={6}

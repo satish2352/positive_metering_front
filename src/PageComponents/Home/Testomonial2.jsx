@@ -148,13 +148,13 @@ const Testomonial2 = () => {
               {testimonial.map((testimonial) => (
                 <div key={testimonial.id} onClick={() => handleShowModal(testimonial)}>
                   <div className='profileposition'>
-                    <h1
-                      className='testomonialprofile'
+                    <div
+                      className='testomonialprofile fs-1'
                       style={{ backgroundImage: `url(${testimonial.img})` }}
                     >{testimonial.experience}
                       {/* &nbsp;
                       <span style={{ fontSize: "10px" }}>Years</span> */}
-                    </h1>
+                    </div>
 
                   </div>
                   <div className='testback'>

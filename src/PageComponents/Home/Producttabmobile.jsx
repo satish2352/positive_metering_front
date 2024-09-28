@@ -17,7 +17,8 @@ const Producttabmobile = ({ no }) => {
   const [productNo, setProductNo] = useState(no || 0); // use prop `no` if provided, otherwise default to 0
   const [activeTab, setActiveTab] = useState(no || 0); // initialize `activeTab` with `no` prop as well
   const handleProductClick = (productId) => {
-    navigate(`/product/${productId}`);
+   
+    localStorage.setItem("prd", productId)
     window.scrollTo(0, 270); // Adjust timeout as needed to ensure navigation completes
   };
 
@@ -126,7 +127,7 @@ const Producttabmobile = ({ no }) => {
             <div>{error}</div>
           ) : (
             <Row className="align-items-center chartslider">
-             
+
               <Col
                 lg={6}
                 className="homeaboutinfo text-black"
@@ -158,7 +159,9 @@ const Producttabmobile = ({ no }) => {
                         <Button
                           variant="outline-dark"
                           className="rounded-5 py-2 fs-6 px-4 m-lg-3 shadow-sm"
-                          onClick={() => handleProductClick(activeProduct.id)}
+                          onClick={() => {handleProductClick(activeProduct.id);
+
+                            navigate(`/product/${encodeURIComponent(activeProduct.productName.toLowerCase().replace(/\s+/g, '-'))}`);}}
                         >
                           Read More
                         </Button>
@@ -172,9 +175,8 @@ const Producttabmobile = ({ no }) => {
                       {products.map((product) => (
                         <Col
                           key={product.id}
-                          className={`plungercard mx-1 d-grid justify-content-center ${
-                            activeTab === product.id ? "active" : ""
-                          }`}
+                          className={`plungercard mx-1 d-grid justify-content-center ${activeTab === product.id ? "active" : ""
+                            }`}
                           onClick={() => handleTabClick(product.id)}
                         >
                           <img
@@ -198,9 +200,8 @@ const Producttabmobile = ({ no }) => {
                       {products.map((product) => (
                         <div
                           key={product.id}
-                          className={`plungercard mx-1 d-grid justify-content-center ${
-                            activeTab === product.id ? "active" : ""
-                          }`}
+                          className={`plungercard mx-1 d-grid justify-content-center ${activeTab === product.id ? "active" : ""
+                            }`}
                           onClick={() => handleTabClick(product.id)}
                         >
                           <img

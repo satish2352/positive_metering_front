@@ -66,7 +66,12 @@ const Aboutourteam = () => {
             style={{ background: "#F7F5EF", paddingTop: "30px" }}
             className="pb-lg-5"
           >
-            <Heading heading="OUR TEAM" className="py-3 " />
+      
+            <Container>
+                <Row className=' text-center'>
+                    <h1 className='oueprd text-uppercase mt-3 py-3' >OUR TEAM</h1>
+                </Row>
+            </Container>
             <Container>
               <Row>
                 {teamMembers

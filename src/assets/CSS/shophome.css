@@ -111,6 +111,9 @@
   text-align: center;
   align-content: center;
   color:  white;
+  font-family: 'News706 BT', sans-serif; /* Fallback to sans-serif */
+  font-weight: bold; /* Ensure it uses the bold weight */
+
   /* background: url('../img/aa/POSITIVE.png'); */
   /* background-image: url('../img/aa/youer.jpeg'); */
   background-size: cover;

@@ -182,7 +182,12 @@ const BlogCard = () => {
     <>
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
       <section>
-        <Heading heading="Blog" />
+        
+        <Container>
+                <Row className=' text-center'>
+                    <h1 className='oueprd text-uppercase mt-3' >Blog</h1>
+                </Row>
+            </Container>
         <Container fluid>
           {blogData.map((_, rowIndex) => (
             <Row className="px-4" key={rowIndex}>

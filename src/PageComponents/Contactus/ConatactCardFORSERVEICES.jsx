@@ -9,7 +9,7 @@ import imgmobile from "../../assets/img/aa/Group 1000004143 (1).jpg";
 import ResponsiveImage from "../../pages/ResponsiveImage";
 import Card from 'react-bootstrap/Card';
 import Heading from "../../components/Heading";
-import { FaPhoneAlt , FaEnvelope, FaUser } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaUser } from 'react-icons/fa';
 
 const ConatactCardFORSERVEICES = () => {
   const [contactDetails, setContactDetails] = useState([]);
@@ -39,8 +39,13 @@ const ConatactCardFORSERVEICES = () => {
         fluid
         className="caontatctcardback py-5 mb-5"
         style={{ backgroundColor: "#EDEAEA" }}
-      >    <Heading heading="Pre Order Services"></Heading>
+      >
 
+        <Container>
+          <Row className=' text-center'>
+            <h1 className='oueprd text-uppercase mt-3' >Pre Order Services</h1>
+          </Row>
+        </Container>
         <Row className=" d-flex justify-content-center">
           <Col lg={10} >
             <Row>
@@ -62,7 +67,7 @@ const ConatactCardFORSERVEICES = () => {
                           src={contact.img}
                           className="rounded-4"
                         />
-                             <h5 className="fw-bolder ps-3 text-center">{contact.title}</h5>
+                        <div className="fw-bolder ps-3 text-center fs-5">{contact.title}</div>
                         <Card.Body className="infrastructurecardinfo">
                           <Container className="txtcontact1">
                             <Row className="pt-1">
@@ -73,10 +78,10 @@ const ConatactCardFORSERVEICES = () => {
                             </Row>
                             <Row className="pt-1">
                               <Col xs={2}>
-                                <FaPhoneAlt  className="digital-icon" />
+                                <FaPhoneAlt className="digital-icon" />
                               </Col>
                               <Col xs={10}>
-                                 <a href={`tel:${contact.phone}`} aria-label="Positive Metering Pumps" className="text-dark text-decoration-none">{contact.phone}</a>
+                                <a href={`tel:${contact.phone}`} aria-label="Positive Metering Pumps" className="text-dark text-decoration-none">{contact.phone}</a>
                               </Col>
                             </Row>
                             <Row className="pt-1">
@@ -84,7 +89,7 @@ const ConatactCardFORSERVEICES = () => {
                                 <FaEnvelope className="digital-icon" />
                               </Col>
                               <Col xs={10}>
-                                 <a href={`mailto:${contact.email}`} aria-label="Positive Metering Pumps" className='text-dark text-decoration-none'>{contact.email}</a>
+                                <a href={`mailto:${contact.email}`} aria-label="Positive Metering Pumps" className='text-dark text-decoration-none'>{contact.email}</a>
                               </Col>
                             </Row>
                           </Container>

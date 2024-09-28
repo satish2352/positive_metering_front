@@ -75,7 +75,7 @@ const Service = () => {
                   >
                     <FrontCard image={service.frontImage} />
                     <Card.Text>
-                      <h1 className='frontH text-center'>{service.frontText}</h1>
+                      <div className='frontH text-center fs-1'>{service.frontText}</div>
                     </Card.Text>
                   </div>
                   <div
@@ -85,7 +85,7 @@ const Service = () => {
                   >
                     <BackCard image={service.backImage} />
                     <div className="text-center px-4 text-white mt-4">
-                      <h3 className='backH'>{service.frontText}</h3>
+                      <div className='backH fs-3'>{service.frontText}</div>
                       <div className='backP'>{service.backText}.</div>
                     </div>
                   </div>

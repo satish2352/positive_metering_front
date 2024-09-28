@@ -251,7 +251,7 @@ function Blogdetails({ image, title, longetxt }) {
           </Col>
         </Row>
         <div className="mt-3"></div>
-        <h5>{title}</h5>
+        <h1 className=" fs-4">{title}</h1>
       </Container>
       <div className="mt-3 mx-3"></div>
       <Container>

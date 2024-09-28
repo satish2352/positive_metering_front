@@ -204,12 +204,12 @@ const UploadCV = () => {
                 <Col xl={12}>
                   <ReCAPTCHA
                     ref={captchaRef}
-                    sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
+                    // sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
                     // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                     // positive.in
                     //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
                     // positive.ae
-                    // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+                    sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
                     onChange={onChange}
                   />
                   {errors.captcha && (

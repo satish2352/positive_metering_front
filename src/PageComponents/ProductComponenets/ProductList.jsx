@@ -17,7 +17,8 @@ const ProductList = ({ no }) => {
   const [prdname, setprdname] = useState("Product")
 
   document.title = `Product |Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators`
-  const { id } = useParams();
+  // const { id } = useParams();
+  const id = localStorage.getItem('prd')
   const [showModal, setShowModal] = useState(false);
   const [modalImage, setModalImage] = useState("");
   const navigate = useNavigate();
@@ -139,7 +140,8 @@ const ProductList = ({ no }) => {
   };
 
   const handleProductClick = (productId) => {
-    navigate(`/product/${productId}`);
+
+    localStorage.setItem("prd", productId)
     if (isMobileView()) {
       setTimeout(() => {
         scrollToProductDetails();
@@ -213,7 +215,7 @@ const ProductList = ({ no }) => {
     }
   ];
 
-  const metaDetails = metaData.find(meta => meta.id === parseInt(id, 10)) ;
+  const metaDetails = metaData.find(meta => meta.id === parseInt(id, 10));
   if (loading) return <p></p>;
   if (error) return <p></p>;
 
@@ -237,12 +239,12 @@ const ProductList = ({ no }) => {
               <Col lg={4}>
                 <Container className="produclistbox">
                   <div className="py-3 px-4" id="menu">
-                    <h4
+                    <div
                       style={{ letterSpacing: "3px" }}
-                      className="text-white text-center py-3"
+                      className="text-white text-center py-3 fs-4"
                     >
                       PRODUCTS
-                    </h4>
+                    </div>
 
 
                     {products
@@ -250,12 +252,15 @@ const ProductList = ({ no }) => {
                       .map((product, index) => (
                         <div
                           key={index}
-                          onClick={() => { handleProductClick(product.id); window.scrollTo(0, 400); setprdname(product.productName) }}
+                          onClick={() => { handleProductClick(product.id); window.scrollTo(0, 400); setprdname(product.productName); 
+                            navigate(`/product/${encodeURIComponent(product.productName.toLowerCase().replace(/\s+/g, '-'))}`);
+                          }}
+                            
                           className={`mx-xxl-3 product-list-item`}
                         >
                           <p
                             className={` ${getNavLinkClass(
-                              `/product/${product.id}`
+                           `/product/${encodeURIComponent(product.productName.toLowerCase().replace(/\s+/g, '-'))}`
                             )} produclistcontetst ps-3 mx-lg-3 pb-2`}
                             style={{ fontFamily: "Poppins" }}
                           >
@@ -282,7 +287,7 @@ const ProductList = ({ no }) => {
                             style={{ height: "23rem" }}
                           />)}
                       </div>
-                      <h2 className="p-2 fs-1">Application</h2>
+                      <div className="p-2 fs-1">Application</div>
 
                       {ApplicationData.map((data) => (
                         <div
@@ -345,18 +350,18 @@ const ProductList = ({ no }) => {
                       >
                         {productDetails && (
                           <>
-                            <h4
-                              className="pulgertitle"
+                            <h1
+                              className="pulgertitle fs-4"
                               style={{ color: "#434343" }}
                             >
                               {productDetails.productName}
-                            </h4>
-                            <h3
-                              className="pulgersubtitle"
+                            </h1>
+                            <div
+                              className="pulgersubtitle fs-2"
                               style={{ fontFamily: "Poppins", fontSize: "20px" }}
                             >
                               {productDetails.subtitle}
-                            </h3>
+                            </div>
                             <div
                               className="me-lg-5 me-0"
                               dangerouslySetInnerHTML={{
@@ -374,9 +379,10 @@ const ProductList = ({ no }) => {
                               .map((product) => (
                                 <Col
                                   key={product.id}
-                                  className={`plungercard mx-1 d-grid justify-content-center  ${getNavLinkClass(`/product/${product.id}`)}}`}
+                                  className={`plungercard mx-1 d-grid justify-content-center  ${getNavLinkClass(`/product/${product.productName}`)}}`}
                                   onClick={() => {
                                     handleProductClick(product.id);
+                                    navigate(`/product/${encodeURIComponent(product.productName.toLowerCase().replace(/\s+/g, '-'))}`);
                                     window.scrollTo(0, 400);
                                   }}
                                 >
@@ -404,10 +410,11 @@ const ProductList = ({ no }) => {
                             {products.map((product) => (
                               <Col
                                 key={product.id}
-                                className={`plungercard mx-1 d-grid justify-content-center  ${getNavLinkClass(`/product/${product.id}`)}}`}
+                                className={`plungercard mx-1 d-grid justify-content-center  ${getNavLinkClass(`/product/${product.productName}`)}}`}
 
                                 onClick={() => {
                                   handleProductClick(product.id);
+                                  navigate(`/product/${encodeURIComponent(product.productName.toLowerCase().replace(/\s+/g, '-'))}`);
                                   window.scrollTo(0, 400);
                                 }}
                               >

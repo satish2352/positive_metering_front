@@ -16,7 +16,7 @@ const NewNavbar = () => {
   };
 
   const [isOpen, setIsOpen] = useState(false);
-  const { productNo } = useContext(ProductContext);
+  const { productNo,productName } = useContext(ProductContext);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
@@ -102,11 +102,13 @@ const NewNavbar = () => {
           <Nav.Link href="/product" onClick={closeNavbar}>
             <Link
               className={`${getNavLinkClass(
-                "/product"
+                `/product/${encodeURIComponent(productName.toLowerCase().replace(/\s+/g, '-'))}`
               )} fw-bold nvlink mx-xxl-3`}
-              onClick={() => window.scrollTo(0, 0)}
-              to={`/product/${productNo}`}
-            >
+              onClick={() => {
+                window.scrollTo(0, 0); localStorage.setItem("prd", productNo)
+              }}
+              to={`/product/${encodeURIComponent(productName.toLowerCase().replace(/\s+/g, '-'))}`}
+              >
               PRODUCT
             </Link>
           </Nav.Link>
@@ -165,10 +167,10 @@ const NewNavbar = () => {
                 onClick={() => window.scrollTo(0, 0)}
                 to="/event"
               >
-               EVENTS
+                EVENTS
               </Link>
             </NavDropdown.Item>
-           
+
           </NavDropdown>
           <Nav.Link href="/career" onClick={closeNavbar}>
             <Link

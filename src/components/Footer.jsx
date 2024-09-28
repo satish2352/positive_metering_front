@@ -125,9 +125,9 @@ const Footer = () => {
             className="text-center justify-content-center d-flex"
           >
             <div className=" footerenqury justify-content-center d-grid">
-              <h2 className="text-white text-center">
+              <div className="text-white text-center fs-2">
                 Subscribe to our News letter
-              </h2>
+              </div>
 
               <div className=" d-flex justify-content-center">
                 <Form className=" mt-3 pb-3 subscribe" onSubmit={handleSubmit}>
@@ -180,7 +180,7 @@ const Footer = () => {
                 <img
                   src={logo}
                   alt="Company Logo"
-                   title="Company Logo"
+                  title="Company Logo"
                   style={{ maxWidth: "100px" }}
                 />
               </Link>
@@ -294,9 +294,11 @@ const Footer = () => {
                             className="nvlink"
                             onClick={() => {
                               window.scrollTo(0, 500);
+                              localStorage.setItem("prd", a.id)
+
                               //  setprdname(a.productName) 
                             }}
-                            to={`/product/${a.id}`}
+                            to={`/product/${encodeURIComponent(a.productName.toLowerCase().replace(/\s+/g, '-'))}`}
                             style={{ textDecoration: "none", color: "black" }}
                           >
                             {capitalizeWords(a.productName)}
@@ -317,9 +319,11 @@ const Footer = () => {
                             className="nvlink"
                             onClick={() => {
                               window.scrollTo(0, 500);
+                              localStorage.setItem("prd", a.id)
+
                               //  setprdname(a.productName) 
                             }}
-                            to={`/product/${a.id}`}
+                            to={`/product/${encodeURIComponent(a.productName.toLowerCase().replace(/\s+/g, '-'))}`}
                             style={{ textDecoration: "none", color: "black" }}
                           >
                             {capitalizeWords(a.productName)}
@@ -350,9 +354,10 @@ const Footer = () => {
                             className="nvlink"
                             onClick={() => {
                               window.scrollTo(0, 500);
+                              localStorage.setItem("prd", a.id)
                               //  setprdname(a.productName) 
                             }}
-                            to={`/product/${a.id}`}
+                            to={`/product/${encodeURIComponent(a.productName.toLowerCase().replace(/\s+/g, '-'))}`}
                             style={{ textDecoration: "none", color: "black" }}
                           >
                             {capitalizeWords(a.productName)}

@@ -34,7 +34,7 @@ function Eventdetails({ image, title, longetxt }) {
             alt="Join Positive Metering" title="Join Positive Metering" fluid />
           </Col>
           <Col className={textColClass}>
-            <h5 className="title">{title}</h5>
+            <h1 className="title fs-5">{title}</h1>
             <p dangerouslySetInnerHTML={{ __html: longetxt }} className="content-text"></p>
           </Col>
         </Row>

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Container, Row, Col ,Button} from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import "../../assets/CSS/shophome.css";
 import axios from "axios";
 import im from "../../assets/img/Home/Group 1000004137.png";
@@ -165,12 +165,12 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           <ReCAPTCHA
             className="my-4 ms-2"
             ref={captchaRef}
-  // sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
-                        // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
-                        // positive.in
-                        //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
-                        // positive.ae
-                        sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+            // sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
+            // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+            // positive.in
+            //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+            // positive.ae
+            sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
             onChange={onChange}
           />
           {errors.captcha && (
@@ -210,14 +210,7 @@ const Shopnowhome = () => {
             className="mt-5 mt-lg-0 justify-content-center d-flex text-center text-lg-start  "
           >
             <div className=" align-content-center">
-              <h2
-                className=" text-uppercase"
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-              >
-                "Streamline Your Dispensing Process
-              </h2>
+
               <h1
                 className=" text-uppercase"
                 data-aos="fade-up"
@@ -225,8 +218,16 @@ const Shopnowhome = () => {
                 data-aos-duration="1500"
               >
                 {" "}
-                Shop Now <span className=" fs-1"> !"</span>{" "}
+              "  Shop Now {" "}
               </h1>
+              <h2
+                className=" text-uppercase"
+                data-aos="fade-up"
+                data-aos-easing="linear"
+                data-aos-duration="1500"
+              >
+                Streamline Your Dispensing Process <span className=" fs-1"> !"</span>
+              </h2>
               <button
                 data-aos="fade-up"
                 data-aos-easing="linear"

@@ -122,8 +122,8 @@ const Aboutleadership = () => {
                   data-aos-duration="2000"
                 >
                   <div className=" textinfff">
-                    <h3
-                      className="text-uppercase abtname fw-bold"
+                    <h1
+                      className="text-uppercase abtname fw-bold fs-3"
                       style={{
                         letterSpacing: "1px",
                         fontFamily: "Roboto",
@@ -131,8 +131,8 @@ const Aboutleadership = () => {
                       }}
                     >
                       {leader.title}
-                    </h3>
-                    <h5 >{leader.designation}</h5>
+                    </h1>
+                    <h2 className="fs-5">{leader.designation}</h2>
                     <p
                       className="fw-medium abouttxt lh-base"
                       style={{
@@ -208,8 +208,8 @@ const Aboutleadership = () => {
                   data-aos-duration="2000"
                 >
                   <div className=" textinfff">
-                    <h3
-                      className="text-uppercase abtname fw-bold"
+                    <h1
+                      className="text-uppercase abtname fw-bold fs-3"
                       style={{
                         letterSpacing: "1px",
                         fontFamily: "Roboto",
@@ -217,8 +217,8 @@ const Aboutleadership = () => {
                       }}
                     >
                       {leader.title}
-                    </h3>
-                    <h5 >{leader.designation}</h5>
+                    </h1>
+                    <h2 className="fs-5">{leader.designation}</h2>
                     <p
                       className="fw-medium abouttxt lh-base"
                       style={{

@@ -30,9 +30,9 @@ const VisionMission = () => {
             <Container fluid>
                 <Row className='align-items-center pt-xl-5'>
                 <Col lg={{ span: 5, offset: 5 }} xs={8}>
-                            <h1 className='text-white'>
+                            <div className='text-white fs-1'>
                                 Vision <img style={{ width: "15%" }} src={visionEye} alt="Vision-img" title='Vision-img' />
-                            </h1>
+                            </div>
                             <p className='text-white fw-light' style={{ textAlign: "justify" }}>
                             To revolutionize and simplify chemical treatments across global industries, ensuring efficiency and sustainability.
                             </p>

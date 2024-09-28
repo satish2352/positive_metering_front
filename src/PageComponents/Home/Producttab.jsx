@@ -17,7 +17,8 @@ const ProductTab = ({ no }) => {
   const [productNo, setProductNo] = useState(no || 0); // use prop `no` if provided, otherwise default to 0
   const [activeTab, setActiveTab] = useState(no || 0); // initialize `activeTab` with `no` prop as well
   const handleProductClick = (productId) => {
-    navigate(`/product/${productId}`);
+
+    localStorage.setItem("prd", productId)
   };
 
 
@@ -173,15 +174,15 @@ const ProductTab = ({ no }) => {
                 <div className="p-lg-3 p-4" style={{ textAlign: "justify" }}>
                   {activeProduct && (
                     <>
-                      <h4 className="pulgertitle" style={{ color: "#434343" }}>
+                      <div className="pulgertitle fs-4" style={{ color: "#434343" }}>
                         {activeProduct.productName}
-                      </h4>
-                      <h3
+                      </div>
+                      <div
                         className="pulgersubtitle"
                         style={{ fontFamily: "Poppins", fontSize: "20px" }}
                       >
                         {activeProduct.subtitle}
-                      </h3>
+                      </div>
                       <div
                         className="me-lg-5 me-0"
                         dangerouslySetInnerHTML={{
@@ -194,6 +195,7 @@ const ProductTab = ({ no }) => {
                           className="rounded-5 py-2 fs-6 px-4 m-lg-3 shadow-sm"
                           onClick={() => {
                             handleProductClick(activeProduct.id);
+                            navigate(`/product/${encodeURIComponent(activeProduct.productName.toLowerCase().replace(/\s+/g, '-'))}`);
                             // setprdname(activeProduct.productName);
                           }}
 
@@ -211,9 +213,11 @@ const ProductTab = ({ no }) => {
                         <Col
                           key={product.id}
                           className={`plungercard mx-1 d-grid justify-content-center ${activeTab === product.id ? "active" : ""}`}
-                          onClick={() => { handleTabClick(product.id);
+                          onClick={() => {
+                            handleTabClick(product.id);
+
                             //  prdname(product.productName); 
-                            }}
+                          }}
                         >
                           <div className="prdimg">
                             {product.images && product.images.length > 0 && (
@@ -250,7 +254,7 @@ const ProductTab = ({ no }) => {
                                 src={`${product.images[0].img}`}
                                 className="img-fluid p-2"
                                 alt={product.productName}
-                                title={product.productName} 
+                                title={product.productName}
                               />
                             )}
                           </div>

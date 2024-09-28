@@ -58,7 +58,7 @@ const ContactCard = () => {
                   <img src={contact.img} alt={contact.title} title={contact.title} className="img-fluid" />
                 </div>
                 <div className="caontatctcardsubsection  py-4">
-                  <h5 className="fw-bolder ps-3">{contact.title}</h5>
+                  <div className="fw-bolder ps-3 fs-5">{contact.title}</div>
 
                   <Container className="txtcontact">
                     <Row className="pt-1">

@@ -156,12 +156,12 @@ const QuoteForm = ({ onClose }) => {
       <ReCAPTCHA
         className="my-4 ms-2"
         ref={captchaRef}
-        sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
+        // sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
         // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
         // positive.in
         //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
         // positive.ae
-        // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+        sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
 
         onChange={onChange}
       />
@@ -235,12 +235,12 @@ const Getaquote = () => {
         <Col lg={3}>
           <img src={im1} alt="Get A Quote" title="Get A Quote" className="getaquotebackleftimg img-fluid" />
           <div className="getaquotebackleft text-center px-3">
-            <h4 className="text-white mx-4">
+            <h2 className="text-white mx-4 fs-4">
               Its Not Just About The Machinery..
-            </h4>
-            <h6 className="text-uppercase fw-bold">
+            </h2>
+            <h3 className="text-uppercase fw-bold fs-5">
               Its about the efficiency!!
-            </h6>
+            </h3>
             <button
               style={{ background: "#636262" }}
               onClick={() => setModalShow(true)}
