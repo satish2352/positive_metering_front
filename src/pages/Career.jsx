@@ -121,6 +121,25 @@ const Career = () => {
         alert("Thank you. we will connect with you soon..");
         console.log("Response data:", response.data);
 
+        try {
+          const response = await axios.post('https://positivemetering.in/careerenquiry.php', 
+            formData,
+          {
+            headers: {
+              'Content-Type': 'multipart/form-data', // Ensure you're sending JSON data
+            },
+          }
+        );
+          if (response.status === 200) {
+            console.log(response, "hiiiiiiiiiiiiiiiii")
+            alert('Email sent successfully');
+          } else {
+            alert('Failed to send email');
+          }
+        } catch (error) {
+          console.error('There was an error sending the email!', error);
+          alert('Error sending email');
+        }
         // Reset form fields
         setName("");
         setEmail("");
@@ -320,7 +339,7 @@ const Career = () => {
                       // sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
                       // local
                       // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
-                      // positive key
+                      // positive key .in
                       // sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
 
                       // positive.ae

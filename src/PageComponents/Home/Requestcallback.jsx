@@ -139,6 +139,30 @@ const Requestcallback = () => {
         });
         if (response.status === 200) {
           alert("Thank you. we will connect with you soon.");
+
+          try {
+            const response = await axios.post('https://positivemetering.in/contacts.php', 
+              {
+              name: fullname,
+              email,
+              mobile,
+              message
+            },
+            {
+              headers: {
+                'Content-Type': 'application/json', // Ensure you're sending JSON data
+              },
+            }
+          );
+            if (response.status === 200) {
+              console.log('Email sent successfully');
+            } else {
+              console.log('Failed to send email');
+            }
+          } catch (error) {
+            console.error('There was an error sending the email!', error);
+            console.log('Error sending email');
+          }
           setFullname("");
           setEmail("");
           setMobile("");
@@ -267,7 +291,7 @@ const Requestcallback = () => {
                       <ReCAPTCHA
 
                         ref={captchaRef}
-                        // sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
+                        // sitekey="6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E"
                         // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                         // positive.in
                         //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
@@ -427,7 +451,7 @@ const Requestcallback = () => {
                       <ReCAPTCHA
                         className="my-4"
                         ref={captchaRef}
-                        // sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
+                        // sitekey="6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E"
                         sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
                         // sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
                         // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"

@@ -89,6 +89,30 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           message,
         });
         if (response.status === 200) {
+
+          try {
+            const response = await axios.post('https://positivemetering.in/contacts.php', 
+              {
+              name: fullname,
+              email,
+              mobile,
+              message
+            },
+            {
+              headers: {
+                'Content-Type': 'application/json', // Ensure you're sending JSON data
+              },
+            }
+          );
+            if (response.status === 200) {
+              console.log('Email sent successfully');
+            } else {
+              console.log('Failed to send email');
+            }
+          } catch (error) {
+            console.error('There was an error sending the email!', error);
+            console.log('Error sending email');
+          }
           // Reset form fields and state after successful submission
           setFullname("");
           setEmail("");
