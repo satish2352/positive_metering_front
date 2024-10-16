@@ -138,10 +138,9 @@ const Requestcallback = () => {
           message,
         });
         if (response.status === 200) {
-          alert("Thank you. we will connect with you soon.");
-
+          alert("Thank You..! We Will Connect With You Soon.");
           try {
-            const response = await axios.post('https://positivemetering.in/contacts.php', 
+            const response = await axios.post('https://positivemetering.ae/contacts.php', 
               {
               name: fullname,
               email,
@@ -451,9 +450,9 @@ const Requestcallback = () => {
                       <ReCAPTCHA
                         className="my-4"
                         ref={captchaRef}
-                        // sitekey="6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E"
-                        sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
-                        // sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+                        // sitekey="6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local web
+                        sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq" // ae
+                        // sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f" //.in
                         // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                         onChange={handleCaptchaChange}
                       />

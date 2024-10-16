@@ -140,9 +140,9 @@ const Requestcallback = () => {
           message,
         });
         if (response.status === 200) {
-          alert("Thank you. we will connect with you soon.");
+          alert("Thank You..! We Will Connect With You Soon.");
           try {
-            const response = await axios.post('https://positivemetering.in/contacts.php', 
+            const response = await axios.post('https://positivemetering.ae/contacts.php', 
               {
               name: fullname,
               email,

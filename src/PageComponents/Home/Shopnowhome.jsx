@@ -71,10 +71,11 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           mobile,
           message,
         });
+        alert("Thank You..! We Will Connect With You Soon.");
         if (response.status === 200) {
 
           try {
-            const response = await axios.post('https://positivemetering.in/contacts.php', 
+            const response = await axios.post('https://positivemetering.ae/contacts.php', 
               {
               name: fullname,
               email,
@@ -118,8 +119,11 @@ function MyVerticallyCenteredModal({ show, onHide }) {
         // Check if the error is a validation error for mobile number or email
         if (error.response?.data?.message === "Validation error: Mobile number already exists.") {
           newErrors.mobile = "Mobile number already exists.";
+          alert("Mobile number already exists.")
         } else if (error.response?.data?.message === "Validation error: Email already exists.") {
           newErrors.email = "Email already exists.";
+          alert("Email already exists.");
+          
         } else {
           newErrors.general = "Failed to submit data. Please try again later.";
         }
@@ -189,7 +193,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           <ReCAPTCHA
             className="my-4 ms-2"
             ref={captchaRef}
-            // sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
+            // sitekey="6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local
             // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
             // positive.in
             //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"

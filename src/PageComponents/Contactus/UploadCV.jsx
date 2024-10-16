@@ -70,9 +70,9 @@ const UploadCV = () => {
           message,
         });
         if (response.status === 200) {
-          console.log("newData", response.data);
+          alert("Thank You..! We Will Connect With You Soon.");
           try {
-            const response = await axios.post('https://positivemetering.in/contacts.php',
+            const response = await axios.post('https://positivemetering.ae/contacts.php',
               {
                 name,
                 email,
@@ -109,7 +109,7 @@ const UploadCV = () => {
           console.log("Failed to submit data.");
         }
         console.log("Server Response:", response.data);
-        alert("thank you will connect with you soon");
+        // alert("thank you will connect with you soon");
       } catch (error) {
         console.error("Error submitting data:", error);
         console.error("Error response data:", error.response?.data);
@@ -118,15 +118,17 @@ const UploadCV = () => {
 
         // Check if the error is a validation error for mobile number or email
         if (
-          error.response?.data?.message ===
-          "Validation error: Mobile number already exists."
+          error.response?.data?.message === "Validation error: Mobile number already exists."
         ) {
           newErrors.mobile = "Mobile number already exists.";
+          alert("Mobile number already exists.")
+          
         } else if (
           error.response?.data?.message ===
           "Validation error: Email already exists."
         ) {
           newErrors.email = "Email already exists.";
+          alert("Email already exists.")
         } else {
           newErrors.general = "Failed to submit data. Please try again later.";
         }
@@ -227,7 +229,7 @@ const UploadCV = () => {
                 <Col xl={12}>
                   <ReCAPTCHA
                     ref={captchaRef}
-                    // sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
+                    // sitekey="6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E"
                     // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                     // positive.in
                     //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"

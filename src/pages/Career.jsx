@@ -118,11 +118,11 @@ const Career = () => {
             },
           }
         );
-        alert("Thank you. we will connect with you soon..");
+        alert("Thank You..! We Will Connect With You Soon.");
         console.log("Response data:", response.data);
 
         try {
-          const response = await axios.post('https://positivemetering.in/careerenquiry.php', 
+          const response = await axios.post('https://positivemetering.ae/careerenquiry.php', 
             formData,
           {
             headers: {
@@ -131,10 +131,9 @@ const Career = () => {
           }
         );
           if (response.status === 200) {
-            console.log(response, "hiiiiiiiiiiiiiiiii")
-            alert('Email sent successfully');
+            console.log('Email sent successfully');
           } else {
-            alert('Failed to send email');
+            console.log('Failed to send email');
           }
         } catch (error) {
           console.error('There was an error sending the email!', error);
@@ -168,11 +167,16 @@ const Career = () => {
           "Validation error: Phone number already exists."
         ) {
           newErrors.mobile = "Mobile number already exists.";
+          console.log("Mobile number already exists.");
+          alert("Mobile number already exists.")
+          
         } else if (
           error.response?.data?.message ===
           "Validation error: Email already exists."
         ) {
           newErrors.email = "Email already exists.";
+          alert("Email already exists.");
+          
         } else {
           newErrors.general = "Failed to submit data. Please try again later.";
         }

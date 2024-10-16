@@ -88,10 +88,11 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           mobile,
           message,
         });
+        alert("Thank You..! We Will Connect With You Soon.");
         if (response.status === 200) {
 
           try {
-            const response = await axios.post('https://positivemetering.in/contacts.php', 
+            const response = await axios.post('https://positivemetering.ae/contacts.php', 
               {
               name: fullname,
               email,
