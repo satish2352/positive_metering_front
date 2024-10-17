@@ -83,7 +83,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           // Reset form fields and state after successful submission
 
           try {
-            const response = await axios.post('https://positivemetering.ae/contacts.php', 
+            const response = await axios.post('https://positivemetering.in/contacts.php', 
               {
               name: fullname,
               email,
@@ -202,9 +202,9 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           //  sitekey="6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E"
                         // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                         // positive.in
-                        //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+                         sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
                         // positive.ae
-                        sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+                        // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
             onChange={onChange}
           />
           {errors.captcha && (
