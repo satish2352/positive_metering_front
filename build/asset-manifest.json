@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.615fe560.css",
-    "main.js": "/static/js/main.cf67d454.js",
+    "main.js": "/static/js/main.e28a8407.js",
     "static/js/453.20b77820.chunk.js": "/static/js/453.20b77820.chunk.js",
     "static/media/My Videodsgfdg.mp4": "/static/media/My Videodsgfdg.0ecdc297719790d2b60f.mp4",
     "static/media/WhatsApp-Video-2024-07-18-at-115.mp4": "/static/media/WhatsApp-Video-2024-07-18-at-115.74012b059b6cfbbced47.mp4",
@@ -51,9 +51,7 @@
     "static/media/leadershipimg2.png": "/static/media/leadershipimg2.91461f9c6594790e19d3.png",
     "static/media/events PAGE.jpg": "/static/media/events PAGE.0fa961268b0208cce48e.jpg",
     "static/media/2540 x 1023 222.jpg": "/static/media/2540 x 1023 222.b33a46b8161097b29826.jpg",
-    "static/media/Group 1000004137.png": "/static/media/Group 1000004137.f0c33984dac7646c5a65.png",
     "static/media/service PAGE.jpg": "/static/media/service PAGE.599f63f73b527af8343b.jpg",
-    "static/media/image.png": "/static/media/image.12c6ba1169092471769c.png",
     "static/media/Group 1000004140 (1) (1).png": "/static/media/Group 1000004140 (1) (1).f5305b2cc52afb91adaf.png",
     "static/media/blog PAGE.jpg": "/static/media/blog PAGE.7e332cd7f8e0d28595a8.jpg",
     "static/media/product PAGE.jpg": "/static/media/product PAGE.1f61df68072288b85e1c.jpg",
@@ -64,6 +62,7 @@
     "static/media/BANER product.jpg": "/static/media/BANER product.e1c37bfaef215e2bd9eb.jpg",
     "static/media/Group 1000004143 (1).jpg": "/static/media/Group 1000004143 (1).5e51bd5c905dd0af122c.jpg",
     "static/media/image-removebg-preview (89) 1.png": "/static/media/image-removebg-preview (89) 1.aad8a2abbaa95c71ffb0.png",
+    "static/media/image.png": "/static/media/image.a959cff37d784f3ed874.png",
     "static/media/madhuli.jpeg": "/static/media/madhuli.d9fedfd56bbf16c22314.jpeg",
     "static/media/PRE ORDER SERVICE (1).png": "/static/media/PRE ORDER SERVICE (1).f06d32f75ac859f55b1e.png",
     "static/media/Layer71.png": "/static/media/Layer71.22883c5cd94558584e23.png",
@@ -79,11 +78,11 @@
     "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "main.615fe560.css.map": "/static/css/main.615fe560.css.map",
-    "main.cf67d454.js.map": "/static/js/main.cf67d454.js.map",
+    "main.e28a8407.js.map": "/static/js/main.e28a8407.js.map",
     "453.20b77820.chunk.js.map": "/static/js/453.20b77820.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.615fe560.css",
-    "static/js/main.cf67d454.js"
+    "static/js/main.e28a8407.js"
   ]
 }

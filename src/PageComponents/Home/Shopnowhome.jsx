@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "../../assets/CSS/shophome.css";
 import axios from "axios";
-import im from "../../assets/img/Home/Group 1000004137.png";
+import im from "../../assets/img/Home/image.png";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -250,7 +250,7 @@ const Shopnowhome = () => {
                 data-aos-duration="1500"
               >
                 {" "}
-                "  Shop Now {" "}
+                {/* "  Shop Now {" "} */}
               </h1>
               <h2
                 className=" text-uppercase"
@@ -258,7 +258,7 @@ const Shopnowhome = () => {
                 data-aos-easing="linear"
                 data-aos-duration="1500"
               >
-                Streamline Your Dispensing Process <span className=" fs-1"> !"</span>
+                Streamline Your chemical dosing applications for simplicity and effectiveness<span className=" fs-1"> !"</span>
               </h2>
               <button
                 data-aos="fade-up"
