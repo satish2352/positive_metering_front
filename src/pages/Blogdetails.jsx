@@ -92,19 +92,19 @@ function MyVerticallyCenteredModal({ show, onHide }) {
         if (response.status === 200) {
 
           try {
-            const response = await axios.post('https://positivemetering.in/contacts.php', 
+            const response = await axios.post('https://positivemetering.in/contacts.php',
               {
-              name: fullname,
-              email,
-              mobile,
-              message
-            },
-            {
-              headers: {
-                'Content-Type': 'application/json', // Ensure you're sending JSON data
+                name: fullname,
+                email,
+                mobile,
+                message
               },
-            }
-          );
+              {
+                headers: {
+                  'Content-Type': 'application/json', // Ensure you're sending JSON data
+                },
+              }
+            );
             if (response.status === 200) {
               console.log('Email sent successfully');
             } else {
@@ -210,9 +210,11 @@ function MyVerticallyCenteredModal({ show, onHide }) {
             // sitekey="6Lf6nU4qAAAAANWj2IVet0GaphDxzp0DLfPHSLMF"
             // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
             // positive.in
-             sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+            //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+            // positive.com
+            // sitekey="6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"
             // positive.ae
-            // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+            sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
             onChange={onChange}
           />
           {errors.captcha && (
@@ -255,10 +257,10 @@ function Blogdetails({ image, title, longetxt }) {
             <Image
               src={blogdetails_img2}
               rounded
-        
+
               style={{ height: "31rem", width: "30rem" }}
               alt={title}
-                  title={title}
+              title={title}
               fluid
             />
             <Button

@@ -122,7 +122,7 @@ const UploadCV = () => {
         ) {
           newErrors.mobile = "Mobile number already exists.";
           alert("Mobile number already exists.")
-          
+
         } else if (
           error.response?.data?.message ===
           "Validation error: Email already exists."
@@ -232,9 +232,11 @@ const UploadCV = () => {
                     // sitekey="6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E"
                     // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                     // positive.in
-                     sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+                    //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+                    // positive.com
+                    // sitekey="6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"
                     // positive.ae
-                    // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+                    sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
                     onChange={onChange}
                   />
                   {errors.captcha && (

@@ -1,4 +1,4 @@
-import React, { useState,useRef } from "react";
+import React, { useState, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "../../assets/CSS/shopnow.css";
 import axios from "axios";
@@ -83,19 +83,19 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           // Reset form fields and state after successful submission
 
           try {
-            const response = await axios.post('https://positivemetering.in/contacts.php', 
+            const response = await axios.post('https://positivemetering.in/contacts.php',
               {
-              name: fullname,
-              email,
-              mobile,
-              message
-            },
-            {
-              headers: {
-                'Content-Type': 'application/json', // Ensure you're sending JSON data
+                name: fullname,
+                email,
+                mobile,
+                message
               },
-            }
-          );
+              {
+                headers: {
+                  'Content-Type': 'application/json', // Ensure you're sending JSON data
+                },
+              }
+            );
             if (response.status === 200) {
               console.log('Email sent successfully');
             } else {
@@ -199,12 +199,14 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           <ReCAPTCHA
             className="my-4 ms-2"
             ref={captchaRef}
-          //  sitekey="6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E"
-                        // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
-                        // positive.in
-                         sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
-                        // positive.ae
-                        // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+            //  sitekey="6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E"
+            // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
+            // positive.in
+            //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+            // positive.com
+            // sitekey="6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"
+            // positive.ae
+            sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
             onChange={onChange}
           />
           {errors.captcha && (
@@ -253,7 +255,7 @@ const Shopnow = () => {
             </a>
             <br />
             <a
-              href="tel:+91-253-6613206"aria-label="Positive Metering Pumps"
+              href="tel:+91-253-6613206" aria-label="Positive Metering Pumps"
               className="BannerT "
               style={{ textDecoration: "none" }}
             >

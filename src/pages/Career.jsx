@@ -122,14 +122,14 @@ const Career = () => {
         console.log("Response data:", response.data);
 
         try {
-          const response = await axios.post('https://positivemetering.in/careerenquiry.php', 
+          const response = await axios.post('https://positivemetering.in/careerenquiry.php',
             formData,
-          {
-            headers: {
-              'Content-Type': 'multipart/form-data', // Ensure you're sending JSON data
-            },
-          }
-        );
+            {
+              headers: {
+                'Content-Type': 'multipart/form-data', // Ensure you're sending JSON data
+              },
+            }
+          );
           if (response.status === 200) {
             console.log('Email sent successfully');
           } else {
@@ -169,14 +169,14 @@ const Career = () => {
           newErrors.mobile = "Mobile number already exists.";
           console.log("Mobile number already exists.");
           alert("Mobile number already exists.")
-          
+
         } else if (
           error.response?.data?.message ===
           "Validation error: Email already exists."
         ) {
           newErrors.email = "Email already exists.";
           alert("Email already exists.");
-          
+
         } else {
           newErrors.general = "Failed to submit data. Please try again later.";
         }
@@ -344,10 +344,12 @@ const Career = () => {
                       // local
                       // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                       // positive key .in
-                      sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+                      // sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+                      // positive.com
+                      // sitekey="6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"
 
                       // positive.ae
-                      // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+                      sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
                       onChange={onChange}
                     />
                     {errors.captcha && (

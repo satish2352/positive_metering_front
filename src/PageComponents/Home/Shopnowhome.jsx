@@ -75,19 +75,19 @@ function MyVerticallyCenteredModal({ show, onHide }) {
         if (response.status === 200) {
 
           try {
-            const response = await axios.post('https://positivemetering.in/contacts.php', 
+            const response = await axios.post('https://positivemetering.in/contacts.php',
               {
-              name: fullname,
-              email,
-              mobile,
-              message
-            },
-            {
-              headers: {
-                'Content-Type': 'application/json', // Ensure you're sending JSON data
+                name: fullname,
+                email,
+                mobile,
+                message
               },
-            }
-          );
+              {
+                headers: {
+                  'Content-Type': 'application/json', // Ensure you're sending JSON data
+                },
+              }
+            );
             if (response.status === 200) {
               console.log('Email sent successfully');
             } else {
@@ -123,7 +123,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
         } else if (error.response?.data?.message === "Validation error: Email already exists.") {
           newErrors.email = "Email already exists.";
           alert("Email already exists.");
-          
+
         } else {
           newErrors.general = "Failed to submit data. Please try again later.";
         }
@@ -196,9 +196,11 @@ function MyVerticallyCenteredModal({ show, onHide }) {
             // sitekey="6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local
             // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
             // positive.in
-             sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+            //  sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"
+            // positive.com
+            // sitekey="6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"
             // positive.ae
-            // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+            sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
             onChange={onChange}
           />
           {errors.captcha && (
@@ -246,7 +248,7 @@ const Shopnowhome = () => {
                 data-aos-duration="1500"
               >
                 {" "}
-              "  Shop Now {" "}
+                "  Shop Now {" "}
               </h1>
               <h2
                 className=" text-uppercase"
