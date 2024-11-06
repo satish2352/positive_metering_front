@@ -9,6 +9,7 @@ import ResponsiveImage from "../../pages/ResponsiveImage";
 import imgmobile from "../../assets/img/About/aboutmobileview.png";
 import ReCAPTCHA from "react-google-recaptcha";
 import { IoMdClose } from "react-icons/io";
+import { captchaKey } from "../../App";
 
 // Form component
 const QuoteForm = ({ onClose }) => {
@@ -186,7 +187,7 @@ const QuoteForm = ({ onClose }) => {
         // positive.com
         // sitekey="6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"
         // positive.ae
-        sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+        sitekey={captchaKey}
 
         onChange={onChange}
       />

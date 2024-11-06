@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
 import { IoMdClose } from "react-icons/io";
+import { captchaKey } from "../../App";
 function MyVerticallyCenteredModal({ show, onHide }) {
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
@@ -200,7 +201,8 @@ function MyVerticallyCenteredModal({ show, onHide }) {
             // positive.com
             // sitekey="6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"
             // positive.ae
-            sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+            // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+            sitekey={captchaKey}
             onChange={onChange}
           />
           {errors.captcha && (

@@ -11,6 +11,7 @@ import ResponsiveImage from "./ResponsiveImage";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Helmet } from "react-helmet";
 import MetaTags from "../components/MetaTags";
+import { captchaKey } from "../App";
 const metaDetails = {
   title: 'Join Positive Metering Pvt. Ltd: Apply for Jobs Today | Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators',
   description: 'Explore exciting career opportunities at Positive Metering Pvt. Ltd. Apply now for rewarding positions and join our dynamic team',
@@ -349,7 +350,8 @@ const Career = () => {
                       // sitekey="6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"
 
                       // positive.ae
-                      sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+                      // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+                      sitekey={captchaKey}
                       onChange={onChange}
                     />
                     {errors.captcha && (

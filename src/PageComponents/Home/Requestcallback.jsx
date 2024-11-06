@@ -5,6 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import "../../assets/CSS/requestcall.css";
 import homepagevideo from "../../assets/video/My Videodsgfdg.mp4";
 import mobilepagevideo from "../../assets/video/WhatsApp-Video-2024-07-18-at-115.mp4";
+import { captchaKey } from "../../App";
 
 const Requestcallback = () => {
 
@@ -297,7 +298,8 @@ const Requestcallback = () => {
                         // positive.com
                         // sitekey="6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"
                         // positive.ae
-                        sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+                        // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+                        sitekey={captchaKey}
                         onChange={handleCaptchaChange}
                       />
                       {errors.captcha && (
@@ -453,11 +455,12 @@ const Requestcallback = () => {
                         className="my-4"
                         ref={captchaRef}
                         // sitekey="6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local web
-                        sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq" // ae
+                        // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq" // ae
                         // sitekey="6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f" //.in
                         // sitekey="6Le657EpAAAAADHl0EnUi-58y19XOcORV9dehjAz"
                         // positive.com
                         // sitekey="6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"
+                        sitekey={captchaKey}
                         onChange={handleCaptchaChange}
                       />
                       {errors.captcha && (

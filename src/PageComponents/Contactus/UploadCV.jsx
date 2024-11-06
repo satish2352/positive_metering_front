@@ -5,6 +5,7 @@ import formImg from "../../assets/img/Contactus/image-removebg-preview (89) 1.pn
 import Image from "react-bootstrap/Image";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
+import { captchaKey } from "../../App";
 
 const UploadCV = () => {
   const [name, setName] = useState("");
@@ -236,7 +237,8 @@ const UploadCV = () => {
                     // positive.com
                     // sitekey="6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"
                     // positive.ae
-                    sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+                    // sitekey="6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"
+                    sitekey={captchaKey}
                     onChange={onChange}
                   />
                   {errors.captcha && (
