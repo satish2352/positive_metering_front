@@ -258,7 +258,7 @@ const Shopnowhome = () => {
                 data-aos-easing="linear"
                 data-aos-duration="1500"
               >
-                Streamline Your chemical dosing applications for simplicity and effectiveness<span className=" fs-1"> !"</span>
+                "Streamline Your chemical dosing applications for simplicity and effectiveness."
               </h2>
               <button
                 data-aos="fade-up"
