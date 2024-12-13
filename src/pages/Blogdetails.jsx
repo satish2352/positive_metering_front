@@ -8,6 +8,7 @@ import axios from "axios";
 import Image from "react-bootstrap/Image";
 import blogdetails_img1 from "../assets/img/Blogdetails/blogdetails_img1.png";
 import blogdetails_img2 from "../assets/img/Blogdetails/blogdetails_img2.png";
+import { Helmet } from "react-helmet";
 
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
@@ -246,6 +247,15 @@ function Blogdetails({ image, title, longetxt }) {
 
   return (
     <>
+      <Helmet>
+        <title>{title}</title>
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content="Read more about this exciting topic!" />
+        <meta property="og:image" content={imgmobile} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={window.location.href} />
+      </Helmet>
+
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
       <Heading heading={"Blog"} />
       <Container className="mt-3" heading={"Blog"}>

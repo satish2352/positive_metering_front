@@ -22,7 +22,7 @@ import Eventdetails from './pages/Eventdetails'
 import Eventspage from './pages/Eventspage'
 import Movingicon from './components/Movingicon'
 const Router = () => {
-    const { blog,newevents } = useContext(ProductContext);
+    const { blog, newevents } = useContext(ProductContext);
 
     return (
         <>
@@ -34,7 +34,7 @@ const Router = () => {
                 <Route path='/contactus' element={<Contactus />} />
                 <Route path='/career' element={<Career />} />
                 <Route path='/news' element={<NewsAndEvents />} />
-                <Route path='/event' element={<Eventspage/>} />
+                <Route path='/event' element={<Eventspage />} />
                 <Route path='/service' element={<Service />} />
                 <Route path='/blogdetails' element={<Blogdetails />} />
                 <Route path='/aboutleadership' element={<Aboutleadership />} />
@@ -45,14 +45,14 @@ const Router = () => {
                     return (
                         <Route
                             key={c.title}
-                            path={`/blogdetails/${c.id}`}
+                            path={`/blogdetails/${c.title.toLowerCase().replace(/\s+/g, '-')}`}
                             element={
                                 <Blogdetails title={c.title} image={c.img} longetxt={c.longDesc} />
                             }
                         />
                     );
                 })}
-                 {newevents.map((c) => {
+                {newevents.map((c) => {
                     return (
                         <Route
                             key={c.title}
@@ -64,7 +64,7 @@ const Router = () => {
                     );
                 })}
             </Routes>
-            <Movingicon/>
+            <Movingicon />
             <Footer />
         </>
     )

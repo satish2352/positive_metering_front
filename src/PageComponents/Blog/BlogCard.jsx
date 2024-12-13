@@ -82,7 +82,7 @@ const BlogCard = () => {
                         __html: blog.shortDesc,
                       }}
                     >
-                      {}
+                      { }
                     </Card.Text>
                   </div>
                   <div className="d-flex justify-content-end ">
@@ -93,7 +93,9 @@ const BlogCard = () => {
                         border: "3px solid white",
                         borderRadius: "30px",
                       }}
-                      onClick={() => navigate(`/blogdetails/${blog.id}`)}
+                      onClick={() =>
+                        navigate(`/blogdetails/${blog.title.toLowerCase().replace(/\s+/g, '-')}`)
+                      }
                     >
                       Read More
                     </Button>
@@ -153,7 +155,7 @@ const BlogCard = () => {
                         __html: blog.shortDesc,
                       }}
                     >
-                      {}
+                      { }
                     </Card.Text>
                   </div>
                   <div className="d-flex justify-content-end ">
@@ -164,7 +166,9 @@ const BlogCard = () => {
                         border: "3px solid white",
                         borderRadius: "30px",
                       }}
-                      onClick={() => navigate(`/blogdetails/${blog.id}`)}
+                      onClick={() =>
+                        navigate(`/blogdetails/${blog.title.toLowerCase().replace(/\s+/g, '-')}`)
+                      }
                     >
                       Read More
                     </Button>
@@ -175,19 +179,19 @@ const BlogCard = () => {
           )}
         </Row>
       </Card>
-    </Col>
+    </Col >
   );
 
   return (
     <>
       <ResponsiveImage mobileSrc={imgmobile} desktopSrc={imgtop} />
       <section>
-        
+
         <Container>
-                <Row className=' text-center'>
-                    <h1 className='oueprd text-uppercase mt-3' >Blog</h1>
-                </Row>
-            </Container>
+          <Row className=' text-center'>
+            <h1 className='oueprd text-uppercase mt-3' >Blog</h1>
+          </Row>
+        </Container>
         <Container fluid>
           {blogData.map((_, rowIndex) => (
             <Row className="px-4" key={rowIndex}>
