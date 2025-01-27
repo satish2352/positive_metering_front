@@ -280,7 +280,7 @@ const ProductList = ({ no }) => {
                           <img
                             alt={productDetails.productName}
                             title={productDetails.productName}
-                            src={`https://api.positivemetering.ae/${productDetails.images[0].img}`}
+                            src={`https://nodetest.positivemetering.in/${productDetails.images[0].img}`}
                             rounded
                             fluid
                             className="rounded mx-auto img-fluid d-block"
@@ -336,7 +336,7 @@ const ProductList = ({ no }) => {
                               <img
                                 alt={productDetails.productName}
                                 title={productDetails.productName}
-                                src={`https://api.positivemetering.ae/${image.img}`}
+                                src={`https://nodetest.positivemetering.in/${image.img}`}
                                 className="img-fluid "
 
                               /></div>
@@ -392,7 +392,7 @@ const ProductList = ({ no }) => {
                                         alt={product.productName}
                                         title={product.productName}
                                         variant="top"
-                                        src={`https://api.positivemetering.ae/${product.images[0].img}`}
+                                        src={`https://nodetest.positivemetering.in/${product.images[0].img}`}
                                         className=" img-fluid p-2"
                                       />)}
                                   </div>
@@ -547,9 +547,9 @@ const ProductList = ({ no }) => {
                                     <img
                                       alt={data.productName}
                                       title={data.productName}
-                                      src={`https://api.positivemetering.ae/${data.img}`}
+                                      src={`https://nodetest.positivemetering.in/${data.img}`}
                                       className="eventimg img-fluid rounded-4"
-                                      onClick={() => handleImageClick(`https://api.positivemetering.ae/${data.img}`)}
+                                      onClick={() => handleImageClick(`https://nodetest.positivemetering.in/${data.img}`)}
                                       style={{ cursor: "pointer" }}
                                     />
                                   </Col>
