@@ -128,7 +128,7 @@ const NewsAndEvents = () => {
                     <button
                       style={{ backgroundColor: "transparent" }}
                       className="rounded-5 border-3 px-3 py-2 border border-danger fw-bolder"
-                      onClick={() => navigate(`/newevents/${card.id}`)}
+                      onClick={() => navigate(`/newevents/${card.title.toLowerCase().replace(/\s+/g, '-')}`)}
                     >
                       Read more
                     </button>

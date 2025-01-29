@@ -56,7 +56,7 @@ const Router = () => {
                     return (
                         <Route
                             key={c.title}
-                            path={`/newevents/${c.id}`}
+                            path={`/newevents/${c.title.toLowerCase().replace(/\s+/g, '-')}`}
                             element={
                                 <Eventdetails title={c.title} image={c.img} longetxt={c.longDesc} />
                             }
