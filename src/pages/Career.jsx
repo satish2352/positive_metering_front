@@ -123,7 +123,7 @@ const Career = () => {
         console.log("Response data:", response.data);
 
         try {
-          const response = await axios.post('https://positivemetering.in/careerenquiry.php',
+          const response = await axios.post(`${window.location.href}careerenquiry.php`,
             formData,
             {
               headers: {

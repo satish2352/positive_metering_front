@@ -5,7 +5,7 @@ import axios from "axios";
 import im from "../../assets/img/Home/homepage img mobileview.png";
 import Image from "react-bootstrap/Image";
 import ResponsiveImage from "../../pages/ResponsiveImage";
-import im1 from "../../assets/img/Home/image.png";
+import im1 from "../../assets/img/Home/image1.png";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -84,7 +84,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           // Reset form fields and state after successful submission
 
           try {
-            const response = await axios.post('https://positivemetering.in/contacts.php',
+            const response = await axios.post(`${window.location.href}contacts.php`,
               {
                 name: fullname,
                 email,

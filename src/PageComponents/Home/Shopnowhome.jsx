@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "../../assets/CSS/shophome.css";
 import axios from "axios";
-import im from "../../assets/img/Home/image.png";
+import im from "../../assets/img/Home/image1.png";
 import { useNavigate } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -76,7 +76,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
         if (response.status === 200) {
 
           try {
-            const response = await axios.post('https://positivemetering.in/contacts.php',
+            const response = await axios.post(`${window.location.href}contacts.php`,
               {
                 name: fullname,
                 email,

@@ -94,7 +94,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
         if (response.status === 200) {
 
           try {
-            const response = await axios.post('https://positivemetering.in/contacts.php',
+            const response = await axios.post(`${window.location.href}contacts.php`,
               {
                 name: fullname,
                 email,
