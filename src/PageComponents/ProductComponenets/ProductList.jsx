@@ -13,6 +13,7 @@ import imgmobile from "../../assets/img/changes/changes/product PAGE.jpg";
 import imgtop from "../../assets/img/changes/changes/BANER product.jpg";
 import { IoMdClose } from "react-icons/io";
 import MetaTags from "../../components/MetaTags";
+import { baseURLLink } from "../../App";
 const ProductList = ({ no }) => {
   const [prdname, setprdname] = useState("Product")
 
@@ -280,7 +281,7 @@ const ProductList = ({ no }) => {
                           <img
                             alt={productDetails.productName}
                             title={productDetails.productName}
-                            src={`https://nodetest.positivemetering.in/${productDetails.images[0].img}`}
+                            src={`${baseURLLink}${productDetails.images[0].img}`}
                             rounded
                             fluid
                             className="rounded mx-auto img-fluid d-block"
@@ -336,7 +337,7 @@ const ProductList = ({ no }) => {
                               <img
                                 alt={productDetails.productName}
                                 title={productDetails.productName}
-                                src={`https://nodetest.positivemetering.in/${image.img}`}
+                                src={`${baseURLLink}${image.img}`}
                                 className="img-fluid "
 
                               /></div>
@@ -392,7 +393,7 @@ const ProductList = ({ no }) => {
                                         alt={product.productName}
                                         title={product.productName}
                                         variant="top"
-                                        src={`https://nodetest.positivemetering.in/${product.images[0].img}`}
+                                        src={`${baseURLLink}${product.images[0].img}`}
                                         className=" img-fluid p-2"
                                       />)}
                                   </div>
@@ -547,9 +548,9 @@ const ProductList = ({ no }) => {
                                     <img
                                       alt={data.productName}
                                       title={data.productName}
-                                      src={`https://nodetest.positivemetering.in/${data.img}`}
+                                      src={`${baseURLLink}${data.img}`}
                                       className="eventimg img-fluid rounded-4"
-                                      onClick={() => handleImageClick(`https://nodetest.positivemetering.in/${data.img}`)}
+                                      onClick={() => handleImageClick(`${baseURLLink}${data.img}`)}
                                       style={{ cursor: "pointer" }}
                                     />
                                   </Col>

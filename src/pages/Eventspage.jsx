@@ -46,7 +46,7 @@ const Eventspage = () => {
             <Col key={event.id} xs={12} lg={4} md={6} className="mb-4">
               <img
                 src={event.img}
-                className="eventimg rounded-4"
+                className="eventimg rounded-4 w-100"
                 alt={event.title}
                 title={event.title}
                 onClick={() => handleImageClick(event.img)}

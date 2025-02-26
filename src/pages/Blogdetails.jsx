@@ -244,11 +244,11 @@ function Blogdetails({ image, title, longetxt }) {
 
 
   const [modalShow, setModalShow] = React.useState(false);
-
+  document.title = "Blog Details | Positive Metering"
   return (
     <>
       <Helmet>
-        <title>{title}</title>
+        <title>{"Blog Details | Positive Metering"}</title>
         <meta property="og:title" content={title} />
         <meta property="og:description" content="Read more about this exciting topic!" />
         <meta property="og:image" content={imgmobile} />
