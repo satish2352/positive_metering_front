@@ -11,7 +11,7 @@ import ResponsiveImage from "./ResponsiveImage";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Helmet } from "react-helmet";
 import MetaTags from "../components/MetaTags";
-import { captchaKey } from "../App";
+import { captchaKey, mailUrl } from "../App";
 const metaDetails = {
   title: 'Join Positive Metering Pvt. Ltd: Apply for Jobs Today | Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators',
   description: 'Explore exciting career opportunities at Positive Metering Pvt. Ltd. Apply now for rewarding positions and join our dynamic team',
@@ -33,7 +33,7 @@ const Career = () => {
   const fileInputRef = useRef(null);
   const [errors, setErrors] = useState({});
   const [isCaptchaVerified, setCaptchaVerified] = useState(false);
-
+  const [flag, setFlag] = useState(false)
   const onChange = (value) => {
     setCaptchaVerified(true);
     console.log(value);
@@ -119,11 +119,12 @@ const Career = () => {
             },
           }
         );
+        setFlag(true)
         alert("Thank You..! We Will Connect With You Soon.");
         console.log("Response data:", response.data);
 
         try {
-          const response = await axios.post(`${window.location.href}careerenquiry.php`,
+          const response = await axios.post(`${mailUrl}/careerenquiry.php`,
             formData,
             {
               headers: {
@@ -136,6 +137,9 @@ const Career = () => {
           } else {
             console.log('Failed to send email');
           }
+          setTimeout(() => {
+            setFlag(false)
+          }, 10000);
         } catch (error) {
           console.error('There was an error sending the email!', error);
           alert('Error sending email');
@@ -370,6 +374,7 @@ const Career = () => {
                         letterSpacing: "2px",
                         backgroundColor: "#E84C52",
                       }}
+                      disabled={flag}
                     >
                       Submit
                     </Button>

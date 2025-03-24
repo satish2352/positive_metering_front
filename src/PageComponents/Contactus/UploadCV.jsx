@@ -5,7 +5,7 @@ import formImg from "../../assets/img/Contactus/image-removebg-preview (89) 1.pn
 import Image from "react-bootstrap/Image";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
-import { captchaKey } from "../../App";
+import { captchaKey, mailUrl } from "../../App";
 
 const UploadCV = () => {
   const [name, setName] = useState("");
@@ -15,7 +15,7 @@ const UploadCV = () => {
   const [errors, setErrors] = useState({});
   const [isCaptchaVerified, setCaptchaVerified] = useState(false);
   const captchaRef = useRef(null);
-
+  const [flag, setFlag] = useState(false)
   const onChange = (value) => {
     setCaptchaVerified(true);
     console.log(value);
@@ -72,8 +72,9 @@ const UploadCV = () => {
         });
         if (response.status === 200) {
           alert("Thank You..! We Will Connect With You Soon.");
+          setFlag(true)
           try {
-            const response = await axios.post(`${window.location.href}contacts.php`,
+            const response = await axios.post(`${mailUrl}/contacts.php`,
               {
                 name,
                 email,
@@ -91,6 +92,9 @@ const UploadCV = () => {
             } else {
               console.log('Failed to send email');
             }
+            setTimeout(() => {
+              setFlag(false)
+            }, 10000);
           } catch (error) {
             console.error('There was an error sending the email!', error);
             console.log('Error sending email');
@@ -252,6 +256,7 @@ const UploadCV = () => {
                   type="submit"
                   className="py-3 px-5 fs-6"
                   style={{ borderRadius: "30px", letterSpacing: "2px" }}
+                  disabled={flag}
                 >
                   Submit
                 </Button>

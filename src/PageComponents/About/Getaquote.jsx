@@ -9,7 +9,7 @@ import ResponsiveImage from "../../pages/ResponsiveImage";
 import imgmobile from "../../assets/img/About/aboutmobileview.png";
 import ReCAPTCHA from "react-google-recaptcha";
 import { IoMdClose } from "react-icons/io";
-import { captchaKey } from "../../App";
+import { captchaKey, mailUrl } from "../../App";
 
 // Form component
 const QuoteForm = ({ onClose }) => {
@@ -20,7 +20,7 @@ const QuoteForm = ({ onClose }) => {
   const [errors, setErrors] = useState({});
   const [isCaptchaVerified, setCaptchaVerified] = useState(false);
   const captchaRef = useRef(null);
-
+  const [flag, setFlag] = useState(false)
   const onChange = (value) => {
     setCaptchaVerified(true);
     console.log(value);
@@ -77,8 +77,9 @@ const QuoteForm = ({ onClose }) => {
         });
         if (response.status === 200) {
           alert("Thank You..! We Will Connect With You Soon.");
+          setFlag(true)
           try {
-            const response = await axios.post(`${window.location.href}contacts.php`,
+            const response = await axios.post(`${mailUrl}/contacts.php`,
               {
                 name: fullname,
                 email,
@@ -96,6 +97,9 @@ const QuoteForm = ({ onClose }) => {
             } else {
               console.log('Failed to send email');
             }
+            setTimeout(() => {
+              setFlag(false)
+            }, 10000);
           } catch (error) {
             console.error('There was an error sending the email!', error);
             console.log('Error sending email');
@@ -197,6 +201,7 @@ const QuoteForm = ({ onClose }) => {
       <button
         type="submit"
         className="bannerbtn w-50 py-2 m-3 me-4 float-end"
+        disabled={flag}
       >
         SUBMIT
       </button>

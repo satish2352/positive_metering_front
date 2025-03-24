@@ -5,7 +5,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import "../../assets/CSS/requestcall.css";
 import homepagevideo from "../../assets/video/My Videodsgfdg.mp4";
 import mobilepagevideo from "../../assets/video/WhatsApp-Video-2024-07-18-at-115.mp4";
-import { captchaKey } from "../../App";
+import { captchaKey, mailUrl } from "../../App";
 
 const Requestcallback = () => {
 
@@ -35,6 +35,7 @@ const Requestcallback = () => {
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
   const [isCaptchaVerified, setCaptchaVerified] = useState(false);
+  const [flag, setFlag] = useState(false)
   const [content, setContent] = useState(
     "Unlock unparalleled dosing precision and reliability with our state-of-the-art Plunger Type Dosing Pumps. Engineered to surpass industry standards and meet the most demanding applications, our pumps redefine excellence in fluid handling."
   );
@@ -140,8 +141,9 @@ const Requestcallback = () => {
         });
         if (response.status === 200) {
           alert("Thank You..! We Will Connect With You Soon.");
+          setFlag(true)
           try {
-            const response = await axios.post(`${window.location.href}contacts.php`,
+            const response = await axios.post(`${mailUrl}/contacts.php`,
               {
                 name: fullname,
                 email,
@@ -159,6 +161,9 @@ const Requestcallback = () => {
             } else {
               console.log('Failed to send email');
             }
+            setTimeout(() => {
+              setFlag(false)
+            }, 10000);
           } catch (error) {
             console.error('There was an error sending the email!', error);
             console.log('Error sending email');
@@ -311,6 +316,7 @@ const Requestcallback = () => {
                         <button
                           className="px-4 py-2 text-center formrequestbtn"
                           type="submit"
+                          disabled={flag}
                         >
                           Submit
                         </button>
@@ -472,6 +478,7 @@ const Requestcallback = () => {
                         <button
                           className="px-4 py-2 text-center formrequestbtn"
                           type="submit"
+                          disabled={flag}
                         >
                           Submit
                         </button>

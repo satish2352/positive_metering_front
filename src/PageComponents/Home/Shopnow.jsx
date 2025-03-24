@@ -12,7 +12,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { IoIosCloseCircle } from "react-icons/io";
 
 import { IoMdClose } from "react-icons/io";
-import { captchaKey } from "../../App";
+import { captchaKey, mailUrl } from "../../App";
 
 
 function MyVerticallyCenteredModal({ show, onHide }) {
@@ -22,7 +22,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
   const [message, setMessage] = useState("");
   const [errors, setErrors] = useState({});
   const [isCaptchaVerified, setCaptchaVerified] = useState(false);
-
+  const [flag, setFlag] = useState(false)
   const captchaRef = useRef(null);
 
   const onChange = (value) => {
@@ -80,11 +80,12 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           message,
         });
         alert("Thank You..! We Will Connect With You Soon.");
+        setFlag(true)
         if (response.status === 200) {
           // Reset form fields and state after successful submission
 
           try {
-            const response = await axios.post(`${window.location.href}contacts.php`,
+            const response = await axios.post(`${mailUrl}/contacts.php`,
               {
                 name: fullname,
                 email,
@@ -102,6 +103,9 @@ function MyVerticallyCenteredModal({ show, onHide }) {
             } else {
               console.log('Failed to send email');
             }
+            setTimeout(() => {
+              setFlag(false)
+            }, 10000);
           } catch (error) {
             console.error('There was an error sending the email!', error);
             console.log('Error sending email');
@@ -217,6 +221,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
           <button
             type="submit"
             className="bannerbtn w-50 py-2 m-3 me-4 float-end"
+            disabled={flag}
           >
             SUBMIT
           </button>
