@@ -11,7 +11,6 @@ import { CiFacebook } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { FaXTwitter } from "react-icons/fa6";
-
 import { ProductContext } from "../ProductContext";
 import { useNavigate } from "react-router-dom";
 import { CiTwitter } from "react-icons/ci";
@@ -379,7 +378,7 @@ const Footer = () => {
             lg={6}
             className="text-center d-flex justify-content-evenly align-items-center"
           > <div>
-              <a href="https://website.positivemetering.in/" className="smglink" aria-label="Positive Metering Pumps">
+              <a href={window.location.origin} className="smglink" aria-label="Positive Metering Pumps">
                 &copy; {currentYear}
                 <ins className="">  Positive Metering Pumps All Rights Reserved.</ins>{" "}
               </a>
@@ -408,6 +407,9 @@ const Footer = () => {
                     </a>
                     <a href={socialLinks.twitter} target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps">
                       <FaXTwitter className="icon-hover fw-bolder mx-2" />
+                    </a>
+                    <a href={socialLinks.youtube} target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps">
+                    <FaYoutube className="icon-hover fw-bolder mx-2" />
                     </a>
                   </>
                 )}
