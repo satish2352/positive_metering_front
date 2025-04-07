@@ -7,7 +7,6 @@ import axios from 'axios';
 
 const Movingicon = () => {
     const [socialLinks, setSocialLinks] = useState({});
-    console.log("socialLinks", socialLinks);
 
     useEffect(() => {
         // Fetching social media links

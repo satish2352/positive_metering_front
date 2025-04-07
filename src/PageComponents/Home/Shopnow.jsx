@@ -27,7 +27,6 @@ function MyVerticallyCenteredModal({ show, onHide }) {
 
   const onChange = (value) => {
     setCaptchaVerified(true);
-    console.log(value);
   };
 
   const validateForm = () => {

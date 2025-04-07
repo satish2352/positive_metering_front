@@ -19,7 +19,6 @@ const Footer = () => {
   const navigate = useNavigate();
 
   const [socialLinks, setSocialLinks] = useState({});
-  console.log("socialLinks", socialLinks);
 
   useEffect(() => {
     // Fetching social media links
@@ -88,7 +87,6 @@ const Footer = () => {
           email,
         });
         alert("Thank you for subscribing to us!");
-        console.log("Response:", response.data);
         setEmail("");
         setErrors({});
 

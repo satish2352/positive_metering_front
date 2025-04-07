@@ -157,7 +157,7 @@ const Requestcallback = () => {
               }
             );
             if (response.status === 200) {
-              console.log('Email sent successfully');
+              // console.log('Email sent successfully');
             } else {
               console.log('Failed to send email');
             }
@@ -185,7 +185,6 @@ const Requestcallback = () => {
 
   const handleCaptchaChange = (value) => {
     setCaptchaVerified(true);
-    console.log("Captcha value:", value);
   };
 
   return (

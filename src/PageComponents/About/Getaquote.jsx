@@ -23,7 +23,6 @@ const QuoteForm = ({ onClose }) => {
   const [flag, setFlag] = useState(false)
   const onChange = (value) => {
     setCaptchaVerified(true);
-    console.log(value);
   };
 
   const validateForm = () => {
@@ -93,7 +92,7 @@ const QuoteForm = ({ onClose }) => {
               }
             );
             if (response.status === 200) {
-              console.log('Email sent successfully');
+              // console.log('Email sent successfully');
             } else {
               console.log('Failed to send email');
             }
@@ -104,7 +103,6 @@ const QuoteForm = ({ onClose }) => {
             console.error('There was an error sending the email!', error);
             console.log('Error sending email');
           }
-          console.log("newData", response.data);
           onClose && onClose(); // Close the modal if onClose function is provided
           resetForm();
         } else {

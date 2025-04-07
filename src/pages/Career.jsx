@@ -36,7 +36,6 @@ const Career = () => {
   const [flag, setFlag] = useState(false)
   const onChange = (value) => {
     setCaptchaVerified(true);
-    console.log(value);
   };
 
   const validateForm = () => {
@@ -121,7 +120,6 @@ const Career = () => {
         );
         setFlag(true)
         alert("Thank You..! We Will Connect With You Soon.");
-        console.log("Response data:", response.data);
 
         try {
           const response = await axios.post(`${mailUrl}/careerenquiry.php`,
@@ -133,7 +131,7 @@ const Career = () => {
             }
           );
           if (response.status === 200) {
-            console.log('Email sent successfully');
+            // console.log('Email sent successfully');
           } else {
             console.log('Failed to send email');
           }
@@ -172,7 +170,6 @@ const Career = () => {
           "Validation error: Phone number already exists."
         ) {
           newErrors.mobile = "Mobile number already exists.";
-          console.log("Mobile number already exists.");
           alert("Mobile number already exists.")
 
         } else if (

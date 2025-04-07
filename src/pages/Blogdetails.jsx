@@ -38,7 +38,6 @@ function MyVerticallyCenteredModal({ show, onHide }) {
 
   const onChange = (value) => {
     setCaptchaVerified(true);
-    console.log(value);
   };
 
   const validateForm = () => {
@@ -109,7 +108,7 @@ function MyVerticallyCenteredModal({ show, onHide }) {
               }
             );
             if (response.status === 200) {
-              console.log('Email sent successfully');
+              // console.log('Email sent successfully');
             } else {
               console.log('Failed to send email');
             }

@@ -14,7 +14,6 @@ const Infrastructure = () => {
       try {
         const response = await axios.get("/infrastructure/get-infrastructure");
         setInfrastructureData(response.data.responseData);
-        console.log(response);
       } catch (error) {
         console.error("Error fetching the infrastructure data:", error);
       }
