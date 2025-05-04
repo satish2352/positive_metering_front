@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
 import Image from 'react-bootstrap/Image';
-import progress_img from '../../assets/img/aa/Group 68 (1).jpg'
-import im3 from '../../assets/img/aa/Group 1000004158.jpg'
+import progress_img from '../../assets/img/aa/Group 68.webp'
+import im3 from '../../assets/img/aa/Frame 93.webp'
 import "../../assets/CSS/requestcall.css";
 
 function Progress_cavity_screw_pump() {

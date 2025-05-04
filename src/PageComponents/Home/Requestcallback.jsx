@@ -347,33 +347,37 @@ const Requestcallback = () => {
                 <Col lg={7} className="requestcallbackleft d-none d-lg-block">
                   <div className="requestcallbacklefttop">
                     <h4 className="text-white text-center py-3">
-                      PLUNGER TYPE DOSING PUMPS
+                    Precision Engineered Dosing Pumps, Systems & Agitators – All in One Place
                     </h4>
                   </div>
                   <div
-                    className="p-3 p-lg-5 d-grid align-items-center"
+                    className="p-3 p-lg-4 d-grid align-items-center"
                     style={{ textAlign: "justify" }}
                   >
                     <div className="description">
-                      Unlock unparalleled dosing precision and reliability with
-                      our state-of-the-art Plunger Type Dosing Pumps. Engineered
-                      to surpass industry standards and meet the most demanding
-                      applications, our pumps redefine excellence in fluid
-                      handling.
+                      At Positive Metering Pumps (India) Private Limited, we offer a comprehensive range of high-performance dosing pumps, advanced skid-mounted systems, and reliable agitators — built to serve diverse industry applications with precision and durability.
                     </div>
+                    <p>Browse through our complete product line below:</p>
                     <ul className="features">
-                      <li>Plunger-style dosing pump featuring gland packing</li>
-                      <li>Accurate metering instruments</li>
+                      <li>Plunger Dosing Pumps</li>
+                      <li>Diaphragm Dosing Pumps – Mechanically Actuated</li>
                       <li>
-                        Consistent metering accuracy regardless of back pressure
+                        Diaphragm Dosing Pumps – Hydraulic Actuated
                       </li>
                       <li>
-                        Flow rate linearly related to changes in stroke length
+                        Electronic Dosing Pumps (ANT Pumps)
                       </li>
                       <li>
-                        Optional external setup for flushing the gland packing
+                        Skid-Mounted Chemical Dosing Systems
+                      </li>
+                      <li>
+                        Industrial Agitators
+                      </li>
+                      <li>
+                        Customized Dosing Solutions
                       </li>
                     </ul>
+                    <p>Each product is designed with cutting-edge technology and quality materials to ensure reliable and efficient chemical dosing, even in the most demanding environments.</p>
                   </div>
                 </Col>
                 <Col lg={4} className="requestcallbackleft">
