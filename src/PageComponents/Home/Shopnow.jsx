@@ -239,12 +239,13 @@ function MyVerticallyCenteredModal({ show, onHide }) {
 const Shopnow = () => {
   const [modalShow, setModalShow] = React.useState(false);
   return (
-    <Container fluid className="shopnow py-sm-4 py-lg-0">
-      <Row>
+    <Container fluid className="shopnow">
+      <Row className="justify-content-center">
         <Col
           md={3}
           xs={12}
-          className="d-flex mt-5 justify-content-end align-items-center ls-2"
+          className="d-flex justify-content-center align-items-center"
+          style={{ minHeight: "300px" }} // or any height you want
         >
           <h1 className="bannerH text-center fs-2" style={{ letterSpacing: "3px" }}>
             ADDRESS
@@ -253,11 +254,11 @@ const Shopnow = () => {
         <Col
           md={6}
           xs={12}
-          className=" justify-content-start d-flex text-center text-lg-start "
-        >
+          className="d-flex justify-content-center align-items-center"
+      style={{ minHeight: "300px" }}>
           <div className=" align-content-center  mt-4  BannerT">
             <a href="" className="BannerT " style={{ textDecoration: "none" }}>
-              Head Office, Nashik M-8, MIDC, Ambad, Nashik - 422010, India.
+              M-8, MIDC, Ambad, Nashik - 422010, India.
             </a>
             <br />
             <a
@@ -286,13 +287,13 @@ const Shopnow = () => {
             />
           </div>
         </Col>
-        <Col
+        {/* <Col
           md={3}
           xs={12}
           className="d-none d-lg-flex align-items-end justify-content-end"
         >
           <img className="imshopnow" src={im1} alt="Shop Now" title="Shop Now" />
-        </Col>
+        </Col> */}
       </Row>
     </Container>
   );

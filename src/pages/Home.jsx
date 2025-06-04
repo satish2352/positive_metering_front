@@ -30,13 +30,13 @@ const Home = () => {
   };
 return (
   <>
-    <MetaTags
+    {/* <MetaTags
       title={metaDetails.title}
       description={metaDetails.description}
       keywords={metaDetails.keywords}
       slug={metaDetails.slug}
       alt={metaDetails.alt}
-    />
+    /> */}
     <Homebaner />
     <HomeAboutus />
     <OurProducts />

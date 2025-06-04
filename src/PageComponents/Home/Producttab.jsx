@@ -157,7 +157,7 @@ const ProductTab = ({ no }) => {
                   >
                     {products.map((item) => (
                       
-                      <Carousel.Item className="homeProduct" key={item.id} interval={900}>
+                      <Carousel.Item className="homeProduct" key={item.id} interval={5000}>
                         <Row className="align-items-center chartslider">
                           <Col lg={6} className="px-0">
                             <div className="d-flex justify-content-center">

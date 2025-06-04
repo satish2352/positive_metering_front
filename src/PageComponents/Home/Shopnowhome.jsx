@@ -238,57 +238,31 @@ const Shopnowhome = () => {
         marginTop: "-71px",
       }}
     >
-      <Container fluid className="shopnow py-sm-4 my-5 py-lg-0s">
-        <Row>
-          <Col
-            md={8}
-            xs={12}
-            className="mt-5 mt-lg-0 justify-content-center d-flex text-center text-lg-start  "
+      <Container fluid className="shopnow d-flex flex-column justify-content-center align-items-center text-center" style={{ minHeight: "60vh" }}>
+        <div className="">
+          <h2
+            className="text-uppercase"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
           >
-            <div className=" align-content-center">
-
-              <h1
-                className=" text-uppercase"
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-              >
-                {" "}
-                {/* "  Shop Now {" "} */}
-              </h1>
-              <h2
-                className=" text-uppercase"
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-              >
-                "Streamline Your chemical dosing applications for simplicity and effectiveness."
-              </h2>
-              <button
-                data-aos="fade-up"
-                data-aos-easing="linear"
-                data-aos-duration="1500"
-                className=" bg-transparent border border-2 border-white text-white rounded-5 px-3 py-3 fw-bold fs-6"
-                style={{ letterSpacing: "2px" }}
-                onClick={() => setModalShow(true)}
-              >
-                {" "}
-                CONTACT US
-              </button>
-              <MyVerticallyCenteredModal
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-              />
-            </div>
-          </Col>
-          <Col
-            md={4}
-            xs={12}
-            className="d-none d-lg-flex align-items-end justify-content-end"
+            Streamline Your chemical dosing applications for<br /> simplicity and effectiveness.
+          </h2>
+          <button
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1500"
+            className="bg-transparent border border-2 border-white text-white rounded-5 px-3 py-3 fw-bold fs-6 mt-3"
+            style={{ letterSpacing: "2px" }}
+            onClick={() => setModalShow(true)}
           >
-            <img className="imshopnow" src={im} alt="Shop Now" title="Shop Now" />
-          </Col>
-        </Row>
+            CONTACT US
+          </button>
+          <MyVerticallyCenteredModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+          />
+        </div>
       </Container>
     </div>
   );

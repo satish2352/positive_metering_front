@@ -145,7 +145,7 @@ const Aboutleadership = () => {
                       {leader.description}
                     </p>
                     <div className="social-icons">
-                      {leader.facebook ? (
+                      {/* {leader.facebook ? (
                         <a href={leader.facebook} target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps" className="text-dark">
                           <FaFacebook className="icon" />
                         </a>
@@ -153,9 +153,9 @@ const Aboutleadership = () => {
                         <span className="text-dark">
                           <FaFacebook className="icon" />
                         </span>
-                      )}
+                      )} */}
 
-                      {leader.instagram ? (
+                      {/* {leader.instagram ? (
                         <a href={leader.instagram} target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps" className="text-dark">
                           <FaInstagram className="icon" />
                         </a>
@@ -163,7 +163,7 @@ const Aboutleadership = () => {
                         <span className="text-dark">
                           <FaInstagram className="icon" />
                         </span>
-                      )}
+                      )} */}
 
                       {leader.linkedin ? (
                         <a href={leader.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps" className="text-dark">
@@ -231,7 +231,7 @@ const Aboutleadership = () => {
                       {leader.description}
                     </p>
                     <div className="social-icons">
-                      {leader.facebook ? (
+                      {/* {leader.facebook ? (
                         <a href={leader.facebook} target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps" className="text-dark">
                           <FaFacebook className="icon" />
                         </a>
@@ -239,9 +239,9 @@ const Aboutleadership = () => {
                         <span className="text-dark">
                           <FaFacebook className="icon" />
                         </span>
-                      )}
+                      )} */}
 
-                      {leader.instagram ? (
+                      {/* {leader.instagram ? (
                         <a href={leader.instagram} target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps" className="text-dark">
                           <FaInstagram className="icon" />
                         </a>
@@ -249,7 +249,7 @@ const Aboutleadership = () => {
                         <span className="text-dark">
                           <FaInstagram className="icon" />
                         </span>
-                      )}
+                      )} */}
 
                       {leader.linkedin ? (
                         <a href={leader.linkedin} target="_blank" rel="noopener noreferrer" aria-label="Positive Metering Pumps" className="text-dark">

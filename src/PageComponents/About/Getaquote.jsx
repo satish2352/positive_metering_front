@@ -257,8 +257,8 @@ const Getaquote = () => {
           style={{ letterSpacing: "3px" }}
         >
           <h1 className="p-5 text-white fw-light">
-            "Streamline Your Dispensing Process{" "}
-            <span className="fw-bold fs-1">Shop Now!</span>"
+            Streamline Your Dispensing Process{" "}
+            <div className="fw-bold fs-1">Shop Now!</div>
           </h1>
         </Col>
         <Col lg={3}>
