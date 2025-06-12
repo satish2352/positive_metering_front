@@ -72,7 +72,7 @@ const HomeAboutus = () => {
             data-aos-easing="linear"
             data-aos-duration="1500"
           >
-            <div style={{ letterSpacing: "4px" }} className=" fs-1">ABOUT US</div>
+            <div style={{ letterSpacing: "4px" }} className=" fs-1"><h1>ABOUT US</h1></div>
             {loading ? <p>Loading...</p> : 
               error ? <p className="text-danger">{error}</p> : (
               <p className="pooja">

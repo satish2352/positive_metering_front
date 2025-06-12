@@ -4,8 +4,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import axios from "axios";
 import "../../assets/CSS/cards.css";
-import imgtop from "../../assets/img/aa/Group 1000004142 (2).png";
-import imgmobile from "../../assets/img/aa/Group 1000004143 (1).png";
+import imgtop from "../../assets/img/contactus.webp";
+import imgmobile from "../../assets/img/ContactPAGE.webp";
 import ResponsiveImage from "../../pages/ResponsiveImage";
 
 const ContactCard = () => {
