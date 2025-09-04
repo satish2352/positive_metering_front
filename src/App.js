@@ -22,8 +22,8 @@ function App() {
 }
 
 export default App;
-export const captchaKey = "6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"  // . com
-// export const captchaKey = "6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"  // . in
+// export const captchaKey = "6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"  // . com
+export const captchaKey = "6LfKtTgqAAAAAGiBqsRqk3xuGrMnqfIlKQgMpT4f"  // . in
 // export const captchaKey = "6LdscT8qAAAAAPbFHPpVbW3vesSLNAIEqdZuB8Dq"  // . ae
 // export const captchaKey = "6LevTFsqAAAAAD5gvKBNZTzNtgPHTX38UAlQdV_E" // local
 // export const captchaKey = "6LfpfgwrAAAAALmozTVkrV1bGyljnlypmgf9I2zr" // demo
@@ -32,3 +32,5 @@ export const captchaKey = "6Lc9fHAqAAAAAHnziHljOuI8xEvd4VU-xTikN5Y4"  // . com
 
 export const mailUrl = "https://positivemetering.in"  // for .in and .com
 // export const mailUrl = "https://positivemetering.ae"
+
+export const source = "in"

@@ -41,7 +41,9 @@ const Router = () => {
                 <Route path='/aboutourstory' element={<Aboutourstory />} />
                 <Route path='/aboutourteam' element={<Aboutourteam />} />
                 <Route path='/product/:productName' element={<ProductList />} />
-                {blog.map((c) => {
+                <Route path='/blogdetails/:slug' element={<Blogdetails />} />
+                <Route path='/newevents/:slug' element={<Eventdetails />} />
+                {/* {blog.map((c) => {
                     return (
                         <Route
                             key={c.title}
@@ -51,8 +53,8 @@ const Router = () => {
                             }
                         />
                     );
-                })}
-                {newevents.map((c) => {
+                })} */}
+                {/* {newevents.map((c) => {
                     return (
                         <Route
                             key={c.title}
@@ -62,7 +64,7 @@ const Router = () => {
                             }
                         />
                     );
-                })}
+                })} */}
             </Routes>
             <Movingicon />
             <Footer />

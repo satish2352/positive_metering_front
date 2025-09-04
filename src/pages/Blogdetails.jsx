@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./blogdetails.css";
 import { IoMdClose } from "react-icons/io";
 import Container from "react-bootstrap/Container";
@@ -9,20 +9,18 @@ import Image from "react-bootstrap/Image";
 import blogdetails_img1 from "../assets/img/Blogdetails/blogdetails_img1.png";
 import blogdetails_img2 from "../assets/img/Blogdetails/blogdetails_img2.png";
 import { Helmet } from "react-helmet";
-
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-
 import Form from "react-bootstrap/Form";
 import Heading from "../components/Heading";
 import ResponsiveImage from "./ResponsiveImage";
 
 import imgmobile from "../assets/img/aa/mobile/blog PAGE.jpg";
 import imgtop from "../assets/img/aa/baner/BANER blog.jpg";
-
+import { FaShare } from "react-icons/fa";
 import ReCAPTCHA from "react-google-recaptcha";
-import { captchaKey, mailUrl } from "../App";
-
+import { baseURLLink, source, captchaKey, mailUrl } from "../App";
+import { useLocation } from "react-router-dom";
 function MyVerticallyCenteredModal({ show, onHide }) {
   document.title = "Blogs | Positive Metering Pumps I Private Limited,Nashik - Manufacturer of Dosing System and Agitators"
 
@@ -244,11 +242,48 @@ function MyVerticallyCenteredModal({ show, onHide }) {
   );
 }
 
-function Blogdetails({ image, title, longetxt }) {
+function Blogdetails({ slug, id, image, title, longetxt }) {
+  const [data, setData] = useState({})
+  const location = useLocation()
 
+  useEffect(() => {
+    if (location?.state) {
+      setData(location?.state?.blog)
+    }
+  }, [])
+  useEffect(() => {
+    const fetchBlog = async () => {
+      try {
+        const response = await axios.get("/blogdetails/get-blogdetails");
+        if (response.data.result) {
+          console.log("resp");
+          // get slug from URL
+          const parts = location.pathname.split("/");
+          const slug = parts[2]; // "/blogdetails/wash-filthy-water/com" → "wash-filthy-water"
+
+          // filter blog by slug
+          const matchedBlog = response.data.responseData.find(
+            (b) => b.slug === slug
+          );
+          console.log("matchedBlog", matchedBlog);
+          setData(matchedBlog || null);
+          window.scrollTo(0, 0)
+        }
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+      }
+    };
+
+    fetchBlog();
+  }, [location?.pathname]);
 
   const [modalShow, setModalShow] = React.useState(false);
   document.title = "Blog Details | Positive Metering"
+  const shareUrl = `${baseURLLink}blogdetails/blog/${data.slug}/${source}`;
+  const handleWhatsAppShare = () => {
+    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(shareUrl)}`;
+    window.open(whatsappUrl, "_blank");
+  };
   return (
     <>
       <Helmet>
@@ -266,7 +301,7 @@ function Blogdetails({ image, title, longetxt }) {
         <Row className="d-flex justify-content-between align-content-center">
           <Col lg={8} md={8} sm={12} className="d-flex justify-content-center">
             <div className=" col-lg-7">
-              <img src={image} className="img-fluid rounded-4" alt={title} title={title} fluid />
+              <img src={data.img} className="img-fluid rounded-4" alt={title} title={title} fluid />
             </div>
           </Col>
           <Col lg={4} md={4} sm={12} className=" d-none d-lg-block">
@@ -294,11 +329,11 @@ function Blogdetails({ image, title, longetxt }) {
           </Col>
         </Row>
         <div className="mt-3"></div>
-        <h1 className=" fs-4">{title}</h1>
+        <h1 className=" fs-4">{data.title} {" "} <FaShare title="Share blog" className="p-1" style={{ cursor: "pointer" }} size={30} color={"#ee243e"} onClick={handleWhatsAppShare}/></h1>
       </Container>
       <div className="mt-3 mx-3"></div>
       <Container>
-        <div dangerouslySetInnerHTML={{ __html: longetxt }}></div>
+        <div dangerouslySetInnerHTML={{ __html: data.longDesc }}></div>
       </Container>
       <div className="mb-5"></div>
     </>
