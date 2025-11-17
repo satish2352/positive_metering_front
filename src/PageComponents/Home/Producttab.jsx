@@ -155,7 +155,10 @@ const ProductTab = ({ no }) => {
                     prevIcon={<span className="carousel-control-prev-icon" />}
                     nextIcon={<span className="carousel-control-next-icon" />}
                   >
-                    {products.map((item) => (
+                   {products
+                      .filter((item) => item.isActive)   // ← filter active products
+                      .map((item) => {
+                        return (
                       
                       <Carousel.Item className="homeProduct" key={item.id} interval={5000}>
                         <Row className="align-items-center chartslider">
@@ -212,7 +215,7 @@ const ProductTab = ({ no }) => {
                           </Col>
                         </Row>
                       </Carousel.Item>
-                    ))}
+                   )})}
                   </Carousel>
                 )}
               </Col>
