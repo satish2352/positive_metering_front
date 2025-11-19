@@ -95,6 +95,7 @@ function OurProducts() {
           <Slider {...settings}>
             {activeProducts.map((product) => (
               <div
+                style={{ cursor: "pointer" }}
                 key={product.id}
                 className="ourprdcard prdimgs d-grid justify-content-center p-4"
                 onClick={() => handleImageClick(product.img)}
@@ -104,8 +105,9 @@ function OurProducts() {
                   className="img-fluid ourprdimg w-100 h-100"
                   alt={product.title || "Product Image"}
                   title={product.title || "Product Image"}
+                  style={{ cursor: "pointer" }}
                 />
-                <p className=" shadow-sm">{product.title}</p>
+                <p className=" shadow-sm" style={{ cursor: "pointer" }}>{product.title}</p>
               </div>
             ))}
           </Slider>
@@ -113,15 +115,16 @@ function OurProducts() {
           <Row>
             {activeProducts.map((product) => (
               <Col key={product.id} xs={12} sm={6} md={2} className="mb-4">
-                <div className="d-grid  justify-content-center">
+                <div className="d-grid  justify-content-center" style={{ cursor: "pointer" }}>
                   <img
                     src={product.img}
                     className="img-fluid ourprdimg w-100 h-100"
                     alt={product.title || "Product Image"}
                     title={product.title || "Product Image"}
                     onClick={() => handleImageClick(product.img)}
+                    style={{ cursor: "pointer" }}
                   />
-                  <p className=" shadow-sm">{product.title}</p>
+                  <p className=" shadow-sm" style={{ cursor: "pointer" }}>{product.title}</p>
 
                 </div>
 
@@ -155,7 +158,7 @@ function OurProducts() {
           >
             <FaTimes />
           </button>
-          <img src={selectedImage} className="img-fluid w-100" alt="Product"  title="Product"/>
+          <img src={selectedImage} className="img-fluid w-100" alt="Product" title="Product" />
         </Modal.Body>
       </Modal>
     </>

@@ -273,13 +273,14 @@ function OurProducts2() {
 
   return (
     <>
-      <Container fluid className="my-5 py-lg-0 d-none d-lg-block">
+      <Container fluid className="my-5 py-lg-0 d-none d-lg-block" style={{ cursor: "pointer" }}>
         {activeProducts.length > 5 ? (
           <Slider {...settings}>
             {activeProducts.map((product) => (
               <div
                 key={product.id}
                 className="ourprdcard d-grid text-center justify-content-center p-4"
+                style={{ cursor: "pointer" }}
                 // onClick={() => handleImageClick(product.img)}
                 onClick={() => {
                   localStorage.setItem("prd", product.details?.id)
@@ -298,9 +299,10 @@ function OurProducts2() {
                   className="img-fluid ourprdimg w-100 h-100"
                   alt={product.title}
                   title={product.title}
+                  style={{ cursor: "pointer" }}
                 />
                 <p
-                  style={{ minHeight: "3rem" }}
+                  style={{ minHeight: "3rem", cursor: "pointer" }}
                   className="shadow-sm"
                   onClick={() => {
                     localStorage.setItem("prd", product.details?.id)
@@ -320,16 +322,17 @@ function OurProducts2() {
             ))}
           </Slider>
         ) : (
-          <Row className="d-flex justify-content-center">
+          <Row className="d-flex justify-content-center cursor-pointer" style={{ cursor: "pointer" }}>
             {activeProducts.map((product) => (
 
               <Col key={product.id} xs={12} sm={6} md={2} className="mb-4">
-                <div className="d-grid text-center justify-content-center">
+                <div className="d-grid text-center justify-content-center" style={{ cursor: "pointer" }}>
                   <img
                     src={product.img}
                     className="img-fluid ourprdimg w-100 h-100"
                     alt={product.title}
                     title={product.title}
+                    style={{ cursor: "pointer" }}
                     // onClick={() => handleImageClick(product.img)}
                     onClick={() => {
                       localStorage.setItem("prd", product.details?.id)
@@ -344,7 +347,7 @@ function OurProducts2() {
                   />
 
                   <p
-                    style={{ minHeight: "3rem" }}
+                    style={{ minHeight: "3rem", cursor: "pointer" }}
                     className="shadow-sm"
                     onClick={() => {
                       localStorage.setItem("prd", product.details?.id)
